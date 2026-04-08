@@ -7,7 +7,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const isTarifsPage = location.pathname === '/tarifs'; // Tarifs hero is also dark green
-  const overDarkBg = (isHomePage || isTarifsPage) && !isScrolled;
+  const isClubPage = location.pathname === '/club';
+  const isEntreprisesPage = location.pathname === '/entreprises';
+  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage) && !isScrolled;
 
   return (
     <>

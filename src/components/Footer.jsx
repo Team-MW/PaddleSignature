@@ -1,21 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
-
-const FAQItemFooter = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  return (
-    <div className="footer-faq-item">
-      <button className="faq-trigger" onClick={() => setIsOpen(!isOpen)}>
-        <span className="serif">{question}</span>
-        <ChevronDown size={16} style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: '0.3s' }} />
-      </button>
-      <div className={`faq-content ${isOpen ? 'open' : ''}`}>
-        <p>{answer}</p>
-      </div>
-    </div>
-  );
-};
+import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = ({ toggleHover }) => {
   const location = useLocation();
@@ -24,34 +9,7 @@ const Footer = ({ toggleHover }) => {
   return (
     <footer className="footer-elite">
       {/* FAQ Section - Full Width Background, Contained Content */}
-      {!isHomePage && (
-        <div className="footer-faq-premium">
-        <div className="container narrow-container">
-          <div className="faq-header-footer">
-             <span className="badge-terracotta">Aide & Infos</span>
-             <h3 className="serif">Foire aux <span className="italic">Questions.</span></h3>
-          </div>
-          <div className="faq-grid-footer">
-             <FAQItemFooter 
-               question="Quels sont les horaires d'ouverture ?" 
-               answer="Le club est accessible tous les jours de 6h00 à minuit pour les réservations via l'application. L'accueil et le bar sont ouverts du Lundi au Dimanche (9h-22h)."
-             />
-             <FAQItemFooter 
-               question="Quelles chaussures de sport porter ?" 
-               answer="Pour préserver la qualité de nos terrains panoramiques, des chaussures de tennis ou de padel à semelles non marquantes sont exigées."
-             />
-             <FAQItemFooter 
-               question="Peut-on louer du matériel sur place ?" 
-               answer="Oui, nous proposons la location de raquettes haut de gamme et la vente de balles premium au bar lounge."
-             />
-             <FAQItemFooter 
-               question="Le parking est-il gratuit ?" 
-               answer="Absolument. Nous mettons à votre disposition 38 places de parking privées et sécurisées juste devant le club."
-             />
-          </div>
-        </div>
-      </div>
-      )}
+
 
       <div className="container">
 

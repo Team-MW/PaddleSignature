@@ -36,7 +36,6 @@ const Entreprises = ({ toggleHover }) => {
         url="/entreprises" 
       />
 
-      {/* Hero Section */}
       <section 
         className="page-hero-premium with-bg"
         style={{ backgroundImage: 'url("/entreprises-hero-bg.jpg")' }}
