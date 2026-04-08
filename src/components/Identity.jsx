@@ -37,13 +37,19 @@ const Identity = ({ toggleHover, yParallax }) => {
             style={{ y: yParallax }}
             className="identity-visual-grid"
           >
-             <div className="iv-main" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <img src="https://images.unsplash.com/photo-1544033527-b192daee1f5b?q=80&w=2070&auto=format&fit=crop" alt="Premium Padel" />
+             <div className="iv-main-full" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                <img src="/identity-main.jpg" alt="Padel Signature Premium Field" />
+                <div className="image-overlay-subtle"></div>
              </div>
-             <div className="iv-sub" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <img src="https://images.unsplash.com/photo-1510915228340-29c85a43dbfe?q=80&w=2070&auto=format&fit=crop" alt="Club details" />
-             </div>
-             <div className="signature-stamp">P. Signature</div>
+             <motion.div 
+               initial={{ opacity: 0, scale: 0.8 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               className="floating-signature-tag"
+             >
+               <span className="serif italic">L'Excellence</span>
+               <div className="line-divider"></div>
+               <span className="uppercase">Montauban</span>
+             </motion.div>
           </motion.div>
         </div>
       </div>

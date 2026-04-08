@@ -16,8 +16,8 @@ const Hero = ({ heroRef, toggleHover, scale }) => {
            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
          >
            <h1 className="serif">
-             Padel Signature <br/> 
-             <span className="italic" style={{ fontWeight: 300 }}>Plus qu'un club.</span>
+             Padel <br/> 
+             <span className="italic" style={{ color: 'var(--terracotta)' }}>Signature</span>
            </h1>
            <h2 className="hero-desc-centered">
              Le 1er complexe de <strong>padel indoor premium à Montauban</strong>. 

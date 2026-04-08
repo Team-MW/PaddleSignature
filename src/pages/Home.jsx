@@ -5,7 +5,6 @@ import Hero from '../components/Hero';
 import Marquee from '../components/Marquee';
 import Identity from '../components/Identity';
 import Services from '../components/Services';
-import Profiles from '../components/Profiles';
 import AppCTA from '../components/AppCTA';
 import BusinessCTA from '../components/BusinessCTA';
 import Localisation from '../components/Localisation';
@@ -25,7 +24,6 @@ const Home = ({ toggleHover }) => {
       />
       <Hero heroRef={heroRef} toggleHover={toggleHover} scale={scale} />
       <Marquee />
-      <Profiles toggleHover={toggleHover} />
       <Identity toggleHover={toggleHover} yParallax={yParallax} />
       <Services toggleHover={toggleHover} />
       <BusinessCTA toggleHover={toggleHover} />

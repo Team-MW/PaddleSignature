@@ -1,24 +1,65 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Target, Users, Layout, ChevronRight } from 'lucide-react';
+
+const BusinessFeature = ({ icon: Icon, text }) => (
+  <div className="biz-feat-item">
+    <div className="biz-feat-icon">
+      <Icon size={18} />
+    </div>
+    <span className="biz-feat-text">{text}</span>
+  </div>
+);
 
 const BusinessCTA = ({ toggleHover }) => {
   return (
-    <section className="business-cta-section" style={{ padding: '8rem 0', background: 'var(--white)' }}>
+    <section id="entreprises" className="business-premium-section">
       <div className="container">
-         <div className="cta-box-premium" style={{ background: 'var(--cream)', border: '1px solid var(--border)' }}>
-            <div className="cta-text-content">
-               <span className="badge-terracotta">B2B & Séminaires</span>
-               <h2 className="serif h2-cta" style={{ color: 'var(--dark-green)' }}>Un lieu pensé <br/><span className="italic">Pour Vos Équipes.</span></h2>
-               <p className="cta-p" style={{ color: 'var(--text-muted)' }}>Sortez du cadre ! Padel Signature vous propose une salle VIP de 31,6 m², des terrains privatisables équipés de LED personnalisables et un bar lounge R+1 pour vos événements professionnels, team-buildings et séminaires d'entreprise à Montauban.</p>
-               <div className="app-store-links">
-                  <Link to="/entreprises" className="btn btn-primary" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Découvrir nos offres B2B</Link>
-               </div>
+        <div className="business-grid-modern">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="business-text-block"
+          >
+            <span className="badge-terracotta">B2B & Séminaires</span>
+            <h2 className="serif xl-title">
+              Élevez Vos <br/>
+              <span className="italic">Événements d'Équipe.</span>
+            </h2>
+            <p className="business-intro">
+              Sortez du cadre conventionnel. Padel Signature offre un environnement unique alliant sport, détente et professionnalisme pour vos collaborateurs.
+            </p>
+            
+            <div className="business-features-list">
+              <BusinessFeature icon={Target} text="Séminaires & Réunions (Salle VIP 32m²)" />
+              <BusinessFeature icon={Users} text="Team Building & Tournois Privés" />
+              <BusinessFeature icon={Layout} text="Privatisation Totale & Bar Lounge" />
             </div>
-            <div className="cta-visual-phone" style={{ position: 'relative', overflow: 'hidden', height: '100%', display: 'flex', alignItems: 'center' }}>
-               <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Salle VIP séminaire Padel Signature Montauban" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px' }} />
+
+            <div className="business-cta-wrapper">
+              <Link to="/entreprises" className="btn btn-primary" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                <span>Découvrir nos offres B2B</span>
+              </Link>
             </div>
-         </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            className="business-visual-block"
+          >
+            <div className="biz-main-img-wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Premium Business Lounge Padel Signature" className="biz-img" />
+              <div className="biz-img-overlay"></div>
+            </div>
+            <div className="biz-floating-card">
+              <p className="serif italic">"Plus qu'un terrain, un lieu de cohésion."</p>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
