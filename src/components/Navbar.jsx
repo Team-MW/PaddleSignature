@@ -44,32 +44,63 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="mobile-menu-overlay"
-            style={{
-              position: 'fixed', top: 0, right: 0, bottom: 0, left: 0,
-              background: 'var(--dark-green)', color: 'white',
-              display: 'flex', flexDirection: 'column', padding: '4rem',
-              zIndex: 2000
-            }}
           >
-             <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', marginBottom: '8rem' }}>
-                <img src="/logo.png" alt="Padel Signature Logo" style={{ height: '35px', objectFit: 'contain' }} />
-                <button onClick={() => setMobileMenuOpen(false)} style={{ color: 'white' }}><X size={32}/></button>
+             <div className="mobile-menu-header">
+                <img src="/logo.png" alt="Padel Signature Logo" className="mobile-logo" />
+                <button className="close-btn" onClick={() => setMobileMenuOpen(false)}><X size={32}/></button>
              </div>
-             <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-                <Link to="/club" onClick={() => setMobileMenuOpen(false)} className="serif" style={{ fontSize: '3rem' }}>Le Club</Link>
-                <Link to="/entreprises" onClick={() => setMobileMenuOpen(false)} className="serif" style={{ fontSize: '3rem' }}>Entreprises</Link>
-                <Link to="/tarifs" onClick={() => setMobileMenuOpen(false)} className="serif" style={{ fontSize: '3rem' }}>Tarifs</Link>
-                <Link to="/infos-pratiques" onClick={() => setMobileMenuOpen(false)} className="serif" style={{ fontSize: '3rem' }}>Infos Pratiques</Link>
-             </div>
-             <div style={{ marginTop: 'auto', display: 'flex', gap: '2rem' }}>
-                <Instagram size={20}/>
-                <Facebook size={20}/>
-             </div>
+             
+             <nav className="mobile-nav">
+                {[
+                  { name: 'Le Club', path: '/club' },
+                  { name: 'Entreprises', path: '/entreprises' },
+                  { name: 'Tarifs', path: '/tarifs' },
+                  { name: 'Infos Pratiques', path: '/infos-pratiques' }
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.path}
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + index * 0.1 }}
+                  >
+                    <Link 
+                      to={item.path} 
+                      onClick={() => setMobileMenuOpen(false)} 
+                      className="mobile-link serif"
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+                
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="mt-40"
+                >
+                  <a href="https://live-experience.com" target="_blank" className="btn btn-primary btn-full-width">
+                     <span>Réserver un court</span>
+                  </a>
+                </motion.div>
+             </nav>
+
+             <motion.div 
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               transition={{ delay: 0.6 }}
+               className="mobile-menu-footer"
+             >
+                <div className="mobile-socials">
+                  <a href="#"><Instagram size={24}/></a>
+                  <a href="#"><Facebook size={24}/></a>
+                </div>
+                <p className="mobile-copyright">© 2024 Padel Signature</p>
+             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
