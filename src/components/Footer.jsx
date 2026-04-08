@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
 
 const FAQItemFooter = ({ question, answer }) => {
@@ -18,14 +18,18 @@ const FAQItemFooter = ({ question, answer }) => {
 };
 
 const Footer = ({ toggleHover }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <footer className="footer-elite">
-      <div className="container">
-        {/* New FAQ Section in Footer */}
+      {/* FAQ Section - Full Width Background, Contained Content */}
+      {!isHomePage && (
         <div className="footer-faq-premium">
+        <div className="container narrow-container">
           <div className="faq-header-footer">
              <span className="badge-terracotta">Aide & Infos</span>
-             <h3 className="serif text-white">Foire aux <span className="italic">Questions.</span></h3>
+             <h3 className="serif">Foire aux <span className="italic">Questions.</span></h3>
           </div>
           <div className="faq-grid-footer">
              <FAQItemFooter 
@@ -46,6 +50,10 @@ const Footer = ({ toggleHover }) => {
              />
           </div>
         </div>
+      </div>
+      )}
+
+      <div className="container">
 
         <div className="footer-divider-premium"></div>
 
@@ -94,14 +102,13 @@ const Footer = ({ toggleHover }) => {
 
         <div className="footer-bottom">
           <div className="footer-legal">
-            <p>© 2024 Padel Signature. Tous droits réservés.</p>
+            <p>© 2026 Padel Signature. Tous droits réservés.</p>
             <div className="legal-links">
               <Link to="/mentions-legales" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Mentions Légales</Link>
-              <Link to="/confidentialite" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Confidentialité</Link>
             </div>
           </div>
           <p className="footer-signature">
-            Design par <span style={{ color: 'var(--terracotta)' }}>MW Créa</span> — Réalisé par <a href="https://microdidact.com" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline' }}>Microdidact</a>
+            Design & Réalisation par <a href="https://microdidact.com" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline' }}>Microdidact</a>
           </p>
         </div>
       </div>

@@ -839,7 +839,7 @@ section {
 
 /* 12. Footer */
 .footer-elite {
-  padding: 10rem 0 4rem;
+  padding: 0 0 4rem;
   background-color: white;
   position: relative;
   border-top: 1px solid var(--border);
@@ -909,13 +909,36 @@ section {
 }
 
 .footer-faq-premium {
-  background: var(--dark-green);
-  padding: 6rem;
-  margin-bottom: 8rem;
+  background: white;
+  padding: 8rem 0;
+  margin-bottom: 2rem;
   position: relative;
   z-index: 10;
-  color: white;
+  color: var(--dark-green);
 }
+
+.footer-faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+  background: none;
+  border: none;
+  color: var(--dark-green);
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-trigger span { font-size: 1.8rem; line-height: 1.2; color: var(--dark-green) !important; }
+.faq-trigger svg { color: var(--terracotta); }
+.faq-content { max-height: 0; overflow: hidden; transition: 0.5s ease; }
+.faq-content.open { max-height: 400px; padding-bottom: 3rem; }
+.faq-content p { font-size: 1.2rem; line-height: 1.8; color: var(--text-muted); max-width: 800px; }
 
 .footer-contact-info li {
   display: flex;
@@ -1254,6 +1277,7 @@ section {
   padding: 2.5rem 0;
   background: none;
   border: none;
+  color: var(--dark-green);
   cursor: pointer;
   text-align: left;
 }
@@ -1261,6 +1285,10 @@ section {
 .faq-question span {
   font-size: 1.5rem;
   color: var(--dark-green);
+}
+
+.faq-question svg {
+  color: var(--terracotta);
 }
 
 .faq-answer {
@@ -1840,3 +1868,33 @@ section {
 }
 
 .mt-40 { margin-top: 4rem; }
+
+@media (max-width: 768px) {
+  .faq-trigger span { font-size: 1.5rem !important; }
+  .faq-content p { font-size: 1.1rem !important; }
+  .footer-faq-premium { padding: 6rem 0; }
+}
+
+@media (max-width: 768px) {
+  .hero-content-centered {
+    padding-top: 120px; /* Bring content up closer to navbar */
+    align-items: flex-start;
+  }
+  .hero {
+    align-items: flex-start;
+    height: 90vh; /* Slightly shorter for impact */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content-centered {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-premium {
+    padding: 10rem 0 5rem !important; /* Fixed huge gap on mobile */
+  }
+}
