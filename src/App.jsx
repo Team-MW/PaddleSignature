@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -12,6 +13,7 @@ import Club from './pages/Club';
 import Entreprises from './pages/Entreprises';
 import Tarifs from './pages/Tarifs';
 import InfosPratiques from './pages/InfosPratiques';
+import MentionsLegales from './pages/MentionsLegales';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +41,7 @@ export default function App() {
   return (
     <Router>
       <div className="app-main-wrapper" style={{ cursor: 'none' }}>
+        <ScrollToTop />
         <CustomCursor mousePos={mousePos} isHovered={isHovered} />
         
         <Navbar 
@@ -55,6 +58,7 @@ export default function App() {
             <Route path="/entreprises" element={<Entreprises toggleHover={toggleHover} />} />
             <Route path="/tarifs" element={<Tarifs toggleHover={toggleHover} />} />
             <Route path="/infos-pratiques" element={<InfosPratiques toggleHover={toggleHover} />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
           </Routes>
         </main>
 

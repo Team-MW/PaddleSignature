@@ -1653,3 +1653,109 @@ section {
 @media (max-width: 768px) {
   .infos-grid-premium { grid-template-columns: 1fr; }
 }
+
+/* 19. Club Page Styles */
+.founders-stat-grid {
+  display: flex;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.stat-item-premium {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-size: 4rem;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.club-visual-wrapper {
+  position: relative;
+  height: 650px;
+}
+
+.club-img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.visual-accent-card {
+  position: absolute;
+  bottom: 2rem;
+  left: -3rem;
+  background: white;
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.features-grid-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.feature-long-card {
+  padding: 4rem;
+  background: white;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.feature-long-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--terracotta);
+}
+
+.feature-long-card h3 { font-size: 1.6rem; margin-bottom: 2rem; }
+.feature-long-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+
+@media (max-width: 1024px) {
+  .features-grid-masonry { grid-template-columns: 1fr; }
+  .visual-accent-card { position: static; margin-top: 2rem; width: 100%; }
+  .club-visual-wrapper { height: 400px; }
+  .founders-stat-grid { gap: 2rem; }
+}
+
+/* 20. Legal Pages Styles */
+.narrow-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-block {
+  margin-bottom: 4rem;
+}
+
+.legal-block h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-green);
+}
+
+.legal-block p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.legal-block strong {
+  color: var(--dark-green);
+}
