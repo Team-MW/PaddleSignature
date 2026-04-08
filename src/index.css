@@ -840,9 +840,10 @@ section {
 /* 12. Footer */
 .footer-elite {
   padding: 10rem 0 4rem;
-  background-color: white; /* Changed to white for a cleaner look that transitions from the last section */
+  background-color: white;
   position: relative;
   border-top: 1px solid var(--border);
+  color: var(--text-main);
 }
 
 .footer-grid {
@@ -893,15 +894,27 @@ section {
   gap: 1.2rem;
 }
 
-.footer-links a {
+.footer-links a, .footer-contact-info li {
   font-size: 0.9rem;
   color: var(--text-muted);
   transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .footer-links a:hover {
   color: var(--terracotta);
   padding-left: 5px;
+}
+
+.footer-faq-premium {
+  background: var(--dark-green);
+  padding: 6rem;
+  margin-bottom: 8rem;
+  position: relative;
+  z-index: 10;
+  color: white;
 }
 
 .footer-contact-info li {
@@ -910,10 +923,6 @@ section {
   align-items: flex-start;
   font-size: 0.9rem;
   color: var(--text-muted);
-}
-
-.footer-contact-info li span {
-  line-height: 1.4;
 }
 
 .footer-social-grid {
@@ -947,21 +956,11 @@ section {
   align-items: center;
   position: relative;
   z-index: 10;
-}
-
-.footer-legal {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  color: var(--text-muted);
 }
 
 .footer-legal p {
   font-size: 0.8rem;
-}
-
-.legal-links {
-  display: flex;
-  gap: 2rem;
 }
 
 .legal-links a {
@@ -979,18 +978,6 @@ section {
   opacity: 0.6;
 }
 
-.footer-giant-bg {
-  position: absolute;
-  bottom: -2rem;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 15vw;
-  opacity: 0.025;
-  pointer-events: none;
-  text-transform: lowercase;
-  color: var(--dark-green);
-}
 
 
 

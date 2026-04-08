@@ -100,10 +100,11 @@ const Footer = ({ toggleHover }) => {
               <Link to="/confidentialite" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Confidentialité</Link>
             </div>
           </div>
-          <p className="footer-signature">Design par MW Créa</p>
+          <p className="footer-signature">
+            Design par <span style={{ color: 'var(--terracotta)' }}>MW Créa</span> — Réalisé par <a href="https://microdidact.com" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline' }}>Microdidact</a>
+          </p>
         </div>
       </div>
-      <div className="footer-giant-bg serif">padel signature</div>
     </footer>
   );
 };
