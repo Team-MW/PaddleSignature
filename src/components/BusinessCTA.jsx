@@ -52,7 +52,7 @@ const BusinessCTA = ({ toggleHover }) => {
             className="business-visual-block"
           >
             <div className="biz-main-img-wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Premium Business Lounge Padel Signature" className="biz-img" />
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=70&w=1200&auto=format&fit=crop" alt="Premium Business Lounge Padel Signature" className="biz-img" loading="lazy" />
               <div className="biz-img-overlay"></div>
             </div>
             <div className="biz-floating-card">

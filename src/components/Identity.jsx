@@ -37,10 +37,10 @@ const Identity = ({ toggleHover, yParallax }) => {
             style={{ y: yParallax }}
             className="identity-visual-grid"
           >
-             <div className="iv-main-full" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <img src="/identity-main.jpg" alt="Padel Signature Premium Field" />
+              <div className="iv-main-full" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                <img src="/identity-main.jpg" alt="Padel Signature Premium Field" loading="lazy" />
                 <div className="image-overlay-subtle"></div>
-             </div>
+              </div>
              <motion.div 
                initial={{ opacity: 0, scale: 0.8 }}
                whileInView={{ opacity: 1, scale: 1 }}

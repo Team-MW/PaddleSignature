@@ -27,7 +27,7 @@ const AppCTA = ({ toggleHover }) => {
             className="phone-mockup-wrapper"
           >
             <div className="phone-screen-container">
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop" alt="Mobile App Experience" className="phone-img" />
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=70&w=600&auto=format&fit=crop" alt="Mobile App Experience" className="phone-img" loading="lazy" />
             </div>
           </motion.div>
         </div>

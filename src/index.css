@@ -270,6 +270,7 @@ section {
   text-align: center;
   color: white;
   width: 100%;
+  padding-bottom: 8rem; /* Move content slightly up from center */
 }
 
 .hero-content-centered h1 {
@@ -1159,10 +1160,34 @@ section {
 
 /* 16. Entreprises Page Styles */
 .page-hero-premium {
-  padding: 18rem 0 10rem;
+  padding: 14rem 0 10rem;
   background: var(--cream);
   position: relative;
   overflow: hidden;
+}
+
+.page-hero-premium.with-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero-premium.with-bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(27, 52, 43, 0.7), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+
+.page-hero-premium.with-bg .container {
+  position: relative;
+  z-index: 10;
+}
+
+.page-hero-premium.with-bg .h1-huge,
+.page-hero-premium.with-bg .hero-subline,
+.page-hero-premium.with-bg .badge-terracotta {
+  color: white !important;
 }
 
 .h1-huge {

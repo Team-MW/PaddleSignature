@@ -10,7 +10,7 @@ const MentionsLegales = () => {
         description="Consultez les mentions légales de Padel Signature. Informations sur l'éditeur, l'hébergeur et la propriété intellectuelle." 
         url="/mentions-legales" 
       />
-      <section className="legal-page-header section-padding" style={{ paddingTop: '15rem', background: 'var(--cream)' }}>
+      <section className="legal-page-header section-padding" style={{ paddingTop: '12rem', background: 'var(--cream)' }}>
         <div className="container">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}

@@ -11,7 +11,7 @@ const ProfileCard = ({ title, description, badge, image, delay, onHover }) => (
     onMouseLeave={onHover}
     className="profile-modern"
   >
-    <img src={image} alt={title} className="profile-img" />
+    <img src={image} alt={title} className="profile-img" loading="lazy" />
     <div className="profile-content-overlay">
       <span className="profile-badge-text">{badge}</span>
       <h3 className="serif text-white">{title}</h3>
@@ -37,7 +37,7 @@ const Profiles = ({ toggleHover }) => {
               badge="Je débute"
               title="Le Découvreur"
               description="Découvrez le padel dans un cadre premium."
-              image="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=1974&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=70&w=800&auto=format&fit=crop"
               onHover={toggleHover}
             />
             <ProfileCard 
@@ -45,7 +45,7 @@ const Profiles = ({ toggleHover }) => {
               badge="Je joue en journée"
               title="Le Matinal"
               description="Profitez des tarifs heures creuses."
-              image="https://images.unsplash.com/photo-1544033527-b192daee1f5b?q=80&w=2070&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1544033527-b192daee1f5b?q=70&w=800&auto=format&fit=crop"
               onHover={toggleHover}
             />
             <ProfileCard 
@@ -53,7 +53,7 @@ const Profiles = ({ toggleHover }) => {
               badge="Je joue après le boulot"
               title="Le Joueur du Soir"
               description="Réservez votre créneau soir en 2 clics."
-              image="https://images.unsplash.com/photo-1599422315853-5d9c66bc28ca?q=80&w=2072&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1599422315853-5d9c66bc28ca?q=70&w=800&auto=format&fit=crop"
               onHover={toggleHover}
             />
             <ProfileCard 
@@ -61,7 +61,7 @@ const Profiles = ({ toggleHover }) => {
               badge="Je veux progresser"
               title="L'Athlète Constant"
               description="Coaching et tournois pour passer au niveau supérieur."
-              image="https://images.unsplash.com/photo-1510915228340-29c85a43dbfe?q=80&w=2070&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1510915228340-29c85a43dbfe?q=70&w=800&auto=format&fit=crop"
               onHover={toggleHover}
             />
             <ProfileCard 
@@ -69,7 +69,7 @@ const Profiles = ({ toggleHover }) => {
               badge="Je viens avec ma boîte"
               title="Le Cercle Business"
               description="Séminaires, team-building, événements sur-mesure."
-              image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=70&w=800&auto=format&fit=crop"
               onHover={toggleHover}
             />
          </div>

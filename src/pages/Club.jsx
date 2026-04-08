@@ -37,7 +37,10 @@ const Club = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium club-hero" style={{ background: 'var(--cream)' }}>
+      <section 
+        className="page-hero-premium club-hero with-bg" 
+        style={{ backgroundImage: 'url("/club-hero-bg.jpg")' }}
+      >
         <div className="container">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}

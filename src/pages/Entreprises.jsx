@@ -37,7 +37,10 @@ const Entreprises = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium">
+      <section 
+        className="page-hero-premium with-bg"
+        style={{ backgroundImage: 'url("/entreprises-hero-bg.jpg")' }}
+      >
         <div className="container">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -55,7 +58,6 @@ const Entreprises = ({ toggleHover }) => {
             </p>
           </motion.div>
         </div>
-        <div className="hero-bg-accent"></div>
       </section>
 
       {/* Offers Section */}
