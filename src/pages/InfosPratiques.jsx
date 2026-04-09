@@ -150,26 +150,6 @@ const InfosPratiques = ({ toggleHover }) => {
         </div>
       </section>
 
-      {/* Tips Section */}
-      <section className="tips-section section-padding" style={{ background: 'var(--dark-green)', color: 'white' }}>
-        <div className="container">
-          <div className="grid-asym-2 align-center">
-            <div className="tips-visual">
-              <img src="https://images.unsplash.com/photo-1541534741688-6078c65b5a33?q=80&w=2070&auto=format&fit=crop" alt="Padel Signature Equipment" className="tips-img" />
-            </div>
-            <div className="tips-content">
-              <span className="badge-terracotta">Bien préparer son match</span>
-              <h2 className="serif xl-title text-white">Conseils de <br/><span className="italic">L'Équipe.</span></h2>
-              <ul className="tips-list">
-                <li><CheckCircle2 size={20} /> Arrivez 15 minutes avant votre session.</li>
-                <li><CheckCircle2 size={20} /> N'oubliez pas vos chaussures de padel (semelle à chevrons).</li>
-                <li><CheckCircle2 size={20} /> Hydratez-vous : fontaines et bar à disposition.</li>
-                <li><CheckCircle2 size={20} /> Le pro-shop propose balles et surgrips en cas d'oubli.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Infos FAQ */}
       <section className="faq-section section-padding" style={{ background: 'var(--off-white)' }}>
