@@ -1941,3 +1941,88 @@ section {
     padding: 10rem 0 5rem !important; /* Fixed huge gap on mobile */
   }
 }
+
+/* 17. Pricing Page Responsive Refinement */
+@media (max-width: 1024px) {
+  .pricing-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    padding-top: 2rem;
+  }
+  
+  .price-card-premium.featured {
+    transform: none;
+    margin: 1rem 0;
+  }
+  
+  .extras-list-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .price-card-premium {
+    padding: 3.5rem 1.5rem;
+  }
+  
+  .price-display {
+    margin-bottom: 2.5rem;
+  }
+  
+  .price-display .amount {
+    font-size: 3.5rem;
+  }
+  
+  .price-features {
+    margin-bottom: 3rem;
+    gap: 1.2rem;
+  }
+  
+  .btn-full-width {
+    margin-top: 2.5rem;
+  }
+  
+  .extra-item {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .extra-price {
+    font-size: 1.5rem;
+  }
+  
+  .booking-experience-section {
+    padding: 6rem 0;
+  }
+  
+  .experience-header {
+    margin-bottom: 4rem;
+  }
+  
+  .step-card-modern {
+    padding: 3.5rem 2rem;
+  }
+  
+  .step-icon-box {
+    margin-bottom: 2rem;
+  }
+  
+  .step-card-modern h4 {
+    font-size: 1.5rem;
+  }
+  
+  .experience-bg-text {
+    font-size: 20vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-display .amount {
+    font-size: 3rem;
+  }
+  
+  .price-card-premium h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
