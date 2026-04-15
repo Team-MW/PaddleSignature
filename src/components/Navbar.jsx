@@ -9,7 +9,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
   const isTarifsPage = location.pathname === '/tarifs'; // Tarifs hero is also dark green
   const isClubPage = location.pathname === '/club';
   const isEntreprisesPage = location.pathname === '/entreprises';
-  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage) && !isScrolled;
+  const isLocauxPage = location.pathname === '/nos-locaux';
+  const isInfosPage = location.pathname === '/infos-pratiques';
+  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isLocauxPage || isInfosPage) && !isScrolled;
 
   return (
     <>
@@ -29,6 +31,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
 
           <div className="nav-links desktop-only" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             <Link to="/club" className="nav-link">Le Club</Link>
+            <Link to="/nos-locaux" className="nav-link">Locaux</Link>
             <Link to="/entreprises" className="nav-link">Entreprises</Link>
             <Link to="/tarifs" className="nav-link">Tarifs</Link>
             <Link to="/infos-pratiques" className="nav-link">Infos</Link>
@@ -59,6 +62,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
              <nav className="mobile-nav">
                 {[
                   { name: 'Le Club', path: '/club' },
+                  { name: 'Nos Locaux', path: '/nos-locaux' },
                   { name: 'Entreprises', path: '/entreprises' },
                   { name: 'Tarifs', path: '/tarifs' },
                   { name: 'Infos Pratiques', path: '/infos-pratiques' }

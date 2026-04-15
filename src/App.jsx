@@ -13,6 +13,7 @@ const Club = lazy(() => import('./pages/Club'));
 const Entreprises = lazy(() => import('./pages/Entreprises'));
 const Tarifs = lazy(() => import('./pages/Tarifs'));
 const InfosPratiques = lazy(() => import('./pages/InfosPratiques'));
+const NosLocaux = lazy(() => import('./pages/NosLocaux'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 
 // Loading fallback
@@ -74,6 +75,7 @@ export default function App() {
               <Route path="/club" element={<Club toggleHover={toggleHover} />} />
               <Route path="/entreprises" element={<Entreprises toggleHover={toggleHover} />} />
               <Route path="/tarifs" element={<Tarifs toggleHover={toggleHover} />} />
+              <Route path="/nos-locaux" element={<NosLocaux toggleHover={toggleHover} />} />
               <Route path="/infos-pratiques" element={<InfosPratiques toggleHover={toggleHover} />} />
               <Route path="/mentions-legales" element={<MentionsLegales />} />
             </Routes>

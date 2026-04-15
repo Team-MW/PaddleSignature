@@ -66,7 +66,7 @@ const Club = ({ toggleHover }) => {
           <div className="grid-asym-2 align-center">
             <div className="club-story-content">
               <span className="badge-terracotta">Notre Vision</span>
-              <h2 className="serif xl-title">Clément & Hugo, <br/><span className="italic">Le Duo Fondateur.</span></h2>
+              <h2 className="serif xl-title">Clément Rouanet & <br/>Hugo Briand, <br/><span className="italic">Le Duo Fondateur.</span></h2>
               <p className="mb-40">Plus qu’un sport, Clément et Hugo ont vu dans le Padel un véritable vecteur de lien social et de performance. Leur ambition ? Créer un lieu où chaque détail, de l'accueil au bar panoramique, respire la qualité.</p>
               
               <div className="founders-stat-grid">
