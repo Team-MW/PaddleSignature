@@ -3016,25 +3016,68 @@ section {
   height: 75vh;
 }
 
-.locaux-feature-section .grid-2 {
-  gap: 8rem;
+.locaux-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 10rem;
+}
+
+.locaux-feature-section.reverse .locaux-grid {
+  grid-template-columns: 0.75fr 1.25fr;
 }
 
 .locaux-image-wrapper {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
 }
 
-.locaux-image-wrapper img {
+.img-decoration-box {
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 1s ease;
+  border: 1px solid var(--terracotta);
+  opacity: 0.2;
+  border-radius: 8px;
+  z-index: -1;
+  transition: transform 0.6s var(--transition);
 }
 
-.locaux-image-wrapper:hover img {
-  transform: scale(1.05);
+.locaux-feature-section.reverse .img-decoration-box {
+  left: auto;
+  right: -2rem;
+}
+
+.locaux-image-wrapper:hover .img-decoration-box {
+  transform: translate(1rem, 1rem);
+}
+
+.img-premium-border {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+}
+
+.locaux-floating-badge {
+  position: absolute;
+  bottom: 3rem;
+  right: -2rem;
+  background: var(--terracotta);
+  color: white;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 5;
+}
+
+.locaux-feature-section.reverse .locaux-floating-badge {
+  right: auto;
+  left: -2rem;
 }
 
 .locaux-content-wrapper {
@@ -3107,5 +3150,38 @@ section {
 
   .locaux-image-wrapper {
     height: 300px;
+  }
+}
+@media (max-width: 1200px) {
+  .locaux-grid, .locaux-feature-section.reverse .locaux-grid {
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .locaux-grid, .locaux-feature-section.reverse .locaux-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .img-premium-border {
+    height: 450px;
+  }
+
+  .img-decoration-box {
+    display: none;
+  }
+
+  .locaux-floating-badge {
+    bottom: 2rem;
+    right: 1rem;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .locaux-feature-section.reverse .locaux-floating-badge {
+    left: auto;
+    right: 1rem;
   }
 }

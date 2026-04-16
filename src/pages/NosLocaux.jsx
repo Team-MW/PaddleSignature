@@ -3,22 +3,24 @@ import { motion } from 'framer-motion';
 import { Layout, Beer, Users, DoorOpen, MapPin, Car, Info, Tv } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const LocauxFeature = ({ icon: Icon, title, description, details, imageUrl, reverse }) => (
+const LocauxFeature = ({ icon: Icon, title, description, details, imageUrl, reverse, badge }) => (
   <section className={`locaux-feature-section section-padding ${reverse ? 'reverse' : ''}`}>
     <div className="container">
-      <div className="grid-2 align-center">
+      <div className="locaux-grid align-center">
         <div className="locaux-image-wrapper">
+          <div className="img-decoration-box"></div>
           <motion.img 
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             src={imageUrl} 
             alt={title} 
             className="img-premium-border"
           />
+          {badge && <div className="locaux-floating-badge serif italic">{badge}</div>}
         </div>
         <div className="locaux-content-wrapper">
-          <Icon className="terracotta-accent mb-20" size={40} />
+          <Icon className="terracotta-accent mb-20" size={48} />
           <h2 className="serif xl-title">{title}</h2>
           <p className="description-text mb-30">{description}</p>
           <ul className="premium-list">
@@ -66,6 +68,7 @@ const NosLocaux = ({ toggleHover }) => {
       <LocauxFeature 
         icon={DoorOpen}
         title="Hall d'entrée & Accueil"
+        badge="Bienvenue"
         description="Un accueil chaleureux et professionnel pour vous mettre dans les meilleures conditions dès votre arrivée."
         details={[
           "Espace accueil & shop",
@@ -81,6 +84,7 @@ const NosLocaux = ({ toggleHover }) => {
       <LocauxFeature 
         icon={Layout}
         title="Les Terrains"
+        badge="Performance"
         description="L'élite du padel avec des conditions de jeu optimales pour la performance et le plaisir."
         details={[
           "4 terrains panoramiques indoor",
@@ -97,6 +101,7 @@ const NosLocaux = ({ toggleHover }) => {
       <LocauxFeature 
         icon={Beer}
         title="Le Bar Lounge"
+        badge="Convivialité"
         description="Situé au R+1, notre bar offre une vue imprenable sur l'ensemble des courts pour prolonger l'expérience."
         details={[
           "Vue panoramique sur les 4 courts",
@@ -112,6 +117,7 @@ const NosLocaux = ({ toggleHover }) => {
       <LocauxFeature 
         icon={Users}
         title="Salle VIP Privatisable"
+        badge="Exclusivité"
         description="Un espace exclusif de 31,6 m² pour vos événements, réunions ou moments privilégiés."
         details={[
           "Vue directe sur les courts",
