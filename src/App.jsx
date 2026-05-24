@@ -42,21 +42,6 @@ export default function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   
-  // Mode prévisualisation privé pour l'administrateur et les développeurs
-  const [previewMode, setPreviewMode] = useState(() => {
-    const params = new URLSearchParams(window.location.search);
-    const urlPreview = params.get('preview');
-    if (urlPreview === 'true') {
-      localStorage.setItem('padel_preview', 'true');
-      return true;
-    }
-    if (urlPreview === 'false') {
-      localStorage.removeItem('padel_preview');
-      return false;
-    }
-    return localStorage.getItem('padel_preview') === 'true';
-  });
-  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -74,8 +59,8 @@ export default function App() {
 
   const toggleHover = () => setIsHovered(!isHovered);
 
-  // Si le site est en construction et qu'on n'est pas en mode prévisualisation
-  if (isUnderConstruction && !previewMode) {
+  // Si le site est en construction
+  if (isUnderConstruction) {
     return (
       <Router>
         <div className="app-main-wrapper" style={{ cursor: 'none' }}>
@@ -115,24 +100,6 @@ export default function App() {
         </main>
 
         <Footer toggleHover={toggleHover} />
-
-        {/* Badge indicateur discret de prévisualisation avec bouton pour quitter */}
-        {previewMode && (
-          <div className="cs-preview-badge">
-            <span>Aperçu Privé</span>
-            <button 
-              onClick={() => {
-                localStorage.removeItem('padel_preview');
-                window.location.href = '/?preview=false';
-              }}
-              onMouseEnter={toggleHover}
-              onMouseLeave={toggleHover}
-              className="cs-preview-badge-btn"
-            >
-              Quitter
-            </button>
-          </div>
-        )}
       </div>
     </Router>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Instagram, Facebook, Linkedin, ArrowRight, Check, Loader2, Sparkles } from 'lucide-react';
+import { Mail, MapPin, Instagram, Facebook, Linkedin, ArrowRight, Check, Loader2 } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const ComingSoon = ({ toggleHover }) => {
@@ -27,11 +27,6 @@ const ComingSoon = ({ toggleHover }) => {
       setStatus('success');
       setEmail('');
     }, 1500);
-  };
-
-  const enablePreviewMode = () => {
-    localStorage.setItem('padel_preview', 'true');
-    window.location.reload();
   };
 
   return (
@@ -226,20 +221,6 @@ const ComingSoon = ({ toggleHover }) => {
             </p>
           </motion.div>
         </main>
-
-        {/* Small hidden entry for previewing the full website */}
-        <div className="cs-preview-entry-wrapper">
-          <button 
-            onClick={enablePreviewMode} 
-            className="cs-preview-btn"
-            title="Accès Administrateur"
-            onMouseEnter={toggleHover}
-            onMouseLeave={toggleHover}
-          >
-            <Sparkles size={14} style={{ marginRight: '6px' }} />
-            <span>Aperçu privé</span>
-          </button>
-        </div>
       </div>
     </>
   );
