@@ -6,6 +6,7 @@ import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ComingSoon from './pages/ComingSoon';
 
 // Lazy load pages for performance
 const Home = lazy(() => import('./pages/Home'));
@@ -15,6 +16,9 @@ const Tarifs = lazy(() => import('./pages/Tarifs'));
 const InfosPratiques = lazy(() => import('./pages/InfosPratiques'));
 const NosLocaux = lazy(() => import('./pages/NosLocaux'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
+
+// Configuration de maintenance temporaire
+const isUnderConstruction = true;
 
 // Loading fallback
 const PageLoader = () => (
@@ -38,6 +42,21 @@ export default function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   
+  // Mode prévisualisation privé pour l'administrateur et les développeurs
+  const [previewMode, setPreviewMode] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlPreview = params.get('preview');
+    if (urlPreview === 'true') {
+      localStorage.setItem('padel_preview', 'true');
+      return true;
+    }
+    if (urlPreview === 'false') {
+      localStorage.removeItem('padel_preview');
+      return false;
+    }
+    return localStorage.getItem('padel_preview') === 'true';
+  });
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -54,6 +73,19 @@ export default function App() {
   }, []);
 
   const toggleHover = () => setIsHovered(!isHovered);
+
+  // Si le site est en construction et qu'on n'est pas en mode prévisualisation
+  if (isUnderConstruction && !previewMode) {
+    return (
+      <Router>
+        <div className="app-main-wrapper" style={{ cursor: 'none' }}>
+          <ScrollToTop />
+          <CustomCursor mousePos={mousePos} isHovered={isHovered} />
+          <ComingSoon toggleHover={toggleHover} />
+        </div>
+      </Router>
+    );
+  }
 
   return (
     <Router>
@@ -83,7 +115,26 @@ export default function App() {
         </main>
 
         <Footer toggleHover={toggleHover} />
+
+        {/* Badge indicateur discret de prévisualisation avec bouton pour quitter */}
+        {previewMode && (
+          <div className="cs-preview-badge">
+            <span>Aperçu Privé</span>
+            <button 
+              onClick={() => {
+                localStorage.removeItem('padel_preview');
+                window.location.href = '/?preview=false';
+              }}
+              onMouseEnter={toggleHover}
+              onMouseLeave={toggleHover}
+              className="cs-preview-badge-btn"
+            >
+              Quitter
+            </button>
+          </div>
+        )}
       </div>
     </Router>
   );
 }
+
