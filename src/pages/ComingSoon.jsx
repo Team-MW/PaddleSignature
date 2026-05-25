@@ -40,8 +40,20 @@ const ComingSoon = ({ toggleHover }) => {
 
     setStatus('loading');
 
+    // Vérifie que les variables d'env sont bien chargées
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error('❌ EmailJS: variables d\'environnement manquantes', {
+        serviceId: EMAILJS_SERVICE_ID,
+        templateId: EMAILJS_TEMPLATE_ID,
+        publicKey: EMAILJS_PUBLIC_KEY ? '✅ présente' : '❌ manquante',
+      });
+      setStatus('error');
+      setErrorMsg('Configuration manquante. Contactez-nous directement par email.');
+      return;
+    }
+
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
@@ -52,14 +64,30 @@ const ComingSoon = ({ toggleHover }) => {
         },
         EMAILJS_PUBLIC_KEY
       );
+      console.log('✅ EmailJS envoyé:', result.status, result.text);
       setStatus('success');
       setForm({ name: '', phone: '', email: '' });
     } catch (err) {
-      console.error('EmailJS error:', err);
+      // Affiche l'erreur complète dans la console pour diagnostic
+      console.error('❌ EmailJS erreur complète:', {
+        status: err?.status,
+        text: err?.text,
+        message: err?.message,
+        err,
+      });
+
+      // Message utilisateur adapté au code d'erreur
+      let msg = 'Une erreur est survenue. Veuillez réessayer ou nous contacter par email.';
+      if (err?.status === 400) msg = 'Template ou Service ID invalide. Veuillez contacter l\'administrateur.';
+      if (err?.status === 401 || err?.status === 403) msg = 'Clé publique EmailJS invalide.';
+      if (err?.status === 422) msg = 'Des champs requis sont manquants dans le template.';
+      if (err?.status === 429) msg = 'Trop de requêtes. Réessayez dans quelques instants.';
+
       setStatus('error');
-      setErrorMsg('Une erreur est survenue. Veuillez réessayer.');
+      setErrorMsg(msg);
     }
   };
+
 
   return (
     <>
