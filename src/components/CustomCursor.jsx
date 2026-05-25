@@ -75,28 +75,6 @@ const CustomCursor = ({ mousePos, isHovered }) => {
         <PadelBallSVG size={28} />
       </motion.div>
 
-      {/* Anneau de hover */}
-      <motion.div
-        animate={{
-          x: mousePos.x,
-          y: mousePos.y,
-          width: isHovered ? 64 : 0,
-          height: isHovered ? 64 : 0,
-          opacity: isHovered ? 1 : 0,
-        }}
-        transition={{ type: 'spring', damping: 22, stiffness: 250, mass: 0.6 }}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          borderRadius: '50%',
-          border: '1.5px solid rgba(226, 114, 91, 0.6)',
-          transform: 'translate(-50%, -50%)',
-          pointerEvents: 'none',
-          zIndex: 9998,
-          background: 'rgba(226, 114, 91, 0.06)',
-        }}
-      />
     </>
   );
 };
