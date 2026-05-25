@@ -3364,6 +3364,25 @@ section {
   letter-spacing: 0.05em;
 }
 
+/* Two-column row: Nom + Téléphone */
+.cs-input-row {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-input-row .cs-input-wrapper {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.2);
+  transition: border-color 0.4s ease;
+}
+
+.cs-input-row .cs-input-wrapper:focus-within {
+  border-color: var(--terracotta);
+}
+
 .cs-input-group {
   display: flex;
   width: 100%;
@@ -3527,6 +3546,22 @@ section {
   box-shadow: 0 10px 20px rgba(226, 114, 91, 0.25);
 }
 
+/* L8nk logo inside social icon */
+.cs-l8nk-logo {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.cs-l8nk-icon:hover .cs-l8nk-logo {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+}
+
+
 .cs-footer-copyright {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.3);
@@ -3603,6 +3638,10 @@ section {
 @media (max-width: 768px) {
   .cs-glass-card {
     padding: 3.5rem 2rem;
+  }
+  .cs-input-row {
+    flex-direction: column;
+    gap: 0.75rem;
   }
   .cs-input-group {
     flex-direction: column;

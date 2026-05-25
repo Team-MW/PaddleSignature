@@ -1,18 +1,36 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Instagram, Facebook, Linkedin, ArrowRight, Check, Loader2 } from 'lucide-react';
+import { Mail, MapPin, Instagram, Linkedin, ArrowRight, Check, Loader2, User, Phone } from 'lucide-react';
 import SEO from '../components/SEO';
 
+// ─── EmailJS Config (depuis variables d'environnement Vite) ───────
+const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+// ─────────────────────────────────────────────────────────────────
+
 const ComingSoon = ({ toggleHover }) => {
-  const [email, setEmail] = useState('');
+  const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email) return;
+  const handleChange = (e) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    if (status === 'error') setStatus('idle');
+  };
 
-    // Simple email validation regex
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { name, phone, email } = form;
+
+    if (!name.trim() || !email.trim()) {
+      setStatus('error');
+      setErrorMsg('Veuillez remplir au moins votre nom et votre adresse e-mail.');
+      return;
+    }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setStatus('error');
@@ -22,11 +40,25 @@ const ComingSoon = ({ toggleHover }) => {
 
     setStatus('loading');
 
-    // Simulate premium API subscription with a smooth timeout
-    setTimeout(() => {
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:  name.trim(),
+          from_phone: phone.trim() || 'Non renseigné',
+          from_email: email.trim(),
+          reply_to:   email.trim(),
+        },
+        EMAILJS_PUBLIC_KEY
+      );
       setStatus('success');
-      setEmail('');
-    }, 1500);
+      setForm({ name: '', phone: '', email: '' });
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setStatus('error');
+      setErrorMsg('Une erreur est survenue. Veuillez réessayer.');
+    }
   };
 
   return (
@@ -120,17 +152,50 @@ const ComingSoon = ({ toggleHover }) => {
                     <p className="cs-form-label text-center">
                       Soyez les premiers informés du lancement officiel et profitez d'avantages exclusifs :
                     </p>
+
+                    {/* Row 1 : Nom + Téléphone */}
+                    <div className="cs-input-row">
+                      <div className="cs-input-wrapper">
+                        <User size={18} className="cs-mail-icon" />
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Votre nom"
+                          value={form.name}
+                          onChange={handleChange}
+                          disabled={status === 'loading'}
+                          required
+                          className="cs-email-input"
+                          onMouseEnter={toggleHover}
+                          onMouseLeave={toggleHover}
+                        />
+                      </div>
+                      <div className="cs-input-wrapper">
+                        <Phone size={18} className="cs-mail-icon" />
+                        <input
+                          type="tel"
+                          name="phone"
+                          placeholder="Votre téléphone (optionnel)"
+                          value={form.phone}
+                          onChange={handleChange}
+                          disabled={status === 'loading'}
+                          className="cs-email-input"
+                          onMouseEnter={toggleHover}
+                          onMouseLeave={toggleHover}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Row 2 : Email + Bouton */}
                     <div className="cs-input-group">
                       <div className="cs-input-wrapper">
                         <Mail size={18} className="cs-mail-icon" />
                         <input 
-                          type="email" 
+                          type="email"
+                          name="email"
                           placeholder="Votre adresse e-mail" 
-                          value={email}
-                          onChange={(e) => {
-                            setEmail(e.target.value);
-                            if (status === 'error') setStatus('idle');
-                          }}
+                          value={form.email}
+                          onChange={handleChange}
                           disabled={status === 'loading'}
                           required
                           className="cs-email-input"
@@ -149,12 +214,13 @@ const ComingSoon = ({ toggleHover }) => {
                           <Loader2 size={18} className="animate-spin" />
                         ) : (
                           <>
-                            <span>S'abonner</span>
+                            <span>S'inscrire</span>
                             <ArrowRight size={16} style={{ marginLeft: '8px' }} />
                           </>
                         )}
                       </button>
                     </div>
+
                     {status === 'error' && (
                       <motion.p 
                         initial={{ opacity: 0, y: -5 }}
@@ -178,7 +244,7 @@ const ComingSoon = ({ toggleHover }) => {
                     </div>
                     <h3 className="serif text-white">Merci pour votre inscription !</h3>
                     <p className="cs-success-text">
-                      Votre adresse a bien été enregistrée. Nous vous contacterons dès le coup d'envoi.
+                      Votre demande a bien été enregistrée. Nous vous contacterons dès le lancement.
                     </p>
                   </motion.div>
                 )}
@@ -189,7 +255,7 @@ const ComingSoon = ({ toggleHover }) => {
             <div className="cs-info-grid">
               <div className="cs-info-item">
                 <MapPin size={18} style={{ color: 'var(--terracotta)' }} />
-                <span>1577 Avenue d’Italie, 82000 Montauban</span>
+                <span>1577 Avenue d'Italie, 82000 Montauban</span>
               </div>
               <div className="cs-info-item">
                 <Mail size={18} style={{ color: 'var(--terracotta)' }} />
@@ -203,15 +269,46 @@ const ComingSoon = ({ toggleHover }) => {
             <div className="cs-socials-wrapper">
               <span className="cs-socials-title uppercase">Suivez notre aventure</span>
               <div className="cs-socials-icons">
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="cs-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/padelsignature_/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cs-social-icon"
+                  aria-label="Instagram Padel Signature"
+                  onMouseEnter={toggleHover}
+                  onMouseLeave={toggleHover}
+                >
                   <Instagram size={20} />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="cs-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                  <Facebook size={20} />
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="cs-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/padel-signature/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cs-social-icon"
+                  aria-label="LinkedIn Padel Signature"
+                  onMouseEnter={toggleHover}
+                  onMouseLeave={toggleHover}
+                >
                   <Linkedin size={20} />
                 </a>
+
+                {/* L8nk — logo personnalisé */}
+                <a
+                  href="https://www.l8nk.com/padelsignature"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cs-social-icon cs-l8nk-icon"
+                  aria-label="L8nk Padel Signature"
+                  onMouseEnter={toggleHover}
+                  onMouseLeave={toggleHover}
+                >
+                  <img src="/l8nk-logo.avif" alt="L8nk" className="cs-l8nk-logo" />
+                </a>
+
               </div>
             </div>
 
