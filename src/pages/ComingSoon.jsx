@@ -161,8 +161,23 @@ const ComingSoon = ({ toggleHover }) => {
                 Plus qu'un club. Une Signature.
               </p>
               <p className="cs-desc text-center">
-                Le premier complexe de padel indoor premium à Montauban. Une expérience unique alliant sport d'excellence et art de vivre est en cours de préparation.
+                Découvrez votre nouveau complexe de padel indoor premium à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
               </p>
+              
+              <div style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScmINsWx9uNJaR7Gukm-ouy-99MWUuxnbxlV4lkMV4LrFbYuQ/viewform?usp=sharing&ouid=107429083947289871223"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                  onMouseEnter={toggleHover}
+                  onMouseLeave={toggleHover}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <span>Pré-inscription Académie</span>
+                  <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+                </a>
+              </div>
             </div>
 
             {/* Newsletter Sign Up */}
