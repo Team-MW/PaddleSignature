@@ -5,9 +5,9 @@ import { Mail, MapPin, Instagram, Linkedin, ArrowRight, Check, Loader2, User, Ph
 import SEO from '../components/SEO';
 
 // ─── EmailJS Config (depuis variables d'environnement Vite) ───────
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 // ─────────────────────────────────────────────────────────────────
 
 const ComingSoon = ({ toggleHover }) => {
@@ -57,10 +57,10 @@ const ComingSoon = ({ toggleHover }) => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name:  name.trim(),
+          from_name: name.trim(),
           from_phone: phone.trim() || 'Non renseigné',
           from_email: email.trim(),
-          reply_to:   email.trim(),
+          reply_to: email.trim(),
         },
         EMAILJS_PUBLIC_KEY
       );
@@ -91,27 +91,27 @@ const ComingSoon = ({ toggleHover }) => {
 
   return (
     <>
-      <SEO 
-        title="Ouverture Prochaine - Complexe de Padel Indoor Premium" 
-        description="Le 1er complexe de padel indoor premium à Montauban. 4 terrains panoramiques, bar lounge et expérience élite. Ouverture très prochaine. Inscrivez-vous pour ne rien manquer." 
-        url="/" 
+      <SEO
+        title="Ouverture Prochaine - Complexe de Padel Indoor"
+        description="Le 1er complexe de padel indoor à Montauban. 4 terrains panoramiques, bar lounge et expérience élite. Ouverture très prochaine. Inscrivez-vous pour ne rien manquer."
+        url="/"
       />
 
       <div className="coming-soon-wrapper">
         {/* Immersive Ken Burns background effect */}
         <div className="cs-bg-container">
-          <motion.img 
-            src="/hero-bg.jpg" 
-            alt="Padel Signature Montauban" 
+          <motion.img
+            src="/hero-bg.jpg"
+            alt="Padel Signature Montauban"
             className="cs-bg-image"
             initial={{ scale: 1.1, y: 0 }}
-            animate={{ 
+            animate={{
               scale: [1.1, 1.18, 1.1],
               y: [0, -15, 0]
             }}
-            transition={{ 
-              duration: 35, 
-              ease: "linear", 
+            transition={{
+              duration: 35,
+              ease: "linear",
               repeat: Infinity,
               repeatType: "mirror"
             }}
@@ -125,14 +125,14 @@ const ComingSoon = ({ toggleHover }) => {
 
         {/* Main centered glass card */}
         <main className="cs-main-container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="cs-glass-card"
           >
             {/* Top Logo - centered */}
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 1 }}
@@ -140,10 +140,10 @@ const ComingSoon = ({ toggleHover }) => {
               onMouseEnter={toggleHover}
               onMouseLeave={toggleHover}
             >
-              <img 
-                src="/logo.png" 
-                alt="Padel Signature Logo" 
-                className="cs-logo-img" 
+              <img
+                src="/logo.png"
+                alt="Padel Signature Logo"
+                className="cs-logo-img"
               />
             </motion.div>
 
@@ -161,11 +161,11 @@ const ComingSoon = ({ toggleHover }) => {
                 Plus qu'un club. Une Signature.
               </p>
               <p className="cs-desc text-center">
-                Découvrez votre nouveau complexe de padel indoor premium à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
+                Découvrez votre nouveau complexe de padel indoor à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
               </p>
-              
+
               <div style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>
-                <a 
+                <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLScmINsWx9uNJaR7Gukm-ouy-99MWUuxnbxlV4lkMV4LrFbYuQ/viewform?usp=sharing&ouid=107429083947289871223"
                   target="_blank"
                   rel="noreferrer"
@@ -184,7 +184,7 @@ const ComingSoon = ({ toggleHover }) => {
             <div className="cs-newsletter-container">
               <AnimatePresence mode="wait">
                 {status !== 'success' ? (
-                  <motion.form 
+                  <motion.form
                     key="form"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -233,10 +233,10 @@ const ComingSoon = ({ toggleHover }) => {
                     <div className="cs-input-group">
                       <div className="cs-input-wrapper">
                         <Mail size={18} className="cs-mail-icon" />
-                        <input 
+                        <input
                           type="email"
                           name="email"
-                          placeholder="Votre adresse e-mail" 
+                          placeholder="Votre adresse e-mail"
                           value={form.email}
                           onChange={handleChange}
                           disabled={status === 'loading'}
@@ -246,8 +246,8 @@ const ComingSoon = ({ toggleHover }) => {
                           onMouseLeave={toggleHover}
                         />
                       </div>
-                      <button 
-                        type="submit" 
+                      <button
+                        type="submit"
                         disabled={status === 'loading'}
                         className="btn btn-primary cs-submit-btn"
                         onMouseEnter={toggleHover}
@@ -265,7 +265,7 @@ const ComingSoon = ({ toggleHover }) => {
                     </div>
 
                     {status === 'error' && (
-                      <motion.p 
+                      <motion.p
                         initial={{ opacity: 0, y: -5 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="cs-error-msg text-center"
@@ -275,7 +275,7 @@ const ComingSoon = ({ toggleHover }) => {
                     )}
                   </motion.form>
                 ) : (
-                  <motion.div 
+                  <motion.div
                     key="success"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}

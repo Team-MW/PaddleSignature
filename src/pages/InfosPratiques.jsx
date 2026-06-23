@@ -13,7 +13,7 @@ const FAQItem = ({ question, answer }) => {
       </button>
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -28,7 +28,7 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const InfoCard = ({ icon: Icon, title, lines, delay }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ delay, duration: 0.8 }}
@@ -48,16 +48,16 @@ const InfoCard = ({ icon: Icon, title, lines, delay }) => (
 const InfosPratiques = ({ toggleHover }) => {
   return (
     <>
-      <SEO 
-        title="Infos Pratiques | Padel Signature Montauban" 
-        description="Retrouvez toutes les informations pratiques : accès, horaires, parking et règles du club Padel Signature à Montauban." 
-        url="/infos-pratiques" 
+      <SEO
+        title="Infos Pratiques | Padel Signature Montauban"
+        description="Retrouvez toutes les informations pratiques : accès, horaires, parking et règles du club Padel Signature à Montauban."
+        url="/infos-pratiques"
       />
 
       {/* Hero Section */}
       <section className="page-hero-premium infos-hero with-bg" style={{ backgroundImage: 'url("/infos-pratiques-bg.png")' }}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -65,7 +65,7 @@ const InfosPratiques = ({ toggleHover }) => {
           >
             <span className="badge-terracotta">Préparer votre venue</span>
             <h1 className="serif h1-huge">
-              Toutes les <br/>
+              Toutes les <br />
               <span className="italic">Infos Pratiques.</span>
             </h1>
             <p className="hero-subline">
@@ -79,7 +79,7 @@ const InfosPratiques = ({ toggleHover }) => {
       <section className="info-grid-section section-padding">
         <div className="container">
           <div className="infos-grid-premium">
-            <InfoCard 
+            <InfoCard
               delay={0.1}
               icon={MapPin}
               title="Accès & Localisation"
@@ -89,7 +89,7 @@ const InfosPratiques = ({ toggleHover }) => {
                 "À 5 min du centre-ville"
               ]}
             />
-            <InfoCard 
+            <InfoCard
               delay={0.2}
               icon={Clock}
               title="Horaires d'Ouverture"
@@ -99,7 +99,7 @@ const InfosPratiques = ({ toggleHover }) => {
                 "7j/7 – Toute l'année"
               ]}
             />
-            <InfoCard 
+            <InfoCard
               delay={0.3}
               icon={Car}
               title="Stationnement"
@@ -109,7 +109,7 @@ const InfosPratiques = ({ toggleHover }) => {
                 "Stationnement Vélos dédié"
               ]}
             />
-            <InfoCard 
+            <InfoCard
               delay={0.4}
               icon={Shield}
               title="Règles du Club"
@@ -126,13 +126,13 @@ const InfosPratiques = ({ toggleHover }) => {
       {/* Interactive Map Section */}
       <section className="map-section-premium">
         <div className="map-container-full">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.7335914619426!2d1.3418523771960165!3d43.99676777108781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac2377a0645001%3A0xe67c06eb1899981a!2s1577%20Av.%20d'Italie%2C%2082000%20Montauban!5e0!3m2!1sfr!2sfr!4v1712570800000!5m2!1sfr!2sfr" 
-            width="100%" 
-            height="600" 
-            style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9)' }} 
-            allowFullScreen="" 
-            loading="lazy" 
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.7335914619426!2d1.3418523771960165!3d43.99676777108781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac2377a0645001%3A0xe67c06eb1899981a!2s1577%20Av.%20d'Italie%2C%2082000%20Montauban!5e0!3m2!1sfr!2sfr!4v1712570800000!5m2!1sfr!2sfr"
+            width="100%"
+            height="600"
+            style={{ border: 0, filter: 'grayscale(1) contrast(1.2) invert(0.9)' }}
+            allowFullScreen=""
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Localisation Padel Signature Montauban"
           ></iframe>
@@ -156,23 +156,23 @@ const InfosPratiques = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center mb-60">
             <span className="badge-terracotta">Aide</span>
-            <h2 className="serif xl-title">Questions <br/><span className="italic">Pratiques.</span></h2>
+            <h2 className="serif xl-title">Questions <br /><span className="italic">Pratiques.</span></h2>
           </div>
           <div className="faq-container-narrow">
-            <FAQItem 
-              question="Y a-t-il des douches et des vestiaires ?" 
+            <FAQItem
+              question="Y a-t-il des douches et des vestiaires ?"
               answer="Oui, nous disposons de vestiaires séparés hommes / femmes, spacieux et équipés de douches individuelles pour votre confort après l'effort."
             />
-            <FAQItem 
-              question="Peut-on venir avec des accompagnateurs ?" 
+            <FAQItem
+              question="Peut-on venir avec des accompagnateurs ?"
               answer="Bien sûr ! Nos accompagnateurs peuvent vous regarder depuis notre bar lounge en R+1 qui offre une vue panoramique sur tous les courts."
             />
-            <FAQItem 
-              question="Acceptiez-vous les enfants ?" 
+            <FAQItem
+              question="Acceptiez-vous les enfants ?"
               answer="Le club accueille les joueurs de tous âges. Pour les mineurs, une autorisation parentale ou la présence d'un adulte est requise."
             />
-            <FAQItem 
-              question="Est-il possible de manger sur place ?" 
+            <FAQItem
+              question="Est-il possible de manger sur place ?"
               answer="Nous proposons une offre de snacking premium (planches, snacks sains, barres énergétiques) tout au long de la journée au bar. "
             />
           </div>

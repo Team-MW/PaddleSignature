@@ -9,12 +9,12 @@ const LocauxFeature = ({ icon: Icon, title, description, details, imageUrl, reve
       <div className="locaux-grid align-center">
         <div className="locaux-image-wrapper">
           <div className="img-decoration-box"></div>
-          <motion.img 
+          <motion.img
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            src={imageUrl} 
-            alt={title} 
+            src={imageUrl}
+            alt={title}
             className="img-premium-border"
           />
           {badge && <div className="locaux-floating-badge serif italic">{badge}</div>}
@@ -37,16 +37,16 @@ const LocauxFeature = ({ icon: Icon, title, description, details, imageUrl, reve
 const NosLocaux = ({ toggleHover }) => {
   return (
     <>
-      <SEO 
-        title="Nos Locaux | Padel Signature Montauban" 
-        description="Découvrez les installations premium de Padel Signature : 4 terrains panoramiques, bar lounge, salle VIP et accès autonome à Montauban." 
-        url="/nos-locaux" 
+      <SEO
+        title="Nos Locaux | Padel Signature Montauban"
+        description="Découvrez les installations premium de Padel Signature : 4 terrains panoramiques, bar lounge, salle VIP et accès autonome à Montauban."
+        url="/nos-locaux"
       />
 
       {/* Hero Section */}
       <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'url("/doccument.png")' }}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -54,7 +54,7 @@ const NosLocaux = ({ toggleHover }) => {
           >
             <span className="badge-terracotta">L'Espace Signature</span>
             <h1 className="serif h1-huge">
-              Une infrastructure <br/>
+              Une infrastructure <br />
               <span className="italic">D'exception.</span>
             </h1>
             <p className="hero-subline">
@@ -65,7 +65,7 @@ const NosLocaux = ({ toggleHover }) => {
       </section>
 
       {/* Hall d'entrée */}
-      <LocauxFeature 
+      <LocauxFeature
         icon={DoorOpen}
         title="Hall d'entrée & Accueil"
         badge="Bienvenue"
@@ -81,7 +81,7 @@ const NosLocaux = ({ toggleHover }) => {
       />
 
       {/* Les Terrains */}
-      <LocauxFeature 
+      <LocauxFeature
         icon={Layout}
         title="Les Terrains"
         badge="Performance"
@@ -98,7 +98,7 @@ const NosLocaux = ({ toggleHover }) => {
       />
 
       {/* Le Bar */}
-      <LocauxFeature 
+      <LocauxFeature
         icon={Beer}
         title="Le Bar Lounge"
         badge="Convivialité"
@@ -114,7 +114,7 @@ const NosLocaux = ({ toggleHover }) => {
       />
 
       {/* Salle VIP */}
-      <LocauxFeature 
+      <LocauxFeature
         icon={Users}
         title="Salle VIP Privatisable"
         badge="Exclusivité"
@@ -135,12 +135,12 @@ const NosLocaux = ({ toggleHover }) => {
         <div className="container">
           <div className="grid-2 gap-100 align-center">
             <div>
-              <h2 className="serif lg-title text-white mb-40">Accès & <br/><span className="italic">Commodités.</span></h2>
+              <h2 className="serif lg-title text-white mb-40">Accès & <br /><span className="italic">Commodités.</span></h2>
               <div className="info-item-minimal">
                 <MapPin size={24} className="terracotta-accent" />
                 <div>
                   <h4 className="serif text-white">Adresse</h4>
-                  <p className="text-white opacity-70">1577 Avenue d'Italie, 82000 Montauban<br/>Zone Albasud</p>
+                  <p className="text-white opacity-70">1577 Avenue d'Italie, 82000 Montauban<br />Zone Albasud</p>
                 </div>
               </div>
               <div className="info-item-minimal">
