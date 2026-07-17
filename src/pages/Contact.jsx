@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Clock, Car, Shield, ChevronDown, CheckCircle2, Navigation, Coffee } from 'lucide-react';
+import { MapPin, Clock, Car, Shield, ChevronDown, Navigation, Loader2 } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const FAQItem = ({ question, answer }) => {
@@ -45,13 +45,30 @@ const InfoCard = ({ icon: Icon, title, lines, delay }) => (
   </motion.div>
 );
 
-const InfosPratiques = ({ toggleHover }) => {
+const ContactPage = ({ toggleHover }) => {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [iframeHeight, setIframeHeight] = useState('600px');
+
+  useEffect(() => {
+    const handleIFrameMessage = (e) => {
+      if (typeof e.data === 'string') {
+        const args = e.data.split(':');
+        if (args.length > 1 && args[0] === 'setHeight') {
+          // Add a small buffer to prevent scrollbars in some browsers
+          setIframeHeight(`${parseInt(args[1], 10) + 20}px`);
+        }
+      }
+    };
+    window.addEventListener('message', handleIFrameMessage);
+    return () => window.removeEventListener('message', handleIFrameMessage);
+  }, []);
+
   return (
     <>
       <SEO
-        title="Infos Pratiques | Padel Signature Montauban"
-        description="Retrouvez toutes les informations pratiques : accès, horaires, parking et règles du club Padel Signature à Montauban."
-        url="/infos-pratiques"
+        title="Contact | Padel Signature Montauban"
+        description="Contactez-nous ou retrouvez toutes les informations pratiques : accès, horaires, parking et règles du club Padel Signature à Montauban."
+        url="/contact"
       />
 
       {/* Hero Section */}
@@ -63,20 +80,51 @@ const InfosPratiques = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="hero-text-center"
           >
-            <span className="badge-terracotta">Préparer votre venue</span>
+            <span className="badge-terracotta">Nous contacter</span>
             <h1 className="serif h1-huge">
-              Toutes les <br />
-              <span className="italic">Infos Pratiques.</span>
+              Contact & <br />
+              <span className="italic">Infos.</span>
             </h1>
             <p className="hero-subline">
-              Tout ce dont vous avez besoin pour profiter pleinement de votre expérience Padel Signature, du parking jusqu'au terrain.
+              Une question ? Un besoin spécifique ? Remplissez notre formulaire ou retrouvez toutes nos informations pratiques.
             </p>
           </motion.div>
         </div>
       </section>
 
+      {/* Contact Form Section (Jotform) */}
+      <section className="contact-form-section section-padding" style={{ background: 'var(--cream)', position: 'relative', paddingBottom: '4rem' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div className="text-center mb-60">
+            <span className="badge-terracotta">Nous écrire</span>
+            <h2 className="serif xl-title">Formulaire de <br /><span className="italic">Contact.</span></h2>
+          </div>
+          
+          {!iframeLoaded && (
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', color: 'var(--dark-green)' }}>
+              <Loader2 size={40} className="animate-spin mb-20" />
+              <p className="serif italic" style={{ fontSize: '1.2rem' }}>Chargement du formulaire...</p>
+            </div>
+          )}
+
+          <iframe
+            id="JotFormIFrame-261872940638366"
+            title="Formulaire de Contact Padel Signature"
+            allowTransparency="true"
+            allowFullScreen="true"
+            allow="geolocation; microphone; camera"
+            src="https://form.jotform.com/261872940638366"
+            frameBorder="0"
+            style={{ minWidth: '100%', height: iframeHeight, border: 'none', opacity: iframeLoaded ? 1 : 0, transition: 'opacity 0.5s ease, height 0.3s ease' }}
+            scrolling="no"
+            onLoad={() => setIframeLoaded(true)}
+          >
+          </iframe>
+        </div>
+      </section>
+
       {/* Core Info Grid */}
-      <section className="info-grid-section section-padding">
+      <section className="info-grid-section section-padding" style={{ paddingTop: '4rem' }}>
         <div className="container">
           <div className="infos-grid-premium">
             <InfoCard
@@ -182,4 +230,4 @@ const InfosPratiques = ({ toggleHover }) => {
   );
 };
 
-export default InfosPratiques;
+export default ContactPage;

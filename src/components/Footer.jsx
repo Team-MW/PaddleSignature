@@ -34,7 +34,7 @@ const Footer = ({ toggleHover }) => {
               <li><Link to="/nos-locaux" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Nos Locaux</Link></li>
               <li><Link to="/entreprises" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Entreprises</Link></li>
               <li><Link to="/tarifs" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Tarifs</Link></li>
-              <li><Link to="/infos-pratiques" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Infos Pratiques</Link></li>
+              <li><Link to="/contact" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Contact</Link></li>
             </ul>
           </div>
 
@@ -42,9 +42,24 @@ const Footer = ({ toggleHover }) => {
           <div className="footer-col">
             <h4 className="footer-title serif">Contact</h4>
             <ul className="footer-contact-info">
-              <li><MapPin size={16} /> <span>1577 Avenue d’Italie, 82000 Montauban</span></li>
-              <li><Phone size={16} /> <span>+33 5 00 00 00 00</span></li>
-              <li><Mail size={16} /> <span>contact@padelsignature.fr</span></li>
+              <li>
+                <MapPin size={16} /> 
+                <a href="https://maps.google.com/?q=1577+Avenue+d'Italie,+82000+Montauban" target="_blank" rel="noopener noreferrer" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                  1577 Avenue d’Italie, 82000 Montauban
+                </a>
+              </li>
+              <li>
+                <Phone size={16} /> 
+                <a href="tel:+33500000000" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                  +33 5 00 00 00 00
+                </a>
+              </li>
+              <li>
+                <Mail size={16} /> 
+                <a href="mailto:contact@padelsignature.fr" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                  contact@padelsignature.fr
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -52,9 +67,9 @@ const Footer = ({ toggleHover }) => {
           <div className="footer-col">
             <h4 className="footer-title serif">Suivez-nous</h4>
             <div className="footer-social-grid">
-              <a href="#" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Instagram size={20} /></a>
-              <a href="#" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Facebook size={20} /></a>
-              <a href="#" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Linkedin size={20} /></a>
+              <a href="https://www.instagram.com/padelsignature_/" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Instagram size={20} /></a>
+              <a href="https://www.facebook.com/61578486221135/videos/" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Facebook size={20} /></a>
+              <a href="https://fr.linkedin.com/company/padel-signature" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Linkedin size={20} /></a>
             </div>
           </div>
         </div>
@@ -64,6 +79,7 @@ const Footer = ({ toggleHover }) => {
             <p>© 2026 Padel Signature SAS. SIREN 995 269 115. Tous droits réservés.</p>
             <div className="legal-links">
               <Link to="/mentions-legales" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Mentions Légales</Link>
+              <Link to="/politique-confidentialite" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Politique de confidentialité</Link>
             </div>
           </div>
           <p className="footer-signature">

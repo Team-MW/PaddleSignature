@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Instagram, Facebook } from 'lucide-react';
+import { Menu, X, Instagram, Facebook, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) => {
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const isTarifsPage = location.pathname === '/tarifs'; // Tarifs hero is also dark green
   const isClubPage = location.pathname === '/club';
   const isEntreprisesPage = location.pathname === '/entreprises';
   const isLocauxPage = location.pathname === '/nos-locaux';
-  const isInfosPage = location.pathname === '/infos-pratiques';
-  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isLocauxPage || isInfosPage) && !isScrolled;
+  const isContactPage = location.pathname === '/contact';
+  const isPartenariatsPage = location.pathname === '/partenariats';
+  const isCSEPage = location.pathname === '/cse';
+  const isSponsoringPage = location.pathname === '/sponsoring';
+  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isLocauxPage || isContactPage || isPartenariatsPage || isCSEPage || isSponsoringPage) && !isScrolled;
 
   return (
     <>
@@ -32,9 +37,29 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
           <div className="nav-links desktop-only" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             <Link to="/club" className="nav-link">Le Club</Link>
             <Link to="/nos-locaux" className="nav-link">Locaux</Link>
-            <Link to="/entreprises" className="nav-link">Entreprises</Link>
+            
+            <div className="nav-dropdown-container" onMouseEnter={() => setDesktopDropdownOpen(true)} onMouseLeave={() => setDesktopDropdownOpen(false)}>
+              <span className="nav-link" style={{cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px'}}>
+                Entreprises <ChevronDown size={14} />
+              </span>
+              <AnimatePresence>
+                {desktopDropdownOpen && (
+                  <motion.div 
+                    className="nav-dropdown" 
+                    initial={{opacity: 0, y: 10}} 
+                    animate={{opacity: 1, y: 0}} 
+                    exit={{opacity: 0, y: 10}}
+                  >
+                    <Link to="/entreprises" className="dropdown-item">Offres B2B</Link>
+                    <Link to="/cse" className="dropdown-item">CSE</Link>
+                    <Link to="/sponsoring" className="dropdown-item">Sponsoring</Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
             <Link to="/tarifs" className="nav-link">Tarifs</Link>
-            <Link to="/infos-pratiques" className="nav-link">Infos</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             <a href="https://live-experience.com" target="_blank" className="btn btn-primary" style={{padding: '0.8rem 2.5rem'}}>
                <span>Réserver</span>
             </a>
@@ -63,23 +88,50 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
                 {[
                   { name: 'Le Club', path: '/club' },
                   { name: 'Nos Locaux', path: '/nos-locaux' },
-                  { name: 'Entreprises', path: '/entreprises' },
+                  { 
+                    name: 'Entreprises', 
+                    subItems: [
+                      { name: 'Offres B2B', path: '/entreprises' },
+                      { name: 'CSE', path: '/cse' },
+                      { name: 'Sponsoring', path: '/sponsoring' }
+                    ]
+                  },
                   { name: 'Tarifs', path: '/tarifs' },
-                  { name: 'Infos Pratiques', path: '/infos-pratiques' }
+                  { name: 'Contact', path: '/contact' }
                 ].map((item, index) => (
                   <motion.div
-                    key={item.path}
+                    key={item.name}
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 + index * 0.1 }}
                   >
-                    <Link 
-                      to={item.path} 
-                      onClick={() => setMobileMenuOpen(false)} 
-                      className="mobile-link serif"
-                    >
-                      {item.name}
-                    </Link>
+                    {item.subItems ? (
+                      <div className="mobile-dropdown-container">
+                        <button onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)} className="mobile-link serif" style={{width: '100%', textAlign: 'left', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', padding: 0, cursor: 'pointer'}}>
+                          {item.name}
+                          <motion.div animate={{ rotate: mobileDropdownOpen ? 180 : 0 }}><ChevronDown size={28} /></motion.div>
+                        </button>
+                        <AnimatePresence>
+                          {mobileDropdownOpen && (
+                            <motion.div initial={{height: 0, opacity: 0}} animate={{height: 'auto', opacity: 1}} exit={{height: 0, opacity: 0}} className="mobile-dropdown-menu">
+                              {item.subItems.map(sub => (
+                                <Link key={sub.path} to={sub.path} onClick={() => setMobileMenuOpen(false)} className="mobile-dropdown-item">
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link 
+                        to={item.path} 
+                        onClick={() => setMobileMenuOpen(false)} 
+                        className="mobile-link serif"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
                 
@@ -102,8 +154,8 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
                className="mobile-menu-footer"
              >
                 <div className="mobile-socials">
-                  <a href="#"><Instagram size={24}/></a>
-                  <a href="#"><Facebook size={24}/></a>
+                  <a href="https://www.instagram.com/padelsignature_/" target="_blank" rel="noopener noreferrer"><Instagram size={24}/></a>
+                  <a href="https://www.facebook.com/61578486221135/videos/" target="_blank" rel="noopener noreferrer"><Facebook size={24}/></a>
                 </div>
                 <p className="mobile-copyright">© 2024 Padel Signature</p>
              </motion.div>

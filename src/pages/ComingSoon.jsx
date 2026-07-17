@@ -10,10 +10,23 @@ const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 // ─────────────────────────────────────────────────────────────────
 
-const ComingSoon = ({ toggleHover }) => {
+const ComingSoon = ({ toggleHover, grantAccess }) => {
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
+  
+  const [showLogin, setShowLogin] = useState(false);
+  const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    if (password.toLowerCase() === 'client' || password.toLowerCase() === 'padel') {
+      grantAccess();
+    } else {
+      setLoginError('Mot de passe incorrect');
+    }
+  };
 
   const handleChange = (e) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -356,9 +369,59 @@ const ComingSoon = ({ toggleHover }) => {
             </div>
 
             {/* Footer rights */}
-            <p className="cs-footer-copyright">
-              © 2026 Padel Signature SAS. Tous droits réservés.
-            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', width: '100%' }}>
+              <p className="cs-footer-copyright" style={{ marginBottom: 0 }}>
+                © 2026 Padel Signature SAS. Tous droits réservés.
+              </p>
+              
+              {showLogin ? (
+                <form onSubmit={handleLoginSubmit} style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <input 
+                    type="password" 
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Mot de passe"
+                    style={{
+                      background: 'rgba(0, 0, 0, 0.05)',
+                      border: '1px solid rgba(0, 0, 0, 0.1)',
+                      padding: '4px 8px',
+                      borderRadius: '4px',
+                      color: '#333',
+                      fontSize: '12px',
+                      outline: 'none'
+                    }}
+                  />
+                  <button type="submit" style={{
+                    background: 'var(--terracotta)',
+                    border: 'none',
+                    padding: '4px 8px',
+                    borderRadius: '4px',
+                    color: 'white',
+                    fontSize: '12px',
+                    cursor: 'pointer'
+                  }}>OK</button>
+                  {loginError && <span style={{ color: 'red', fontSize: '10px' }}>{loginError}</span>}
+                </form>
+              ) : (
+                <button 
+                  onClick={() => setShowLogin(true)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: 'rgba(0, 0, 0, 0.2)',
+                    fontSize: '10px',
+                    cursor: 'pointer',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px',
+                    padding: '4px 8px'
+                  }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgba(0, 0, 0, 0.6)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgba(0, 0, 0, 0.2)'}
+                >
+                  Connexion Client
+                </button>
+              )}
+            </div>
           </motion.div>
         </main>
       </div>

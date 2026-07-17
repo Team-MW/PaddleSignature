@@ -20,8 +20,8 @@ const Contact = ({ toggleHover }) => {
                 </div>
              </div>
              <div className="social-links-premium" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <a href="#" className="social-link-item"><Instagram size={20}/> <span className="uppercase text-social">Instagram</span></a>
-                <a href="#" className="social-link-item"><Facebook size={20}/> <span className="uppercase text-social">Facebook</span></a>
+                <a href="https://www.instagram.com/padelsignature_/" target="_blank" rel="noopener noreferrer" className="social-link-item"><Instagram size={20}/> <span className="uppercase text-social">Instagram</span></a>
+                <a href="https://www.facebook.com/61578486221135/videos/" target="_blank" rel="noopener noreferrer" className="social-link-item"><Facebook size={20}/> <span className="uppercase text-social">Facebook</span></a>
              </div>
           </div>
           <motion.form 

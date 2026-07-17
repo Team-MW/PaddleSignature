@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Users, Target, Calendar, MessageSquare, Coffee } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import BusinessCTA from '../components/BusinessCTA';
 
@@ -60,24 +61,29 @@ const Entreprises = ({ toggleHover }) => {
         </div>
       </section>
 
-      {/* Features Detail */}
+      {/* Features Detail & Massive CTA */}
       <section className="business-features-detail section-padding" style={{ background: 'var(--off-white)' }}>
         <div className="container">
-          <div className="grid-2 align-center">
-            <div className="business-detail-img">
-               <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Team Building Padel" className="img-premium-border" />
-            </div>
-            <div className="business-detail-content pl-60">
-              <span className="badge-terracotta">Infrastructure</span>
-              <h2 className="serif lg-title">Un espace de travail <br/><span className="italic">Inspirant.</span></h2>
-              <ul className="premium-list">
-                <li><Calendar className="list-icon" /> Salle VIP modulable de 32m²</li>
-                <li><MessageSquare className="list-icon" /> Equipement audiovisuel complet</li>
-                <li><Coffee className="list-icon" /> Service traiteur et bar lounge</li>
-                <li><Users className="list-icon" /> Capacité d'accueil jusqu'à 100 personnes</li>
-              </ul>
-              <button className="btn-terracotta-outline mt-40" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Demander un devis</button>
-            </div>
+          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <span className="badge-terracotta">Infrastructure & Événementiel</span>
+            <h2 className="serif lg-title mb-40">Un espace de travail <br/><span className="italic">Inspirant.</span></h2>
+            
+            <ul className="premium-list" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', textAlign: 'left', marginBottom: '50px', background: 'white', padding: '30px', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+              <li><Calendar className="list-icon" /> Salle VIP modulable de 32m²</li>
+              <li><MessageSquare className="list-icon" /> Equipement audiovisuel complet</li>
+              <li><Coffee className="list-icon" /> Service traiteur et bar lounge</li>
+              <li><Users className="list-icon" /> Capacité jusqu'à 100 personnes</li>
+            </ul>
+
+            <Link 
+              to="/creer-evenement" 
+              className="btn btn-primary" 
+              onMouseEnter={toggleHover} 
+              onMouseLeave={toggleHover} 
+              style={{ display: 'inline-block', fontSize: '1.6rem', padding: '1.5rem 4rem', borderRadius: '50px', boxShadow: '0 15px 30px rgba(164, 87, 41, 0.3)' }}
+            >
+              <span>Créer votre événement B2B</span>
+            </Link>
           </div>
         </div>
       </section>
