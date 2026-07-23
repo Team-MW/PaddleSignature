@@ -177,7 +177,7 @@ section {
 .nav-links {
   margin-left: auto;
   display: flex;
-  gap: 3.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -357,13 +357,12 @@ section {
   text-align: center;
   color: white;
   width: 100%;
-  padding-bottom: 8rem;
-  /* Move content slightly up from center */
+  padding-top: 100px;
 }
 
 .hero-content-centered h1 {
-  font-size: clamp(4rem, 10vw, 8rem);
-  line-height: 1.1;
+  font-size: clamp(4rem, 10vw, 7rem);
+  line-height: 1.2;
   color: white;
   margin-bottom: 2rem;
   letter-spacing: -0.02em;
@@ -4022,3 +4021,60 @@ section {
   font-size: 1.1rem;
 }
 
+
+/* Content Block Styles */
+.content-block-section {
+  position: relative;
+  background: var(--cream);
+}
+.content-block-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.content-block-grid.no-img {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.content-block-section.reverse .content-block-grid {
+  direction: rtl;
+}
+.content-block-section.reverse .content-block-wrapper,
+.content-block-section.reverse .content-block-image {
+  direction: ltr;
+}
+
+.step-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.rule-text {
+  border-left: 3px solid var(--terracotta);
+  padding-left: 15px;
+  color: var(--dark-green);
+  opacity: 0.8;
+}
+
+@media (max-width: 992px) {
+  .content-block-grid {
+    grid-template-columns: 1fr;
+  }
+  .content-block-section.reverse .content-block-grid {
+    direction: ltr;
+  }
+}

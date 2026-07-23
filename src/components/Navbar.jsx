@@ -11,12 +11,11 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
   const isTarifsPage = location.pathname === '/tarifs'; // Tarifs hero is also dark green
   const isClubPage = location.pathname === '/club';
   const isEntreprisesPage = location.pathname === '/entreprises';
-  const isLocauxPage = location.pathname === '/nos-locaux';
   const isContactPage = location.pathname === '/contact';
   const isPartenariatsPage = location.pathname === '/partenariats';
   const isCSEPage = location.pathname === '/cse';
   const isSponsoringPage = location.pathname === '/sponsoring';
-  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isLocauxPage || isContactPage || isPartenariatsPage || isCSEPage || isSponsoringPage) && !isScrolled;
+  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isContactPage || isPartenariatsPage || isCSEPage || isSponsoringPage) && !isScrolled;
 
   return (
     <>
@@ -36,7 +35,6 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
 
           <div className="nav-links desktop-only" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             <Link to="/club" className="nav-link">Le Club</Link>
-            <Link to="/nos-locaux" className="nav-link">Locaux</Link>
             
             <div className="nav-dropdown-container" onMouseEnter={() => setDesktopDropdownOpen(true)} onMouseLeave={() => setDesktopDropdownOpen(false)}>
               <span className="nav-link" style={{cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px'}}>
@@ -87,7 +85,6 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
              <nav className="mobile-nav">
                 {[
                   { name: 'Le Club', path: '/club' },
-                  { name: 'Nos Locaux', path: '/nos-locaux' },
                   { 
                     name: 'Entreprises', 
                     subItems: [

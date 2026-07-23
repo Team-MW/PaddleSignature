@@ -31,7 +31,6 @@ const Footer = ({ toggleHover }) => {
             <ul className="footer-links">
               <li><Link to="/" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Accueil</Link></li>
               <li><Link to="/club" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Le Club</Link></li>
-              <li><Link to="/nos-locaux" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Nos Locaux</Link></li>
               <li><Link to="/entreprises" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Entreprises</Link></li>
               <li><Link to="/tarifs" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Tarifs</Link></li>
               <li><Link to="/contact" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Contact</Link></li>

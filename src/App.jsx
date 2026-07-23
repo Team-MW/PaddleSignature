@@ -13,7 +13,6 @@ const Club = lazy(() => import('./pages/Club'));
 const Entreprises = lazy(() => import('./pages/Entreprises'));
 const Tarifs = lazy(() => import('./pages/Tarifs'));
 const ContactPage = lazy(() => import('./pages/Contact'));
-const NosLocaux = lazy(() => import('./pages/NosLocaux'));
 const EventBuilder = lazy(() => import('./pages/EventBuilder'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
 const Sponsoring = lazy(() => import('./pages/Sponsoring'));
@@ -96,7 +95,6 @@ export default function App() {
               <Route path="/entreprises" element={<Entreprises toggleHover={toggleHover} />} />
               <Route path="/creer-evenement" element={<EventBuilder />} />
               <Route path="/tarifs" element={<Tarifs toggleHover={toggleHover} />} />
-              <Route path="/nos-locaux" element={<NosLocaux toggleHover={toggleHover} />} />
               <Route path="/contact" element={<ContactPage toggleHover={toggleHover} />} />
               <Route path="/sponsoring" element={<Sponsoring toggleHover={toggleHover} />} />
               <Route path="/cse" element={<CSE toggleHover={toggleHover} />} />

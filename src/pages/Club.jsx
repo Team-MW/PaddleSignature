@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, CheckCircle2, Star, Users, Award, Layout, Zap } from 'lucide-react';
 import SEO from '../components/SEO';
+import ContentBlock from '../components/ContentBlock';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -144,6 +145,77 @@ const Club = ({ toggleHover }) => {
           </div>
         </div>
       </section>
+      {/* Nouveaux Contenus (JSON) */}
+      <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
+        <div className="text-center mb-60">
+          <span className="badge-terracotta">Le Club, raconté</span>
+          <h2 className="serif xl-title">L'Essentiel.</h2>
+          <p className="hero-subline" style={{ maxWidth: '600px', margin: '0 auto' }}>Cinq blocs qui alternent photo et texte. Des phrases courtes, lisibles en deux secondes. On dit les choses, on ne les vend pas.</p>
+        </div>
+
+        <ContentBlock
+          eyebrow="Notre ADN"
+          title="L'alliance du style et de la performance."
+          quote="Quatre terrains, un clubhouse à l'étage, et de quoi rester après le match."
+          list={[
+            ["Excellence", "Des terrains de compétition dans un cadre soigné."],
+            ["Convivialité", "Un clubhouse à l'étage avec vue sur les courts."],
+            ["Communauté", "Des tournois et des rendez-vous tout au long de l'année."]
+          ]}
+          img="Plan large de l'intérieur, terrains visibles avec le clubhouse en hauteur. L'image qui résume l'ambiance en un regard."
+          toggleHover={toggleHover}
+        />
+
+        <ContentBlock
+          eyebrow="Nos espaces"
+          title="Un lieu pensé pour le jeu."
+          quote="Tout est pensé pour que vous n'ayez qu'à jouer."
+          list={[
+            ["4 courts panoramiques", "Terrains indoor avec 8,50 m de hauteur et scoring électronique."],
+            ["Vidéo replay", "Vos plus beaux points captés et rejouables sur les courts équipés."],
+            ["Vestiaires équipés", "Casiers, douches et tout le confort avant et après le jeu."],
+            ["Accès autonome", "Le club reste ouvert 24h/24, vous entrez par QR code."]
+          ]}
+          img="La perspective de l'allée centrale entre les terrains, avec le sol terracotta. La plus belle image d'architecture, en grand."
+          reverse={true}
+          toggleHover={toggleHover}
+        />
+
+        <ContentBlock
+          eyebrow="Après le match"
+          title="Le clubhouse, le coeur du club."
+          quote="À l'étage, un espace qui surplombe les quatre terrains."
+          list={[
+            ["Vue sur les courts", "Suivez les matchs depuis le clubhouse en hauteur."],
+            ["Comptoir signature", "Tireuses à bière et comptoir terracotta."],
+            ["Snacking", "De quoi se restaurer avant comme après le jeu."],
+            ["Esprit sport", "Les grands événements diffusés en direct."]
+          ]}
+          img="Le clubhouse avec le comptoir terracotta et la vue sur les terrains. Idéalement avec de la lumière chaude et de la vie."
+          toggleHover={toggleHover}
+        />
+
+        <ContentBlock
+          eyebrow="Espace privé"
+          title="Une salle pour vos réunions et vos événements."
+          lead="Une salle privatisable avec vue sur les courts. Réunions, séminaires, événements d'équipe, on s'adapte à vos besoins."
+          rule="Ni surface ni capacité ici. On donne les dispositions précises quand les entreprises nous contactent."
+          cta="Découvrir nos offres entreprises"
+          ctaGhost={true}
+          img="La salle configurée en réunion, avec l'écran et la vue sur les terrains. Montrer le côté pro et la vue unique."
+          reverse={true}
+          toggleHover={toggleHover}
+        />
+
+        <ContentBlock
+          eyebrow="Notre communauté"
+          title="Rejoignez la communauté."
+          lead="Ici, on se retrouve, on rejoue le match, on partage un verre. C'est ça aussi, le club."
+          cta="Nous rejoindre"
+          img="LA vraie photo de joueurs, pas de stock. Un groupe qui pose après un match. À shooter le jour de l'inauguration avec de vrais membres."
+          toggleHover={toggleHover}
+        />
+      </div>
     </>
   );
 };
