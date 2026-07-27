@@ -37,10 +37,16 @@ const ContentBlock = ({
             {rule && <p className="rule-text mb-30"><em>{rule}</em></p>}
             
             {list && (
-              <ul className="premium-list mb-30">
+              <ul className="premium-list content-block-grid-list mb-30">
                 {list.map((item, idx) => (
-                  <li key={idx} className="mb-10">
-                    <strong>{item[0]}</strong>{item[1] ? ` - ${item[1]}` : ''}
+                  <li key={idx} className="mb-10 grid-list-item">
+                    <strong className="list-title">{item[0]}</strong>
+                    {item[1] && (
+                      <span className="list-desc">
+                        <span className="list-dash">- </span>
+                        {item[1]}
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>

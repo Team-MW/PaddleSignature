@@ -29,9 +29,9 @@ const FAQItem = ({ question, answer }) => {
   );
 };
 
-const PriceCard = ({ title, price, period, features, highlight, toggleHover }) => (
+const PriceCard = ({ title, price, period, features, highlight, badgeText, toggleHover }) => (
   <div className={`price-card-modern ${highlight ? 'highlighted' : ''}`}>
-    {highlight && <div className="card-badge">Plus Populaire</div>}
+    {(highlight || badgeText) && <div className="card-badge">{badgeText || 'Plus Populaire'}</div>}
     <h3 className="serif">{title}</h3>
     <div className="price-value">
       <span className="amount serif">{price}</span>
@@ -42,7 +42,7 @@ const PriceCard = ({ title, price, period, features, highlight, toggleHover }) =
         <li key={idx}><Check size={16} className="terracotta-accent" /> {feature}</li>
       ))}
     </ul>
-    <button 
+    <button
       className={`btn-price ${highlight ? 'btn-terracotta' : 'btn-dark'}`}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
@@ -55,16 +55,16 @@ const PriceCard = ({ title, price, period, features, highlight, toggleHover }) =
 const Tarifs = ({ toggleHover }) => {
   return (
     <>
-      <SEO 
-        title="Tarifs & Abonnements | Padel Signature" 
-        description="Consultez nos tarifs de location de terrains, abonnements mensuels et cours de Padel à Montauban. Jouez dès 10€ par personne." 
-        url="/tarifs" 
+      <SEO
+        title="Tarifs & Abonnements | Padel Signature"
+        description="Consultez nos tarifs de location de terrains, abonnements mensuels et cours de Padel à Montauban. Jouez dès 10€ par personne."
+        url="/tarifs"
       />
 
       {/* Hero Section */}
       <section className="page-hero-premium pricing-hero with-bg" style={{ backgroundImage: 'url("/people-playing-padle-tennis-inside.jpg")' }}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -72,7 +72,7 @@ const Tarifs = ({ toggleHover }) => {
           >
             <span className="badge-terracotta">Transparence</span>
             <h1 className="serif h1-huge">
-              Jouez selon <br/>
+              Jouez selon <br />
               <span className="italic">Vos envies.</span>
             </h1>
             <p className="hero-subline">
@@ -82,49 +82,39 @@ const Tarifs = ({ toggleHover }) => {
         </div>
       </section>
 
-      {/* Pricing Tables */}
+      {/* Pricing Tables - Jouez à votre rythme */}
       <section className="pricing-section section-padding">
         <div className="container">
-          <div className="text-center mb-100">
-            <h2 className="serif xl-title">Nos Formules <br/><span className="italic">Signature.</span></h2>
+          <div className="text-center mb-80">
+            <span className="badge-terracotta">La partie</span>
+            <h2 className="serif xl-title">Jouez à votre <br/><span className="italic">rythme.</span></h2>
+            <p className="hero-subline" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.2rem' }}>
+              Une partie se joue à quatre, pendant 1h30. Le tarif dépend du créneau. Pas de sélecteur de durée, toutes les parties durent 1h30.
+            </p>
+            <p className="rule-text mt-20"><em>4 joueurs maximum par terrain.</em></p>
           </div>
-          
-          <div className="pricing-grid-modern">
+
+          <div className="pricing-grid-modern" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', maxWidth: '800px', margin: '0 auto' }}>
             <PriceCard 
-              title="Session Découverte"
-              price="10€"
+              title="Heures creuses"
+              price="10,50 €"
+              period="pers"
+              highlight={true}
+              badgeText="Le bon plan"
+              features={[
+                "Du lundi au vendredi",
+                "Hors créneaux heures pleines"
+              ]}
+              toggleHover={toggleHover}
+            />
+            <PriceCard 
+              title="Heures pleines"
+              price="13,50 €"
               period="pers"
               features={[
-                "Location terrain (90 min)",
-                "Accès au Bar Lounge",
-                "Vestiaires premium",
-                "Réservation via l'App"
-              ]}
-              toggleHover={toggleHover}
-            />
-            <PriceCard 
-              title="Abonnement Club"
-              price="45€"
-              period="mois"
-              highlight={true}
-              features={[
-                "Accès prioritaire 14j",
-                "Tarifs réduits heures creuses",
-                "Espace VIP inclus",
-                "Tournois internes offerts",
-                "Réduction ProShop -10%"
-              ]}
-              toggleHover={toggleHover}
-            />
-            <PriceCard 
-              title="Pack Performance"
-              price="150€"
-              period="10 séances"
-              features={[
-                "10 sessions de 90 min",
-                "Multi-joueurs (partageable)",
-                "Sans date d'expiration",
-                "Accès aux statistiques vidéo"
+                "Du lun. au ven. 12h00 - 13h30",
+                "Du lun. au ven. 16h30 - 22h30",
+                "Samedi et dimanche en continu"
               ]}
               toggleHover={toggleHover}
             />
@@ -137,7 +127,7 @@ const Tarifs = ({ toggleHover }) => {
         <div className="container">
           <div className="grid-2 gap-100">
             <div>
-              <h2 className="serif lg-title mb-40">Services <br/><span className="italic">Complémentaires.</span></h2>
+              <h2 className="serif lg-title mb-40">Services <br /><span className="italic">Complémentaires.</span></h2>
               <div className="info-item-minimal">
                 <Clock size={20} className="terracotta-accent" />
                 <div>
@@ -170,14 +160,13 @@ const Tarifs = ({ toggleHover }) => {
       {/* Nouveaux Contenus (JSON) */}
       <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
         <ContentBlock
-          eyebrow="La partie"
-          title="Jouez à votre rythme."
-          lead="Une partie se joue à quatre, pendant 1h30. Le tarif dépend du créneau. Pas de sélecteur de durée, toutes les parties durent 1h30."
+          eyebrow="Nos Formules"
+          title="Signature."
           cards={[
-            ["Heures creuses", "10,50 €", "Du lundi au vendredi, hors créneaux heures pleines", "Le bon plan"],
-            ["Heures pleines", "13,50 €", "Du lundi au vendredi de 12h00 à 13h30 et de 16h30 à 22h30. Samedi et dimanche."]
+            ["Session Découverte", "10 € / pers", "Location terrain (90 min) · Accès au Bar Lounge · Vestiaires premium · Réservation via l'App"],
+            ["Abonnement Club", "45 € / mois", "Accès prioritaire 14j · Tarifs réduits heures creuses · Espace VIP inclus · Tournois internes offerts · Réduction ProShop -10%", "Plus Populaire"],
+            ["Pack Performance", "150 €", "10 sessions de 90 min · Multi-joueurs (partageable) · Sans date d'expiration · Accès aux statistiques vidéo"]
           ]}
-          rule="Mention au-dessus des cards : 4 joueurs maximum par terrain. Un CTA Réserver sur chaque card."
           cta="Réserver"
           toggleHover={toggleHover}
         />
@@ -238,20 +227,7 @@ const Tarifs = ({ toggleHover }) => {
           toggleHover={toggleHover}
         />
 
-        <section className="faq-section section-padding">
-          <div className="container">
-            <div className="text-center mb-60">
-              <span className="badge-terracotta">FAQ</span>
-              <h2 className="serif xl-title">Questions de <br/><span className="italic">tarifs.</span></h2>
-            </div>
-            <div className="faq-container-narrow">
-              <FAQItem question="Le tarif est-il par personne ou par terrain ?" answer="Par personne. Un terrain accueille quatre joueurs." />
-              <FAQItem question="Comment régler ?" answer="Directement dans l'application, au moment de la réservation." />
-              <FAQItem question="Puis-je annuler ma réservation ?" answer="Oui, jusqu'à 24 heures avant votre créneau." />
-              <FAQItem question="Faut-il être membre pour jouer ?" answer="Non. Les terrains sont accessibles à tous, avec ou sans abonnement." />
-            </div>
-          </div>
-        </section>
+
 
         <ContentBlock
           eyebrow="À ne pas ajouter"
@@ -267,6 +243,20 @@ const Tarifs = ({ toggleHover }) => {
           toggleHover={toggleHover}
         />
       </div>
+      <section className="faq-section section-padding">
+        <div className="container">
+          <div className="text-center mb-60">
+            <span className="badge-terracotta">FAQ</span>
+            <h2 className="serif xl-title">Questions de <br /><span className="italic">tarifs.</span></h2>
+          </div>
+          <div className="faq-container-narrow">
+            <FAQItem question="Le tarif est-il par personne ou par terrain ?" answer="Par personne. Un terrain accueille quatre joueurs." />
+            <FAQItem question="Comment régler ?" answer="Directement dans l'application, au moment de la réservation." />
+            <FAQItem question="Puis-je annuler ma réservation ?" answer="Oui, jusqu'à 24 heures avant votre créneau." />
+            <FAQItem question="Faut-il être membre pour jouer ?" answer="Non. Les terrains sont accessibles à tous, avec ou sans abonnement." />
+          </div>
+        </div>
+      </section>
     </>
   );
 };

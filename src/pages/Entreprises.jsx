@@ -202,23 +202,7 @@ const Entreprises = ({ toggleHover }) => {
           toggleHover={toggleHover}
         />
 
-        <section className="faq-section section-padding">
-          <div className="container">
-            <div className="text-center mb-60">
-              <span className="badge-terracotta">FAQ</span>
-              <h2 className="serif xl-title">Les questions <br/><span className="italic">qu'on nous pose.</span></h2>
-            </div>
-            <div className="faq-container-narrow">
-              <FAQItem question="Faut-il savoir jouer au padel ?" answer="Non. Le padel s'apprend en quelques minutes et nos formats sont adaptés aux débutants comme aux confirmés." />
-              <FAQItem question="Combien de personnes peut-on accueillir ?" answer="Cela dépend du format retenu. Dites-nous votre effectif, on construit la journée avec vous." />
-              <FAQItem question="Faut-il apporter du matériel ?" answer="Non. Raquettes et balles sont fournies." />
-              <FAQItem question="Peut-on venir sur une demi-journée ?" answer="Oui. D'une session d'1h30 à une journée complète." />
-            </div>
-            <p className="rule-text mt-40" style={{ maxWidth: '800px', margin: '40px auto 0' }}>
-              <em>Aucune capacité maximale chiffrée sur la page. On adapte au cas par cas.</em>
-            </p>
-          </div>
-        </section>
+
 
         <ContentBlock
           eyebrow="Questionnaire"
@@ -233,6 +217,23 @@ const Entreprises = ({ toggleHover }) => {
           toggleHover={toggleHover}
         />
       </div>
+      <section className="faq-section section-padding">
+        <div className="container">
+          <div className="text-center mb-60">
+            <span className="badge-terracotta">FAQ</span>
+            <h2 className="serif xl-title">Les questions <br/><span className="italic">qu'on nous pose.</span></h2>
+          </div>
+          <div className="faq-container-narrow">
+            <FAQItem question="Faut-il savoir jouer au padel ?" answer="Non. Le padel s'apprend en quelques minutes et nos formats sont adaptés aux débutants comme aux confirmés." />
+            <FAQItem question="Combien de personnes peut-on accueillir ?" answer="Cela dépend du format retenu. Dites-nous votre effectif, on construit la journée avec vous." />
+            <FAQItem question="Faut-il apporter du matériel ?" answer="Non. Raquettes et balles sont fournies." />
+            <FAQItem question="Peut-on venir sur une demi-journée ?" answer="Oui. D'une session d'1h30 à une journée complète." />
+          </div>
+          <p className="rule-text mt-40" style={{ maxWidth: '800px', margin: '40px auto 0' }}>
+            <em>Aucune capacité maximale chiffrée sur la page. On adapte au cas par cas.</em>
+          </p>
+        </div>
+      </section>
     </>
   );
 };

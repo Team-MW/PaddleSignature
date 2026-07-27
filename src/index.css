@@ -2941,6 +2941,47 @@ section {
   width: 20px;
 }
 
+/* Content Block Grid List Alignment */
+.premium-list.content-block-grid-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.premium-list.content-block-grid-list .grid-list-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 0;
+  /* Override premium-list li default */
+}
+
+.grid-list-item .list-title {
+  font-weight: 600;
+  color: var(--dark-green);
+}
+
+.grid-list-item .list-desc {
+  display: flex;
+  gap: 8px;
+}
+
+.grid-list-item .list-dash {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .premium-list.content-block-grid-list .grid-list-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .grid-list-item .list-dash {
+    display: none;
+  }
+}
+
 /* PRICING / TARIFS */
 .pricing-grid-modern {
   display: grid;
@@ -3046,6 +3087,17 @@ section {
   padding: 5rem;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.benefit-card-dark h3,
+.additional-info h2,
+.additional-info h4 {
+  color: white;
+}
+
+.benefit-card-dark p,
+.additional-info p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* RESPONSIVE */
@@ -3225,15 +3277,20 @@ section {
     height: 300px;
   }
 }
+
 @media (max-width: 1200px) {
-  .locaux-grid, .locaux-feature-section.reverse .locaux-grid {
+
+  .locaux-grid,
+  .locaux-feature-section.reverse .locaux-grid {
     gap: 5rem;
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 1024px) {
-  .locaux-grid, .locaux-feature-section.reverse .locaux-grid {
+
+  .locaux-grid,
+  .locaux-feature-section.reverse .locaux-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
@@ -3332,8 +3389,13 @@ section {
 }
 
 @keyframes floatLight {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(8%, 5%) scale(1.15); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(8%, 5%) scale(1.15);
+  }
 }
 
 .cs-main-container {
@@ -3348,7 +3410,8 @@ section {
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid var(--terracotta);
-  border-radius: 0px; /* Sharp premium edges */
+  border-radius: 0px;
+  /* Sharp premium edges */
   padding: 5rem 4rem;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -3511,7 +3574,8 @@ section {
 
 .cs-submit-btn:hover {
   background: var(--terracotta-dark);
-  transform: none !important; /* override global btn movement */
+  transform: none !important;
+  /* override global btn movement */
 }
 
 .cs-error-msg {
@@ -3712,25 +3776,30 @@ section {
   .cs-glass-card {
     padding: 3.5rem 2rem;
   }
+
   .cs-input-row {
     flex-direction: column;
     gap: 0.75rem;
   }
+
   .cs-input-group {
     flex-direction: column;
     border: none;
     background: transparent;
     gap: 1rem;
   }
+
   .cs-input-wrapper {
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: rgba(0, 0, 0, 0.2);
     width: 100%;
   }
+
   .cs-submit-btn {
     width: 100%;
     padding: 1.2rem !important;
   }
+
   .cs-info-item {
     font-size: 0.85rem;
     flex-direction: column;
@@ -3827,6 +3896,7 @@ section {
   letter-spacing: -0.02em;
   margin-bottom: 3rem;
   line-height: 1.1;
+  color: white;
 }
 
 .eb-counter-wrapper {
@@ -4007,7 +4077,8 @@ section {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: rgba(164, 87, 41, 0.2); /* Terracotta transparent */
+  background: rgba(164, 87, 41, 0.2);
+  /* Terracotta transparent */
   color: var(--terracotta);
   display: flex;
   align-items: center;
@@ -4027,20 +4098,24 @@ section {
   position: relative;
   background: var(--cream);
 }
+
 .content-block-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
+
 .content-block-grid.no-img {
   grid-template-columns: 1fr;
   max-width: 800px;
   margin: 0 auto;
 }
+
 .content-block-section.reverse .content-block-grid {
   direction: rtl;
 }
+
 .content-block-section.reverse .content-block-wrapper,
 .content-block-section.reverse .content-block-image {
   direction: ltr;
@@ -4051,6 +4126,7 @@ section {
   gap: 20px;
   align-items: flex-start;
 }
+
 .step-number {
   font-size: 2rem;
   font-weight: bold;
@@ -4074,6 +4150,7 @@ section {
   .content-block-grid {
     grid-template-columns: 1fr;
   }
+
   .content-block-section.reverse .content-block-grid {
     direction: ltr;
   }

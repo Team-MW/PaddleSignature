@@ -92,65 +92,15 @@ const Club = ({ toggleHover }) => {
         </div>
       </section>
 
-      {/* Features Showcase */}
-      <section className="club-features-highlight section-padding" style={{ background: 'var(--off-white)' }}>
-        <div className="container">
-          <div className="text-center mb-100">
-            <h2 className="serif xl-title">Un Complexe <br /><span className="italic">Tout Equipé.</span></h2>
-          </div>
-          <div className="features-grid-masonry">
-            <div className="feature-long-card">
-              <Layout size={32} className="mb-20 terracotta-accent" />
-              <h3 className="serif">Le Bar Lounge (R+1)</h3>
-              <p>Surplombez l’action sur les 4 courts depuis notre espace détente situé à l’étage. Idéal pour un cocktail post-match ou un café entre amis.</p>
-            </div>
-            <div className="feature-long-card">
-              <Users size={32} className="mb-20 terracotta-accent" />
-              <h3 className="serif">Salle VIP & Business</h3>
-              <p>Un espace de 32m² dédié à vos réunions, séminaires ou événements privés avec vue directe sur le terrain central.</p>
-            </div>
-            <div className="feature-long-card">
-              <Zap size={32} className="mb-20 terracotta-accent" />
-              <h3 className="serif">Vidéo Replay HD</h3>
-              <p>Chaque terrain est équipé d'un système de captation vidéo automatique. Analysez vos points et partagez vos meilleurs smashes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Club FAQ */}
-      <section className="faq-section section-padding">
-        <div className="container">
-          <div className="text-center mb-60">
-            <span className="badge-terracotta">Héritage</span>
-            <h2 className="serif xl-title">En Savoir Plus <br /><span className="italic">Sur le Club.</span></h2>
-          </div>
-          <div className="faq-container-narrow">
-            <FAQItem
-              question="D'où provient le nom 'Signature' ?"
-              answer="Signature représente notre engagement sur la qualité. Chaque membre du club est unique, et nous souhaitons que chaque session de jeu soit gravée comme une expérience d'exception."
-            />
-            <FAQItem
-              question="Est-il possible de prendre des cours avec Clément ou Hugo ?"
-              answer="Le club dispose d'entraîneurs diplômés partenaires. Clément et Hugo, bien que fondateurs, sont souvent présents sur les courts pour conseiller les joueurs et partager leur passion."
-            />
-            <FAQItem
-              question="Quels types de terrains utilisez-vous ?"
-              answer="Nous avons sélectionné des pistes panoramiques sans montants d'angles pour une visibilité totale, avec une moquette WPT de dernière génération pour limiter les traumatismes articulaires."
-            />
-            <FAQItem
-              question="Le club organise-t-il des tournois ?"
-              answer="Absolument. Des tournois homologués (P100, P250) ainsi que des tournois loisirs et des montées-descentes sont organisés mensuellement."
-            />
-          </div>
-        </div>
-      </section>
+
+
       {/* Nouveaux Contenus (JSON) */}
       <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
         <div className="text-center mb-60">
           <span className="badge-terracotta">Le Club, raconté</span>
           <h2 className="serif xl-title">L'Essentiel.</h2>
-          <p className="hero-subline" style={{ maxWidth: '600px', margin: '0 auto' }}>Cinq blocs qui alternent photo et texte. Des phrases courtes, lisibles en deux secondes. On dit les choses, on ne les vend pas.</p>
+
         </div>
 
         <ContentBlock
@@ -216,6 +166,33 @@ const Club = ({ toggleHover }) => {
           toggleHover={toggleHover}
         />
       </div>
+      {/* Club FAQ */}
+      <section className="faq-section section-padding">
+        <div className="container">
+          <div className="text-center mb-60">
+            <span className="badge-terracotta">Héritage</span>
+            <h2 className="serif xl-title">En Savoir Plus <br /><span className="italic">Sur le Club.</span></h2>
+          </div>
+          <div className="faq-container-narrow">
+            <FAQItem
+              question="D'où provient le nom 'Signature' ?"
+              answer="Signature représente notre engagement sur la qualité. Chaque membre du club est unique, et nous souhaitons que chaque session de jeu soit gravée comme une expérience d'exception."
+            />
+            <FAQItem
+              question="Est-il possible de prendre des cours avec Clément ou Hugo ?"
+              answer="Le club dispose d'entraîneurs diplômés partenaires. Clément et Hugo, bien que fondateurs, sont souvent présents sur les courts pour conseiller les joueurs et partager leur passion."
+            />
+            <FAQItem
+              question="Quels types de terrains utilisez-vous ?"
+              answer="Nous avons sélectionné des pistes panoramiques sans montants d'angles pour une visibilité totale, avec une moquette WPT de dernière génération pour limiter les traumatismes articulaires."
+            />
+            <FAQItem
+              question="Le club organise-t-il des tournois ?"
+              answer="Absolument. Des tournois homologués (P100, P250) ainsi que des tournois loisirs et des montées-descentes sont organisés mensuellement."
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 };
