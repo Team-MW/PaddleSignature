@@ -111,7 +111,7 @@ const ContactPage = ({ toggleHover }) => {
       </div>
 
       {/* Contact Form Section (Jotform) */}
-      <section className="contact-form-section section-padding" style={{ background: 'var(--cream)', position: 'relative', paddingBottom: '4rem' }}>
+      <section id="reservation-form" className="contact-form-section section-padding" style={{ background: 'var(--cream)', position: 'relative', paddingBottom: '4rem' }}>
         <div className="container" style={{ position: 'relative' }}>
           <div className="text-center mb-60">
             <span className="badge-terracotta">Nous écrire</span>

@@ -1,9 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Check, Info, Clock, Star, Zap, ShieldCheck, ChevronDown } from 'lucide-react';
 import SEO from '../components/SEO';
 import ContentBlock from '../components/ContentBlock';
-import { AnimatePresence } from 'framer-motion';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -42,13 +42,15 @@ const PriceCard = ({ title, price, period, features, highlight, badgeText, toggl
         <li key={idx}><Check size={16} className="terracotta-accent" /> {feature}</li>
       ))}
     </ul>
-    <button
+    <Link
+      to="/contact#reservation-form"
       className={`btn-price ${highlight ? 'btn-terracotta' : 'btn-dark'}`}
+      style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >
       Réserver
-    </button>
+    </Link>
   </div>
 );
 

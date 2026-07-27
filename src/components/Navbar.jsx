@@ -58,9 +58,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
             
             <Link to="/tarifs" className="nav-link">Tarifs</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
-            <a href="https://live-experience.com" target="_blank" className="btn btn-primary" style={{padding: '0.8rem 2.5rem'}}>
+            <Link to="/contact#reservation-form" className="btn btn-primary" style={{padding: '0.8rem 2.5rem'}}>
                <span>Réserver</span>
-            </a>
+            </Link>
           </div>
 
           <button className="mobile-only" onClick={() => setMobileMenuOpen(true)}>
@@ -138,9 +138,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
                   transition={{ delay: 0.5 }}
                   className="mt-40"
                 >
-                  <a href="https://live-experience.com" target="_blank" className="btn btn-primary btn-full-width">
+                  <Link to="/contact#reservation-form" className="btn btn-primary btn-full-width" onClick={() => setMobileMenuOpen(false)}>
                      <span>Réserver un court</span>
-                  </a>
+                  </Link>
                 </motion.div>
              </nav>
 

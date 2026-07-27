@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = ({ heroRef, toggleHover, scale }) => {
   return (
@@ -24,9 +25,9 @@ const Hero = ({ heroRef, toggleHover, scale }) => {
             Vivez une expérience unique où le sport de haut niveau rencontre l'excellence de notre bar lounge et espaces entreprises.
           </h2>
           <div className="hero-cta-centered">
-            <a href="https://live-experience.com" target="_blank" className="btn btn-terracotta" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+            <Link to="/contact#reservation-form" className="btn btn-terracotta" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
               Réserver un terrain
-            </a>
+            </Link>
             <div className="scroll-arrow" style={{ marginTop: '2rem' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
             </div>
