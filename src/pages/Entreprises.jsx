@@ -7,6 +7,12 @@ import BusinessCTA from '../components/BusinessCTA';
 import ContentBlock from '../components/ContentBlock';
 import { AnimatePresence } from 'framer-motion';
 
+import EntrepriseEspaces from '../components/EntrepriseEspaces';
+import EntrepriseCollaborateurs from '../components/EntrepriseCollaborateurs';
+import EntrepriseEvenements from '../components/EntrepriseEvenements';
+import EntrepriseOptions from '../components/EntrepriseOptions';
+import EntreprisePartenariats from '../components/EntreprisePartenariats';
+
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
@@ -50,13 +56,22 @@ const Entreprises = ({ toggleHover }) => {
             className="hero-text-center"
           >
             <span className="badge-terracotta">Business & Performance</span>
-            <h1 className="serif h1-huge">
-              Fédérez vos équipes <br/>
-              <span className="italic">Par le sport.</span>
+            <h1 className="serif h1-b2b-hero">
+              Le padel, nouveau terrain <br/>
+              <span className="italic">de jeu de votre entreprise.</span>
             </h1>
             <p className="hero-subline">
-              Padel Signature offre un cadre prestigieux pour vos événements d'entreprise, alliant sportivité, convivialité et professionnalisme.
+              Recevoir vos clients, fédérer vos équipes, faire rayonner votre marque.
             </p>
+            <Link 
+              to="/contact" 
+              className="btn btn-terracotta mt-20" 
+              onMouseEnter={toggleHover} 
+              onMouseLeave={toggleHover}
+              style={{ fontSize: '1.2rem', padding: '1rem 2.5rem' }}
+            >
+              Parlons de votre projet
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -116,107 +131,12 @@ const Entreprises = ({ toggleHover }) => {
 
       <BusinessCTA />
 
-      {/* Nouveaux Contenus (JSON) */}
-      <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
-        <ContentBlock
-          eyebrow="Entreprises"
-          title="Le padel, nouveau terrain de jeu de votre entreprise."
-          quote="Recevoir vos clients, fédérer vos équipes, faire rayonner votre marque."
-          rule="Trois mots-repères sous le titre : RECEVOIR · FÉDÉRER · RAYONNER"
-          cta="Parlons de votre projet"
-          img="Le couloir des terrains ou le clubhouse, un plan qui donne l'échelle du lieu."
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Nos espaces"
-          title="Un club conçu pour recevoir."
-          lead="Quatre terrains, une salle séminaire privatisable et un clubhouse avec vue sur les courts. Le tout au même endroit, avec un parking sur place."
-          list={[
-            ["Le padel s'apprend en quelques minutes", "Vos équipes ou vos clients jouent ensemble dès la première fois, quel que soit leur niveau. Personne ne reste sur le côté."]
-          ]}
-          rule="Quatre repères en ligne : 4 terrains · 1 salle séminaire de 32 m² · 1 clubhouse · parking sur place"
-          flags={[
-            ["Aucun chiffre de marché", "Les +40 % de pratiquants et la croissance du padel en France sont retirés. On parle de nous, pas du secteur."]
-          ]}
-          img="Le clubhouse en situation, lumière chaude, quelques personnes."
-          reverse={true}
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Pour vos collaborateurs"
-          title="La carte crédit entreprise."
-          quote="Offrez le padel à vos équipes, sans gérer les réservations une par une."
-          steps={[
-            ["01", "Nous ouvrons votre compte", "Un compte au nom de l'entreprise, entièrement dématérialisé."],
-            ["02", "Vous créditez le montant de votre choix", "Nous ajoutons un bonus, qui augmente avec le montant crédité."],
-            ["03", "Vos équipes réservent", "Vous répartissez les crédits vers l'application de chaque collaborateur. Utilisables partout dans le club."]
-          ]}
-          price="Avec les bonus, la partie revient à partir de 10 € par joueur."
-          rule="Ne pas publier les tranches ni les pourcentages de bonus. Ça se présente en rendez-vous."
-          cta="En discuter avec nous"
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Événements"
-          title="Séminaires, team building, privatisations."
-          lead="Vous réservez les terrains, puis vous composez votre journée. On s'occupe du reste : matériel, boissons, encadrement, mise en place."
-          steps={[
-            ["09h00", "Accueil", "Café au clubhouse, vestiaires à disposition."],
-            ["10h00", "Session de travail", "La salle séminaire privatisée, équipée pour vos présentations."],
-            ["12h30", "Déjeuner", "Sur place au clubhouse, ou formule traiteur."],
-            ["14h00", "Sur les terrains", "Initiation, tournoi ou américano. Raquettes et balles fournies."],
-            ["17h00", "Afterwork", "Le clubhouse pour prolonger le moment, avec vue sur les courts."]
-          ]}
-          cards={[
-            ["Les terrains", "", "De 1 à 4 terrains pendant 1h30, soit 4 à 16 joueurs. Raquettes, balles et boissons comprises."],
-            ["Terrains et salle séminaire", "", "La formule terrains, avec notre salle séminaire de 32 m² privatisée et équipée : écran, wifi, climatisation."],
-            ["Terrains et coaching", "", "La formule terrains, avec un coach dédié sur vos courts. Initiation, tournoi ou américano."],
-            ["La formule complète", "", "Terrains, salle séminaire, coaching et écrans à vos couleurs."]
-          ]}
-          rule="Options en une seule phrase, pas de cards : « Traiteur, photo et vidéo, afterwork prolongé, salle séminaire seule : on ajoute ce qu'il vous faut au moment de construire votre devis. »"
-          cta="Demander un devis"
-          img="La salle séminaire configurée en réunion, avec la vue sur les terrains."
-          reverse={true}
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Visibilité"
-          title="Votre marque, du terrain aux réseaux."
-          quote="Un panneau publicitaire, c'est trois secondes vues par un automobiliste qui passe. Ici, votre marque accompagne un dirigeant pendant deux heures."
-          list={[
-            ["Sur les deux écrans du club", "Dans le sas d'entrée et le couloir des terrains."],
-            ["Le nom de votre entreprise sur un terrain", "Y compris dans l'application."],
-            ["Le mur des partenaires", "Devant lequel posent les vainqueurs de nos tournois."],
-            ["Nos supports", "Notre site, nos réseaux et nos contenus vidéo."]
-          ]}
-          rule="Les positions sont limitées et exclusives par secteur d'activité."
-          flags={[
-            ["Aucun tarif, aucun nom de formule", "Ni Majeur, ni Officiel, ni Local. Le naming se présente en visite, devant les écrans allumés. C'est là que ça se joue."]
-          ]}
-          cta="Prendre rendez-vous"
-          img="L'écran du sas d'entrée avec un visuel partenaires affiché."
-          toggleHover={toggleHover}
-        />
-
-
-
-        <ContentBlock
-          eyebrow="Questionnaire"
-          title="Parlons de votre projet."
-          lead="Destination de tous les CTA de la page. Deux étapes, barre de progression, des boutons à cliquer plutôt que des champs à remplir."
-          steps={[
-            ["Étape 1", "Votre projet", "Type de demande · nombre de participants · échéance · durée envisagée · ce qui vous intéresse"],
-            ["Étape 2", "Vous", "Entreprise · nom · email · téléphone · un mot sur votre projet"],
-            ["Après", "Confirmation", "« On revient vers vous sous 48 heures. » Plus les contacts directs de Clément et Hugo."]
-          ]}
-          rule="Si « Visibilité et partenariat » est sélectionné, les questions sur l'effectif et la durée sautent. On demande le secteur d'activité, ce qui permet de vérifier tout de suite si la position sectorielle est libre."
-          toggleHover={toggleHover}
-        />
-      </div>
+      {/* Nouveaux Contenus B2B */}
+      <EntrepriseEspaces />
+      <EntrepriseCollaborateurs toggleHover={toggleHover} />
+      <EntrepriseEvenements />
+      <EntrepriseOptions toggleHover={toggleHover} />
+      <EntreprisePartenariats toggleHover={toggleHover} />
       <section className="faq-section section-padding">
         <div className="container">
           <div className="text-center mb-60">
@@ -229,9 +149,7 @@ const Entreprises = ({ toggleHover }) => {
             <FAQItem question="Faut-il apporter du matériel ?" answer="Non. Raquettes et balles sont fournies." />
             <FAQItem question="Peut-on venir sur une demi-journée ?" answer="Oui. D'une session d'1h30 à une journée complète." />
           </div>
-          <p className="rule-text mt-40" style={{ maxWidth: '800px', margin: '40px auto 0' }}>
-            <em>Aucune capacité maximale chiffrée sur la page. On adapte au cas par cas.</em>
-          </p>
+
         </div>
       </section>
     </>

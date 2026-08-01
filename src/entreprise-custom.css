@@ -1,0 +1,287 @@
+
+/* --- ENTREPRISES PAGE CUSTOM STYLES --- */
+
+/* Nos Espaces */
+.entreprise-espaces-section {
+  background-color: var(--white);
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.espaces-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 4rem;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Carte Credit Entreprise */
+.collaborateurs-section {
+  background-color: var(--cream);
+  padding: 6rem 0;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.step-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--terracotta);
+  font-weight: 600;
+  min-width: 40px;
+}
+
+.step-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.step-desc {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.repere-box {
+  background-color: #174735;
+  color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-top: 3rem;
+}
+
+.repere-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #D3A783;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.repere-price {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.repere-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Timeline Evenements */
+.evenements-section {
+  background-color: var(--white);
+  padding: 6rem 0;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 120px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background-color: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  position: relative;
+}
+
+.timeline-time {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--terracotta);
+  min-width: 100px;
+  text-align: right;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+}
+
+.timeline-desc {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Options Cards */
+.options-section {
+  background-color: var(--cream);
+  padding: 6rem 0;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.option-card {
+  background-color: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+}
+
+.option-icon {
+  color: var(--terracotta);
+  margin-bottom: 1.5rem;
+}
+
+.option-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.option-desc {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Partenariats */
+.partenariats-section {
+  background-color: var(--dark-green);
+  color: var(--white);
+  padding: 6rem 0;
+}
+
+.partenariat-block {
+  margin-bottom: 4rem;
+}
+
+.partenariat-block h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+}
+
+.partenariat-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.partenariat-item {
+  background-color: rgba(255,255,255,0.03);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.partenariat-item-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #D3A783;
+}
+
+.partenariat-item-desc {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .order-1-mobile {
+    order: 1;
+  }
+  .order-2-mobile {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-container::before {
+    left: 80px;
+  }
+  .timeline-time {
+    min-width: 60px;
+    font-size: 1.1rem;
+  }
+  .timeline-item {
+    gap: 1rem;
+  }
+}
+
+/* Custom Responsive Hero Title */
+.h1-b2b-hero {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}

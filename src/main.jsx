@@ -7,6 +7,7 @@ import './abonnement.css'
 import './cartes.css'
 import './coaching.css'
 import './academie.css'
+import './entreprise-custom.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
