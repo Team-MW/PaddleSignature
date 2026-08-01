@@ -6,6 +6,7 @@ import Marquee from '../components/Marquee';
 import Identity from '../components/Identity';
 import Services from '../components/Services';
 import AppCTA from '../components/AppCTA';
+import CommunityCTA from '../components/CommunityCTA';
 import BusinessCTA from '../components/BusinessCTA';
 import Localisation from '../components/Localisation';
 
@@ -27,6 +28,7 @@ const Home = ({ toggleHover }) => {
       <Identity toggleHover={toggleHover} yParallax={yParallax} />
       <Services toggleHover={toggleHover} />
       <BusinessCTA toggleHover={toggleHover} />
+      <CommunityCTA />
       <AppCTA toggleHover={toggleHover} />
       <Localisation toggleHover={toggleHover} />
     </>

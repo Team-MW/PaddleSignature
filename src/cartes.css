@@ -1,0 +1,156 @@
+
+/* --- CARTES PREPAYEES SECTION --- */
+.cartes-prepayees-section {
+  background-color: var(--cream);
+  padding: 6rem 0;
+  color: var(--text-main);
+}
+
+.cartes-header {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.cartes-desc {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.prepaid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.prepaid-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.prepaid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.prepaid-card.highlighted {
+  border-color: var(--terracotta);
+}
+
+.prepaid-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--terracotta);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.prepaid-header {
+  margin-bottom: 2rem;
+}
+
+.prepaid-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.prepaid-subtitle {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.prepaid-price-block {
+  margin-bottom: 2rem;
+}
+
+.prepaid-price {
+  font-size: 3.5rem;
+  color: var(--terracotta);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.prepaid-credits {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.prepaid-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+  flex-grow: 1;
+}
+
+.prepaid-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+}
+
+.prepaid-footer {
+  margin-top: auto;
+}
+
+.prepaid-btn {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4px; /* match image style which has slightly rounded buttons */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--text-main);
+  background-color: rgba(0,0,0,0.02);
+}
+
+.cartes-footer-note {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: left;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .prepaid-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

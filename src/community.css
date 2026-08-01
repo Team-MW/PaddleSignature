@@ -1,0 +1,227 @@
+
+/* --- COMMUNITY CTA SECTION --- */
+.community-section {
+  background-color: var(--white);
+  color: var(--text-main);
+  padding: var(--section-padding) 0;
+  overflow: hidden;
+}
+
+.community-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.community-text-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.community-subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.community-line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--terracotta);
+}
+
+.community-subtitle {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  color: var(--terracotta);
+}
+
+.community-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.whatsapp-green {
+  color: var(--terracotta); /* Using DA color instead of bright green */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+
+.whatsapp-icon-inline {
+  display: inline-block;
+  margin-right: -0.2rem;
+}
+
+.community-description {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: var(--text-muted);
+  max-width: 500px;
+}
+
+.community-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.community-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--cream);
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  transition: var(--transition);
+}
+
+.community-chip:hover {
+  background-color: var(--off-white);
+  border-color: var(--terracotta);
+}
+
+.community-visual {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.community-phone-mockup {
+  width: 320px;
+  height: 650px;
+  background-color: var(--white);
+  border-radius: 40px;
+  border: 12px solid var(--text-main);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-header {
+  background-color: var(--dark-green);
+  color: var(--white);
+  padding: 2.5rem 1.25rem 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phone-avatar {
+  width: 48px;
+  height: 48px;
+  background-color: var(--terracotta);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+}
+
+.phone-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-header-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.phone-header-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.phone-body {
+  flex: 1;
+  background-color: var(--white);
+  color: var(--text-main);
+  overflow-y: auto;
+}
+
+.phone-list-item {
+  display: flex;
+  padding: 1.25rem;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.phone-icon-bg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terracotta);
+}
+
+.phone-item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.phone-item-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.phone-item-desc {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .community-flex-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .community-subtitle-wrapper {
+    justify-content: center;
+  }
+
+  .community-chips {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin: 0 auto 3rem auto;
+  }
+  
+  .community-chip {
+    justify-content: center;
+  }
+
+  .community-visual {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}

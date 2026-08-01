@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import { Check, Info, Clock, Star, Zap, ShieldCheck, ChevronDown } from 'lucide-react';
 import SEO from '../components/SEO';
 import ContentBlock from '../components/ContentBlock';
+import AbonnementBanner from '../components/AbonnementBanner';
+import CartesPrepayees from '../components/CartesPrepayees';
+import CoachingSection from '../components/CoachingSection';
+import AcademieSection from '../components/AcademieSection';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -121,129 +125,21 @@ const Tarifs = ({ toggleHover }) => {
               toggleHover={toggleHover}
             />
           </div>
+          
+          <AbonnementBanner toggleHover={toggleHover} />
         </div>
       </section>
 
-      {/* Additional Costs / Info */}
-      <section className="additional-info section-padding" style={{ background: 'var(--dark-green)', color: 'white' }}>
-        <div className="container">
-          <div className="grid-2 gap-100">
-            <div>
-              <h2 className="serif lg-title mb-40">Services <br /><span className="italic">Complémentaires.</span></h2>
-              <div className="info-item-minimal">
-                <Clock size={20} className="terracotta-accent" />
-                <div>
-                  <h4 className="serif">Location de Matériel</h4>
-                  <p>Raquettes haut de gamme (Babolat, Wilson) : 4€ / session. Balles neuves en vente au ProShop.</p>
-                </div>
-              </div>
-              <div className="info-item-minimal">
-                <Star size={20} className="terracotta-accent" />
-                <div>
-                  <h4 className="serif">Coaching Individuel</h4>
-                  <p>Cours particuliers avec coach certifié : à partir de 50€/h. Packs 5 ou 10 cours disponibles.</p>
-                </div>
-              </div>
-            </div>
-            <div className="benefit-card-dark">
-              <ShieldCheck size={40} className="terracotta-accent mb-20" />
-              <h3 className="serif">Pourquoi s'abonner ?</h3>
-              <p className="mb-30">L'abonnement Club est conçu pour les passionnés souhaitant intégrer une communauté active tout en bénéficiant du meilleur rapport qualité/prix.</p>
-              <ul className="check-list">
-                <li><Zap size={16} /> Priorité sur les créneaux Premium</li>
-                <li><Zap size={16} /> Événements Members Only</li>
-                <li><Zap size={16} /> Guest Pass pour vos amis</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Cartes Prépayées Section */}
+      <CartesPrepayees toggleHover={toggleHover} />
 
       {/* Nouveaux Contenus (JSON) */}
       <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
-        <ContentBlock
-          eyebrow="Nos Formules"
-          title="Signature."
-          cards={[
-            ["Session Découverte", "10 € / pers", "Location terrain (90 min) · Accès au Bar Lounge · Vestiaires premium · Réservation via l'App"],
-            ["Abonnement Club", "45 € / mois", "Accès prioritaire 14j · Tarifs réduits heures creuses · Espace VIP inclus · Tournois internes offerts · Réduction ProShop -10%", "Plus Populaire"],
-            ["Pack Performance", "150 €", "10 sessions de 90 min · Multi-joueurs (partageable) · Sans date d'expiration · Accès aux statistiques vidéo"]
-          ]}
-          cta="Réserver"
-          toggleHover={toggleHover}
-        />
+      {/* Coaching Section */}
+      <CoachingSection toggleHover={toggleHover} />
 
-        <ContentBlock
-          eyebrow="Abonnement"
-          title="Abonnement heures creuses."
-          quote="Pour ceux qui jouent régulièrement en journée."
-          cards={[
-            ["Offre annuelle", "500 €", "Accès illimité aux créneaux heures creuses · Engagement de 12 mois · Places limitées", "Offre annuelle"]
-          ]}
-          rule="Ne pas mentionner les modalités de paiement, elles figureront dans les CGV. Un seul abonnement affiché : heures creuses. Celui en heures pleines est à l'étude, on ne l'annonce pas."
-          cta="Je m'abonne"
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Cartes prépayées"
-          title="Jouez plus, payez moins."
-          lead="Vous créditez le montant de votre choix, nous ajoutons un bonus."
-          cards={[
-            ["Découverte", "100 €", "120 crédits, soit 20 offerts. Environ 9 parties dont 1 offerte. 11,25 € la partie."],
-            ["Confort", "250 €", "325 crédits, soit 75 offerts. Environ 24 parties dont 5 offertes. 10,38 € la partie.", "Le plus choisi"],
-            ["Signature", "500 €", "675 crédits, soit 175 offerts. Environ 50 parties dont 13 offertes. 10,00 € la partie."]
-          ]}
-          rule="Trois mentions à afficher clairement : 1 crédit = 1 euro · utilisables partout dans le club · valables un an"
-          rule2="Mention sous les cards : nombre de parties calculé sur la base d'une partie en heure pleine. En heures creuses, vous en jouez davantage."
-          cta="Acheter"
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Coaching"
-          title="Progressez avec un coach."
-          lead="Des séances d'une heure, seul ou à plusieurs. Le tarif est par personne, il baisse dès que vous venez accompagné."
-          cards={[
-            ["Individuel", "50 €", "par personne"],
-            ["En duo", "30 €", "par personne"],
-            ["À trois ou quatre", "25 €", "par personne"]
-          ]}
-          rule="Section informative. Pas de réservation en ligne, l'organisation se fait ensuite directement avec le coach."
-          cta="Nous contacter"
-          ctaGhost={true}
-          toggleHover={toggleHover}
-        />
-
-        <ContentBlock
-          eyebrow="Académie"
-          title="Une saison complète."
-          lead="25 séances sur l'année, en groupe et par niveau. Une formule pour progresser dans la durée."
-          list={[
-            ["Enfants", "7 à 12 ans"],
-            ["Jeunes", "13 à 17 ans"],
-            ["Adultes", ""]
-          ]}
-          rule="Bandeau en tête de section : à partir de septembre 2026. Aucun tarif affiché pour l'instant, mention « tarifs communiqués prochainement ». Le bouton est une préinscription, pas une inscription."
-          cta="Se préinscrire"
-          toggleHover={toggleHover}
-        />
-
-
-
-        <ContentBlock
-          eyebrow="À ne pas ajouter"
-          title="Ce qui ne figure pas sur cette page."
-          lead="Ces éléments existent mais ne sont pas publiés au lancement. Ils apparaissent dans nos documents commerciaux, ne pas les reprendre ici."
-          list={[
-            ["Location de raquette, balles, pro shop", "Seront ajoutés dans un second temps."],
-            ["Modalités de paiement", "Abonnement comme académie, elles figureront dans les CGV."],
-            ["Tarifs de l'académie", "Communiqués prochainement."],
-            ["Abonnement heures pleines", "N'existe pas au lancement."],
-            ["Tarif étudiant", "Il n'y en a pas."]
-          ]}
-          toggleHover={toggleHover}
-        />
+      {/* Academie Section */}
+      <AcademieSection toggleHover={toggleHover} />
       </div>
       <section className="faq-section section-padding">
         <div className="container">
