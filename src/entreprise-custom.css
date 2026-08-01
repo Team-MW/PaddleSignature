@@ -100,13 +100,15 @@
 .repere-price {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--white);
 }
 
 .repere-desc {
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1.6;
+  color: var(--white);
 }
 
 /* Timeline Evenements */
