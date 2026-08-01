@@ -220,6 +220,43 @@ const ContactPage = ({ toggleHover }) => {
 
 
 
+      {/* Bon Usage Section */}
+      <section className="bon-usage-section section-padding" style={{ background: 'var(--white)' }}>
+        <div className="container">
+          <div className="community-subtitle-wrapper" style={{ justifyContent: 'flex-start', marginBottom: '1rem' }}>
+            <span className="community-line"></span>
+            <span className="community-subtitle">BON USAGE</span>
+          </div>
+          
+          <h2 className="serif xl-title mb-60">
+            Quelques <span className="italic" style={{ color: 'var(--terracotta)' }}>règles simples.</span>
+          </h2>
+          
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+            gap: '1.5rem' 
+          }}>
+            <div style={{ padding: '2.5rem 2rem', border: '1px solid var(--border)', borderRadius: '12px' }}>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Chaussures propres</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Exigées sur les terrains.</p>
+            </div>
+            <div style={{ padding: '2.5rem 2rem', border: '1px solid var(--border)', borderRadius: '12px' }}>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Respectez l'horaire de fin</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Un autre terrain vous suit.</p>
+            </div>
+            <div style={{ padding: '2.5rem 2rem', border: '1px solid var(--border)', borderRadius: '12px' }}>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Prévenez-nous en cas d'empêchement</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Jusqu'à 24 heures avant.</p>
+            </div>
+            <div style={{ padding: '2.5rem 2rem', border: '1px solid var(--border)', borderRadius: '12px' }}>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Le fair-play</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Sur le terrain comme au clubhouse.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Infos FAQ Combine */}
       <section className="faq-section section-padding" style={{ background: 'var(--off-white)' }}>
         <div className="container">
