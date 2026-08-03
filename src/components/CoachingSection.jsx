@@ -62,7 +62,7 @@ const CoachingSection = ({ toggleHover }) => {
 
         <div className="coaching-footer">
           <Link 
-            to="/contact" 
+            to="/infos" 
             className="btn btn-outline-dark" 
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}

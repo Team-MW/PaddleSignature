@@ -33,7 +33,7 @@ const Footer = ({ toggleHover }) => {
               <li><Link to="/club" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Le Club</Link></li>
               <li><Link to="/entreprises" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Entreprises</Link></li>
               <li><Link to="/tarifs" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Tarifs</Link></li>
-              <li><Link to="/contact" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Contact</Link></li>
+              <li><Link to="/infos" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Infos</Link></li>
             </ul>
           </div>
 

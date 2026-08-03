@@ -27,7 +27,7 @@ const PrepaidCard = ({ title, subtitle, price, creditsInfo, features, isHighligh
       
       <div className="prepaid-footer">
         <Link 
-          to="/contact#reservation-form" 
+          to="/infos#reservation-form" 
           className={`btn ${isHighlighted ? 'btn-terracotta' : 'btn-outline-dark'} prepaid-btn`}
           onMouseEnter={toggleHover}
           onMouseLeave={toggleHover}

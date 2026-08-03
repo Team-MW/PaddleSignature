@@ -48,7 +48,7 @@ const EntrepriseCollaborateurs = ({ toggleHover }) => {
             </div>
             
             <Link 
-              to="/contact" 
+              to="/infos" 
               className="btn btn-terracotta mt-20"
               onMouseEnter={toggleHover}
               onMouseLeave={toggleHover}

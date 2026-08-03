@@ -59,7 +59,7 @@ const AcademieSection = ({ toggleHover }) => {
         <div className="academie-footer">
           <p className="academie-footer-note">Tarifs communiqués prochainement.</p>
           <Link 
-            to="/contact" 
+            to="/infos" 
             className="btn btn-terracotta" 
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}

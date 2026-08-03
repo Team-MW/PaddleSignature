@@ -47,7 +47,7 @@ const InfoCard = ({ icon: Icon, title, lines, delay }) => (
   </motion.div>
 );
 
-const ContactPage = ({ toggleHover }) => {
+const InfosPage = ({ toggleHover }) => {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [iframeHeight, setIframeHeight] = useState('600px');
 
@@ -68,9 +68,9 @@ const ContactPage = ({ toggleHover }) => {
   return (
     <>
       <SEO
-        title="Contact | Padel Signature Montauban"
-        description="Contactez-nous ou retrouvez toutes les informations pratiques : accès, horaires, parking et règles du club Padel Signature à Montauban."
-        url="/contact"
+        title="Infos Pratiques | Padel Signature Montauban"
+        description="Retrouvez toutes les informations pratiques : accès, horaires, parking et règles du club Padel Signature à Montauban."
+        url="/infos"
       />
 
       {/* Hero Section */}
@@ -189,6 +189,46 @@ const ContactPage = ({ toggleHover }) => {
         </div>
       </section>
 
+      {/* 24/7 Access Section */}
+      <section className="infos-access-section section-padding" style={{ background: 'var(--off-white)' }}>
+        <div className="container">
+          <div className="text-center mb-60" style={{ maxWidth: '800px', margin: '0 auto 4rem auto' }}>
+            <h2 className="serif xl-title mb-20">
+              Les terrains sont ouverts <span className="italic" style={{ color: 'var(--terracotta)' }}>24h/24.</span>
+            </h2>
+            <p className="text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+              En dehors des horaires du clubhouse, vous accédez au club de façon autonome et sécurisée, par QR code. Vous réservez, vous entrez, vous jouez.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            <div style={{ padding: '2.5rem', background: 'white', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--terracotta)' }}>
+                 <DoorOpen size={24} />
+              </div>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Votre QR code d'accès</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Transmis avec votre réservation.</p>
+            </div>
+            
+            <div style={{ padding: '2.5rem', background: 'white', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--terracotta)' }}>
+                 <Users size={24} />
+              </div>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Terrains et vestiaires</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Accessibles à toute heure.</p>
+            </div>
+
+            <div style={{ padding: '2.5rem', background: 'white', borderRadius: '16px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'var(--cream)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--terracotta)' }}>
+                 <Beer size={24} />
+              </div>
+              <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Le clubhouse</h4>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Ouvert de 9h00 à 22h30.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive Map Section */}
       <section className="map-section-premium">
         <div className="map-container-full">
@@ -282,4 +322,4 @@ const ContactPage = ({ toggleHover }) => {
   );
 };
 
-export default ContactPage;
+export default InfosPage;

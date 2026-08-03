@@ -25,7 +25,7 @@ const Hero = ({ heroRef, toggleHover, scale }) => {
             Vivez une expérience unique où le sport de haut niveau rencontre l'excellence de notre bar lounge et espaces entreprises.
           </h2>
           <div className="hero-cta-centered">
-            <Link to="/contact#reservation-form" className="btn btn-terracotta" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+            <Link to="/infos#reservation-form" className="btn btn-terracotta" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
               Réserver un terrain
             </Link>
             <div className="scroll-arrow" style={{ marginTop: '2rem' }}>

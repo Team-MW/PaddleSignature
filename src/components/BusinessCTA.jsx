@@ -14,7 +14,7 @@ const BusinessFeature = ({ icon: Icon, text }) => (
 
 const BusinessCTA = ({ toggleHover }) => {
   return (
-    <section id="entreprises" className="business-premium-section">
+    <section id="entreprises" className="business-premium-section" style={{ paddingBottom: '2rem' }}>
       <div className="container">
         <div className="business-grid-modern">
           <motion.div 

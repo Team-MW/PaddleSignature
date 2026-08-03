@@ -64,7 +64,7 @@ const Entreprises = ({ toggleHover }) => {
               Recevoir vos clients, fédérer vos équipes, faire rayonner votre marque.
             </p>
             <Link 
-              to="/contact" 
+              to="/infos" 
               className="btn btn-terracotta mt-20" 
               onMouseEnter={toggleHover} 
               onMouseLeave={toggleHover}
