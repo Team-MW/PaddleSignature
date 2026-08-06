@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Target, Users, Layout, ChevronRight } from 'lucide-react';
 
-const BusinessFeature = ({ icon: Icon, text }) => (
-  <div className="biz-feat-item">
-    <div className="biz-feat-icon">
-      <Icon size={18} />
+const BusinessFeature = ({ emoji, title, text }) => (
+  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', marginBottom: '2rem' }}>
+    <div style={{ fontSize: '2rem', lineHeight: '1' }}>{emoji}</div>
+    <div>
+      <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>{title}</h4>
+      <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0 }}>{text}</p>
     </div>
-    <span className="biz-feat-text">{text}</span>
   </div>
 );
 
@@ -23,24 +23,35 @@ const BusinessCTA = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="business-text-block"
           >
-            <span className="badge-terracotta">B2B & Séminaires</span>
-            <h2 className="serif xl-title">
-              Élevez Vos <br/>
-              <span className="italic">Événements d'Équipe.</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <span style={{ width: '30px', height: '2px', backgroundColor: 'var(--terracotta)' }}></span> ENTREPRISES
+            </div>
+            <h2 className="serif xl-title" style={{ marginBottom: '3rem' }}>
+              Recevez vos équipes <br/>
+              <span className="italic" style={{ color: 'var(--terracotta)' }}>et vos clients.</span>
             </h2>
-            <p className="business-intro">
-              Sortez du cadre conventionnel. Padel Signature offre un environnement unique alliant sport, détente et professionnalisme pour vos collaborateurs.
-            </p>
             
             <div className="business-features-list">
-              <BusinessFeature icon={Target} text="Séminaires & Réunions (Salle VIP 32m²)" />
-              <BusinessFeature icon={Users} text="Team Building & Tournois Privés" />
-              <BusinessFeature icon={Layout} text="Privatisation Totale & Bar Lounge" />
+              <BusinessFeature 
+                emoji="🎟️" 
+                title="Offre CSE" 
+                text="Des crédits à offrir à vos salariés, une seule facture." 
+              />
+              <BusinessFeature 
+                emoji="🤝" 
+                title="Séminaires & Team Building" 
+                text="Une journée clé en main, du café à l'afterwork." 
+              />
+              <BusinessFeature 
+                emoji="✨" 
+                title="Sponsoring" 
+                text="Votre marque sur les terrains, les écrans et nos réseaux." 
+              />
             </div>
 
-            <div className="business-cta-wrapper">
+            <div className="business-cta-wrapper" style={{ marginTop: '3rem' }}>
               <Link to="/entreprises" className="btn btn-primary" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <span>Découvrir nos offres B2B</span>
+                <span>Nos offres entreprises</span>
               </Link>
             </div>
           </motion.div>
@@ -52,11 +63,8 @@ const BusinessCTA = ({ toggleHover }) => {
             className="business-visual-block"
           >
             <div className="biz-main-img-wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=70&w=1200&auto=format&fit=crop" alt="Premium Business Lounge Padel Signature" className="biz-img" loading="lazy" />
+              <img src="/entreprises-hero-bg.jpg" alt="Entreprise Padel Signature" className="biz-img" loading="lazy" style={{ objectFit: 'cover' }} />
               <div className="biz-img-overlay"></div>
-            </div>
-            <div className="biz-floating-card">
-              <p className="serif italic">"Plus qu'un terrain, un lieu de cohésion."</p>
             </div>
           </motion.div>
         </div>

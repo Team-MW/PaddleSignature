@@ -27,26 +27,26 @@ const Localisation = ({ toggleHover }) => {
     <section id="localisation" className="localisation-section">
       <div className="container">
         <div className="text-center mb-80">
-          <motion.span 
+          <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="badge-terracotta"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}
           >
-            Nous trouver
-          </motion.span>
+            <span style={{ width: '30px', height: '2px', backgroundColor: 'var(--terracotta)' }}></span> NOUS TROUVER
+          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="serif xl-title"
           >
-            Votre Club Padel à <span className="italic">Montauban.</span>
+            Votre club de padel à <span className="italic">Montauban.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="loc-intro"
           >
-            Idéalement situé dans la Zone Albasud, Padel Signature est votre nouveau QG sportif au cœur du Tarn-et-Garonne.
+            Zone Albasud, en bordure de l'A20. À 5 minutes du centre-ville.
           </motion.p>
         </div>
 
@@ -56,21 +56,21 @@ const Localisation = ({ toggleHover }) => {
               delay={0.1}
               icon={MapPin}
               title="Adresse"
-              content="1577 Avenue d’Italie, Zone Albasud, 82000 Montauban"
+              content="1577 Avenue d'Italie, Zone Albasud, 82000 Montauban. En bordure de l'A20, sortie 66 Albasud."
               onHover={toggleHover}
             />
             <InfoCard 
               delay={0.2}
               icon={Clock}
               title="Horaires"
-              content="Ouvert tous les jours (9h - 23h). Accès autonome hors équipe."
+              content="Terrains : 24h/24, 7j/7. Clubhouse : 9h00 à 22h30. Hors horaires du clubhouse, accès en autonomie."
               onHover={toggleHover}
             />
             <InfoCard 
               delay={0.3}
               icon={Car}
               title="Parking"
-              content="38 places gratuites dont 1 PMR / Stationnement vélos sécurisé."
+              content="46 places gratuites, place PMR, stationnement vélos."
               onHover={toggleHover}
             />
             

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Zap, Users } from 'lucide-react';
+import { Star, Users, Trophy } from 'lucide-react';
 
 const Identity = ({ toggleHover, yParallax }) => {
   return (
@@ -17,34 +17,50 @@ const Identity = ({ toggleHover, yParallax }) => {
             </div>
           </div>
           <div className="identity-content pl-60">
-            <span className="badge-terracotta">Notre ADN</span>
-            <h2 className="serif xl-title">L'alliance du style <br/><span className="italic">& de la performance.</span></h2>
-            <p className="description-text mb-40">
-              Padel Signature n'est pas qu'un simple club de sport. C'est un lieu de vie pensé pour ceux qui ne veulent pas choisir entre confort et compétition. Nous avons créé cet espace pour offrir une expérience sans compromis.
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <span style={{ width: '30px', height: '2px', backgroundColor: 'var(--terracotta)' }}></span> NOTRE ADN
+            </div>
+            <h2 className="serif xl-title" style={{ marginBottom: '1.5rem' }}>
+              L'alliance du style <span className="italic" style={{ color: 'var(--terracotta)' }}>et de la performance.</span>
+            </h2>
+            <p className="description-text mb-40" style={{ fontSize: '1.25rem', color: 'var(--dark-green)', fontWeight: '400' }}>
+              Quatre terrains, un clubhouse à l'étage, et de quoi rester après le match.
             </p>
             
-            <div className="features-mini-grid">
-              <div className="feature-mini-item">
-                <div className="icon-circle"><Award size={20} /></div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
+                <div style={{ minWidth: '50px', width: '50px', height: '50px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Star size={24} />
+                </div>
                 <div>
-                  <h4 className="serif">Excellence</h4>
-                  <p>Infrastructures de niveau World Padel Tour.</p>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>Excellence</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Des terrains de compétition dans un cadre soigné.</p>
                 </div>
               </div>
-              <div className="feature-mini-item">
-                <div className="icon-circle"><Zap size={20} /></div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
+                <div style={{ minWidth: '50px', width: '50px', height: '50px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Users size={24} />
+                </div>
                 <div>
-                  <h4 className="serif">Dynamisme</h4>
-                  <p>Une communauté active et des tournois réguliers.</p>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>Convivialité</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Un clubhouse à l'étage avec vue sur les courts.</p>
                 </div>
               </div>
-              <div className="feature-mini-item">
-                <div className="icon-circle"><Users size={20} /></div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
+                <div style={{ minWidth: '50px', width: '50px', height: '50px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Trophy size={24} />
+                </div>
                 <div>
-                  <h4 className="serif">Convivialité</h4>
-                  <p>Un bar lounge panoramique pour l'après-match.</p>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>Communauté</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Des tournois et des rendez-vous tout au long de l'année.</p>
                 </div>
               </div>
+            </div>
+            
+            <div style={{ marginTop: '3rem' }}>
+              <button className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '0.9rem', fontWeight: '600', borderRadius: '4px', textTransform: 'none', letterSpacing: 'normal' }}>
+                Découvrir le club
+              </button>
             </div>
           </div>
         </div>

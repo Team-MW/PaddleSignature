@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const words = ["PREMIUM PADEL", "SIGNATURE EXPERIENCE", "MONTAUBAN", "INDOOR CLUB", "LIFESTYLE", "PERFORMANCE"];
+const words = ["MONTAUBAN", "INDOOR", "24H/24", "4 TERRAINS", "CLUBHOUSE", "PADEL", "COMMUNAUTÉ", "SIGNATURE"];
 
 const Marquee = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Activity, Coffee, ShoppingBag, Users, Trophy, Heart, ChevronRight } from 'lucide-react';
+import { Activity, Coffee, Users, Briefcase, Car, Clock, ChevronRight } from 'lucide-react';
 
 const ServiceCard = ({ icon: Icon, title, description, delay, onHover, number }) => (
   <motion.div 
@@ -37,17 +37,9 @@ const Services = ({ toggleHover }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-               <span className="uppercase badge-terracotta">L'Art de Vivre</span>
-               <h2 className="serif text-white h2-xl">Infrastructures & <br/><span className="italic">Excellence.</span></h2>
+               <span className="uppercase badge-terracotta">NOS ESPACES</span>
+               <h2 className="serif text-white h2-xl">Un lieu pensé <br/><span className="italic">pour le jeu.</span></h2>
             </motion.div>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="services-intro-p"
-            >
-              Chaque espace a été dessiné par des experts pour offrir une expérience sensorielle et sportive sans compromis.
-            </motion.p>
          </div>
 
           <div className="services-masonry">
@@ -55,48 +47,48 @@ const Services = ({ toggleHover }) => {
               delay={0.1}
               number="01"
               icon={Activity} 
-              title="4 Courts Panoramiques" 
-              description="Terrains indoor de prestige (9m de hauteur) avec scoring électronique intégré sur tous les courts."
+              title="Les terrains" 
+              description="Quatre courts panoramiques indoor, 8,50 m sous plafond."
               onHover={toggleHover}
             />
             <ServiceCard 
               delay={0.2}
               number="02"
               icon={Coffee} 
-              title="Bar & Lounge R+1" 
-              description="Vue panoramique sur les courts, comptoir terracotta signature et tireuses à bière pour vos après-matchs."
+              title="Le clubhouse" 
+              description="À l'étage, avec vue sur les courts et un comptoir terracotta."
               onHover={toggleHover}
             />
             <ServiceCard 
               delay={0.3}
               number="03"
               icon={Users} 
-              title="Salle VIP (31,6 m²)" 
-              description="Espace d’exception privatisable pour vos réunions, séminaires et board meetings d'entreprise."
+              title="La salle séminaire" 
+              description="Un espace privatisable pour vos réunions et vos événements."
               onHover={toggleHover}
             />
             <ServiceCard 
               delay={0.4}
               number="04"
-              icon={ShoppingBag} 
-              title="Hall & Casiers" 
-              description="Accueil premium, signalétique brandée, écran CMS et rangements dédiés à votre équipement."
+              icon={Briefcase} 
+              title="Vestiaires" 
+              description="Casiers et douches, tout le confort avant et après le jeu."
               onHover={toggleHover}
             />
             <ServiceCard 
               delay={0.5}
               number="05"
-              icon={Heart} 
-              title="Vidéo Replay HD" 
-              description="Replay automatique sur 2 terrains via l'app Live Experience pour revoir et analyser vos plus beaux points."
+              icon={Car} 
+              title="46 places de parking" 
+              description="Un parking gratuit sur place, place PMR et vélos."
               onHover={toggleHover}
             />
             <ServiceCard 
               delay={0.6}
               number="06"
-              icon={Trophy} 
-              title="Affichage LED CMS" 
-              description="Écrans LED sur chaque terrain et au bar, créant une ambiance visuelle immersive pour vos événements."
+              icon={Clock} 
+              title="Accès 24h/24" 
+              description="Vous entrez par QR code, à toute heure, en autonomie."
               onHover={toggleHover}
             />
           </div>
