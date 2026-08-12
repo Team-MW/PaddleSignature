@@ -177,7 +177,18 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
                 Découvrez votre nouveau complexe de padel indoor à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
               </p>
 
-              <div style={{ marginTop: '2.5rem', marginBottom: '1rem' }}>
+              <div style={{ marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                  onMouseEnter={toggleHover}
+                  onMouseLeave={toggleHover}
+                  style={{ textDecoration: 'none', backgroundColor: 'var(--terracotta)', border: 'none' }}
+                >
+                  <span>Réserver un terrain</span>
+                </a>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLScmINsWx9uNJaR7Gukm-ouy-99MWUuxnbxlV4lkMV4LrFbYuQ/viewform?usp=sharing&ouid=107429083947289871223"
                   target="_blank"
