@@ -58,9 +58,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
             
             <Link to="/tarifs" className="nav-link">Tarifs</Link>
             <Link to="/infos" className="nav-link">Infos</Link>
-            <Link to="/infos#reservation-form" className="btn btn-primary" style={{padding: '0.8rem 2.5rem'}}>
+            <a href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{padding: '0.8rem 2.5rem', textDecoration: 'none'}}>
                <span>Réserver</span>
-            </Link>
+            </a>
           </div>
 
           <button className="mobile-only" onClick={() => setMobileMenuOpen(true)}>
@@ -138,9 +138,9 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
                   transition={{ delay: 0.5 }}
                   className="mt-40"
                 >
-                  <Link to="/infos#reservation-form" className="btn btn-primary btn-full-width" onClick={() => setMobileMenuOpen(false)}>
+                  <a href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-full-width" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
                      <span>Réserver un court</span>
-                  </Link>
+                  </a>
                 </motion.div>
              </nav>
 
