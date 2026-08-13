@@ -56,15 +56,12 @@ const ReservationGuide = ({ toggleHover }) => {
               <div style={{ 
                 width: '48px', 
                 height: '48px', 
-                background: 'rgba(164, 87, 41, 0.1)', 
-                borderRadius: '16px', 
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center',
-                marginBottom: '0.5rem',
-                color: 'var(--terracotta)'
+                marginBottom: '0.5rem'
               }}>
-                <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg>
+                <img src="/favicon.png" alt="Logo Padel Signature" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </div>
               
               <h3 style={{ color: 'var(--dark-green)', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
