@@ -15,7 +15,7 @@ const ReservationGuide = ({ toggleHover }) => {
         title="Comment Réserver" 
         description="Guide en 4 étapes pour réserver votre terrain de Padel à Padel Signature." 
       />
-      <div style={{ paddingTop: '160px', minHeight: '100vh', backgroundColor: 'var(--white)', paddingBottom: '5rem' }}>
+      <div style={{ paddingTop: '60px', minHeight: '100vh', backgroundColor: 'var(--white)', paddingBottom: '5rem' }}>
         <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
           
           {/* Breadcrumb */}

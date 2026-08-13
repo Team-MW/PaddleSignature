@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Mail, MapPin, Instagram, Linkedin, ArrowRight, Check, Loader2, User, Phone } from 'lucide-react';
 import SEO from '../components/SEO';
 
@@ -178,17 +179,15 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
               </p>
 
               <div style={{ marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature"
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  to="/comment-reserver"
                   className="btn btn-primary"
                   onMouseEnter={toggleHover}
                   onMouseLeave={toggleHover}
                   style={{ textDecoration: 'none', backgroundColor: 'var(--terracotta)', border: 'none' }}
                 >
                   <span>Réserver un terrain</span>
-                </a>
+                </Link>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLScmINsWx9uNJaR7Gukm-ouy-99MWUuxnbxlV4lkMV4LrFbYuQ/viewform?usp=sharing&ouid=107429083947289871223"
                   target="_blank"

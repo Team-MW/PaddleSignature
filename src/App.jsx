@@ -64,13 +64,20 @@ export default function App() {
     setIsUnderConstruction(false);
   };
 
-  // Si le site est en construction
   if (isUnderConstruction) {
     return (
       <Router>
         <div className="app-main-wrapper">
           <ScrollToTop />
-          <ComingSoon toggleHover={toggleHover} grantAccess={grantAccess} />
+          
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<ComingSoon toggleHover={toggleHover} grantAccess={grantAccess} />} />
+              <Route path="/comment-reserver" element={
+                <ReservationGuide toggleHover={toggleHover} />
+              } />
+            </Routes>
+          </Suspense>
         </div>
       </Router>
     );
