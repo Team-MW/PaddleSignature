@@ -75,7 +75,7 @@ const ReservationGuide = ({ toggleHover }) => {
               </p>
               
               <div style={{ display: 'flex', gap: '1rem', width: '100%', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="#" className="btn-app-download" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ 
+                <a href="https://apps.apple.com/fr/app/padel-signature/id6762594127" target="_blank" rel="noopener noreferrer" className="btn-app-download" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ 
                   display: 'flex', alignItems: 'center', gap: '0.5rem', 
                   padding: '0.8rem 2.5rem', borderRadius: '50px', 
                   border: '2px solid var(--terracotta)', color: 'var(--terracotta)', 
@@ -96,9 +96,7 @@ const ReservationGuide = ({ toggleHover }) => {
               </div>
             </div>
 
-            <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginBottom: '4rem' }}>
-              Pas de smartphone ? <a href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature" style={{ color: 'var(--terracotta)', textDecoration: 'underline' }}>Accédez à la plateforme web</a>
-            </p>
+
 
             {/* Steps list */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', textAlign: 'left', width: '100%' }}>
