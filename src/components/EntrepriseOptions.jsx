@@ -39,7 +39,7 @@ const EntrepriseOptions = ({ toggleHover }) => {
           </div>
         </div>
         
-        <div className="text-center mt-60">
+        <div className="text-center" style={{ marginTop: '4rem' }}>
           <Link 
             to="/infos#reservation-form" 
             className="btn btn-terracotta"

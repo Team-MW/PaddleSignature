@@ -60,10 +60,15 @@ const AppCTA = ({ toggleHover }) => {
             alignItems: 'center',
             boxShadow: 'var(--shadow-sm)'
           }}>
-            <div className="cta-visual-block">
-              <div className="app-mockup-wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <img src="/favicon.png" alt="Logo Padel Signature" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-              </div>
+            <div style={{ 
+              width: '120px', 
+              height: '120px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              marginBottom: '1.5rem'
+            }} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+              <img src="/favicon.png" alt="Logo Padel Signature" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             
             <h3 style={{ color: 'var(--dark-green)', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>

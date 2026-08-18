@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const tabsData = {
+  matinee: [
+    { time: '09h00', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
+    { time: '09h30', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
+    { time: '10h30', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
+    { time: '12h30', title: 'DÉJEUNER', desc: 'Sur place au clubhouse, ou formule traiteur.' },
+  ],
+  apresMidi: [
+    { time: '14h00', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
+    { time: '14h30', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
+    { time: '15h30', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
+    { time: '17h30', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
+  ],
+  journee: [
+    { time: '09h00', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
+    { time: '09h30', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
+    { time: '12h30', title: 'DÉJEUNER', desc: 'Sur place au clubhouse, ou formule traiteur.' },
+    { time: '14h00', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
+  ]
+};
 
 const EntrepriseEvenements = () => {
+  const [activeTab, setActiveTab] = useState('matinee');
   return (
     <section className="evenements-section">
       <div className="container">
@@ -19,79 +41,78 @@ const EntrepriseEvenements = () => {
           </p>
         </div>
 
-        <div className="grid-2 gap-100">
-          <div>
-            <h3 className="serif h3-title mb-40">À quoi ressemble une journée chez nous.</h3>
-            
-            <div className="badges-group mb-40">
-              <span className="badge-terracotta">Matinée</span>
-              <span className="badge-terracotta" style={{ background: 'var(--cream)', color: 'var(--text-main)' }}>Après-midi</span>
-              <span className="badge-terracotta" style={{ background: 'var(--cream)', color: 'var(--text-main)' }}>Journée complète</span>
-            </div>
+        <div className="seminaire-card">
+          <h3 className="serif h3-title mb-20 text-center" style={{ fontSize: '1.4rem' }}>À quoi ressemble une journée chez nous.</h3>
+          
+          <div className="badges-group mb-40" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+            <button 
+              onClick={() => setActiveTab('matinee')}
+              style={{ 
+                background: 'transparent', 
+                border: activeTab === 'matinee' ? 'none' : '1px solid var(--border)', 
+                color: activeTab === 'matinee' ? 'var(--terracotta)' : 'var(--dark-green)', 
+                fontWeight: activeTab === 'matinee' ? 'bold' : 'normal',
+                padding: activeTab === 'matinee' ? '0' : '0.4rem 1.2rem', 
+                borderRadius: '50px', 
+                fontSize: '0.85rem',
+                textTransform: 'uppercase',
+                cursor: 'pointer'
+              }}>
+              Matinée
+            </button>
+            <button 
+              onClick={() => setActiveTab('apresMidi')}
+              style={{ 
+                background: 'transparent', 
+                border: activeTab === 'apresMidi' ? 'none' : '1px solid var(--border)', 
+                color: activeTab === 'apresMidi' ? 'var(--terracotta)' : 'var(--dark-green)', 
+                fontWeight: activeTab === 'apresMidi' ? 'bold' : 'normal',
+                padding: activeTab === 'apresMidi' ? '0' : '0.4rem 1.2rem', 
+                borderRadius: '50px', 
+                fontSize: '0.85rem',
+                textTransform: 'uppercase',
+                cursor: 'pointer'
+              }}>
+              Après-midi
+            </button>
+            <button 
+              onClick={() => setActiveTab('journee')}
+              style={{ 
+                background: 'transparent', 
+                border: activeTab === 'journee' ? 'none' : '1px solid var(--border)', 
+                color: activeTab === 'journee' ? 'var(--terracotta)' : 'var(--dark-green)', 
+                fontWeight: activeTab === 'journee' ? 'bold' : 'normal',
+                padding: activeTab === 'journee' ? '0' : '0.4rem 1.2rem', 
+                borderRadius: '50px', 
+                fontSize: '0.85rem',
+                textTransform: 'uppercase',
+                cursor: 'pointer'
+              }}>
+              Journée complète
+            </button>
+          </div>
 
-            <div className="timeline-container">
-              <div className="timeline-item">
-                <div className="timeline-time">09h00</div>
+          <div className="timeline-container mx-auto" style={{ maxWidth: '500px' }}>
+            {tabsData[activeTab].map((item, index) => (
+              <div className="timeline-item" key={index}>
+                <div className="timeline-time">{item.time}</div>
                 <div className="timeline-content">
-                  <h4 className="timeline-title">ACCUEIL</h4>
-                  <p className="timeline-desc">Café au clubhouse, vestiaires à disposition.</p>
+                  <h4 className="timeline-title">{item.title}</h4>
+                  <p className="timeline-desc" style={{ fontSize: '0.9rem', opacity: 0.8 }}>{item.desc}</p>
                 </div>
               </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-time">09h30</div>
-                <div className="timeline-content">
-                  <h4 className="timeline-title">SESSION DE TRAVAIL</h4>
-                  <p className="timeline-desc">La salle séminaire privatisée, équipée pour vos présentations.</p>
-                </div>
-              </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-time">10h30</div>
-                <div className="timeline-content">
-                  <h4 className="timeline-title">SUR LES TERRAINS</h4>
-                  <p className="timeline-desc">Initiation, tournoi ou américano. Raquettes et balles fournies.</p>
-                </div>
-              </div>
-              
-              <div className="timeline-item">
-                <div className="timeline-time">12h30</div>
-                <div className="timeline-content">
-                  <h4 className="timeline-title">DÉJEUNER</h4>
-                  <p className="timeline-desc">Sur place au clubhouse, ou formule traiteur.</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
           
-          <div>
-            <h3 className="serif h3-title mb-40" style={{ color: 'var(--dark-green)' }}>Trois formats parmi d'autres. <br /><span className="italic" style={{ fontSize: '1.2rem', fontFamily: 'var(--font-sans)', fontWeight: '400', display: 'block', marginTop: '10px' }}>On construit le vôtre selon votre durée, votre effectif et vos objectifs.</span></h3>
-            
-            <div className="premium-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div className="business-card-premium" style={{ padding: '1.5rem', background: 'var(--cream)' }}>
-                <h4 className="serif mb-10" style={{ fontSize: '1.3rem' }}>Les terrains</h4>
-                <p className="text-muted" style={{ fontSize: '0.95rem' }}>De 1 à 4 terrains pendant 1h30. Raquettes, balles et boissons comprises. Vos visuels sur les écrans du club.</p>
-              </div>
-              
-              <div className="business-card-premium" style={{ padding: '1.5rem', background: 'var(--cream)' }}>
-                <h4 className="serif mb-10" style={{ fontSize: '1.3rem' }}>Terrains et salle séminaire</h4>
-                <p className="text-muted" style={{ fontSize: '0.95rem' }}>La formule terrains, avec notre salle séminaire privatisée et équipée : écran, wifi, climatisation.</p>
-              </div>
-              
-              <div className="business-card-premium" style={{ padding: '1.5rem', background: 'var(--cream)' }}>
-                <h4 className="serif mb-10" style={{ fontSize: '1.3rem' }}>Terrains et coaching</h4>
-                <p className="text-muted" style={{ fontSize: '0.95rem' }}>La formule terrains, avec un coach dédié sur vos courts. Initiation, tournoi ou américano selon les niveaux.</p>
-              </div>
-              
-              <div className="business-card-premium" style={{ padding: '1.5rem', background: 'var(--dark-green)', color: 'white' }}>
-                <h4 className="serif mb-10" style={{ fontSize: '1.3rem', color: 'white' }}>La formule complète</h4>
-                <p style={{ fontSize: '0.95rem', opacity: '0.8' }}>Terrains, salle séminaire, coaching et écrans à vos couleurs. La journée organisée de bout en bout.</p>
-              </div>
+          <p className="text-muted mb-40 text-center mx-auto" style={{ fontSize: '0.85rem', fontStyle: 'italic', borderTop: '1px solid var(--border)', paddingTop: '1.5rem', maxWidth: '500px' }}>
+            Trois formats parmi d'autres. On construit le vôtre selon votre durée, votre effectif et vos objectifs.
+          </p>
+          
+          <div className="premium-list mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '500px' }}>
+            <div className="business-card-premium" style={{ padding: '1.5rem', background: 'transparent', border: '1px solid var(--border)', borderRadius: '8px', boxShadow: 'none' }}>
+              <h4 className="serif mb-10 text-center" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Les terrains</h4>
+              <p className="text-muted text-center" style={{ fontSize: '0.9rem' }}>De 1 à 4 terrains pendant 1h30. Raquettes, balles et boissons comprises. Vos visuels sur les écrans du club.</p>
             </div>
-            
-            <p className="mt-20 text-muted" style={{ fontSize: '0.9rem', fontStyle: 'italic' }}>
-              Tarif par personne, établi sur devis. Il baisse à mesure que le groupe s'agrandit.
-            </p>
           </div>
         </div>
       </div>
