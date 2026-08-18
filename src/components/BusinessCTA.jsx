@@ -56,17 +56,12 @@ const BusinessCTA = ({ toggleHover }) => {
             </div>
           </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2 }}
-            className="business-visual-block"
-          >
+          <div className="business-visual-block">
             <div className="biz-main-img-wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-              <img src="/entreprises-hero-bg.jpg" alt="Entreprise Padel Signature" className="biz-img" loading="lazy" style={{ objectFit: 'cover' }} />
+              <img src="/entreprises-hero-bg.jpg" alt="Entreprise Padel Signature" className="biz-img" style={{ objectFit: 'cover' }} />
               <div className="biz-img-overlay"></div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

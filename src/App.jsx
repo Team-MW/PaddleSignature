@@ -24,20 +24,7 @@ const ReservationGuide = lazy(() => import('./pages/ReservationGuide'));
 const IS_MAINTENANCE_MODE = true;
 
 // Loading fallback
-const PageLoader = () => (
-  <div style={{ 
-    height: '100vh', 
-    width: '100%', 
-    display: 'flex', 
-    alignItems: 'center', 
-    justifyContent: 'center',
-    background: '#1B342B',
-    color: 'white',
-    fontFamily: 'serif'
-  }}>
-    <div className="animate-pulse">Padel Signature...</div>
-  </div>
-);
+import Preloader, { LogoLoader as PageLoader } from './components/Preloader';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,7 +71,9 @@ export default function App() {
   }
 
   return (
-    <Router>
+    <>
+      <Preloader />
+      <Router>
       <div className="app-main-wrapper">
         <ScrollToTop />
         
@@ -116,6 +105,7 @@ export default function App() {
         <Footer toggleHover={toggleHover} />
       </div>
     </Router>
+    </>
   );
 }
 

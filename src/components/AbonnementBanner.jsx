@@ -22,7 +22,7 @@ const AbonnementBanner = ({ toggleHover }) => {
             </div>
             <div className="abo-price-sub">ou 50 € par mois</div>
           </div>
-          <Link to="/infos" className="btn btn-terracotta abo-btn" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+          <Link to="/infos#reservation-form" className="btn btn-terracotta abo-btn" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             Je m'abonne
           </Link>
         </div>

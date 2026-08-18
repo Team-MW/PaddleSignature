@@ -51,17 +51,13 @@ const CommunityCTA = () => {
 
         {/* Right Content - Phone Mockup Image */}
         <div className="community-visual">
-          <motion.div 
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="community-phone-img-wrapper"
-          >
+          <div className="community-visual-block relative">
             <img 
-              src="/phone-mockup.png" 
-              alt="Communauté Padel Signature sur WhatsApp" 
-              className="community-phone-img"
+              src="/community-app-mockup.png" 
+              alt="Application Communauté Padel" 
+              className="community-mockup-img" 
             />
-          </motion.div>
+          </div>
         </div>
         
       </div>

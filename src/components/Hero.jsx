@@ -2,13 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const Hero = ({ heroRef, toggleHover, scale }) => {
+const Hero = ({ heroRef, toggleHover }) => {
   return (
     <header className="hero" ref={heroRef} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-      <motion.div className="hero-fullscreen-bg" style={{ scale }}>
+      <div className="hero-fullscreen-bg">
         <img src="/hero-bg.jpg" alt="Padel Signature Montauban" />
         <div className="hero-overlay"></div>
-      </motion.div>
+      </div>
 
       <div className="container hero-content-centered">
         <motion.div
@@ -32,7 +32,7 @@ const Hero = ({ heroRef, toggleHover, scale }) => {
             </Link>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginTop: '4rem', opacity: '0.9' }}>
+          <div className="desktop-only" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginTop: '4rem', opacity: '0.9' }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>4</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>TERRAINS PANORAMIQUES</div>

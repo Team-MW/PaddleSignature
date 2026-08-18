@@ -23,7 +23,7 @@ const Home = ({ toggleHover }) => {
         description="Le 1er complexe de padel indoor premium à Montauban. Découvrez nos 4 terrains panoramiques, notre bar lounge, et nos offres entreprises ou régulières. Réservez vite." 
         url="/" 
       />
-      <Hero heroRef={heroRef} toggleHover={toggleHover} scale={scale} />
+      <Hero heroRef={heroRef} toggleHover={toggleHover} />
       <Marquee />
       <Identity toggleHover={toggleHover} yParallax={yParallax} />
       <Services toggleHover={toggleHover} />

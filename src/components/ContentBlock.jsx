@@ -105,17 +105,11 @@ const ContentBlock = ({
           {img && (
             <div className="content-block-image">
               <div className="img-decoration-box"></div>
-              <motion.img
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070&auto=format&fit=crop"
+              <img
+                src={img.startsWith('/') || img.startsWith('http') ? img : "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2070&auto=format&fit=crop"}
                 alt={eyebrow || 'Illustration'}
                 className="img-premium-border"
               />
-              <div className="img-caption" style={{ marginTop: '10px', fontSize: '0.8rem', opacity: 0.6, fontStyle: 'italic' }}>
-                (Image requise : {img})
-              </div>
             </div>
           )}
 

@@ -2587,7 +2587,7 @@ section {
 @media (max-width: 768px) {
   .page-hero-premium, .page-hero-premium.with-bg {
     display: block !important;
-    padding: 14rem 1.5rem 6rem !important;
+    padding: 10rem 1.5rem 6rem !important;
     min-height: auto !important;
     height: auto !important;
   }
