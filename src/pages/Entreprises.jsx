@@ -65,10 +65,9 @@ const Entreprises = ({ toggleHover }) => {
             </p>
             <Link 
               to="/infos" 
-              className="btn btn-terracotta mt-20" 
+              className="btn btn-terracotta mt-20 hero-cta-btn" 
               onMouseEnter={toggleHover} 
               onMouseLeave={toggleHover}
-              style={{ fontSize: '1.2rem', padding: '1rem 2.5rem' }}
             >
               Parlons de votre projet
             </Link>

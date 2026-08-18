@@ -17,8 +17,8 @@ const Identity = ({ toggleHover, yParallax }) => {
             </div>
           </div>
           <div className="identity-content pl-60">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-              <span style={{ width: '30px', height: '2px', backgroundColor: 'var(--terracotta)' }}></span> NOTRE ADN
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.95rem', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span> NOTRE ADN
             </div>
             <h2 className="serif xl-title" style={{ marginBottom: '1.5rem' }}>
               L'alliance du style <span className="italic" style={{ color: 'var(--terracotta)' }}>et de la performance.</span>
@@ -27,32 +27,41 @@ const Identity = ({ toggleHover, yParallax }) => {
               Quatre terrains, un clubhouse à l'étage, et de quoi rester après le match.
             </p>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
-                <div style={{ minWidth: '50px', width: '50px', height: '50px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Star size={24} />
+                <div style={{ minWidth: '54px', width: '54px', height: '54px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Star size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>Excellence</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Des terrains de compétition dans un cadre soigné.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.4rem' }}>
+                    <span style={{ width: '24px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
+                    <h4 style={{ color: 'var(--dark-green)', fontWeight: '700', fontSize: '1.3rem', margin: 0 }}>Excellence</h4>
+                  </div>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '31px' }}>Des terrains de compétition dans un cadre soigné.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
-                <div style={{ minWidth: '50px', width: '50px', height: '50px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Users size={24} />
+                <div style={{ minWidth: '54px', width: '54px', height: '54px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Users size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>Convivialité</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Un clubhouse à l'étage avec vue sur les courts.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.4rem' }}>
+                    <span style={{ width: '24px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
+                    <h4 style={{ color: 'var(--dark-green)', fontWeight: '700', fontSize: '1.3rem', margin: 0 }}>Convivialité</h4>
+                  </div>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '31px' }}>Un clubhouse à l'étage avec vue sur les courts.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
-                <div style={{ minWidth: '50px', width: '50px', height: '50px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Trophy size={24} />
+                <div style={{ minWidth: '54px', width: '54px', height: '54px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Trophy size={26} />
                 </div>
                 <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>Communauté</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Des tournois et des rendez-vous tout au long de l'année.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.4rem' }}>
+                    <span style={{ width: '24px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
+                    <h4 style={{ color: 'var(--dark-green)', fontWeight: '700', fontSize: '1.3rem', margin: 0 }}>Communauté</h4>
+                  </div>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '31px' }}>Des tournois et des rendez-vous tout au long de l'année.</p>
                 </div>
               </div>
             </div>

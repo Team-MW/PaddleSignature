@@ -106,7 +106,6 @@ const Tarifs = ({ toggleHover }) => {
               price="10,50 €"
               period="pers"
               highlight={true}
-              badgeText="Le bon plan"
               features={[
                 "Du lundi au vendredi",
                 "Hors créneaux heures pleines"

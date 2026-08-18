@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { User } from 'lucide-react';
 
 const AcademieSection = ({ toggleHover }) => {
@@ -58,14 +57,16 @@ const AcademieSection = ({ toggleHover }) => {
 
         <div className="academie-footer">
           <p className="academie-footer-note">Tarifs communiqués prochainement.</p>
-          <Link 
-            to="/infos" 
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScmINsWx9uNJaR7Gukm-ouy-99MWUuxnbxlV4lkMV4LrFbYuQ/viewform?usp=sharing&ouid=107429083947289871223"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-terracotta" 
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}
           >
             Se préinscrire
-          </Link>
+          </a>
         </div>
 
       </div>

@@ -20,9 +20,7 @@ const Footer = ({ toggleHover }) => {
           <div className="footer-col brand-col">
             <img src="/logo.png" alt="Padel Signature Logo" className="footer-logo-img" />
             <p className="footer-tagline serif italic">Plus qu'un club. Une Signature.</p>
-            <p className="footer-about">
-              Le premier complexe de padel indoor premium à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
-            </p>
+
           </div>
 
           {/* Navigation Column */}
@@ -49,8 +47,8 @@ const Footer = ({ toggleHover }) => {
               </li>
               <li>
                 <Phone size={16} /> 
-                <a href="tel:+33500000000" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                  +33 5 00 00 00 00
+                <a href="tel:0531970301" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+                  05 31 97 03 01
                 </a>
               </li>
               <li>

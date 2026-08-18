@@ -34,11 +34,18 @@
   text-align: center;
 }
 
+.coaching-table thead {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 .coaching-table th {
-  padding: 2rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 1.4rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   vertical-align: middle;
 }
 

@@ -66,8 +66,7 @@ const CartesPrepayees = ({ toggleHover }) => {
             price="100 €"
             creditsInfo="115 crédits, soit 15 offerts"
             features={[
-              "Environ 8 parties dont 1 offerte",
-              "Soit 11,74 € la partie"
+              "Environ 8 parties dont 1 offerte"
             ]}
             toggleHover={toggleHover}
           />
@@ -78,8 +77,7 @@ const CartesPrepayees = ({ toggleHover }) => {
             price="250 €"
             creditsInfo="300 crédits, soit 50 offerts"
             features={[
-              "Environ 22 parties dont 3 offertes",
-              "Soit 11,25 € la partie"
+              "Environ 22 parties dont 3 offertes"
             ]}
             isHighlighted={true}
             badge="LE PLUS CHOISI"
@@ -92,8 +90,7 @@ const CartesPrepayees = ({ toggleHover }) => {
             price="500 €"
             creditsInfo="625 crédits, soit 125 offerts"
             features={[
-              "Environ 46 parties dont 9 offertes",
-              "Soit 10,80 € la partie"
+              "Environ 46 parties dont 9 offertes"
             ]}
             toggleHover={toggleHover}
           />

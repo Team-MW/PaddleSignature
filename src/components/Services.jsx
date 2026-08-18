@@ -48,7 +48,7 @@ const Services = ({ toggleHover }) => {
               number="01"
               icon={Activity} 
               title="Les terrains" 
-              description="Quatre courts panoramiques indoor, 8,50 m sous plafond."
+              description="Quatre courts panoramiques indoor, 9 m sous plafond."
               onHover={toggleHover}
             />
             <ServiceCard 

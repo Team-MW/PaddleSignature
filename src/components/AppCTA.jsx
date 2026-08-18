@@ -3,24 +3,52 @@ import { motion } from 'framer-motion';
 
 const AppCTA = ({ toggleHover }) => {
   return (
-    <section className="app-luxury-section" style={{ paddingTop: '10rem', paddingBottom: '10rem', backgroundColor: 'var(--white)' }}>
-      <div className="container cta-flex-container">
-        <div className="cta-text-content" style={{ maxWidth: '550px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', margin: '0 auto' }}>
+    <section className="app-luxury-section" style={{ paddingTop: '4rem', paddingBottom: '4rem', backgroundColor: 'var(--white)' }}>
+      <div className="container" style={{ maxWidth: '680px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2rem', backgroundColor: 'rgba(164, 87, 41, 0.1)', padding: '0.6rem 1.2rem', borderRadius: '50px' }}>
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
             GUIDE DE RÉSERVATION
           </div>
 
-          <h2 className="serif" style={{ fontSize: '4rem', marginBottom: '1rem', lineHeight: '1', color: 'var(--dark-green)', textTransform: 'uppercase' }}>
-            RÉSERVEZ EN<br/>
-            <span style={{ color: 'var(--terracotta)', fontStyle: 'italic' }}>4 ÉTAPES</span>
+          <h2 className="serif" style={{ fontSize: '3rem', marginBottom: '0.5rem', lineHeight: '1.1', color: 'var(--dark-green)', textTransform: 'uppercase' }}>
+            RÉSERVATION
           </h2>
+          <p className="serif italic" style={{ fontSize: '1.8rem', color: 'var(--terracotta)', marginBottom: '1rem', lineHeight: '1.2' }}>
+            Réserver, mode d'emploi.
+          </p>
           
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '4rem' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>
             Simple, rapide et 100% en ligne. Votre terrain vous attend !
           </p>
 
+          {/* 4 Steps */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'left', width: '100%', marginBottom: '2rem' }}>
+            {[
+              { n: '01', title: "Téléchargez l'application", desc: "Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications." },
+              { n: '02', title: 'Choisissez votre créneau', desc: 'Disponibilités en temps réel. Les heures creuses sont à tarif réduit.' },
+              { n: '03', title: 'Ajoutez vos partenaires', desc: "Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver." },
+              { n: '04', title: 'Réglez comme vous voulez', desc: "Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant." },
+            ].map(({ n, title, desc }) => (
+              <motion.div
+                key={n}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}
+              >
+                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8', minWidth: '56px' }}>{n}</div>
+                <div style={{ paddingTop: '0.25rem' }}>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.05rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{title}</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.6' }}>{desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* App Box */}
           <div style={{ 
             background: 'var(--off-white)', 
             border: '1px solid rgba(27, 52, 43, 0.05)', 
@@ -75,19 +103,6 @@ const AppCTA = ({ toggleHover }) => {
           </div>
 
         </div>
-        
-        <div className="cta-visual-phone">
-          <motion.div 
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="phone-mockup-wrapper"
-          >
-            <div className="phone-screen-container" style={{ boxShadow: 'var(--shadow-lg)' }}>
-              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=70&w=600&auto=format&fit=crop" alt="Mobile App Experience" className="phone-img" loading="lazy" />
-            </div>
-          </motion.div>
-        </div>
-
       </div>
     </section>
   );

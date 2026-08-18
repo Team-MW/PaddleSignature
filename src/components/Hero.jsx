@@ -39,7 +39,7 @@ const Hero = ({ heroRef, toggleHover, scale }) => {
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>8,50 m</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>9 m</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SOUS PLAFOND</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>

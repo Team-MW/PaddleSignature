@@ -94,21 +94,7 @@ const InfosPage = ({ toggleHover }) => {
         </div>
       </section>
 
-      {/* Réservation Mode d'emploi */}
-      <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
-        <ContentBlock
-          eyebrow="Réservation"
-          title="Réserver, mode d'emploi."
-          steps={[
-            ["01", "Téléchargez l'application", "Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications."],
-            ["02", "Choisissez votre créneau", "Disponibilités en temps réel. Les heures creuses sont à tarif réduit."],
-            ["03", "Ajoutez vos partenaires", "Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver."],
-            ["04", "Réglez comme vous voulez", "Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant."]
-          ]}
-          cta="Réserver un terrain"
-          toggleHover={toggleHover}
-        />
-      </div>
+
 
       {/* Contact Form Section (Jotform) */}
       <section id="reservation-form" className="contact-form-section section-padding" style={{ background: 'var(--cream)', position: 'relative', paddingBottom: '4rem' }}>

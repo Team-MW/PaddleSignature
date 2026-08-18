@@ -15,15 +15,9 @@ const ReservationGuide = ({ toggleHover }) => {
         title="Comment Réserver" 
         description="Guide en 4 étapes pour réserver votre terrain de Padel à Padel Signature." 
       />
-      <div style={{ paddingTop: '30px', minHeight: '100vh', backgroundColor: 'var(--white)', paddingBottom: '5rem' }}>
+      <div style={{ paddingTop: '120px', minHeight: '100vh', backgroundColor: 'var(--white)', paddingBottom: '5rem' }}>
         <div className="container" style={{ maxWidth: '600px', margin: '0 auto' }}>
           
-          {/* Breadcrumb */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', marginBottom: '1rem', textTransform: 'uppercase' }}>
-            <Link to="/" style={{ color: 'inherit', display: 'flex', alignItems: 'center' }} onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Home size={14} /></Link>
-            <span>&gt;</span>
-            <span>Comment réserver</span>
-          </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.7rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.5rem', backgroundColor: 'rgba(164, 87, 41, 0.1)', padding: '0.4rem 1rem', borderRadius: '50px' }}>

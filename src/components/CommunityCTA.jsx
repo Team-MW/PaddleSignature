@@ -49,54 +49,18 @@ const CommunityCTA = () => {
           </a>
         </div>
 
-        {/* Right Content - Phone Mockup */}
+        {/* Right Content - Phone Mockup Image */}
         <div className="community-visual">
           <motion.div 
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="community-phone-mockup"
+            className="community-phone-img-wrapper"
           >
-            <div className="phone-header">
-              <div className="phone-avatar">S</div>
-              <div className="phone-header-text">
-                <div className="phone-header-title">Padel Signature</div>
-                <div className="phone-header-subtitle">Communauté · le groupe des membres</div>
-              </div>
-            </div>
-            
-            <div className="phone-body">
-              <div className="phone-list-item">
-                <div className="phone-icon-bg"><Users size={18} className="phone-icon" /></div>
-                <div className="phone-item-text">
-                  <div className="phone-item-title">Recherche de partenaires</div>
-                  <div className="phone-item-desc">Il manque 1 joueur ce soir à 19h</div>
-                </div>
-              </div>
-              
-              <div className="phone-list-item">
-                <div className="phone-icon-bg"><Trophy size={18} className="phone-icon" /></div>
-                <div className="phone-item-text">
-                  <div className="phone-item-title">Tournois et événements</div>
-                  <div className="phone-item-desc">Américano samedi, inscriptions ouvertes</div>
-                </div>
-              </div>
-              
-              <div className="phone-list-item">
-                <div className="phone-icon-bg"><Clock size={18} className="phone-icon" /></div>
-                <div className="phone-item-text">
-                  <div className="phone-item-title">Créneaux de dernière minute</div>
-                  <div className="phone-item-desc">Un terrain vient de se libérer à 21h</div>
-                </div>
-              </div>
-              
-              <div className="phone-list-item">
-                <div className="phone-icon-bg"><Info size={18} className="phone-icon" /></div>
-                <div className="phone-item-text">
-                  <div className="phone-item-title">Actus du club</div>
-                  <div className="phone-item-desc">Le clubhouse ouvre plus tôt ce week-end</div>
-                </div>
-              </div>
-            </div>
+            <img 
+              src="/phone-mockup.png" 
+              alt="Communauté Padel Signature sur WhatsApp" 
+              className="community-phone-img"
+            />
           </motion.div>
         </div>
         

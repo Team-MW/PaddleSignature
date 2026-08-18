@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const BusinessFeature = ({ emoji, title, text }) => (
-  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem', marginBottom: '2rem' }}>
-    <div style={{ fontSize: '2rem', lineHeight: '1' }}>{emoji}</div>
-    <div>
-      <h4 style={{ color: 'var(--dark-green)', fontWeight: '600', fontSize: '1.1rem', marginBottom: '0.3rem' }}>{title}</h4>
-      <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0 }}>{text}</p>
+  <div className="business-feature-item">
+    <div className="biz-emoji">{emoji}</div>
+    <div className="biz-content">
+      <h4>{title}</h4>
+      <p>{text}</p>
     </div>
   </div>
 );
@@ -23,8 +23,8 @@ const BusinessCTA = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="business-text-block"
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-              <span style={{ width: '30px', height: '2px', backgroundColor: 'var(--terracotta)' }}></span> ENTREPRISES
+            <div className="biz-eyebrow">
+              <span className="biz-eyebrow-line"></span> ENTREPRISES
             </div>
             <h2 className="serif xl-title" style={{ marginBottom: '3rem' }}>
               Recevez vos équipes <br/>
@@ -43,7 +43,7 @@ const BusinessCTA = ({ toggleHover }) => {
                 text="Une journée clé en main, du café à l'afterwork." 
               />
               <BusinessFeature 
-                emoji="✨" 
+                emoji="📣" 
                 title="Sponsoring" 
                 text="Votre marque sur les terrains, les écrans et nos réseaux." 
               />

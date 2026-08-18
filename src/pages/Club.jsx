@@ -121,12 +121,12 @@ const Club = ({ toggleHover }) => {
           title="Un lieu pensé pour le jeu."
           quote="Tout est pensé pour que vous n'ayez qu'à jouer."
           list={[
-            ["4 courts panoramiques", "Terrains indoor avec 8,50 m de hauteur et scoring électronique."],
+            ["4 courts panoramiques", "Terrains indoor avec 9 m de hauteur et scoring électronique."],
             ["Vidéo replay", "Vos plus beaux points captés et rejouables sur les courts équipés."],
             ["Vestiaires équipés", "Casiers, douches et tout le confort avant et après le jeu."],
             ["Accès autonome", "Le club reste ouvert 24h/24, vous entrez par QR code."]
           ]}
-          img="La perspective de l'allée centrale entre les terrains, avec le sol terracotta. La plus belle image d'architecture, en grand."
+          img="/espaces.jpeg"
           reverse={true}
           toggleHover={toggleHover}
         />
