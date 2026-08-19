@@ -6,7 +6,7 @@ const Hero = ({ heroRef, toggleHover }) => {
   return (
     <header className="hero" ref={heroRef} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
       <div className="hero-fullscreen-bg">
-        <img src="/hero-bg.jpg" alt="Padel Signature Montauban" />
+        <img src="/homePage.jpeg" alt="Padel Signature Montauban" />
         <div className="hero-overlay"></div>
       </div>
 
