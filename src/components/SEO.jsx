@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, url }) => {
-  const siteName = "Padel Signature | Plus qu'un club, une Signature. Montauban";
+  const siteName = "Padel Signature | Plus qu'un club. Une Signature. Montauban";
   const defaultDesc = "Découvrez Padel Signature, le premier complexe indoor premium à Montauban. 4 courts panoramiques (9m de hauteur), bar lounge, salle VIP et coaching. Ouvert à tous, joueurs réguliers et entreprises.";
   
   return (

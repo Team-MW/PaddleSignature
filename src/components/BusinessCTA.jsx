@@ -58,7 +58,7 @@ const BusinessCTA = ({ toggleHover }) => {
 
           <div className="business-visual-block">
             <div className="biz-main-img-wrapper" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-              <img src="/entreprises-hero-bg.jpg" alt="Entreprise Padel Signature" className="biz-img" style={{ objectFit: 'cover' }} />
+              <img src="/salle-de-reunion.png" alt="Entreprise Padel Signature" className="biz-img" style={{ objectFit: 'cover' }} />
               <div className="biz-img-overlay"></div>
             </div>
           </div>

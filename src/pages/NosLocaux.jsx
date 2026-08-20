@@ -44,7 +44,7 @@ const NosLocaux = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'url("/doccument.png")' }}>
+      <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'url("/projet-presentation.png")' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -58,7 +58,7 @@ const NosLocaux = ({ toggleHover }) => {
               <span className="italic">D'exception.</span>
             </h1>
             <p className="hero-subline">
-              Plus qu'un club, une Signature. 1400m² dédiés à l'excellence du Padel indoor à Montauban.
+              Plus qu'un club. Une Signature. 1400m² dédiés à l'excellence du Padel indoor à Montauban.
             </p>
           </motion.div>
         </div>

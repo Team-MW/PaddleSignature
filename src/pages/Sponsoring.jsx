@@ -10,7 +10,7 @@ const Sponsoring = ({ toggleHover }) => {
     <>
       <section className="hero">
         <div className="hero-fullscreen-bg">
-          <img src="/hero-bg.jpg" alt="Sponsoring" />
+          <img src="/image-en-plus.png" alt="Sponsoring" />
           <div className="hero-overlay"></div>
         </div>
         
