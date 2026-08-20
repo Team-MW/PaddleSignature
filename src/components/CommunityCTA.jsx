@@ -49,11 +49,11 @@ const CommunityCTA = () => {
           </a>
         </div>
 
-        {/* Right Content - Phone Mockup Image */}
+      {/* Right Content - Phone Mockup Image */}
         <div className="community-visual">
           <div className="community-visual-block relative">
             <img 
-              src="/community-app-mockup.png" 
+              src="/padelsignaturewattapp.png" 
               alt="Application Communauté Padel" 
               className="community-mockup-img" 
             />
