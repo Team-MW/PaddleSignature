@@ -19,6 +19,8 @@ const Sponsoring = lazy(() => import('./pages/Sponsoring'));
 const CSE = lazy(() => import('./pages/CSE'));
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'));
 const ReservationGuide = lazy(() => import('./pages/ReservationGuide'));
+const Evenement = lazy(() => import('./pages/Evenement'));
+const AdminEvenement = lazy(() => import('./pages/AdminEvenement'));
 
 // Configuration de maintenance temporaire
 const IS_MAINTENANCE_MODE = true;
@@ -95,6 +97,8 @@ export default function App() {
               <Route path="/infos" element={<Infos toggleHover={toggleHover} />} />
               <Route path="/sponsoring" element={<Sponsoring toggleHover={toggleHover} />} />
               <Route path="/cse" element={<CSE toggleHover={toggleHover} />} />
+              <Route path="/evenement" element={<Evenement toggleHover={toggleHover} />} />
+              <Route path="/admin-evenement" element={<AdminEvenement />} />
               <Route path="/comment-reserver" element={<ReservationGuide toggleHover={toggleHover} />} />
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />

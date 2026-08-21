@@ -15,7 +15,8 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
   const isPartenariatsPage = location.pathname === '/partenariats';
   const isCSEPage = location.pathname === '/cse';
   const isSponsoringPage = location.pathname === '/sponsoring';
-  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isInfosPage || isPartenariatsPage || isCSEPage || isSponsoringPage) && !isScrolled;
+  const isEvenementPage = location.pathname === '/evenement';
+  const overDarkBg = (isHomePage || isTarifsPage || isClubPage || isEntreprisesPage || isInfosPage || isPartenariatsPage || isCSEPage || isSponsoringPage || isEvenementPage) && !isScrolled;
 
   return (
     <>
@@ -58,6 +59,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
             
             <Link to="/tarifs" className="nav-link">Tarifs</Link>
             <Link to="/infos" className="nav-link">Infos</Link>
+            <Link to="/evenement" className="nav-link">Événements</Link>
             <Link to="/comment-reserver" className="btn btn-primary" style={{padding: '0.8rem 2.5rem', textDecoration: 'none'}}>
                <span>Réserver</span>
             </Link>
@@ -94,7 +96,8 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
                     ]
                   },
                   { name: 'Tarifs', path: '/tarifs' },
-                  { name: 'Infos', path: '/infos' }
+                  { name: 'Infos', path: '/infos' },
+                  { name: 'Événements', path: '/evenement' }
                 ].map((item, index) => (
                   <motion.div
                     key={item.name}
