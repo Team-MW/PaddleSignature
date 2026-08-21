@@ -19,43 +19,16 @@ const AdminEvenement = () => {
 
   useEffect(() => {
     const fetchAdminEvents = async () => {
-      const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-      if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') return;
-
-      const getLocalPayload = () => {
-        try { return JSON.parse(localStorage.getItem('admin_events_backup')); } 
-        catch (e) { return null; }
-      };
-
       try {
-        const url = `https://res.cloudinary.com/${cloudName}/raw/upload/padelsignature_events.json?t=${Date.now()}`;
-        const response = await fetch(url, { cache: 'no-store' });
-        
+        const response = await fetch('/api/events');
         if (response.ok) {
           const data = await response.json();
-          const cloudEvents = data.events || (Array.isArray(data) ? data : []);
-          const localData = getLocalPayload();
-          
-          const isCloudOlder = localData && localData.lastUpdated && (!data.lastUpdated || data.lastUpdated < localData.lastUpdated);
-          
-          if (isCloudOlder) {
-            setEvents(localData.events);
-          } else {
-            setEvents(cloudEvents);
-            localStorage.setItem('admin_events_backup', JSON.stringify({
-              lastUpdated: data.lastUpdated || Date.now(),
-              events: cloudEvents
-            }));
-          }
+          setEvents(data);
         } else {
-          // Si Cloudinary renvoie une erreur (404), on charge la sauvegarde locale
-          const localData = getLocalPayload();
-          if (localData) setEvents(localData.events);
+          console.error("Erreur lors de la récupération des événements");
         }
       } catch (e) {
-        console.error("Cloudinary fetch error", e);
-        const localData = getLocalPayload();
-        if (localData) setEvents(localData.events);
+        console.error("Erreur réseau", e);
       }
     };
 
@@ -76,54 +49,7 @@ const AdminEvenement = () => {
     };
   }, []);
 
-  const saveToStorage = async (newEvents) => {
-    setEvents(newEvents);
-    
-    const payload = {
-      lastUpdated: Date.now(),
-      events: newEvents
-    };
 
-    // On sauvegarde en local instantanément pour contrer la lenteur de Cloudinary
-    localStorage.setItem('admin_events_backup', JSON.stringify(payload));
-
-    const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-    const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
-
-    if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') return;
-
-    setIsUploading(true);
-    setMessage("Sauvegarde de la base de données sur Cloudinary...");
-
-    try {
-      const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
-      const uploadData = new FormData();
-      uploadData.append('file', blob, 'events.json');
-      uploadData.append('upload_preset', uploadPreset);
-      uploadData.append('public_id', 'padelsignature_events');
-
-      const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/raw/upload`, {
-        method: 'POST',
-        body: uploadData,
-      });
-      
-      const data = await response.json();
-      if (data.error) {
-        console.error("Cloudinary error:", data.error);
-        setMessage("Erreur: Vérifie les réglages de ton Upload Preset sur Cloudinary !");
-      } else if (data.public_id !== 'padelsignature_events.json' && data.public_id !== 'padelsignature_events') {
-        setMessage(`⚠️ ERREUR : Cloudinary a créé le fichier '${data.public_id}' au lieu d'écraser. Vérifie que "Unique filename" est bien sur OFF dans le preset "padelsignature".`);
-      } else {
-        setMessage("Synchronisation Cloudinary réussie !");
-      }
-    } catch (error) {
-      console.error("Upload JSON error:", error);
-      setMessage("Erreur lors de la synchronisation.");
-    } finally {
-      setIsUploading(false);
-      setTimeout(() => setMessage(''), 4000);
-    }
-  };
 
   const handleImageChange = async (e) => {
     const file = e.target.files[0];
@@ -174,19 +100,53 @@ const AdminEvenement = () => {
       return;
     }
     
-    const newEvent = {
-      ...formData,
-      id: Date.now()
-    };
+    setIsUploading(true);
+    setMessage("Ajout de l'événement en cours...");
     
-    await saveToStorage([...events, newEvent]);
-    setFormData({ title: '', text: '', image: '' }); // reset form
+    try {
+      const response = await fetch('/api/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        const newEvent = await response.json();
+        setEvents([newEvent, ...events]);
+        setFormData({ title: '', text: '', image: '' });
+        setMessage("Événement ajouté avec succès !");
+      } else {
+        setMessage("Erreur lors de l'ajout.");
+      }
+    } catch (e) {
+      console.error(e);
+      setMessage("Erreur de connexion.");
+    } finally {
+      setIsUploading(false);
+      setTimeout(() => setMessage(''), 3000);
+    }
   };
 
   const handleDeleteEvent = async (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cet événement ?")) {
-      const filtered = events.filter(ev => ev.id !== id);
-      await saveToStorage(filtered);
+      try {
+        const response = await fetch(`/api/events?id=${id}`, {
+          method: 'DELETE'
+        });
+        
+        if (response.ok) {
+          setEvents(events.filter(ev => ev.id !== id));
+          setMessage("Événement supprimé.");
+          setTimeout(() => setMessage(''), 3000);
+        } else {
+          setMessage("Erreur lors de la suppression.");
+        }
+      } catch (e) {
+        console.error(e);
+        setMessage("Erreur de connexion.");
+      }
     }
   };
 

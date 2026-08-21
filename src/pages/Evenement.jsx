@@ -7,42 +7,16 @@ const Evenement = ({ toggleHover }) => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-      if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') return;
-
-      const getLocalPayload = () => {
-        try { return JSON.parse(localStorage.getItem('admin_events_backup')); } 
-        catch (e) { return null; }
-      };
-
       try {
-        const url = `https://res.cloudinary.com/${cloudName}/raw/upload/padelsignature_events.json?t=${Date.now()}`;
-        const response = await fetch(url, { cache: 'no-store' });
-        
+        const response = await fetch('/api/events');
         if (response.ok) {
           const data = await response.json();
-          const cloudEvents = data.events || (Array.isArray(data) ? data : []);
-          const localData = getLocalPayload();
-          
-          const isCloudOlder = localData && localData.lastUpdated && (!data.lastUpdated || data.lastUpdated < localData.lastUpdated);
-          
-          if (isCloudOlder) {
-            setEvents(localData.events);
-          } else {
-            setEvents(cloudEvents);
-            localStorage.setItem('admin_events_backup', JSON.stringify({
-              lastUpdated: data.lastUpdated || Date.now(),
-              events: cloudEvents
-            }));
-          }
+          setEvents(data);
         } else {
-          const localData = getLocalPayload();
-          if (localData) setEvents(localData.events);
+          console.error("Erreur lors de la récupération des événements");
         }
       } catch (e) {
-        console.error("Cloudinary fetch error", e);
-        const localData = getLocalPayload();
-        if (localData) setEvents(localData.events);
+        console.error("Erreur réseau", e);
       }
     };
 
