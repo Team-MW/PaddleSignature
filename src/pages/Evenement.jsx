@@ -8,44 +8,41 @@ const Evenement = ({ toggleHover }) => {
   useEffect(() => {
     const fetchEvents = async () => {
       const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-      
-      const fallbackLocal = () => {
-        const savedData = localStorage.getItem('evenements_list');
-        if (savedData) {
-          try {
-            setEvents(JSON.parse(savedData));
-          } catch (e) {}
-        } else {
-          const oldData = localStorage.getItem('evenement_page_data');
-          if (oldData) {
-            try {
-              const parsed = JSON.parse(oldData);
-              if (parsed.title && parsed.title !== 'Événements') {
-                setEvents([{ ...parsed, id: Date.now() }]);
-              }
-            } catch (e) {}
-          }
-        }
-      };
+      if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') return;
 
-      if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') {
-        fallbackLocal();
-        return;
-      }
+      const getLocalPayload = () => {
+        try { return JSON.parse(localStorage.getItem('admin_events_backup')); } 
+        catch (e) { return null; }
+      };
 
       try {
         const url = `https://res.cloudinary.com/${cloudName}/raw/upload/padelsignature_events.json?t=${Date.now()}`;
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-store' });
         
         if (response.ok) {
           const data = await response.json();
-          setEvents(data);
-          localStorage.setItem('evenements_list', JSON.stringify(data));
+          const cloudEvents = data.events || (Array.isArray(data) ? data : []);
+          const localData = getLocalPayload();
+          
+          const isCloudOlder = localData && localData.lastUpdated && (!data.lastUpdated || data.lastUpdated < localData.lastUpdated);
+          
+          if (isCloudOlder) {
+            setEvents(localData.events);
+          } else {
+            setEvents(cloudEvents);
+            localStorage.setItem('admin_events_backup', JSON.stringify({
+              lastUpdated: data.lastUpdated || Date.now(),
+              events: cloudEvents
+            }));
+          }
         } else {
-          fallbackLocal();
+          const localData = getLocalPayload();
+          if (localData) setEvents(localData.events);
         }
       } catch (e) {
-        fallbackLocal();
+        console.error("Cloudinary fetch error", e);
+        const localData = getLocalPayload();
+        if (localData) setEvents(localData.events);
       }
     };
 
