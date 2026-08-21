@@ -1,10 +1,14 @@
-import mysql from 'mysql2/promise';
+import { connect } from '@planetscale/database';
 
 export default async function handler(req, res) {
   // Configurer la connexion à PlanetScale
-  let connection;
+  let conn;
   try {
-    connection = await mysql.createConnection(process.env.DATABASE_URL);
+    const databaseUrl = process.env.DATABASE_URL;
+    if (!databaseUrl) {
+      return res.status(500).json({ error: 'DATABASE_URL is not set' });
+    }
+    conn = connect({ url: databaseUrl });
   } catch (error) {
     console.error('Erreur de connexion à la base de données:', error);
     return res.status(500).json({ error: 'Erreur de connexion à la base de données' });
@@ -13,9 +17,8 @@ export default async function handler(req, res) {
   try {
     // GET : Récupérer tous les événements
     if (req.method === 'GET') {
-      const [rows] = await connection.execute('SELECT * FROM events ORDER BY created_at DESC');
-      await connection.end();
-      return res.status(200).json(rows);
+      const results = await conn.execute('SELECT * FROM events ORDER BY created_at DESC');
+      return res.status(200).json(results.rows);
     }
 
     // POST : Ajouter un nouvel événement
@@ -23,18 +26,16 @@ export default async function handler(req, res) {
       const { title, text, image } = req.body;
       
       if (!title || !text) {
-        await connection.end();
         return res.status(400).json({ error: 'Le titre et le texte sont obligatoires' });
       }
       
-      const [result] = await connection.execute(
+      const results = await conn.execute(
         'INSERT INTO events (title, text, image) VALUES (?, ?, ?)',
         [title, text, image || null]
       );
       
-      const [newEvent] = await connection.execute('SELECT * FROM events WHERE id = ?', [result.insertId]);
-      await connection.end();
-      return res.status(201).json(newEvent[0]);
+      const newEvent = await conn.execute('SELECT * FROM events WHERE id = ?', [results.insertId]);
+      return res.status(201).json(newEvent.rows[0]);
     }
 
     // DELETE : Supprimer un événement
@@ -42,20 +43,16 @@ export default async function handler(req, res) {
       const { id } = req.query;
       
       if (!id) {
-        await connection.end();
         return res.status(400).json({ error: 'L\'ID de l\'événement est obligatoire' });
       }
       
-      await connection.execute('DELETE FROM events WHERE id = ?', [id]);
-      await connection.end();
+      await conn.execute('DELETE FROM events WHERE id = ?', [id]);
       return res.status(200).json({ message: 'Événement supprimé avec succès' });
     }
 
-    await connection.end();
     return res.status(405).json({ error: 'Méthode non autorisée' });
   } catch (error) {
     console.error('Erreur SQL:', error);
-    if (connection) await connection.end();
     return res.status(500).json({ error: 'Erreur interne du serveur' });
   }
 }

@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@planetscale/database": "^1.20.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.477.0",
-    "mysql2": "^3.23.4",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-helmet-async": "^3.0.0",
