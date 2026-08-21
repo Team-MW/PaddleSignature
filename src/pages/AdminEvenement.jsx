@@ -54,9 +54,44 @@ const AdminEvenement = () => {
     };
   }, []);
 
-  const saveToStorage = (newEvents) => {
+  const saveToStorage = async (newEvents) => {
     setEvents(newEvents);
     localStorage.setItem('evenements_list', JSON.stringify(newEvents));
+
+    const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+    const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+
+    if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') return;
+
+    setIsUploading(true);
+    setMessage("Sauvegarde de la base de données sur Cloudinary...");
+
+    try {
+      const blob = new Blob([JSON.stringify(newEvents)], { type: 'application/json' });
+      const uploadData = new FormData();
+      uploadData.append('file', blob, 'events.json');
+      uploadData.append('upload_preset', uploadPreset);
+      uploadData.append('public_id', 'padelsignature_events');
+
+      const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/raw/upload`, {
+        method: 'POST',
+        body: uploadData,
+      });
+      
+      const data = await response.json();
+      if (data.error) {
+        console.error("Cloudinary error:", data.error);
+        setMessage("Erreur: Vérifie les réglages de ton Upload Preset sur Cloudinary !");
+      } else {
+        setMessage("Synchronisation Cloudinary réussie !");
+      }
+    } catch (error) {
+      console.error("Upload JSON error:", error);
+      setMessage("Erreur lors de la synchronisation.");
+    } finally {
+      setIsUploading(false);
+      setTimeout(() => setMessage(''), 4000);
+    }
   };
 
   const handleImageChange = async (e) => {
@@ -87,7 +122,7 @@ const AdminEvenement = () => {
       const data = await response.json();
       
       if (data.secure_url) {
-        setFormData({ ...formData, image: data.secure_url });
+        setFormData(prev => ({ ...prev, image: data.secure_url }));
         setMessage("Image uploadée avec succès !");
         setTimeout(() => setMessage(''), 3000);
       } else {
@@ -101,7 +136,7 @@ const AdminEvenement = () => {
     }
   };
 
-  const handleAddEvent = (e) => {
+  const handleAddEvent = async (e) => {
     e.preventDefault();
     if (!formData.title || !formData.text) {
       setMessage("Le titre et le texte sont obligatoires.");
@@ -113,18 +148,14 @@ const AdminEvenement = () => {
       id: Date.now()
     };
     
-    saveToStorage([...events, newEvent]);
+    await saveToStorage([...events, newEvent]);
     setFormData({ title: '', text: '', image: '' }); // reset form
-    setMessage("Événement ajouté avec succès !");
-    setTimeout(() => setMessage(''), 3000);
   };
 
-  const handleDeleteEvent = (id) => {
+  const handleDeleteEvent = async (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cet événement ?")) {
       const filtered = events.filter(ev => ev.id !== id);
-      saveToStorage(filtered);
-      setMessage("Événement supprimé.");
-      setTimeout(() => setMessage(''), 3000);
+      await saveToStorage(filtered);
     }
   };
 
@@ -219,7 +250,7 @@ const AdminEvenement = () => {
                   <img src={formData.image} alt="Aperçu" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', objectFit: 'cover' }} />
                   <button 
                     type="button" 
-                    onClick={() => setFormData({...formData, image: ''})}
+                    onClick={() => setFormData(prev => ({...prev, image: ''}))}
                     style={{ display: 'block', marginTop: '10px', color: '#dc3545', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
                   >
                     Supprimer l'image

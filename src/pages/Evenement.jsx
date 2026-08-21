@@ -6,25 +6,50 @@ const Evenement = ({ toggleHover }) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const savedData = localStorage.getItem('evenements_list');
-    if (savedData) {
-      try {
-        setEvents(JSON.parse(savedData));
-      } catch (e) {
-        console.error("Error parsing saved data");
-      }
-    } else {
-      // Fallback
-      const oldData = localStorage.getItem('evenement_page_data');
-      if (oldData) {
-        try {
-          const parsed = JSON.parse(oldData);
-          if (parsed.title && parsed.title !== 'Événements') {
-            setEvents([{ ...parsed, id: Date.now() }]);
+    const fetchEvents = async () => {
+      const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+      
+      const fallbackLocal = () => {
+        const savedData = localStorage.getItem('evenements_list');
+        if (savedData) {
+          try {
+            setEvents(JSON.parse(savedData));
+          } catch (e) {}
+        } else {
+          const oldData = localStorage.getItem('evenement_page_data');
+          if (oldData) {
+            try {
+              const parsed = JSON.parse(oldData);
+              if (parsed.title && parsed.title !== 'Événements') {
+                setEvents([{ ...parsed, id: Date.now() }]);
+              }
+            } catch (e) {}
           }
-        } catch (e) {}
+        }
+      };
+
+      if (!cloudName || cloudName === 'REMPLACE_CECI_PAR_TON_CLOUD_NAME') {
+        fallbackLocal();
+        return;
       }
-    }
+
+      try {
+        const url = `https://res.cloudinary.com/${cloudName}/raw/upload/padelsignature_events.json?t=${Date.now()}`;
+        const response = await fetch(url);
+        
+        if (response.ok) {
+          const data = await response.json();
+          setEvents(data);
+          localStorage.setItem('evenements_list', JSON.stringify(data));
+        } else {
+          fallbackLocal();
+        }
+      } catch (e) {
+        fallbackLocal();
+      }
+    };
+
+    fetchEvents();
   }, []);
 
   return (
@@ -62,7 +87,11 @@ const Evenement = ({ toggleHover }) => {
       </section>
 
       {/* Events List Section */}
-      <section className="section-padding" style={{ background: '#f8f9fa' }}>
+      <section className="section-padding" style={{ 
+        background: 'linear-gradient(135deg, #f4f7f6 0%, #ffffff 100%)',
+        position: 'relative',
+        paddingTop: '40px'
+      }}>
         <div className="container">
           
           {events.length === 0 ? (
@@ -79,62 +108,77 @@ const Evenement = ({ toggleHover }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
+                  whileHover={{ 
+                    y: -5
+                  }}
                   style={{ 
                     display: 'flex', 
                     flexDirection: 'row', 
                     flexWrap: 'wrap', 
-                    gap: '40px', 
+                    gap: '60px', 
                     alignItems: 'center', 
-                    background: 'white', 
-                    padding: '40px', 
-                    borderRadius: '24px', 
-                    boxShadow: '0 15px 40px rgba(10, 35, 24, 0.08)'
+                    background: 'transparent', 
+                    padding: '20px 0', 
+                    transition: 'all 0.4s ease',
+                    position: 'relative'
                   }}
                 >
+
                   {/* Image à gauche */}
-                  <div style={{ flex: '1 1 400px' }}>
+                  <div style={{ flex: '1 1 400px', zIndex: 2 }}>
                     {event.image ? (
-                      <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
-                        <img 
-                          src={event.image} 
-                          alt={event.title} 
-                          style={{ 
-                            width: '100%', 
-                            height: '100%', 
-                            maxHeight: '450px', 
-                            objectFit: 'cover',
-                            display: 'block',
-                            transition: 'transform 0.5s ease'
-                          }} 
-                          onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                          onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        />
-                      </div>
+                      <img 
+                        src={event.image} 
+                        alt={event.title} 
+                        style={{ 
+                          width: '100%', 
+                          maxHeight: '500px', 
+                          objectFit: 'cover',
+                          display: 'block',
+                          borderRadius: '16px'
+                        }} 
+                      />
                     ) : (
-                      <div style={{ width: '100%', height: '300px', background: '#e9ecef', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <span style={{ color: '#adb5bd' }}>Image de l'événement</span>
+                      <div style={{ width: '100%', height: '300px', background: '#f5f5f5', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <span style={{ color: '#aaa' }}>Image de l'événement</span>
                       </div>
                     )}
                   </div>
                   
                   {/* Texte à droite */}
-                  <div style={{ flex: '1 1 400px', paddingRight: '20px' }}>
+                  <div style={{ flex: '1 1 400px', paddingRight: '20px', zIndex: 2 }}>
+                    
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
+                      <img src="/logo.png" alt="Padel Signature" style={{ height: '30px', objectFit: 'contain' }} />
+                      <span style={{
+                        color: '#d4af37',
+                        fontSize: '0.85rem',
+                        fontWeight: 'bold',
+                        letterSpacing: '2px',
+                        textTransform: 'uppercase',
+                        borderLeft: '1px solid rgba(212, 175, 55, 0.5)',
+                        paddingLeft: '15px'
+                      }}>
+                        Exclusivité
+                      </span>
+                    </div>
+
                     <h2 style={{ 
                       color: '#0a2318', 
                       marginBottom: '20px', 
-                      fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-                      lineHeight: '1.2',
-                      textTransform: 'uppercase',
-                      fontWeight: '800'
+                      fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
+                      lineHeight: '1.1',
+                      fontFamily: 'serif',
+                      fontWeight: '700'
                     }}>
                       {event.title}
                     </h2>
                     
                     <div style={{ 
-                      width: '60px', 
-                      height: '4px', 
-                      background: '#d4af37', 
-                      marginBottom: '25px',
+                      width: '80px', 
+                      height: '3px', 
+                      background: 'linear-gradient(90deg, #d4af37, transparent)', 
+                      marginBottom: '30px',
                       borderRadius: '2px'
                     }}></div>
 
@@ -143,7 +187,8 @@ const Evenement = ({ toggleHover }) => {
                       fontSize: '1.15rem', 
                       lineHeight: '1.8', 
                       whiteSpace: 'pre-wrap',
-                      marginBottom: '0'
+                      marginBottom: '0',
+                      fontWeight: '400'
                     }}>
                       {event.text}
                     </p>
