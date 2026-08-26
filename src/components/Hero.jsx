@@ -6,7 +6,7 @@ const Hero = ({ heroRef, toggleHover }) => {
   return (
     <header className="hero" ref={heroRef} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
       <div className="hero-fullscreen-bg">
-        <img src="/homePage.jpeg" alt="Padel Signature Montauban" />
+        <video src="/ImagePadelSignature.mov" autoPlay loop muted playsInline></video>
         <div className="hero-overlay"></div>
       </div>
 
