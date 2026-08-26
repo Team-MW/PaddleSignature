@@ -74,7 +74,7 @@ const InfosPage = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium infos-hero with-bg" style={{ backgroundImage: 'url("/encore-nos-terrains.png")' }}>
+      <section className="page-hero-premium infos-hero with-bg" style={{ backgroundImage: 'url("/encore-nos-terrains.avif")' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

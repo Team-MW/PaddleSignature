@@ -40,7 +40,7 @@ const Club = ({ toggleHover }) => {
       {/* Hero Section */}
       <section
         className="page-hero-premium club-hero with-bg"
-        style={{ backgroundImage: 'url("/bar.png")' }}
+        style={{ backgroundImage: 'url("/bar.avif")' }}
       >
         <div className="container">
           <motion.div
@@ -82,7 +82,7 @@ const Club = ({ toggleHover }) => {
               </div>
             </div>
             <div className="club-visual-wrapper">
-              <img src="/projet-presentation.png" alt="Padel High Performance" className="club-img-main" />
+              <img src="/projet-presentation.avif" alt="Padel High Performance" className="club-img-main" />
               <div className="visual-accent-card" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
                 <Star className="terracotta-accent" size={24} />
                 <p className="serif">Expérience Certifiée</p>
@@ -112,7 +112,7 @@ const Club = ({ toggleHover }) => {
             ["Convivialité", "Un clubhouse à l'étage avec vue sur les courts."],
             ["Communauté", "Des tournois et des rendez-vous tout au long de l'année."]
           ]}
-          img="/encore-nos-terrains.png"
+          img="/encore-nos-terrains.avif"
           toggleHover={toggleHover}
         />
 
@@ -126,7 +126,7 @@ const Club = ({ toggleHover }) => {
             ["Vestiaires équipés", "Casiers, douches et tout le confort avant et après le jeu."],
             ["Accès autonome", "Le club reste ouvert 24h/24, vous entrez par QR code."]
           ]}
-          img="/casier.png"
+          img="/casier.avif"
           reverse={true}
           toggleHover={toggleHover}
         />
@@ -141,7 +141,7 @@ const Club = ({ toggleHover }) => {
             ["Snacking", "De quoi se restaurer avant comme après le jeu."],
             ["Esprit sport", "Les grands événements diffusés en direct."]
           ]}
-          img="/salle-de-pause.png"
+          img="/salle-de-pause.avif"
           toggleHover={toggleHover}
         />
 
@@ -152,7 +152,7 @@ const Club = ({ toggleHover }) => {
           rule="Ni surface ni capacité ici. On donne les dispositions précises quand les entreprises nous contactent."
           cta="Découvrir nos offres entreprises"
           ctaGhost={true}
-          img="/salle-de-reunion.png"
+          img="/salle-de-reunion.avif"
           reverse={true}
           toggleHover={toggleHover}
         />
@@ -162,7 +162,7 @@ const Club = ({ toggleHover }) => {
           title="Rejoignez la communauté."
           lead="Ici, on se retrouve, on rejoue le match, on partage un verre. C'est ça aussi, le club."
           cta="Nous rejoindre"
-          img="/image-en-plus.png"
+          img="/image-en-plus.avif"
           toggleHover={toggleHover}
         />
       </div>

@@ -18,7 +18,7 @@ export const LogoLoader = () => (
     }}
   >
     <motion.img 
-      src="/Fichier 11.png" 
+      src="/Fichier 11.avif" 
       alt="Padel Signature Loading" 
       initial={{ scale: 0.9, opacity: 0.6 }}
       animate={{ scale: 1, opacity: 1 }}

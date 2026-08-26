@@ -68,7 +68,7 @@ const Tarifs = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium pricing-hero with-bg" style={{ backgroundImage: 'url("/score.png")' }}>
+      <section className="page-hero-premium pricing-hero with-bg" style={{ backgroundImage: 'url("/score.avif")' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

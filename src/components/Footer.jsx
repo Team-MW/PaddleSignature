@@ -18,7 +18,7 @@ const Footer = ({ toggleHover }) => {
         <div className="footer-grid">
           {/* Brand Column */}
           <div className="footer-col brand-col">
-            <img src="/logo.png" alt="Padel Signature Logo" className="footer-logo-img" />
+            <img src="/logo.avif" alt="Padel Signature Logo" className="footer-logo-img" />
             <p className="footer-tagline serif italic">Plus qu'un club. Une Signature.</p>
 
           </div>

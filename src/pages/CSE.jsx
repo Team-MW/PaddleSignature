@@ -43,7 +43,7 @@ const CSE = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium enterprises-hero with-bg" style={{ backgroundImage: 'url("/salle-de-pause-2.png")' }}>
+      <section className="page-hero-premium enterprises-hero with-bg" style={{ backgroundImage: 'url("/salle-de-pause-2.avif")' }}>
         <div className="container">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
@@ -201,7 +201,7 @@ const CSE = ({ toggleHover }) => {
         <div className="container">
            <div className="grid-2 align-center">
             <div className="business-detail-img">
-               <img src="/casier.png" alt="Club Padel Signature Montauban" className="img-premium-border" style={{ borderRadius: '12px' }} />
+               <img src="/casier.avif" alt="Club Padel Signature Montauban" className="img-premium-border" style={{ borderRadius: '12px' }} />
             </div>
             <div className="business-detail-content pl-60">
               <span className="badge-terracotta">Le Complexe</span>

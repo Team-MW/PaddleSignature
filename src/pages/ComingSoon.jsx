@@ -115,7 +115,7 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
         {/* Immersive Ken Burns background effect */}
         <div className="cs-bg-container">
           <motion.img
-            src="/hero-bg.jpg"
+            src="/hero-bg.avif"
             alt="Padel Signature Montauban"
             className="cs-bg-image"
             initial={{ scale: 1.1, y: 0 }}
@@ -155,7 +155,7 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
               onMouseLeave={toggleHover}
             >
               <img
-                src="/logo.png"
+                src="/logo.avif"
                 alt="Padel Signature Logo"
                 className="cs-logo-img"
               />

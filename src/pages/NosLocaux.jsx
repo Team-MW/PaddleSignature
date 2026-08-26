@@ -44,7 +44,7 @@ const NosLocaux = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'url("/projet-presentation.png")' }}>
+      <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'url("/projet-presentation.avif")' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -77,7 +77,7 @@ const NosLocaux = ({ toggleHover }) => {
           "Signalétique claire et élégante",
           "Sanitaires & Douche PMR"
         ]}
-        imageUrl="/doc3.png"
+        imageUrl="/doc3.avif"
       />
 
       {/* Les Terrains */}
@@ -93,7 +93,7 @@ const NosLocaux = ({ toggleHover }) => {
           "Caméras replay HD intelligentes",
           "Scoring électronique intégré"
         ]}
-        imageUrl="/doccument 2.png"
+        imageUrl="/doccument 2.avif"
         reverse={true}
       />
 
@@ -110,7 +110,7 @@ const NosLocaux = ({ toggleHover }) => {
           "Espace Merchandising",
           "Ambiance feutrée et conviviale"
         ]}
-        imageUrl="/retour5.png"
+        imageUrl="/retour5.avif"
       />
 
       {/* Salle VIP */}
@@ -126,7 +126,7 @@ const NosLocaux = ({ toggleHover }) => {
           "Espace climatisé et insonorisé",
           "Service dédié sur demande"
         ]}
-        imageUrl="/doc4.png"
+        imageUrl="/doc4.avif"
         reverse={true}
       />
 

@@ -33,7 +33,7 @@ const Evenement = ({ toggleHover }) => {
         display: 'flex', 
         alignItems: 'center', 
         justifyContent: 'center', 
-        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/salle-de-pause-2.png")',
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/salle-de-pause-2.avif")',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
@@ -120,7 +120,7 @@ const Evenement = ({ toggleHover }) => {
                   <div style={{ flex: '1 1 400px', paddingRight: '20px', zIndex: 2 }}>
                     
                     <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                      <img src="/logo.png" alt="Padel Signature" style={{ height: '30px', objectFit: 'contain' }} />
+                      <img src="/logo.avif" alt="Padel Signature" style={{ height: '30px', objectFit: 'contain' }} />
                       <span style={{
                         color: '#d4af37',
                         fontSize: '0.85rem',

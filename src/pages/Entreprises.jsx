@@ -47,7 +47,7 @@ const Entreprises = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium enterprises-hero with-bg" style={{ backgroundImage: 'url("/salle-de-reunion.png")' }}>
+      <section className="page-hero-premium enterprises-hero with-bg" style={{ backgroundImage: 'url("/salle-de-reunion.avif")' }}>
         <div className="container">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}

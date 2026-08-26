@@ -30,7 +30,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
               onMouseEnter={toggleHover} 
               onMouseLeave={toggleHover}
             >
-              <img src="/logo.png" alt="Padel Signature Logo" style={{ height: '45px', objectFit: 'contain' }} />
+              <img src="/logo.avif" alt="Padel Signature Logo" style={{ height: '45px', objectFit: 'contain' }} />
             </motion.div>
           </Link>
 
@@ -80,7 +80,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
             className="mobile-menu-overlay"
           >
              <div className="mobile-menu-header">
-                <img src="/logo.png" alt="Padel Signature Logo" className="mobile-logo" />
+                <img src="/logo.avif" alt="Padel Signature Logo" className="mobile-logo" />
                 <button className="close-btn" onClick={() => setMobileMenuOpen(false)}><X size={32}/></button>
              </div>
              

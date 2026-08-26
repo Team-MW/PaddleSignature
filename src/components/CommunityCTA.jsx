@@ -53,7 +53,7 @@ const CommunityCTA = () => {
         <div className="community-visual">
           <div className="community-visual-block relative">
             <img 
-              src="/padelsignaturewattapp.png" 
+              src="/padelsignaturewattapp.avif" 
               alt="Application Communauté Padel" 
               className="community-mockup-img" 
             />
