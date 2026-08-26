@@ -40,7 +40,7 @@ const Club = ({ toggleHover }) => {
       {/* Hero Section */}
       <section
         className="page-hero-premium club-hero with-bg"
-        style={{ backgroundImage: 'url("/bar.avif")' }}
+        style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/bar.avif")' }}
       >
         <div className="container">
           <motion.div

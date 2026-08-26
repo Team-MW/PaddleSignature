@@ -44,7 +44,7 @@ const NosLocaux = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'url("/projet-presentation.avif")' }}>
+      <section className="page-hero-premium locaux-hero with-bg" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/projet-presentation.avif")' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
