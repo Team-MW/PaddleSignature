@@ -95,7 +95,7 @@ const ContentBlock = ({
             )}
 
             {cta && (
-              <Link to={ctaLink || "/infos#reservation-form"} className={`btn ${ctaGhost ? 'btn-ghost' : 'btn-primary'} mt-20`} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+              <Link to={ctaLink || "/infos#reservation-form"} className={`btn ${ctaGhost ? 'btn-ghost' : 'btn-primary'} mt-40`} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
                 <span>{cta}</span>
               </Link>
             )}
