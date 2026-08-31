@@ -117,52 +117,54 @@ const Club = ({ toggleHover }) => {
         />
 
         <div className="container" style={{ padding: '4rem 0' }}>
-          <h2 className="serif xl-title mb-10" style={{ fontSize: '3rem' }}>
-            Un lieu pensé <span className="italic" style={{ color: 'var(--terracotta)' }}>pour le jeu.</span>
-          </h2>
-          <p className="mb-40 text-muted" style={{ fontSize: '1.2rem' }}>
-            Tout est pensé pour que vous n'ayez qu'à jouer.
-          </p>
+          <div className="text-center mb-60">
+            <h2 className="serif xl-title mb-10" style={{ fontSize: '3.5rem' }}>
+              Un lieu pensé <span className="italic" style={{ color: 'var(--terracotta)' }}>pour le jeu.</span>
+            </h2>
+            <p className="text-muted" style={{ fontSize: '1.2rem', margin: '0 auto', maxWidth: '600px' }}>
+              Tout est pensé pour que vous n'ayez qu'à jouer.
+            </p>
+          </div>
 
-          <div className="grid-2 gap-60 mt-40">
+          <div className="grid-2 gap-60 mt-40" style={{ alignItems: 'center' }}>
             <div className="features-list-modern">
-              <div className="feature-item-modern" style={{ display: 'flex', gap: '20px', marginBottom: '30px', alignItems: 'flex-start' }}>
-                <div style={{ backgroundColor: 'rgba(235, 94, 62, 0.1)', color: 'var(--terracotta)', padding: '12px', borderRadius: '12px', flexShrink: 0 }}>
-                  <LayoutGrid size={24} />
+              <div className="feature-item-modern" style={{ display: 'flex', gap: '24px', marginBottom: '35px', alignItems: 'flex-start' }}>
+                <div style={{ backgroundColor: 'rgba(164, 87, 41, 0.1)', color: 'var(--terracotta)', padding: '14px', borderRadius: '12px', flexShrink: 0 }}>
+                  <LayoutGrid size={26} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="mb-5" style={{ fontSize: '1.1rem', fontWeight: '600' }}>4 courts panoramiques</h4>
-                  <p className="text-muted m-0">Terrains indoor avec 8,50 m de hauteur.</p>
+                  <h4 className="serif" style={{ fontSize: '1.25rem', fontWeight: '500', marginBottom: '8px', color: 'var(--dark-green)' }}>4 courts panoramiques</h4>
+                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Terrains indoor avec 8,50 m de hauteur.</p>
                 </div>
               </div>
               
-              <div className="feature-item-modern" style={{ display: 'flex', gap: '20px', marginBottom: '30px', alignItems: 'flex-start' }}>
-                <div style={{ backgroundColor: 'rgba(235, 94, 62, 0.1)', color: 'var(--terracotta)', padding: '12px', borderRadius: '12px', flexShrink: 0 }}>
-                  <Video size={24} />
+              <div className="feature-item-modern" style={{ display: 'flex', gap: '24px', marginBottom: '35px', alignItems: 'flex-start' }}>
+                <div style={{ backgroundColor: 'rgba(164, 87, 41, 0.1)', color: 'var(--terracotta)', padding: '14px', borderRadius: '12px', flexShrink: 0 }}>
+                  <Video size={26} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="mb-5" style={{ fontSize: '1.1rem', fontWeight: '600' }}>Vidéo replay et compteur de points</h4>
-                  <p className="text-muted m-0">Deux courts équipés de la vidéo. Le score s'affiche à l'écran et vos plus beaux points sont rejouables juste après le match.</p>
+                  <h4 className="serif" style={{ fontSize: '1.25rem', fontWeight: '500', marginBottom: '8px', color: 'var(--dark-green)' }}>Vidéo replay et compteur</h4>
+                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Deux courts équipés de la vidéo. Le score s'affiche à l'écran et vos plus beaux points sont rejouables.</p>
                 </div>
               </div>
 
-              <div className="feature-item-modern" style={{ display: 'flex', gap: '20px', marginBottom: '30px', alignItems: 'flex-start' }}>
-                <div style={{ backgroundColor: 'rgba(235, 94, 62, 0.1)', color: 'var(--terracotta)', padding: '12px', borderRadius: '12px', flexShrink: 0 }}>
-                  <Box size={24} />
+              <div className="feature-item-modern" style={{ display: 'flex', gap: '24px', marginBottom: '35px', alignItems: 'flex-start' }}>
+                <div style={{ backgroundColor: 'rgba(164, 87, 41, 0.1)', color: 'var(--terracotta)', padding: '14px', borderRadius: '12px', flexShrink: 0 }}>
+                  <Box size={26} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="mb-5" style={{ fontSize: '1.1rem', fontWeight: '600' }}>Vestiaires équipés</h4>
-                  <p className="text-muted m-0">Casiers, douches et tout le confort avant et après le jeu.</p>
+                  <h4 className="serif" style={{ fontSize: '1.25rem', fontWeight: '500', marginBottom: '8px', color: 'var(--dark-green)' }}>Vestiaires équipés</h4>
+                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Casiers, douches et tout le confort avant et après le jeu.</p>
                 </div>
               </div>
 
-              <div className="feature-item-modern" style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                <div style={{ backgroundColor: 'rgba(235, 94, 62, 0.1)', color: 'var(--terracotta)', padding: '12px', borderRadius: '12px', flexShrink: 0 }}>
-                  <QrCode size={24} />
+              <div className="feature-item-modern" style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
+                <div style={{ backgroundColor: 'rgba(164, 87, 41, 0.1)', color: 'var(--terracotta)', padding: '14px', borderRadius: '12px', flexShrink: 0 }}>
+                  <QrCode size={26} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h4 className="mb-5" style={{ fontSize: '1.1rem', fontWeight: '600' }}>Accès autonome</h4>
-                  <p className="text-muted m-0">Le club reste ouvert 24h/24, vous entrez par QR code.</p>
+                  <h4 className="serif" style={{ fontSize: '1.25rem', fontWeight: '500', marginBottom: '8px', color: 'var(--dark-green)' }}>Accès autonome</h4>
+                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Le club reste ouvert 24h/24, vous entrez par QR code.</p>
                 </div>
               </div>
             </div>
@@ -208,7 +210,7 @@ const Club = ({ toggleHover }) => {
           rule="Ni surface ni capacité ici. On donne les dispositions précises quand les entreprises nous contactent."
           cta="Découvrir nos offres entreprises"
           ctaGhost={true}
-          img="/salle-de-reunion.avif"
+          img="/salle-de-seminaire.jpeg"
           reverse={true}
           toggleHover={toggleHover}
         />

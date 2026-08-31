@@ -92,7 +92,7 @@ const EntrepriseEvenements = () => {
             </button>
           </div>
 
-          <div className="timeline-container mx-auto" style={{ maxWidth: '500px' }}>
+          <div className="timeline-container" style={{ maxWidth: '600px', margin: '0 auto' }}>
             {tabsData[activeTab].map((item, index) => (
               <div className="timeline-item" key={index}>
                 <div className="timeline-time">{item.time}</div>
@@ -104,11 +104,11 @@ const EntrepriseEvenements = () => {
             ))}
           </div>
           
-          <p className="text-muted mb-40 text-center mx-auto" style={{ fontSize: '0.85rem', fontStyle: 'italic', borderTop: '1px solid var(--border)', paddingTop: '1.5rem', maxWidth: '500px' }}>
+          <p className="text-muted mb-40 text-center" style={{ fontSize: '0.85rem', fontStyle: 'italic', borderTop: '1px solid var(--border)', paddingTop: '1.5rem', maxWidth: '600px', margin: '2rem auto 2.5rem auto' }}>
             Trois formats parmi d'autres. On construit le vôtre selon votre durée, votre effectif et vos objectifs.
           </p>
           
-          <div className="premium-list mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '500px' }}>
+          <div className="premium-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '600px', margin: '0 auto' }}>
             <div className="business-card-premium" style={{ padding: '1.5rem', background: 'transparent', border: '1px solid var(--border)', borderRadius: '8px', boxShadow: 'none' }}>
               <h4 className="serif mb-10 text-center" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Les terrains</h4>
               <p className="text-muted text-center" style={{ fontSize: '0.9rem' }}>De 1 à 4 terrains pendant 1h30. Raquettes, balles et boissons comprises. Vos visuels sur les écrans du club.</p>

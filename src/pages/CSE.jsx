@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Gift, FileText, Unlock, Wallet, MessageSquare, FileSignature, Play, MapPin, HelpCircle, ChevronDown, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
-import BusinessCTA from '../components/BusinessCTA';
 
 const faqData = [
   {
@@ -201,7 +200,7 @@ const CSE = ({ toggleHover }) => {
         <div className="container">
            <div className="grid-2 align-center">
             <div className="business-detail-img">
-               <img src="/casier.avif" alt="Club Padel Signature Montauban" className="img-premium-border" style={{ borderRadius: '12px' }} />
+               <img src="/accesautonome.jpeg" alt="Club Padel Signature Montauban - Accès 24h/24" className="img-premium-border" style={{ borderRadius: '12px' }} />
             </div>
             <div className="business-detail-content pl-60">
               <span className="badge-terracotta">Le Complexe</span>
@@ -281,7 +280,6 @@ const CSE = ({ toggleHover }) => {
         </div>
       </section>
 
-      <BusinessCTA />
     </>
   );
 };
