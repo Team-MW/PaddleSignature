@@ -53,11 +53,11 @@ const Preloader = () => {
     const handleLoad = () => setLoading(false);
 
     if (document.readyState === 'complete') {
-      const timer = setTimeout(() => setLoading(false), 800);
+      const timer = setTimeout(() => setLoading(false), 1800);
       return () => clearTimeout(timer);
     } else {
       window.addEventListener('load', handleLoad);
-      const timeout = setTimeout(() => setLoading(false), 3000);
+      const timeout = setTimeout(() => setLoading(false), 4000);
       return () => {
         window.removeEventListener('load', handleLoad);
         clearTimeout(timeout);

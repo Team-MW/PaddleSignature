@@ -56,6 +56,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Image loader placeholder */
+img:not([src*=".svg"]):not([src*="logo.avif"]):not([src*="Fichier"]) {
+  background-image: url('/Fichier 11.avif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-color: transparent;
+}
+
 /* Grainy Texture */
 body::before {
   content: "";
@@ -3885,11 +3894,11 @@ section {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--dark-green);
+  background-color: var(--cream);
   z-index: 99999;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--dark-green);
   overflow: hidden;
 }
 
@@ -3902,7 +3911,7 @@ section {
 
 .eb-logo {
   font-size: 1.5rem;
-  color: white;
+  color: var(--dark-green);
 }
 
 .eb-logo-link {
@@ -3913,13 +3922,13 @@ section {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
 }
 
 .eb-close-btn {
   background: none;
   border: none;
-  color: white;
+  color: var(--dark-green);
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.3s ease;
@@ -3964,7 +3973,7 @@ section {
   letter-spacing: -0.02em;
   margin-bottom: 3rem;
   line-height: 1.1;
-  color: white;
+  color: var(--dark-green);
 }
 
 .eb-counter-wrapper {
@@ -3979,9 +3988,9 @@ section {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  background: transparent;
+  border: 1px solid var(--terracotta);
+  color: var(--terracotta);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3991,7 +4000,7 @@ section {
 
 .eb-counter-btn:hover:not(:disabled) {
   background: var(--terracotta);
-  border-color: var(--terracotta);
+  color: white;
   transform: scale(1.05);
 }
 
@@ -4017,7 +4026,7 @@ section {
 .eb-counter-unit {
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -4029,9 +4038,9 @@ section {
 }
 
 .eb-choice-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
+  background: transparent;
+  border: 1px solid var(--terracotta);
+  color: var(--terracotta);
   padding: 1.5rem 3rem;
   font-family: var(--font-sans);
   font-size: 1.1rem;
@@ -4042,24 +4051,24 @@ section {
 }
 
 .eb-choice-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(164, 87, 41, 0.05);
 }
 
 .eb-choice-btn.active {
   background: var(--terracotta);
-  border-color: var(--terracotta);
+  color: white;
 }
 
 .eb-hint {
   font-family: var(--font-sans);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-muted);
   font-size: 1.1rem;
   font-weight: 400;
 }
 
 .eb-footer {
   padding: 2rem 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(27, 52, 43, 0.1);
 }
 
 .eb-footer-inner {
@@ -4076,7 +4085,7 @@ section {
   gap: 0.5rem;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   font-family: var(--font-sans);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
@@ -4085,7 +4094,7 @@ section {
 }
 
 .eb-nav-btn:hover {
-  color: white;
+  color: var(--dark-green);
 }
 
 .eb-nav-btn.next {
@@ -4116,17 +4125,17 @@ section {
 .eb-input-label {
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--dark-green);
   margin-bottom: 0.5rem;
 }
 
 .eb-text-input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: white;
+  border: 1px solid rgba(27, 52, 43, 0.2);
   border-radius: 8px;
   padding: 1.2rem 1.5rem;
-  color: white;
+  color: var(--dark-green);
   font-family: var(--font-sans);
   font-size: 1.1rem;
   transition: border-color 0.3s ease;
@@ -4138,15 +4147,14 @@ section {
 }
 
 .eb-text-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(27, 52, 43, 0.3);
 }
 
 .eb-success-icon {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: rgba(164, 87, 41, 0.2);
-  /* Terracotta transparent */
+  background: rgba(164, 87, 41, 0.1);
   color: var(--terracotta);
   display: flex;
   align-items: center;

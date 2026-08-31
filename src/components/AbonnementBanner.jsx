@@ -37,7 +37,7 @@ const AbonnementBanner = ({ toggleHover }) => {
         <div className="eq-divider"></div>
         <div className="eq-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="eq-icon"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-          <span className="eq-text-main">Test raquette <strong className="eq-price">10 €</strong></span>
+          <span className="eq-text-main">Test raquette haut de gamme <strong className="eq-price">10 €</strong></span>
           <span className="eq-text-sub">déduit si achat</span>
         </div>
         <div className="eq-divider"></div>
