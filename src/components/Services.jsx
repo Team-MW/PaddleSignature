@@ -158,7 +158,7 @@ const Services = ({ toggleHover }) => {
             title="46 places de parking" 
             description="Un parking gratuit sur place, place PMR et vélos."
             onHover={toggleHover}
-            image="/espaces.avif"
+            image="/parking.jpeg"
           />
           <SignatureCard 
             delay={0.6}

@@ -14,6 +14,7 @@ const ContentBlock = ({
   cards,
   flags,
   cta,
+  ctaLink,
   ctaGhost,
   img,
   price,
@@ -44,7 +45,6 @@ const ContentBlock = ({
                     <strong className="list-title">{item[0]}</strong>
                     {item[1] && (
                       <span className="list-desc">
-                        <span className="list-dash">- </span>
                         {item[1]}
                       </span>
                     )}
@@ -95,7 +95,7 @@ const ContentBlock = ({
             )}
 
             {cta && (
-              <Link to="/infos#reservation-form" className={`btn ${ctaGhost ? 'btn-ghost' : 'btn-primary'} mt-20`} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+              <Link to={ctaLink || "/infos#reservation-form"} className={`btn ${ctaGhost ? 'btn-ghost' : 'btn-primary'} mt-20`} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
                 <span>{cta}</span>
               </Link>
             )}

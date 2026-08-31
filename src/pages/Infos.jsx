@@ -137,8 +137,7 @@ const InfosPage = ({ toggleHover }) => {
               title="Accès & Localisation"
               lines={[
                 "1577 Avenue d’Italie, 82000 Montauban",
-                "Zone Albasud - Entrée Directe",
-                "À 5 min du centre-ville"
+                "Zone Albasud - Entrée Directe"
               ]}
             />
             <InfoCard
@@ -146,9 +145,9 @@ const InfosPage = ({ toggleHover }) => {
               icon={Clock}
               title="Horaires d'Ouverture"
               lines={[
-                "Accès App : 06h00 – 00h00",
-                "Bar & Accueil : 09h00 – 22h00",
-                "7j/7 – Toute l'année"
+                "Terrains : 24h/24, 7j/7",
+                "Clubhouse : 11h30-22h (semaine)",
+                "Clubhouse : 10h30-21h (week-end)"
               ]}
             />
             <InfoCard
@@ -156,8 +155,8 @@ const InfosPage = ({ toggleHover }) => {
               icon={Car}
               title="Stationnement"
               lines={[
-                "38 Places Privées & Gratuites",
-                "Accès Sécurisé & Éclairé",
+                "46 places gratuites",
+                "Place PMR",
                 "Stationnement Vélos dédié"
               ]}
             />
@@ -166,9 +165,9 @@ const InfosPage = ({ toggleHover }) => {
               icon={Shield}
               title="Règles du Club"
               lines={[
+                "Accès autonome via Digicode",
                 "Chaussures Propres exigées",
-                "Fair-play & Élégance",
-                "Accès autonome via Digicode"
+                "Fair-play & Élégance"
               ]}
             />
           </div>
@@ -209,7 +208,7 @@ const InfosPage = ({ toggleHover }) => {
                  <Beer size={24} />
               </div>
               <h4 className="serif" style={{ fontSize: '1.3rem', marginBottom: '1rem', color: 'var(--text-main)' }}>Le clubhouse</h4>
-              <p className="text-muted" style={{ fontSize: '0.95rem' }}>Ouvert de 9h00 à 22h30.</p>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>11h30 à 22h en semaine, 10h30 à 21h le week-end.</p>
             </div>
           </div>
         </div>

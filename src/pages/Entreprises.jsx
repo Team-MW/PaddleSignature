@@ -55,12 +55,12 @@ const Entreprises = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="hero-text-center"
           >
-            <span className="badge-terracotta">Business & Performance</span>
-            <h1 className="serif h1-b2b-hero">
+            <span className="badge-terracotta" style={{ marginBottom: '2rem', display: 'inline-block' }}>Business & Performance</span>
+            <h1 className="serif h1-b2b-hero" style={{ marginBottom: '2rem' }}>
               Le padel, nouveau terrain <br/>
               <span className="italic">de jeu de votre entreprise.</span>
             </h1>
-            <p className="hero-subline">
+            <p className="hero-subline" style={{ marginBottom: '3rem' }}>
               Recevoir vos clients, fédérer vos équipes, faire rayonner votre marque.
             </p>
             <Link 

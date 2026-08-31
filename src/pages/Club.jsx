@@ -61,60 +61,10 @@ const Club = ({ toggleHover }) => {
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section className="philosophy-section section-padding">
-        <div className="container">
-          <div className="grid-asym-2 align-center">
-            <div className="club-story-content">
-              <span className="badge-terracotta">Notre Vision</span>
-              <h2 className="serif xl-title">Clément Rouanet & <br />Hugo Briand, <br /><span className="italic">Le Duo Fondateur.</span></h2>
-              <p className="mb-40">Plus qu’un sport, Clément et Hugo ont vu dans le Padel un véritable vecteur de lien social et de performance. Leur ambition ? Créer un lieu où chaque détail, de l'accueil au bar panoramique, respire la qualité.</p>
-
-              <div className="founders-stat-grid">
-                <div className="stat-item-premium">
-                  <span className="serif stat-num">04</span>
-                  <span className="stat-label">Terrains Panoramiques</span>
-                </div>
-                <div className="stat-item-premium">
-                  <span className="serif stat-num">09m</span>
-                  <span className="stat-label">De Hauteur Utile</span>
-                </div>
-              </div>
-            </div>
-            <div className="club-visual-wrapper">
-              <img src="/projet-presentation.avif" alt="Padel High Performance" className="club-img-main" />
-              <div className="visual-accent-card" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-                <Star className="terracotta-accent" size={24} />
-                <p className="serif">Expérience Certifiée</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
 
 
-      {/* Nouveaux Contenus (JSON) */}
-      <div style={{ background: 'var(--cream)', paddingTop: '4rem' }}>
-        <div className="text-center mb-60">
-          <span className="badge-terracotta">Le Club, raconté</span>
-          <h2 className="serif xl-title">L'Essentiel.</h2>
-
-        </div>
-
-        <ContentBlock
-          eyebrow="Notre ADN"
-          title="L'alliance du style et de la performance."
-          quote="Quatre terrains, un clubhouse à l'étage, et de quoi rester après le match."
-          list={[
-            ["Excellence", "Des terrains de compétition dans un cadre soigné."],
-            ["Convivialité", "Un clubhouse à l'étage avec vue sur les courts."],
-            ["Communauté", "Des tournois et des rendez-vous tout au long de l'année."]
-          ]}
-          img="/encore-nos-terrains.avif"
-          toggleHover={toggleHover}
-        />
 
         <div className="container" style={{ padding: '4rem 0' }}>
           <div className="text-center mb-60">
@@ -207,9 +157,9 @@ const Club = ({ toggleHover }) => {
           eyebrow="Espace privé"
           title="Une salle pour vos réunions et vos événements."
           lead="Une salle privatisable avec vue sur les courts. Réunions, séminaires, événements d'équipe, on s'adapte à vos besoins."
-          rule="Ni surface ni capacité ici. On donne les dispositions précises quand les entreprises nous contactent."
           cta="Découvrir nos offres entreprises"
-          ctaGhost={true}
+          ctaGhost={false}
+          ctaLink="/entreprises"
           img="/salle-de-seminaire.jpeg"
           reverse={true}
           toggleHover={toggleHover}
