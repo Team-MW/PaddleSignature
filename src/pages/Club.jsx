@@ -173,7 +173,6 @@ const Club = ({ toggleHover }) => {
           img="/image-en-plus.avif"
           toggleHover={toggleHover}
         />
-      </div>
       {/* Club FAQ */}
       <section className="faq-section section-padding">
         <div className="container">
