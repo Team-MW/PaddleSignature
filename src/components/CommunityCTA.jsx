@@ -4,7 +4,7 @@ import { MessageCircle, Users, Clock, Trophy, Info } from 'lucide-react'; // Ass
 
 const CommunityCTA = () => {
   return (
-    <section className="community-section" style={{ paddingTop: '2rem' }}>
+    <section className="community-section" style={{ paddingTop: '2rem', backgroundColor: '#FFFFFF' }}>
       <div className="container community-flex-container">
         
         {/* Left Content */}
@@ -56,7 +56,7 @@ const CommunityCTA = () => {
               src="/wattapp.jpg" 
               alt="Application Communauté Padel" 
               className="community-mockup-img"
-              style={{ maxWidth: '350px', width: '100%', height: 'auto', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+              style={{ maxWidth: '350px', width: '100%', height: 'auto', borderRadius: '24px', boxShadow: 'none' }}
             />
           </div>
         </div>

@@ -26,19 +26,19 @@ const EntrepriseEspaces = () => {
           
           <div className="espaces-stats-grid">
             <div className="stat-item">
-              <div className="serif stat-number">4</div>
+              <div className="stat-number">4</div>
               <div className="stat-label">terrains</div>
             </div>
             <div className="stat-item">
-              <div className="serif stat-number">1</div>
+              <div className="stat-number">1</div>
               <div className="stat-label">salle séminaire</div>
             </div>
             <div className="stat-item">
-              <div className="serif stat-number">1</div>
+              <div className="stat-number">1</div>
               <div className="stat-label">clubhouse</div>
             </div>
             <div className="stat-item">
-              <div className="serif stat-number">46</div>
+              <div className="stat-number">46</div>
               <div className="stat-label">places parking</div>
             </div>
           </div>

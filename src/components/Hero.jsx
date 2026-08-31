@@ -34,32 +34,32 @@ const Hero = ({ heroRef, toggleHover }) => {
 
           <div className="desktop-only" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginTop: '4rem', opacity: '0.9' }}>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>4</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>4</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>TERRAINS PANORAMIQUES</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>9 m</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>9 m</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SOUS PLAFOND</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>1</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>1</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>CLUBHOUSE À L'ÉTAGE</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>1</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>1</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SALLE SÉMINAIRE</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>46</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>46</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>PLACES DE PARKING</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-serif)', color: 'white' }}>24h/24</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>24h/24</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>7J/7 · TOUTE L'ANNÉE</div>
             </div>
           </div>

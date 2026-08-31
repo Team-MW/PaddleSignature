@@ -9,7 +9,7 @@ const Identity = ({ toggleHover, yParallax }) => {
         <div className="grid-2 align-center">
           <div className="identity-visual relative">
             <motion.div style={{ y: yParallax }} className="parallax-img-wrapper">
-              <img src="/nos-terrains.avif" alt="Padel Spirit" className="img-premium-border" />
+              <img src="/image-asmettre.jpeg" alt="Padel Spirit" className="img-premium-border" />
             </motion.div>
             <div className="floating-stat" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
               <span className="serif stat-xl">100%</span>
@@ -34,10 +34,9 @@ const Identity = ({ toggleHover, yParallax }) => {
                 </div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.4rem' }}>
-                    <span style={{ width: '24px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
                     <h4 style={{ color: 'var(--dark-green)', fontWeight: '700', fontSize: '1.3rem', margin: 0 }}>Excellence</h4>
                   </div>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '31px' }}>Des terrains de compétition dans un cadre soigné.</p>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '0' }}>Des terrains de compétition dans un cadre soigné.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
@@ -46,10 +45,9 @@ const Identity = ({ toggleHover, yParallax }) => {
                 </div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.4rem' }}>
-                    <span style={{ width: '24px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
                     <h4 style={{ color: 'var(--dark-green)', fontWeight: '700', fontSize: '1.3rem', margin: 0 }}>Convivialité</h4>
                   </div>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '31px' }}>Un clubhouse à l'étage avec vue sur les courts.</p>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '0' }}>Un clubhouse à l'étage avec vue sur les courts.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5rem' }}>
@@ -58,10 +56,9 @@ const Identity = ({ toggleHover, yParallax }) => {
                 </div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', marginBottom: '0.4rem' }}>
-                    <span style={{ width: '24px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
                     <h4 style={{ color: 'var(--dark-green)', fontWeight: '700', fontSize: '1.3rem', margin: 0 }}>Communauté</h4>
                   </div>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '31px' }}>Des tournois et des rendez-vous tout au long de l'année.</p>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginLeft: '0' }}>Des tournois et des rendez-vous tout au long de l'année.</p>
                 </div>
               </div>
             </div>

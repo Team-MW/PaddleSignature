@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Minus, Plus, X, CheckCircle2, Handshake, ClipboardList, Moon, Trophy } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
 
 const EventBuilder = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const totalSteps = 9; 
 
   const [formData, setFormData] = useState({
@@ -27,12 +29,42 @@ const EventBuilder = () => {
     window.scrollTo(0, 0);
   }, [step]);
 
-  const handleNext = () => {
-    if (step < totalSteps) setStep(step + 1);
+  const handleNext = async () => {
+    if (step === 8) {
+      setIsSubmitting(true);
+      try {
+        await emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_B2B_ID || import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            format: formData.format,
+            participants: formData.participants,
+            date: formData.date,
+            duree: formData.duree,
+            restauration: formData.restauration,
+            entreprise: formData.entreprise,
+            poste: formData.poste,
+            nom: formData.nom,
+            email: formData.email,
+            telephone: formData.telephone,
+            details: formData.details || 'Aucun détail'
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+        setStep(step + 1);
+      } catch (error) {
+        console.error("Erreur d'envoi :", error);
+        alert("Une erreur est survenue lors de l'envoi de votre demande. Veuillez réessayer ou nous contacter par téléphone.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    } else if (step < totalSteps) {
+      setStep(step + 1);
+    }
   };
 
   const handlePrev = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > 1 && !isSubmitting) setStep(step - 1);
   };
 
   const updateForm = (key, value) => {
@@ -396,6 +428,7 @@ const EventBuilder = () => {
               className="eb-nav-btn next" 
               onClick={handleNext}
               disabled={
+                isSubmitting ||
                 (step === 1 && !formData.format) || 
                 (step === 3 && !formData.date) || 
                 (step === 4 && !formData.duree) || 
@@ -404,7 +437,8 @@ const EventBuilder = () => {
                 (step === 7 && (!formData.nom || !formData.email || !formData.telephone))
               }
             >
-              {step === 8 ? 'Envoyer ma demande' : 'Suivant'} {step < 8 && <ChevronRight size={20} />}
+              {step === 8 ? (isSubmitting ? 'Envoi...' : 'Envoyer ma demande') : 'Suivant'} 
+              {step < 8 && <ChevronRight size={20} />}
             </button>
           </div>
         </footer>

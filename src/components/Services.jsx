@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Coffee, Users, Briefcase, Car, Clock } from 'lucide-react';
 
-const SignatureCard = ({ icon: Icon, title, description, delay, onHover, number, isHighlighted }) => (
+const SignatureCard = ({ icon: Icon, title, description, delay, onHover, number, image }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -11,28 +11,34 @@ const SignatureCard = ({ icon: Icon, title, description, delay, onHover, number,
     onMouseEnter={onHover}
     onMouseLeave={onHover}
     style={{
-      backgroundColor: isHighlighted ? 'white' : 'transparent',
-      color: isHighlighted ? 'var(--terracotta)' : 'white',
+      backgroundImage: image ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${image})` : 'var(--terracotta)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      color: 'white',
       padding: '25px 20px',
       position: 'relative',
-      border: isHighlighted ? 'none' : '1px solid rgba(255, 255, 255, 0.3)',
+      border: 'none',
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '220px',
+      minHeight: '260px',
       borderRadius: '12px',
-      transition: 'all 0.3s ease'
+      transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+      overflow: 'hidden',
+      cursor: 'pointer'
     }}
+    whileHover={{ transform: 'translateY(-5px)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}
   >
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', zIndex: 2 }}>
       <div style={{
         width: '45px',
         height: '45px',
         borderRadius: '50%',
-        backgroundColor: isHighlighted ? 'rgba(164, 87, 41, 0.1)' : 'rgba(255, 255, 255, 0.15)',
+        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        backdropFilter: 'blur(4px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: isHighlighted ? 'var(--terracotta)' : 'white',
+        color: 'white',
       }}>
         <Icon size={20} strokeWidth={1.5} />
       </div>
@@ -41,7 +47,7 @@ const SignatureCard = ({ icon: Icon, title, description, delay, onHover, number,
       <div style={{
         fontFamily: 'var(--font-handwriting)',
         fontSize: '3rem',
-        color: isHighlighted ? 'rgba(164, 87, 41, 0.3)' : 'rgba(255, 255, 255, 0.4)',
+        color: 'rgba(255, 255, 255, 0.5)',
         lineHeight: 0.8,
         transform: 'rotate(-8deg)'
       }}>
@@ -49,16 +55,16 @@ const SignatureCard = ({ icon: Icon, title, description, delay, onHover, number,
       </div>
     </div>
     
-    <div style={{ marginTop: 'auto' }}>
-      <h3 className="serif" style={{ fontSize: '1.6rem', marginBottom: '8px', fontWeight: '500', color: 'inherit' }}>{title}</h3>
+    <div style={{ marginTop: 'auto', zIndex: 2 }}>
+      <h3 className="serif" style={{ fontSize: '1.6rem', marginBottom: '8px', fontWeight: '500', color: 'white' }}>{title}</h3>
       <p style={{ 
         fontFamily: 'var(--font-sans)',
         fontSize: '0.9rem', 
-        opacity: 0.95, 
+        opacity: 0.9, 
         lineHeight: 1.4, 
         margin: 0,
         fontWeight: '300',
-        color: 'inherit'
+        color: 'white'
       }}>{description}</p>
     </div>
   </motion.div>
@@ -116,7 +122,7 @@ const Services = ({ toggleHover }) => {
             title="Les terrains" 
             description="Quatre courts panoramiques indoor, 9 m sous plafond."
             onHover={toggleHover}
-            isHighlighted={true}
+            image="/nos-terrains.avif"
           />
           <SignatureCard 
             delay={0.2}
@@ -125,7 +131,7 @@ const Services = ({ toggleHover }) => {
             title="Le clubhouse" 
             description="À l'étage, avec vue sur les courts et un comptoir terracotta."
             onHover={toggleHover}
-            isHighlighted={false}
+            image="/bar.avif"
           />
           <SignatureCard 
             delay={0.3}
@@ -134,7 +140,7 @@ const Services = ({ toggleHover }) => {
             title="La salle séminaire" 
             description="Un espace privatisable pour vos réunions et vos événements."
             onHover={toggleHover}
-            isHighlighted={false}
+            image="/salle-de-seminaire.jpeg"
           />
           <SignatureCard 
             delay={0.4}
@@ -143,7 +149,7 @@ const Services = ({ toggleHover }) => {
             title="Vestiaires" 
             description="Casiers et douches, tout le confort avant et après le jeu."
             onHover={toggleHover}
-            isHighlighted={false}
+            image="/casier.avif"
           />
           <SignatureCard 
             delay={0.5}
@@ -152,7 +158,7 @@ const Services = ({ toggleHover }) => {
             title="46 places de parking" 
             description="Un parking gratuit sur place, place PMR et vélos."
             onHover={toggleHover}
-            isHighlighted={false}
+            image="/espaces.avif"
           />
           <SignatureCard 
             delay={0.6}
@@ -161,7 +167,7 @@ const Services = ({ toggleHover }) => {
             title="Accès 24h/24" 
             description="Vous entrez par QR code, à toute heure, en autonomie."
             onHover={toggleHover}
-            isHighlighted={false}
+            image="/accesautonome.jpeg"
           />
         </div>
       </div>
