@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Satisfy&display=swap');
 
 :root {
   /* Colors */
@@ -18,7 +18,7 @@
 
   /* Fonts */
   --font-serif: 'Cormorant Garamond', serif;
-  --font-sans: 'DM Sans', sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-handwriting: 'Satisfy', cursive;
 
   /* Animation/Transitions */
@@ -29,6 +29,9 @@
 
   /* Spacing */
   --section-padding: 12rem;
+  
+  /* Border Radius */
+  --radius: 8px;
 }
 
 /* 1. Global Reset & Base */
@@ -287,7 +290,7 @@ section {
   align-items: center;
   justify-content: center;
   padding: 1.2rem 3rem;
-  border-radius: 0;
+  border-radius: var(--radius);
   font-weight: 500;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
@@ -3487,7 +3490,7 @@ section {
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid var(--terracotta);
-  border-radius: 0px;
+  border-radius: var(--radius);
   /* Sharp premium edges */
   padding: 5rem 4rem;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
@@ -3588,6 +3591,7 @@ section {
   flex: 1;
   border: 1px solid rgba(17, 66, 50, 0.2);
   background: var(--white);
+  border-radius: var(--radius);
   transition: border-color 0.4s ease;
 }
 
@@ -3601,6 +3605,7 @@ section {
   gap: 0;
   border: 1px solid rgba(17, 66, 50, 0.2);
   background: var(--white);
+  border-radius: var(--radius);
   transition: border-color 0.4s ease;
 }
 
@@ -3636,7 +3641,7 @@ section {
 }
 
 .cs-submit-btn {
-  border-radius: 0;
+  border-radius: var(--radius);
   border: none;
   background: var(--terracotta);
   color: white;

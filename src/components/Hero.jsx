@@ -19,9 +19,9 @@ const Hero = ({ heroRef, toggleHover }) => {
           <div style={{ textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.85rem', marginBottom: '1.5rem' }}>
             BIENVENUE CHEZ PADEL SIGNATURE
           </div>
-          <h1 className="serif" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', marginBottom: '1.5rem', lineHeight: '1.1' }}>
-            Un club. <br />
-            <span className="italic" style={{ color: 'var(--terracotta)' }}>Une signature.</span>
+          <h1 className="serif" style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', marginBottom: '1.5rem', lineHeight: '1.1', fontWeight: 'normal' }}>
+            Un club <br />
+            <span style={{ fontFamily: 'var(--font-handwriting)', color: 'var(--terracotta)', display: 'inline-block', transform: 'translateY(-10px)' }}>Une signature</span>
           </h1>
           <h2 className="hero-desc-centered" style={{ maxWidth: '800px', fontSize: '1.25rem', marginBottom: '3rem' }}>
             Le confort du jeu, le plaisir des rencontres, l'émotion du partage. Ici, le padel est plus qu'un sport : une expérience à vivre au cœur de Montauban.
