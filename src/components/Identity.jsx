@@ -9,12 +9,8 @@ const Identity = ({ toggleHover, yParallax }) => {
         <div className="grid-2 align-center">
           <div className="identity-visual relative">
             <motion.div style={{ y: yParallax }} className="parallax-img-wrapper">
-              <img src="/image-asmettre.jpeg" alt="Padel Spirit" className="img-premium-border" />
+              <img src="/espaces.avif" alt="Padel Spirit" className="img-premium-border" />
             </motion.div>
-            <div className="floating-stat" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-              <span className="serif stat-xl">100%</span>
-              <p>Passion</p>
-            </div>
           </div>
           <div className="identity-content pl-60">
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.95rem', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>

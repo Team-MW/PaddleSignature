@@ -95,7 +95,7 @@ const EventBuilder = () => {
       {/* Header */}
       <header className="eb-header">
         <Link to="/" className="eb-logo-link">
-           <span className="serif italic eb-logo">Padel Signature</span>
+           <span className="serif italic eb-logo"><span className="font-padel">Padel</span> <span className="font-signature">Signature</span></span>
         </Link>
         <div className="eb-progress">
            {step < totalSteps ? `${step} / ${totalSteps - 1}` : 'Terminé'}

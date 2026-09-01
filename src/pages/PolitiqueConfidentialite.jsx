@@ -25,7 +25,7 @@ const PolitiqueConfidentialite = () => {
 
             <h2 className="serif" style={{ fontSize: '1.8rem', marginTop: '2rem', marginBottom: '1rem', color: 'var(--terracotta)' }}>1. Collecte des données personnelles</h2>
             <p style={{ marginBottom: '1rem' }}>
-              Les informations recueillies via nos formulaires de contact sont enregistrées dans un fichier informatisé par Padel Signature pour la gestion des demandes de contact et l'envoi d'informations.
+              Les informations recueillies via nos formulaires de contact sont enregistrées dans un fichier informatisé par <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> pour la gestion des demandes de contact et l'envoi d'informations.
             </p>
 
             <h2 className="serif" style={{ fontSize: '1.8rem', marginTop: '2rem', marginBottom: '1rem', color: 'var(--terracotta)' }}>2. Utilisation des données</h2>

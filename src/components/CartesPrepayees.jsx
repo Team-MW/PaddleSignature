@@ -96,9 +96,7 @@ const CartesPrepayees = ({ toggleHover }) => {
           />
         </div>
 
-        <div className="cartes-footer-note">
-          Nombre de parties calculé sur la base d'une partie en heure pleine. En heures creuses, vous en jouez davantage. Tout se passe dans l'application Padel Signature.
-        </div>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '20px' }}>Nombre de parties calculé sur la base d'une partie en heure pleine. En heures creuses, vous en jouez davantage. Tout se passe dans l'application <span className="font-padel">Padel</span> <span className="font-signature">Signature</span>.</p>
 
       </div>
     </section>

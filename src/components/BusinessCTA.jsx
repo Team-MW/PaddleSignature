@@ -35,17 +35,17 @@ const BusinessCTA = ({ toggleHover }) => {
               <BusinessFeature 
                 emoji="🎟️" 
                 title="Offre CSE" 
-                text="Des crédits à offrir à vos salariés, une seule facture." 
+                text="Des crédits à offrir à vos salariés, utilisables au club à tarif négocié. Une seule facture pour le CSE." 
               />
               <BusinessFeature 
                 emoji="🤝" 
                 title="Séminaires & Team Building" 
-                text="Une journée clé en main, du café à l'afterwork." 
+                text="Une journée clé en main : salle jusqu’à 16 places assises (en configuration U), barre de visioconférence dernière génération sans fil, terrains et traiteur. Du café à l'afterwork." 
               />
               <BusinessFeature 
                 emoji="📣" 
                 title="Sponsoring" 
-                text="Votre marque sur les terrains, les écrans et nos réseaux." 
+                text="Votre marque sur l'écran géant et les écrans dynamiques du club, un créneau réservé et une forte présence sur nos différents réseaux." 
               />
             </div>
 

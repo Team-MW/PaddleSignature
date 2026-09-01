@@ -19,7 +19,7 @@ const Footer = ({ toggleHover }) => {
           {/* Brand Column */}
           <div className="footer-col brand-col">
             <img src="/logo.avif" alt="Padel Signature Logo" className="footer-logo-img" />
-            <p className="footer-tagline serif italic">Plus qu'un club. Une Signature.</p>
+            <p className="footer-tagline serif italic">Plus qu'un club. Une <span className="font-signature">Signature</span>.</p>
 
           </div>
 
@@ -73,7 +73,7 @@ const Footer = ({ toggleHover }) => {
 
         <div className="footer-bottom">
           <div className="footer-legal">
-            <p>© 2026 Padel Signature SAS. SIREN 995 269 115. Tous droits réservés.</p>
+            <p>© 2026 <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> SAS. SIREN 995 269 115. Tous droits réservés.</p>
             <div className="legal-links">
               <Link to="/mentions-legales" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Mentions Légales</Link>
               <Link to="/politique-confidentialite" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>Politique de confidentialité</Link>

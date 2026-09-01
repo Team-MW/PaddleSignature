@@ -28,7 +28,7 @@ const Sponsoring = ({ toggleHover }) => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
-            Associez votre image au club de Padel le plus premium de Montauban. Devenez partenaire de nos tournois et événements.
+            Associez votre image au club de <span className="font-padel">Padel</span> le plus premium de Montauban. Devenez partenaire de nos tournois et événements.
           </motion.p>
         </div>
       </section>

@@ -1,78 +1,61 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Activity, Coffee, Users, Briefcase, Car, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const SignatureCard = ({ icon: Icon, title, description, delay, onHover, number, image }) => (
+const SignatureCard = ({ title, description, image }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay, duration: 0.6 }}
+    transition={{ duration: 0.6 }}
     viewport={{ once: true }}
-    onMouseEnter={onHover}
-    onMouseLeave={onHover}
     style={{
-      backgroundImage: image ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${image})` : 'var(--terracotta)',
+      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(${image})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       color: 'white',
-      padding: '25px 20px',
+      padding: '30px 25px',
       position: 'relative',
-      border: 'none',
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '260px',
-      borderRadius: '12px',
-      transition: 'transform 0.4s ease, box-shadow 0.4s ease',
+      justifyContent: 'flex-end',
+      minWidth: '320px',
+      height: '420px',
+      borderRadius: '16px',
       overflow: 'hidden',
-      cursor: 'pointer'
+      scrollSnapAlign: 'start',
+      flexShrink: 0
     }}
-    whileHover={{ transform: 'translateY(-5px)', boxShadow: '0 10px 30px rgba(0,0,0,0.2)' }}
   >
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px', zIndex: 2 }}>
-      <div style={{
-        width: '45px',
-        height: '45px',
-        borderRadius: '50%',
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        backdropFilter: 'blur(4px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-      }}>
-        <Icon size={20} strokeWidth={1.5} />
-      </div>
-      
-      {/* Signature style number */}
-      <div style={{
-        fontFamily: 'var(--font-handwriting)',
-        fontSize: '3rem',
-        color: 'rgba(255, 255, 255, 0.5)',
-        lineHeight: 0.8,
-        transform: 'rotate(-8deg)'
-      }}>
-        {number}
-      </div>
-    </div>
-    
-    <div style={{ marginTop: 'auto', zIndex: 2 }}>
-      <h3 className="serif" style={{ fontSize: '1.6rem', marginBottom: '8px', fontWeight: '500', color: 'white' }}>{title}</h3>
-      <p style={{ 
-        fontFamily: 'var(--font-sans)',
-        fontSize: '0.9rem', 
-        opacity: 0.9, 
-        lineHeight: 1.4, 
-        margin: 0,
-        fontWeight: '300',
-        color: 'white'
-      }}>{description}</p>
-    </div>
+    <h3 className="serif" style={{ fontSize: '1.8rem', marginBottom: '10px', fontWeight: '500', color: 'white' }}>{title}</h3>
+    <p style={{ 
+      fontFamily: 'var(--font-sans)',
+      fontSize: '0.95rem', 
+      opacity: 0.9, 
+      lineHeight: 1.4, 
+      margin: 0,
+      fontWeight: '300',
+      color: 'white'
+    }}>{description}</p>
   </motion.div>
 );
 
-const Services = ({ toggleHover }) => {
+const Services = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -340, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 340, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="services" style={{ backgroundColor: 'var(--terracotta)', paddingTop: '5rem', paddingBottom: '5rem' }}>
+    <section id="espaces" style={{ backgroundColor: 'var(--off-white)', paddingTop: '5rem', paddingBottom: '5rem' }}>
       <div className="container" style={{ marginBottom: '3rem' }}>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -80,32 +63,22 @@ const Services = ({ toggleHover }) => {
           viewport={{ once: true }}
           style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}
         >
-          <span style={{ 
-            color: 'white', 
-            textTransform: 'uppercase', 
-            fontSize: '0.75rem', 
-            letterSpacing: '3px', 
-            fontWeight: '600', 
-            display: 'block', 
-            marginBottom: '15px',
-            opacity: 0.95
-          }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: 'bold', fontSize: '0.95rem', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+            <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span> 
             NOS ESPACES
-          </span>
+            <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span>
+          </div>
+          
           <h2 className="serif" style={{ 
-            color: 'white', 
-            fontSize: '3.5rem', 
-            lineHeight: 1, 
+            color: 'var(--dark-green)', 
+            fontSize: 'clamp(2.5rem, 5vw, 4rem)', 
+            lineHeight: 1.1, 
             fontWeight: '400', 
-            margin: '0 0 10px 0' 
+            margin: '0 0 30px 0' 
           }}>
-            Un lieu pensé <br/>
-            <span style={{ 
-              fontFamily: 'var(--font-handwriting)', 
-              fontSize: '4.5rem', 
-              color: 'white', 
-              display: 'inline-block', 
-              transform: 'rotate(-4deg) translateY(-5px)' 
+            Un lieu pensé <span style={{ 
+              fontFamily: 'var(--font-signature)', 
+              color: 'var(--terracotta)'
             }}>
               pour le jeu
             </span>
@@ -113,62 +86,89 @@ const Services = ({ toggleHover }) => {
         </motion.div>
       </div>
 
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+      <div className="container" style={{ position: 'relative' }}>
+        <div 
+          ref={scrollContainerRef}
+          style={{ 
+            display: 'flex', 
+            gap: '20px', 
+            overflowX: 'auto', 
+            scrollBehavior: 'smooth',
+            scrollSnapType: 'x mandatory',
+            paddingBottom: '20px',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+          className="no-scrollbar"
+        >
           <SignatureCard 
-            delay={0.1}
-            number="01."
-            icon={Activity} 
             title="Les terrains" 
             description="Quatre courts panoramiques indoor, 9 m sous plafond."
-            onHover={toggleHover}
-            image="/nos-terrains.avif"
+            image="/encore-nos-terrains.avif"
           />
           <SignatureCard 
-            delay={0.2}
-            number="02."
-            icon={Coffee} 
             title="Le clubhouse" 
             description="À l'étage, avec vue sur les courts et un comptoir terracotta."
-            onHover={toggleHover}
-            image="/bar.avif"
+            image="/salle-de-pause.avif"
           />
           <SignatureCard 
-            delay={0.3}
-            number="03."
-            icon={Users} 
             title="La salle séminaire" 
             description="Un espace privatisable pour vos réunions et vos événements."
-            onHover={toggleHover}
             image="/salle-de-seminaire.jpeg"
           />
           <SignatureCard 
-            delay={0.4}
-            number="04."
-            icon={Briefcase} 
             title="Vestiaires" 
             description="Casiers et douches, tout le confort avant et après le jeu."
-            onHover={toggleHover}
             image="/casier.avif"
           />
           <SignatureCard 
-            delay={0.5}
-            number="05."
-            icon={Car} 
             title="46 places de parking" 
             description="Un parking gratuit sur place, place PMR et vélos."
-            onHover={toggleHover}
             image="/parking.jpeg"
           />
           <SignatureCard 
-            delay={0.6}
-            number="06."
-            icon={Clock} 
             title="Accès 24h/24" 
-            description="Vous entrez par QR code, à toute heure, en autonomie."
-            onHover={toggleHover}
+            description="Par QR code, en dehors des horaires du club house."
             image="/accesautonome.jpeg"
           />
+        </div>
+
+        {/* Navigation Arrows */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
+          <button 
+            onClick={scrollLeft}
+            style={{ 
+              width: '60px', 
+              height: '60px', 
+              borderRadius: '50%', 
+              backgroundColor: 'white', 
+              border: '1px solid var(--terracotta)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              color: 'var(--dark-green)'
+            }}
+          >
+            <ChevronLeft size={30} />
+          </button>
+          <button 
+            onClick={scrollRight}
+            style={{ 
+              width: '60px', 
+              height: '60px', 
+              borderRadius: '50%', 
+              backgroundColor: 'white', 
+              border: '1px solid var(--terracotta)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              color: 'var(--dark-green)'
+            }}
+          >
+            <ChevronRight size={30} />
+          </button>
         </div>
       </div>
     </section>

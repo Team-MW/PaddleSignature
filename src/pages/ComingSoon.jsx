@@ -172,10 +172,10 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
                 <span className="italic font-light" style={{ color: 'var(--terracotta)' }}>disponible</span>
               </h1>
               <p className="cs-tagline serif italic text-center">
-                Plus qu'un club. Une Signature.
+                Plus qu'un club. Une <span className="font-signature">Signature</span>.
               </p>
               <p className="cs-desc text-center">
-                Découvrez votre nouveau complexe de padel indoor à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
+                Découvrez votre nouveau complexe de <span className="font-padel">padel</span> indoor à Montauban. Une expérience unique alliant sport d'excellence et art de vivre.
               </p>
 
               <div style={{ marginTop: '2.5rem', marginBottom: '1rem', display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

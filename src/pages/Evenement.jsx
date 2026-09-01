@@ -50,9 +50,9 @@ const Evenement = ({ toggleHover }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            style={{ color: '#d4af37', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto', fontFamily: 'serif', fontStyle: 'italic' }}
+            style={{ color: '#d4af37', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto', fontFamily: 'var(--font-padel)', fontStyle: 'italic' }}
           >
-            Découvrez l'agenda Padel Signature
+            Découvrez l'agenda <span className="font-padel">Padel</span> <span className="font-signature">Signature</span>
           </motion.p>
         </div>
       </section>
@@ -139,7 +139,7 @@ const Evenement = ({ toggleHover }) => {
                       marginBottom: '20px', 
                       fontSize: 'clamp(2rem, 3.5vw, 2.8rem)',
                       lineHeight: '1.1',
-                      fontFamily: 'serif',
+                      fontFamily: 'var(--font-serif)',
                       fontWeight: '700'
                     }}>
                       {event.title}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import signatureImg from '../assets/images/signature.avif';
 
 const Hero = ({ heroRef, toggleHover }) => {
   return (
@@ -16,15 +17,15 @@ const Hero = ({ heroRef, toggleHover }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div style={{ textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.85rem', marginBottom: '1.5rem' }}>
-            BIENVENUE CHEZ PADEL SIGNATURE
+          <div style={{ textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            UN CLUB UNE <img src={signatureImg} alt="Signature" style={{ height: '2em', objectFit: 'contain' }} />
           </div>
-          <h1 className="serif" style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', marginBottom: '1.5rem', lineHeight: '1.1', fontWeight: 'normal' }}>
-            Un club <br />
-            <span style={{ fontFamily: 'var(--font-handwriting)', color: 'var(--terracotta)', display: 'inline-block', transform: 'translateY(-10px)' }}>Une signature</span>
+          <h1 className="serif" style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', marginBottom: '2.5rem', lineHeight: '1.1', fontWeight: 'normal' }}>
+            Bienvenue chez <span className="font-padel">Padel</span> <br />
+            <img src={signatureImg} alt="Signature" style={{ height: '1.2em', display: 'inline-block', transform: 'translateY(10px)', objectFit: 'contain' }} />
           </h1>
           <h2 className="hero-desc-centered" style={{ maxWidth: '800px', fontSize: '1.25rem', marginBottom: '3rem' }}>
-            Le confort du jeu, le plaisir des rencontres, l'émotion du partage. Ici, le padel est plus qu'un sport : une expérience à vivre au cœur de Montauban.
+            Le confort du jeu, le plaisir des rencontres, l'émotion du partage. Ici, le <span className="font-padel">padel</span> est plus qu'un sport : une expérience à vivre au cœur de Montauban.
           </h2>
           <div className="hero-cta-centered">
             <Link to="/comment-reserver" className="btn" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ backgroundColor: 'var(--terracotta)', color: 'white', padding: '1.2rem 3rem', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 'bold', textDecoration: 'none' }}>
@@ -32,34 +33,34 @@ const Hero = ({ heroRef, toggleHover }) => {
             </Link>
           </div>
 
-          <div className="desktop-only" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginTop: '4rem', opacity: '0.9' }}>
+          <div className="desktop-only" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginTop: '4rem', opacity: '0.9', fontFamily: 'var(--font-padel)' }}>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>4</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>4</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>TERRAINS PANORAMIQUES</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>9 m</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>9 m</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SOUS PLAFOND</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>1</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>1</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>CLUBHOUSE À L'ÉTAGE</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>1</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>1</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SALLE SÉMINAIRE</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>46</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>46</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>PLACES DE PARKING</div>
             </div>
             <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'var(--font-sans)', color: 'white' }}>24h/24</div>
+              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>24h/24</div>
               <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>7J/7 · TOUTE L'ANNÉE</div>
             </div>
           </div>

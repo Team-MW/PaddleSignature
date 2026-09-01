@@ -52,7 +52,7 @@ const CSE = ({ toggleHover }) => {
           >
             <span className="badge-terracotta">Offre CSE</span>
             <h1 className="serif h1-huge">
-              Tickets Padel <br/>
+              Tickets <span className="font-padel">Padel</span> <br/>
               <span className="italic">Pour votre CSE.</span>
             </h1>
             <p className="hero-subline">
@@ -92,7 +92,7 @@ const CSE = ({ toggleHover }) => {
             <div className="business-card-premium" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <Unlock size={32} className="terracotta-accent mb-20" />
               <h3 className="serif h3-title">Sans Contrainte</h3>
-              <p>Tickets utilisables en toute liberté au club : paiement des sessions de padel, location de matériel, ou bar lounge.</p>
+              <p>Tickets utilisables en toute liberté au club : paiement des sessions de <span className="font-padel">padel</span>, location de matériel, ou bar lounge.</p>
             </div>
             <div className="business-card-premium" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <FileText size={32} className="terracotta-accent mb-20" />
@@ -163,7 +163,7 @@ const CSE = ({ toggleHover }) => {
               <h2 className="serif xl-title" style={{ color: 'white' }}>Vos salariés <br/><span className="italic">Économisent.</span></h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', marginBottom: '2rem' }}>
                 Offrez à vos salariés un crédit à dépenser au club à un tarif négocié exclusif pour les comités d'entreprise. 
-                Ils profitent du padel dans des conditions financières imbattables.
+                Ils profitent du <span className="font-padel">padel</span> dans des conditions financières imbattables.
               </p>
               <a href="mailto:contact@padelsignature.fr" className="btn btn-primary" style={{ background: 'white', color: 'var(--dark-green)' }}>
                 <span>Demander votre grille tarifaire</span>

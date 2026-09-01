@@ -57,7 +57,7 @@ const Entreprises = ({ toggleHover }) => {
           >
             <span className="badge-terracotta" style={{ marginBottom: '2rem', display: 'inline-block' }}>Business & Performance</span>
             <h1 className="serif h1-b2b-hero" style={{ marginBottom: '2rem' }}>
-              Le padel, nouveau terrain <br/>
+              Le <span className="font-padel">padel</span>, nouveau terrain <br/>
               <span className="italic">de jeu de votre entreprise.</span>
             </h1>
             <p className="hero-subline" style={{ marginBottom: '3rem' }}>
@@ -143,7 +143,7 @@ const Entreprises = ({ toggleHover }) => {
             <h2 className="serif xl-title">Les questions <br/><span className="italic">qu'on nous pose.</span></h2>
           </div>
           <div className="faq-container-narrow">
-            <FAQItem question="Faut-il savoir jouer au padel ?" answer="Non. Le padel s'apprend en quelques minutes et nos formats sont adaptés aux débutants comme aux confirmés." />
+            <FAQItem question={<>Faut-il savoir jouer au <span className="font-padel">padel</span> ?</>} answer={<>Non. Le <span className="font-padel">padel</span> s'apprend en quelques minutes et nos formats sont adaptés aux débutants comme aux confirmés.</>} />
             <FAQItem question="Combien de personnes peut-on accueillir ?" answer="Cela dépend du format retenu. Dites-nous votre effectif, on construit la journée avec vous." />
             <FAQItem question="Faut-il apporter du matériel ?" answer="Non. Raquettes et balles sont fournies." />
             <FAQItem question="Peut-on venir sur une demi-journée ?" answer="Oui. D'une session d'1h30 à une journée complète." />

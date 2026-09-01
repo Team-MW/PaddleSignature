@@ -27,7 +27,7 @@ const MentionsLegales = () => {
         <div className="container narrow-container">
           <div className="legal-block">
             <h2 className="serif">1. Éditeur du Site</h2>
-            <p>Le site <strong>Padel Signature</strong> est édité par la société <strong>Padel Signature SAS</strong>, société par actions simplifiée au capital de 10 000 €, dont le siège social est situé au 1577 Avenue d’Italie, 82000 Montauban.</p>
+            <p>Le site <strong><span className="font-padel">Padel</span> <span className="font-signature">Signature</span></strong> est édité par la société <strong><span className="font-padel">Padel</span> <span className="font-signature">Signature</span> SAS</strong>, société par actions simplifiée au capital de 10 000 €, dont le siège social est situé au 1577 Avenue d’Italie, 82000 Montauban.</p>
             <p>SIRET : 000 000 000 00000</p>
             <p>Directeurs de la publication : Clément & Hugo.</p>
           </div>
@@ -39,7 +39,7 @@ const MentionsLegales = () => {
 
           <div className="legal-block">
             <h2 className="serif">3. Propriété Intellectuelle</h2>
-            <p>L'intégralité du site Padel Signature (structure, textes, logos, images, vidéos) est la propriété exclusive de Padel Signature SAS. Toute reproduction, même partielle, est strictement interdite sans autorisation préalable.</p>
+            <p>L'intégralité du site <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> (structure, textes, logos, images, vidéos) est la propriété exclusive de <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> SAS. Toute reproduction, même partielle, est strictement interdite sans autorisation préalable.</p>
           </div>
 
           <div className="legal-block">

@@ -51,11 +51,11 @@ const Club = ({ toggleHover }) => {
           >
             <span className="badge-terracotta">L'Esprit Signature</span>
             <h1 className="serif h1-huge">
-              L'Elite du Padel <br />
+              L'Elite du <span className="font-padel">Padel</span> <br />
               <span className="italic">À Montauban.</span>
             </h1>
             <p className="hero-subline">
-              Né d’une passion commune pour le sport et l’exigence, Padel Signature redéfinit les codes du club indoor premium.
+              Né d’une passion commune pour le sport et l’exigence, <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> redéfinit les codes du club indoor premium.
             </p>
           </motion.div>
         </div>
@@ -145,7 +145,7 @@ const Club = ({ toggleHover }) => {
           quote="À l'étage, un espace qui surplombe les quatre terrains."
           list={[
             ["Vue sur les courts", "Suivez les matchs depuis le clubhouse en hauteur."],
-            ["Comptoir signature", "Tireuses à bière et comptoir terracotta."],
+            [<>Comptoir <span className="font-signature">Signature</span></>, "Tireuses à bière et comptoir terracotta."],
             ["Snacking", "De quoi se restaurer avant comme après le jeu."],
             ["Esprit sport", "Les grands événements diffusés en direct."]
           ]}
@@ -182,8 +182,8 @@ const Club = ({ toggleHover }) => {
           </div>
           <div className="faq-container-narrow">
             <FAQItem
-              question="D'où provient le nom 'Signature' ?"
-              answer="Signature représente notre engagement sur la qualité. Chaque membre du club est unique, et nous souhaitons que chaque session de jeu soit gravée comme une expérience d'exception."
+              question={<>D'où provient le nom '<span className="font-signature">Signature</span>' ?</>}
+              answer={<><span className="font-signature">Signature</span> représente notre engagement sur la qualité. Chaque membre du club est unique, et nous souhaitons que chaque session de jeu soit gravée comme une expérience d'exception.</>}
             />
             <FAQItem
               question="Est-il possible de prendre des cours avec Clément ou Hugo ?"

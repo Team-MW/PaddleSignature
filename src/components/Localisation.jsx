@@ -39,7 +39,7 @@ const Localisation = ({ toggleHover }) => {
             whileInView={{ opacity: 1, y: 0 }}
             className="serif xl-title"
           >
-            Votre club de padel à <span className="italic">Montauban.</span>
+            Votre club de <span className="font-padel">padel</span> à <span className="italic">Montauban.</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}

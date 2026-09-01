@@ -58,7 +58,7 @@ const NosLocaux = ({ toggleHover }) => {
               <span className="italic">D'exception.</span>
             </h1>
             <p className="hero-subline">
-              Plus qu'un club. Une Signature. 1400m² dédiés à l'excellence du Padel indoor à Montauban.
+              Plus qu'un club. Une <span className="font-signature">Signature</span>. 1400m² dédiés à l'excellence du <span className="font-padel">Padel</span> indoor à Montauban.
             </p>
           </motion.div>
         </div>
@@ -105,7 +105,7 @@ const NosLocaux = ({ toggleHover }) => {
         description="Situé au R+1, notre bar offre une vue imprenable sur l'ensemble des courts pour prolonger l'expérience."
         details={[
           "Vue panoramique sur les 4 courts",
-          "Comptoir Signature terracotta",
+          <>Comptoir <span className="font-signature">Signature</span> terracotta</>,
           "Tireuses à bière & sélection premium",
           "Espace Merchandising",
           "Ambiance feutrée et conviviale"

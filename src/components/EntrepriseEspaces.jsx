@@ -20,7 +20,7 @@ const EntrepriseEspaces = () => {
             </p>
             
             <p className="text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-              Le padel s'apprend en quelques minutes. Vos équipes ou vos clients jouent ensemble dès la première fois, quel que soit leur niveau. Personne ne reste sur le côté.
+              Le <span className="font-padel">padel</span> s'apprend en quelques minutes. Vos équipes ou vos clients jouent ensemble dès la première fois, quel que soit leur niveau. Personne ne reste sur le côté.
             </p>
           </div>
           

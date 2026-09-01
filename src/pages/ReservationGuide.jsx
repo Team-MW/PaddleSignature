@@ -97,7 +97,7 @@ const ReservationGuide = ({ toggleHover }) => {
                 <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>01</div>
                 <div>
                   <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>TÉLÉCHARGEZ L'APPLICATION</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Installez l'application Padel Signature sur iOS et Android, ou réservez directement depuis votre navigateur.</p>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Installez l'application <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> sur iOS et Android, ou réservez directement depuis votre navigateur.</p>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>

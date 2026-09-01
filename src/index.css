@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Satisfy&display=swap');
 
+@font-face {
+  font-family: 'Diamant';
+  src: url('./assets/fonts/Diamant2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Melbourne';
+  src: url('./assets/fonts/Melbourne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /* Colors */
   --terracotta: #A45729;
@@ -17,9 +31,11 @@
   --border: rgba(27, 52, 43, 0.08);
 
   /* Fonts */
-  --font-serif: 'Cormorant Garamond', serif;
+  --font-serif: 'Melbourne', sans-serif;
   --font-sans: 'Inter', sans-serif;
   --font-handwriting: 'Satisfy', cursive;
+  --font-signature: 'Diamant', sans-serif;
+  --font-padel: 'Melbourne', sans-serif;
 
   /* Animation/Transitions */
   --transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -59,14 +75,15 @@ body {
   overflow-x: hidden;
 }
 
-/* Image loader placeholder */
-img:not([src*=".svg"]):not([src*="logo.avif"]):not([src*="Fichier"]) {
-  background-image: url('/Fichier 11.avif');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80px;
-  background-color: transparent;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
 
 /* Grainy Texture */
 body::before {
@@ -94,6 +111,16 @@ h4,
   color: var(--dark-green);
 }
 
+.hero-subline,
+.hero-desc-centered,
+.description-text,
+.loc-intro,
+.cs-tagline,
+.cs-desc,
+.eb-subtitle {
+  font-family: var(--font-padel);
+}
+
 .italic {
   font-style: italic;
 }
@@ -101,6 +128,14 @@ h4,
 .uppercase {
   text-transform: uppercase;
   letter-spacing: 0.15em;
+}
+
+.font-signature {
+  font-family: var(--font-signature);
+}
+
+.font-padel {
+  font-family: var(--font-padel);
 }
 
 .text-white {
@@ -293,6 +328,7 @@ section {
   border-radius: var(--radius);
   font-weight: 500;
   font-size: 0.8rem;
+  font-family: var(--font-padel);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: var(--transition);
@@ -2839,6 +2875,22 @@ section {
 .marquee-content {
   display: flex;
   white-space: nowrap;
+}
+
+.marquee-content-css {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-marquee 60s linear infinite;
+  width: max-content;
+}
+
+.marquee-hover-pause:hover .marquee-content-css {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .marquee-word {
