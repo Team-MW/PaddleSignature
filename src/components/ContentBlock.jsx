@@ -39,17 +39,26 @@ const ContentBlock = ({
             {rule && <p className="rule-text mb-30"><em>{rule}</em></p>}
             
             {list && (
-              <ul className="premium-list content-block-grid-list mb-30">
-                {list.map((item, idx) => (
-                  <li key={idx} className="mb-10 grid-list-item">
-                    <strong className="list-title">{item[0]}</strong>
-                    {item[1] && (
-                      <span className="list-desc">
-                        {item[1]}
-                      </span>
-                    )}
-                  </li>
-                ))}
+              <ul className="premium-list content-block-grid-list mb-30" style={{ listStyle: 'none', padding: 0 }}>
+                {list.map((item, idx) => {
+                  const hasIcon = item.length === 3;
+                  const icon = hasIcon ? item[0] : null;
+                  const title = hasIcon ? item[1] : item[0];
+                  const desc = hasIcon ? item[2] : item[1];
+                  return (
+                    <li key={idx} className="mb-10 grid-list-item" style={hasIcon ? { display: 'flex', gap: '1.25rem', alignItems: 'flex-start', marginBottom: '1.5rem' } : {}}>
+                      {hasIcon && (
+                        <div style={{ minWidth: '48px', width: '48px', height: '48px', borderRadius: '12px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          {icon}
+                        </div>
+                      )}
+                      <div>
+                        <strong className="list-title" style={hasIcon ? { display: 'block', marginBottom: '4px' } : {}}>{title}</strong>
+                        {desc && <span className="list-desc">{desc}</span>}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             )}
 

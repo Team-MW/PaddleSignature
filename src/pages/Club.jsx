@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, CheckCircle2, Star, Users, Award, Layout, Zap, LayoutGrid, Video, Box, QrCode, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, CheckCircle2, Star, Users, Award, Layout, Zap, LayoutGrid, Video, Box, QrCode, ChevronLeft, ChevronRight, Eye, UtensilsCrossed, Tv2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import ContentBlock from '../components/ContentBlock';
 
@@ -170,9 +170,9 @@ const Club = ({ toggleHover }) => {
           title="Le clubhouse, <span style='color: var(--terracotta); font-style: italic;'>le coeur du club</span>"
           quote="À l'étage, un espace qui surplombe les quatre terrains."
           list={[
-            ["Vue sur les courts", "Suivez les matchs depuis le clubhouse en hauteur."],
-            ["Boire et se restaurer", "Le moment où l'équipe se retrouve, avant comme après le match."],
-            ["Esprit sport", "Les grands événements diffusés en direct."]
+            [<Eye size={22} />, "Vue sur les courts", "Suivez les matchs depuis le clubhouse en hauteur."],
+            [<UtensilsCrossed size={22} />, "Boire et se restaurer", "Le moment où l'équipe se retrouve, avant comme après le match."],
+            [<Tv2 size={22} />, "Esprit sport", "Les grands événements diffusés en direct."]
           ]}
           img="/salle-de-pause.avif"
           toggleHover={toggleHover}
