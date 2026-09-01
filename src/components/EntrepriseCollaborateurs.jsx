@@ -14,7 +14,7 @@ const EntrepriseCollaborateurs = ({ toggleHover }) => {
             </div>
             
             <h2 className="serif xl-title mb-20">
-              La carte crédit <span className="italic" style={{ color: '#D3A783' }}>entreprise</span>
+              La carte crédit <span className="italic" style={{ color: 'var(--terracotta)' }}>entreprise</span>
             </h2>
             
             <p className="description-text mb-30" style={{ maxWidth: '800px' }}>Offrez le <span className="font-padel">padel</span> à vos équipes, sans gérer les réservations une par une.</p>

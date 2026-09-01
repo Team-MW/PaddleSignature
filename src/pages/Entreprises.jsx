@@ -76,10 +76,10 @@ const Entreprises = ({ toggleHover }) => {
       <section className="business-solutions section-padding">
         <div className="container">
           <div className="text-center mb-80">
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: '#D3A783', fontWeight: '700', fontSize: '0.8rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-              <span style={{ width: '40px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.8rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
               Nos solutions
-              <span style={{ width: '40px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
+              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
             </div>
             <h2 className="serif xl-title">Des formats <span className="italic">sur mesure</span></h2>
             <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '560px', margin: '0 auto' }}>Trois façons de faire vivre le club à vos équipes et à vos clients.</p>
@@ -122,12 +122,12 @@ const Entreprises = ({ toggleHover }) => {
       <section className="business-features-detail section-padding" style={{ background: 'var(--off-white)' }}>
         <div className="container">
           <div className="text-center" style={{ maxWidth: '720px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: '#D3A783', fontWeight: '700', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.2rem' }}>
-              <span style={{ width: '32px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.2rem' }}>
+              <span style={{ width: '32px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
               Infrastructure &amp; Événementiel
-              <span style={{ width: '32px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
+              <span style={{ width: '32px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
             </div>
-            <h2 className="serif lg-title mb-20">Une salle de séminaire <span className="italic" style={{ color: '#D3A783' }}>entièrement équipée</span></h2>
+            <h2 className="serif lg-title mb-20">Une salle de séminaire <span className="italic" style={{ color: 'var(--terracotta)' }}>entièrement équipée</span></h2>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '2.5rem', lineHeight: '1.7' }}>Une salle indépendante qui a tout le nécessaire pour travailler : écran, barre de visioconférence sans fil, wifi et service traiteur possible. Prête à l'emploi, à deux pas des courts.</p>
 
             <div style={{ background: 'white', borderRadius: '16px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', gap: '1.8rem', marginBottom: '3rem' }}>
@@ -138,7 +138,7 @@ const Entreprises = ({ toggleHover }) => {
                 { icon: <UtensilsCrossed size={22} />, title: 'Service traiteur possible', desc: 'Pauses, déjeuner ou cocktail.' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
-                  <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(211, 167, 131, 0.15)', color: '#D3A783', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     {item.icon}
                   </div>
                   <div style={{ textAlign: 'left' }}>
@@ -174,10 +174,12 @@ const Entreprises = ({ toggleHover }) => {
             <h2 className="serif xl-title">Les questions <br/><span className="italic">qu'on nous pose</span></h2>
           </div>
           <div className="faq-container-narrow">
-            <FAQItem question={<>Faut-il savoir jouer au <span className="font-padel">padel</span> ?</>} answer={<>Non. Le <span className="font-padel">padel</span> s'apprend en quelques minutes et nos formats sont adaptés aux débutants comme aux confirmés.</>} />
-            <FAQItem question="Combien de personnes peut-on accueillir ?" answer="Cela dépend du format retenu. Dites-nous votre effectif, on construit la journée avec vous." />
-            <FAQItem question="Faut-il apporter du matériel ?" answer="Non. Raquettes et balles sont fournies." />
-            <FAQItem question="Peut-on venir sur une demi-journée ?" answer="Oui. D'une session d'1h30 à une journée complète." />
+            <FAQItem question={<>Faut-il savoir jouer au <span className="font-padel">padel</span> ?</>} answer={<>Pas du tout. L'initiation est encadrée et adaptée à chacun, du débutant complet au joueur confirmé. Certains participants découvrent le <span className="font-padel">padel</span> le jour même.</>} />
+            <FAQItem question="Combien de personnes peut-on accueillir ?" answer="Cela dépend du format. Avec quatre courts et une salle séminaire, nous pouvons faire tourner les équipes par rotations. On cale la jauge et le déroulé avec vous en amont." />
+            <FAQItem question="Combien de temps à l'avance réserver ?" answer="Quelques semaines suffisent pour la plupart des événements. Sur les périodes plus demandées, juin, septembre et décembre, mieux vaut s'y prendre tôt pour bloquer le bon créneau." />
+            <FAQItem question="Le repas est-il obligatoire ?" answer="Non, il reste optionnel. Mais c'est souvent le moment où l'équipe se retrouve vraiment : pause café, planches à partager, cocktail ou déjeuner, on adapte à votre journée." />
+            <FAQItem question="Faut-il apporter du matériel ?" answer="Non, raquettes et balles sont fournies sur place. Prévoyez simplement une tenue de sport et des chaussures propres réservées à l'intérieur." />
+            <FAQItem question="Comment se passe le devis ?" answer="On construit un devis sur mesure selon votre format, le nombre de participants et les options retenues. Prestations comme modalités y sont détaillées avant validation." />
           </div>
 
         </div>

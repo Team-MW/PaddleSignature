@@ -242,7 +242,7 @@
 .partenariat-item-title {
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
-  color: #D3A783;
+  color: var(--terracotta);
 }
 
 .partenariat-item-desc {
