@@ -3102,6 +3102,7 @@ section {
 .grid-list-item .list-title {
   font-weight: 600;
   color: var(--dark-green);
+  font-family: var(--font-serif);
 }
 
 .grid-list-item .list-desc {
