@@ -37,7 +37,7 @@ const EntrepriseEvenements = () => {
             <span className="community-line"></span>
           </div>
           <h2 className="serif xl-title mb-20">
-            Séminaires, team building, <span className="italic" style={{ color: 'var(--terracotta)' }}>privatisations</span>
+            Séminaires, team building, <span className="italic" style={{ color: '#D3A783' }}>privatisations</span>
           </h2>
           <p className="text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
             Vous réservez les terrains, puis vous composez votre journée. On s'occupe du reste : matériel, boissons, encadrement, mise en place.
@@ -53,7 +53,7 @@ const EntrepriseEvenements = () => {
               style={{ 
                 background: 'transparent', 
                 border: activeTab === 'matinee' ? 'none' : '1px solid var(--border)', 
-                color: activeTab === 'matinee' ? 'var(--terracotta)' : 'var(--dark-green)', 
+                color: activeTab === 'matinee' ? '#D3A783' : 'var(--dark-green)', 
                 fontWeight: activeTab === 'matinee' ? 'bold' : 'normal',
                 padding: activeTab === 'matinee' ? '0' : '0.4rem 1.2rem', 
                 borderRadius: '50px', 
@@ -68,7 +68,7 @@ const EntrepriseEvenements = () => {
               style={{ 
                 background: 'transparent', 
                 border: activeTab === 'apresMidi' ? 'none' : '1px solid var(--border)', 
-                color: activeTab === 'apresMidi' ? 'var(--terracotta)' : 'var(--dark-green)', 
+                color: activeTab === 'apresMidi' ? '#D3A783' : 'var(--dark-green)', 
                 fontWeight: activeTab === 'apresMidi' ? 'bold' : 'normal',
                 padding: activeTab === 'apresMidi' ? '0' : '0.4rem 1.2rem', 
                 borderRadius: '50px', 
@@ -83,7 +83,7 @@ const EntrepriseEvenements = () => {
               style={{ 
                 background: 'transparent', 
                 border: activeTab === 'journee' ? 'none' : '1px solid var(--border)', 
-                color: activeTab === 'journee' ? 'var(--terracotta)' : 'var(--dark-green)', 
+                color: activeTab === 'journee' ? '#D3A783' : 'var(--dark-green)', 
                 fontWeight: activeTab === 'journee' ? 'bold' : 'normal',
                 padding: activeTab === 'journee' ? '0' : '0.4rem 1.2rem', 
                 borderRadius: '50px', 

@@ -45,7 +45,7 @@ const EntrepriseOptions = ({ toggleHover }) => {
               gap: '1.2rem', 
               alignItems: 'flex-start' 
             }}>
-              <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(211, 167, 131, 0.15)', color: '#D3A783', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 {item.icon}
               </div>
               <div style={{ textAlign: 'left' }}>

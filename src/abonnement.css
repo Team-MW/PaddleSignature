@@ -104,6 +104,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
   color: var(--white);
   font-family: var(--font-sans);
@@ -126,12 +127,14 @@
 
 .eq-price {
   margin-left: 0.3rem;
+  white-space: nowrap;
 }
 
 .eq-text-sub {
   font-size: 0.75rem;
   opacity: 0.6;
   margin-left: 0.3rem;
+  line-height: 1.2;
 }
 
 .eq-divider {

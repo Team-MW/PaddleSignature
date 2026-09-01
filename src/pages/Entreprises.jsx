@@ -76,10 +76,10 @@ const Entreprises = ({ toggleHover }) => {
       <section className="business-solutions section-padding">
         <div className="container">
           <div className="text-center mb-80">
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.8rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
-              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: '#D3A783', fontWeight: '700', fontSize: '0.8rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <span style={{ width: '40px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
               Nos solutions
-              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+              <span style={{ width: '40px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
             </div>
             <h2 className="serif xl-title">Des formats <span className="italic">sur mesure</span></h2>
             <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '560px', margin: '0 auto' }}>Trois façons de faire vivre le club à vos équipes et à vos clients.</p>
@@ -122,12 +122,12 @@ const Entreprises = ({ toggleHover }) => {
       <section className="business-features-detail section-padding" style={{ background: 'var(--off-white)' }}>
         <div className="container">
           <div className="text-center" style={{ maxWidth: '720px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.2rem' }}>
-              <span style={{ width: '32px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: '#D3A783', fontWeight: '700', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.2rem' }}>
+              <span style={{ width: '32px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
               Infrastructure &amp; Événementiel
-              <span style={{ width: '32px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+              <span style={{ width: '32px', height: '2px', backgroundColor: '#D3A783', display: 'inline-block' }}></span>
             </div>
-            <h2 className="serif lg-title mb-20">Une salle de séminaire <span className="italic" style={{ color: 'var(--terracotta)' }}>entièrement équipée</span></h2>
+            <h2 className="serif lg-title mb-20">Une salle de séminaire <span className="italic" style={{ color: '#D3A783' }}>entièrement équipée</span></h2>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '2.5rem', lineHeight: '1.7' }}>Une salle indépendante qui a tout le nécessaire pour travailler : écran, barre de visioconférence sans fil, wifi et service traiteur possible. Prête à l'emploi, à deux pas des courts.</p>
 
             <div style={{ background: 'white', borderRadius: '16px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', gap: '1.8rem', marginBottom: '3rem' }}>
@@ -138,10 +138,10 @@ const Entreprises = ({ toggleHover }) => {
                 { icon: <UtensilsCrossed size={22} />, title: 'Service traiteur possible', desc: 'Pauses, déjeuner ou cocktail.' },
               ].map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
-                  <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(211, 167, 131, 0.15)', color: '#D3A783', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     {item.icon}
                   </div>
-                  <div>
+                  <div style={{ textAlign: 'left' }}>
                     <strong style={{ display: 'block', color: 'var(--dark-green)', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', marginBottom: '2px' }}>{item.title}</strong>
                     <span style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>{item.desc}</span>
                   </div>
