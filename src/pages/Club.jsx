@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, CheckCircle2, Star, Users, Award, Layout, Zap, LayoutGrid, Video, Box, QrCode, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -29,6 +29,24 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const Club = ({ toggleHover }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    { src: "/espaces.avif", title: "4 courts panoramiques", subtitle: "Terrains indoor avec 9 m de hauteur, en plein cœur de Montauban." },
+    { src: "/accesautonome.jpeg", title: "Accès autonome", subtitle: "Le club reste ouvert 24h/24. En dehors des horaires du clubhouse, l'entrée se fait par QR code." },
+    { src: "/score.jpeg", title: "Vidéo replay et score", subtitle: "Le score à l'écran, vos points en replay." },
+    { src: "/casier.avif", title: "Vestiaires équipés", subtitle: "Casiers, douches et tout le confort avant et après le jeu." }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+
   return (
     <>
       <SEO
@@ -40,7 +58,7 @@ const Club = ({ toggleHover }) => {
       {/* Hero Section */}
       <section
         className="page-hero-premium club-hero with-bg"
-        style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/bar.avif")' }}
+        style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/ezfaz.jpeg")' }}
       >
         <div className="container">
           <motion.div
@@ -54,9 +72,6 @@ const Club = ({ toggleHover }) => {
               L'Elite du <span className="font-padel">Padel</span> <br />
               <span className="italic">À Montauban</span>
             </h1>
-            <p className="hero-subline">
-              Né d’une passion commune pour le sport et l’exigence, <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> redéfinit les codes du club indoor premium.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -66,13 +81,13 @@ const Club = ({ toggleHover }) => {
 
 
 
-        <div className="container" style={{ padding: '4rem 0' }}>
+        <div className="container" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
           <div className="text-center mb-60">
-            <h2 className="serif xl-title mb-10" style={{ fontSize: '3.5rem' }}>
-              Un lieu pensé <span className="italic" style={{ color: 'var(--terracotta)' }}>pour le jeu</span>
+            <h2 className="serif xl-title mb-10" style={{ fontSize: '3rem' }}>
+              Un club où l'on vient <span className="italic" style={{ color: 'var(--terracotta)' }}>pour jouer,</span>
             </h2>
             <p className="text-muted" style={{ fontSize: '1.2rem', margin: '0 auto', maxWidth: '600px' }}>
-              Tout est pensé pour que vous n'ayez qu'à jouer.
+              et où l'on reste pour le plaisir des rencontres.
             </p>
           </div>
 
@@ -84,7 +99,7 @@ const Club = ({ toggleHover }) => {
                 </div>
                 <div>
                   <h4 className="serif" style={{ fontSize: '1.25rem', fontWeight: '500', marginBottom: '8px', color: 'var(--dark-green)' }}>4 courts panoramiques</h4>
-                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Terrains indoor avec 8,50 m de hauteur.</p>
+                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Terrains indoor avec 9 m de hauteur.</p>
                 </div>
               </div>
               
@@ -114,23 +129,34 @@ const Club = ({ toggleHover }) => {
                 </div>
                 <div>
                   <h4 className="serif" style={{ fontSize: '1.25rem', fontWeight: '500', marginBottom: '8px', color: 'var(--dark-green)' }}>Accès autonome</h4>
-                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Le club reste ouvert 24h/24, vous entrez par QR code.</p>
+                  <p className="text-muted" style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>Le club reste ouvert 24h/24. En dehors des horaires du clubhouse, l'entrée se fait par QR code.</p>
                 </div>
               </div>
             </div>
 
             <div className="image-carousel-container" style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', minHeight: '400px' }}>
-              <img src="/accesautonome.jpeg" alt="Accès 24h/24" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
-              <div className="carousel-overlay" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '40px', background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                <div>
-                  <h3 className="serif mb-5" style={{ color: 'white', fontSize: '2rem' }}>Accès 24h/24</h3>
-                  <p className="m-0" style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem' }}>Entrée autonome par QR code.</p>
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentSlide}
+                  src={slides[currentSlide].src} 
+                  alt={slides[currentSlide].title} 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} 
+                />
+              </AnimatePresence>
+              <div className="carousel-overlay" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '40px', background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', zIndex: 2, gap: '20px' }}>
+                <div style={{ maxWidth: '75%' }}>
+                  <h3 className="serif mb-5" style={{ color: 'white', fontSize: '2rem' }}>{slides[currentSlide].title}</h3>
+                  <p className="m-0" style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem' }}>{slides[currentSlide].subtitle}</p>
                 </div>
                 <div className="carousel-controls" style={{ display: 'flex', gap: '15px' }}>
-                  <button style={{ background: 'white', border: 'none', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
-                    <ChevronLeft size={24} color="var(--dark)" />
+                  <button onClick={prevSlide} style={{ background: 'white', border: '2px solid var(--terracotta)', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                    <ChevronLeft size={24} color="var(--terracotta)" />
                   </button>
-                  <button style={{ background: 'white', border: '2px solid var(--terracotta)', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
+                  <button onClick={nextSlide} style={{ background: 'white', border: '2px solid var(--terracotta)', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
                     <ChevronRight size={24} color="var(--terracotta)" />
                   </button>
                 </div>
@@ -141,12 +167,11 @@ const Club = ({ toggleHover }) => {
 
         <ContentBlock
           eyebrow="Après le match"
-          title="Le clubhouse, le coeur du club."
+          title="Le clubhouse, <span style='color: var(--terracotta); font-style: italic;'>le coeur du club</span>"
           quote="À l'étage, un espace qui surplombe les quatre terrains."
           list={[
             ["Vue sur les courts", "Suivez les matchs depuis le clubhouse en hauteur."],
-            [<>Comptoir <span className="font-signature">Signature</span></>, "Tireuses à bière et comptoir terracotta."],
-            ["Snacking", "De quoi se restaurer avant comme après le jeu."],
+            ["Boire et se restaurer", "Le moment où l'équipe se retrouve, avant comme après le match."],
             ["Esprit sport", "Les grands événements diffusés en direct."]
           ]}
           img="/salle-de-pause.avif"
@@ -155,7 +180,7 @@ const Club = ({ toggleHover }) => {
 
         <ContentBlock
           eyebrow="Espace privé"
-          title="Une salle pour vos réunions et vos événements."
+          title="Une salle pour vos réunions et <span style='color: var(--terracotta); font-style: italic;'>vos événements</span>"
           lead="Une salle privatisable avec vue sur les courts. Réunions, séminaires, événements d'équipe, on s'adapte à vos besoins."
           cta="Découvrir nos offres entreprises"
           ctaGhost={false}
@@ -168,8 +193,9 @@ const Club = ({ toggleHover }) => {
         <ContentBlock
           eyebrow="Notre communauté"
           title="Rejoignez la communauté."
-          lead="Ici, on se retrouve, on rejoue le match, on partage un verre. C'est ça aussi, le club."
+          lead="Ici, on se retrouve, on rejoue le match, on partage un verre. C'est aussi ça le padel."
           cta="Nous rejoindre"
+          ctaLink="/comment-reserver"
           img="/image-en-plus.avif"
           toggleHover={toggleHover}
         />
