@@ -235,7 +235,7 @@ const EventBuilder = () => {
               <h1 className="eb-step-title uppercase">Durée de l'événement</h1>
               <p className="eb-hint mb-40">Combien de temps serez-vous sur place ?</p>
               
-              <div className="eb-options-grid" style={{ gridTemplateColumns: '1fr 1fr', maxWidth: '600px', margin: '0 auto' }}>
+              <div className="eb-options-grid" style={{ flexWrap: 'wrap', maxWidth: '700px', margin: '0 auto' }}>
                 {['½ JOURNÉE', 'JOURNÉE', 'SOIRÉE', '2 JOURS'].map(duree => (
                   <button 
                     key={duree}

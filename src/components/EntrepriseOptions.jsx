@@ -13,33 +13,54 @@ const EntrepriseOptions = ({ toggleHover }) => {
           <span className="community-line"></span>
         </div>
         
-        <div className="options-grid">
-          <div className="option-card">
-            <Palette size={32} className="option-icon" />
-            <h4 className="serif option-title">Le club à vos couleurs</h4>
-            <p className="option-desc">Votre marque sur l'écran géant du couloir des terrains, à l'entrée et à l'étage. Le temps de l'événement, le club entier passe à vos couleurs.</p>
-          </div>
-          
-          <div className="option-card">
-            <Coffee size={32} className="option-icon" />
-            <h4 className="serif option-title">Traiteur</h4>
-            <p className="option-desc">Petit-déjeuner, cocktail déjeunatoire ou pauses gourmandes.</p>
-          </div>
-          
-          <div className="option-card">
-            <Camera size={32} className="option-icon" />
-            <h4 className="serif option-title">Photo et vidéo</h4>
-            <p className="option-desc">La journée captée en images, fichiers remis après l'événement.</p>
-          </div>
-          
-          <div className="option-card">
-            <Moon size={32} className="option-icon" />
-            <h4 className="serif option-title">Afterwork prolongé</h4>
-            <p className="option-desc">Le clubhouse privatisé pour prolonger la soirée entre collaborateurs.</p>
-          </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '720px', margin: '0 auto' }}>
+          {[
+            { 
+              icon: <Palette size={22} />, 
+              title: 'Le club à vos couleurs', 
+              desc: "Votre marque sur l'écran géant du couloir des terrains, à l'entrée et à l'étage. Le temps de l'événement, le club entier passe à vos couleurs." 
+            },
+            { 
+              icon: <Coffee size={22} />, 
+              title: 'Traiteur', 
+              desc: 'Petit-déjeuner, cocktail déjeunatoire ou pauses gourmandes.' 
+            },
+            { 
+              icon: <Camera size={22} />, 
+              title: 'Photo et vidéo', 
+              desc: "La journée captée en images, fichiers remis après l'événement." 
+            },
+            { 
+              icon: <Moon size={22} />, 
+              title: 'Afterwork prolongé', 
+              desc: 'Le clubhouse privatisé pour prolonger la soirée entre collaborateurs.' 
+            }
+          ].map((item, i) => (
+            <div key={i} style={{ 
+              background: 'white', 
+              borderRadius: '12px', 
+              padding: '1.5rem', 
+              border: '1px solid var(--border)', 
+              display: 'flex', 
+              gap: '1.2rem', 
+              alignItems: 'flex-start' 
+            }}>
+              <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                {item.icon}
+              </div>
+              <div style={{ textAlign: 'left' }}>
+                <strong style={{ display: 'block', color: 'var(--dark-green)', fontFamily: 'var(--font-serif)', fontSize: '1.15rem', marginBottom: '4px' }}>{item.title}</strong>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.5', display: 'block' }}>{item.desc}</span>
+              </div>
+            </div>
+          ))}
         </div>
         
-        <div className="text-center" style={{ marginTop: '4rem' }}>
+        <div style={{ textAlign: 'center', marginTop: '1.5rem', fontStyle: 'italic', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+          Tarif par personne, établi sur devis. Il baisse à mesure que le groupe s'agrandit.
+        </div>
+        
+        <div className="text-center" style={{ marginTop: '3rem' }}>
           <Link 
             to="/infos#reservation-form" 
             className="btn btn-terracotta"

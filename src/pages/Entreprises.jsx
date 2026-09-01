@@ -1,13 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Users, Target, Calendar, MessageSquare, Coffee, ChevronDown } from 'lucide-react';
+import { Building2, Users, Target, Monitor, Wifi, UtensilsCrossed, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import BusinessCTA from '../components/BusinessCTA';
 import ContentBlock from '../components/ContentBlock';
 import { AnimatePresence } from 'framer-motion';
 
-import EntrepriseEspaces from '../components/EntrepriseEspaces';
 import EntrepriseCollaborateurs from '../components/EntrepriseCollaborateurs';
 import EntrepriseEvenements from '../components/EntrepriseEvenements';
 import EntrepriseOptions from '../components/EntrepriseOptions';
@@ -55,7 +53,6 @@ const Entreprises = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="hero-text-center"
           >
-            <span className="badge-terracotta" style={{ marginBottom: '2rem', display: 'inline-block' }}>Business & Performance</span>
             <h1 className="serif h1-b2b-hero" style={{ marginBottom: '2rem' }}>
               Le <span className="font-padel">padel</span>, nouveau terrain <br/>
               <span className="italic">de jeu de votre entreprise</span>
@@ -79,41 +76,78 @@ const Entreprises = ({ toggleHover }) => {
       <section className="business-solutions section-padding">
         <div className="container">
           <div className="text-center mb-80">
-            <h2 className="serif xl-title">Nos Solutions <br/><span className="italic">Sur Mesure</span></h2>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.8rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+              Nos solutions
+              <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+            </div>
+            <h2 className="serif xl-title">Des formats <span className="italic">sur mesure</span></h2>
+            <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '560px', margin: '0 auto' }}>Trois façons de faire vivre le club à vos équipes et à vos clients.</p>
           </div>
           <div className="grid-3-clean">
             <div className="business-card-premium">
               <Users size={32} className="terracotta-accent mb-20" />
               <h3 className="serif h3-title">Team Building</h3>
-              <p>Initiez vos collaborateurs au sport le plus convivial du moment. Tournois internes, cliniques avec coachs et moments de partage garantis.</p>
+              <p style={{ marginBottom: '1rem' }}>Le sport le plus convivial pour souder vos équipes.</p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                <li>• Initiations encadrées par nos coachs</li>
+                <li>• Tournois internes ou format américano</li>
+                <li>• De vrais moments de partage</li>
+              </ul>
             </div>
             <div className="business-card-premium">
               <Building2 size={32} className="terracotta-accent mb-20" />
               <h3 className="serif h3-title">Séminaires</h3>
-              <p>Profitez de notre salle VIP de 32m² équipée (écran, WiFi) pour vos réunions, avant de vous détendre sur les courts ou au bar lounge.</p>
+              <p style={{ marginBottom: '1rem' }}>Travailler dans une salle équipée, puis souffler sur les courts.</p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                <li>• Salle indépendante, 16 places assises en U</li>
+                <li>• Wifi, écran et visioconférence sans fil</li>
+                <li>• Café, eau et traiteur possible</li>
+              </ul>
             </div>
             <div className="business-card-premium">
               <Target size={32} className="terracotta-accent mb-20" />
               <h3 className="serif h3-title">Privatisation</h3>
-              <p>Offrez-vous l'exclusivité du club pour une soirée ou une journée. Un cadre unique pour impressionner vos clients et partenaires.</p>
+              <p style={{ marginBottom: '1rem' }}>Le club rien qu'à vous, une soirée ou une journée.</p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                <li>• Jusqu'à 4 terrains privatisés</li>
+                <li>• Clubhouse et comptoir à disposition</li>
+                <li>• Pour recevoir clients et partenaires</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Detail & Massive CTA */}
       <section className="business-features-detail section-padding" style={{ background: 'var(--off-white)' }}>
         <div className="container">
-          <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
-            <span className="badge-terracotta">Infrastructure & Événementiel</span>
-            <h2 className="serif lg-title mb-40">Un espace de travail <br/><span className="italic">Inspirant</span></h2>
-            
-            <ul className="premium-list" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', textAlign: 'left', marginBottom: '50px', background: 'white', padding: '30px', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
-              <li><Calendar className="list-icon" /> Salle VIP modulable de 32m²</li>
-              <li><MessageSquare className="list-icon" /> Equipement audiovisuel complet</li>
-              <li><Coffee className="list-icon" /> Service traiteur et bar lounge</li>
-              <li><Users className="list-icon" /> Capacité jusqu'à 100 personnes</li>
-            </ul>
+          <div className="text-center" style={{ maxWidth: '720px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '1.2rem' }}>
+              <span style={{ width: '32px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+              Infrastructure &amp; Événementiel
+              <span style={{ width: '32px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block' }}></span>
+            </div>
+            <h2 className="serif lg-title mb-20">Une salle de séminaire <span className="italic" style={{ color: 'var(--terracotta)' }}>entièrement équipée</span></h2>
+            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', marginBottom: '2.5rem', lineHeight: '1.7' }}>Une salle indépendante qui a tout le nécessaire pour travailler : écran, barre de visioconférence sans fil, wifi et service traiteur possible. Prête à l'emploi, à deux pas des courts.</p>
+
+            <div style={{ background: 'white', borderRadius: '16px', padding: '2rem', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', display: 'flex', flexDirection: 'column', gap: '1.8rem', marginBottom: '3rem' }}>
+              {[
+                { icon: <Monitor size={22} />, title: 'Salle de séminaire indépendante', desc: 'Modulable selon votre format.' },
+                { icon: <Users size={22} />, title: '16 places assises', desc: 'En configuration U.' },
+                { icon: <Wifi size={22} />, title: 'Wifi, écran et visioconférence', desc: 'Barre dernière génération, connexion sans fil.' },
+                { icon: <UtensilsCrossed size={22} />, title: 'Service traiteur possible', desc: 'Pauses, déjeuner ou cocktail.' },
+              ].map((item, i) => (
+                <div key={i} style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start' }}>
+                  <div style={{ minWidth: '46px', width: '46px', height: '46px', borderRadius: '10px', backgroundColor: 'rgba(164, 87, 41, 0.08)', color: 'var(--terracotta)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    {item.icon}
+                  </div>
+                  <div>
+                    <strong style={{ display: 'block', color: 'var(--dark-green)', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', marginBottom: '2px' }}>{item.title}</strong>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '0.92rem' }}>{item.desc}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
 
             <Link 
               to="/creer-evenement" 
@@ -122,16 +156,13 @@ const Entreprises = ({ toggleHover }) => {
               onMouseLeave={toggleHover} 
               style={{ display: 'inline-block', fontSize: '1.6rem', padding: '1.5rem 4rem', borderRadius: '50px', boxShadow: '0 15px 30px rgba(164, 87, 41, 0.3)' }}
             >
-              <span>Créer votre événement B2B</span>
+              <span>Créer votre événement</span>
             </Link>
           </div>
         </div>
       </section>
 
-      <BusinessCTA />
-
       {/* Nouveaux Contenus B2B */}
-      <EntrepriseEspaces />
       <EntrepriseCollaborateurs toggleHover={toggleHover} />
       <EntrepriseEvenements />
       <EntrepriseOptions toggleHover={toggleHover} />

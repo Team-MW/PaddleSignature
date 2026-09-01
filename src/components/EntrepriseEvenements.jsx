@@ -8,16 +8,19 @@ const tabsData = {
     { time: '12h30', title: 'DÉJEUNER', desc: 'Sur place au clubhouse, ou formule traiteur.' },
   ],
   apresMidi: [
-    { time: '14h00', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
-    { time: '14h30', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
-    { time: '15h30', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
-    { time: '17h30', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
+    { time: '13h30', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
+    { time: '13h45', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
+    { time: '15h00', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
+    { time: '17h00', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
   ],
   journee: [
     { time: '09h00', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
     { time: '09h30', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
+    { time: '10h30', title: 'SUR LES TERRAINS', desc: 'Initiation ou tournoi encadré.' },
     { time: '12h30', title: 'DÉJEUNER', desc: 'Sur place au clubhouse, ou formule traiteur.' },
-    { time: '14h00', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
+    { time: '13h45', title: 'SESSION DE TRAVAIL', desc: 'Reprise de vos réunions en salle.' },
+    { time: '15h00', title: 'SUR LES TERRAINS', desc: 'Deuxième session de jeu, tournoi amical.' },
+    { time: '17h00', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
   ]
 };
 

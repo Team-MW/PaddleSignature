@@ -7,7 +7,7 @@ const EntrepriseCollaborateurs = ({ toggleHover }) => {
       <div className="container">
         <div className="grid-2 gap-100 align-items-center">
           
-          <div className="order-2-mobile">
+          <div className="order-1-mobile">
             <div className="community-subtitle-wrapper" style={{ justifyContent: 'flex-start' }}>
               <span className="community-line"></span>
               <span className="community-subtitle">POUR VOS COLLABORATEURS</span>
@@ -55,7 +55,7 @@ const EntrepriseCollaborateurs = ({ toggleHover }) => {
             </Link>
           </div>
           
-          <div className="order-1-mobile">
+          <div className="order-2-mobile">
             <div className="repere-box">
               <span className="repere-eyebrow">Le repère</span>
               <div className="serif repere-price">à partir de 10 €</div>
