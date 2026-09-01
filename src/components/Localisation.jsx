@@ -11,13 +11,14 @@ const InfoCard = ({ icon: Icon, title, content, delay, onHover }) => (
     onMouseEnter={onHover}
     onMouseLeave={onHover}
     className="loc-info-card"
+    style={{ padding: '1.5rem 2rem' }}
   >
     <div className="loc-card-icon">
       <Icon size={24} />
     </div>
     <div className="loc-card-content">
-      <h4 className="serif">{title}</h4>
-      <p>{content}</p>
+      <h4 className="serif" style={{ marginBottom: '0.25rem' }}>{title}</h4>
+      <p style={{ margin: 0 }}>{content}</p>
     </div>
   </motion.div>
 );
@@ -26,7 +27,7 @@ const Localisation = ({ toggleHover }) => {
   return (
     <section id="localisation" className="localisation-section">
       <div className="container">
-        <div className="text-center mb-80">
+        <div className="text-center" style={{ marginBottom: '2rem' }}>
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -46,12 +47,12 @@ const Localisation = ({ toggleHover }) => {
             whileInView={{ opacity: 1 }}
             className="loc-intro"
           >
-            Zone Albasud, en bordure de l'A20. À 5 minutes du centre-ville.
+            Zone Albasud, en bordure de l'A20, sortie 66 Albasud.
           </motion.p>
         </div>
 
         <div className="loc-content-grid">
-          <div className="loc-info-pane">
+          <div className="loc-info-pane" style={{ gap: '1rem' }}>
             <InfoCard 
               delay={0.1}
               icon={MapPin}
@@ -63,14 +64,14 @@ const Localisation = ({ toggleHover }) => {
               delay={0.2}
               icon={Clock}
               title="Horaires"
-              content="Terrains : 24h/24, 7j/7. Clubhouse : 9h00 à 22h30. Hors horaires du clubhouse, accès en autonomie."
+              content="Terrains : 24h/24, 7j/7. Clubhouse : 11h30 à 22h en semaine, 10h30 à 21h le week-end. Hors horaires du clubhouse, accès en autonomie."
               onHover={toggleHover}
             />
             <InfoCard 
               delay={0.3}
               icon={Car}
               title="Parking"
-              content="46 places gratuites, place PMR, stationnement vélos."
+              content="46 places gratuites, place PMR, stationnement 2 roues."
               onHover={toggleHover}
             />
             

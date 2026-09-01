@@ -30,6 +30,38 @@ const ReservationGuide = ({ toggleHover }) => {
               <span style={{ color: 'var(--terracotta)', fontStyle: 'italic' }}>4 ÉTAPES</span>
             </h1>
             
+            {/* Steps list */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', textAlign: 'left', width: '100%', marginBottom: '1rem', marginTop: '1.5rem' }}>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>01</div>
+                <div>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>TÉLÉCHARGEZ L'APPLICATION</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications.</p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>02</div>
+                <div>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>CHOISISSEZ VOTRE CRÉNEAU</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Disponibilités en temps réel. Les heures creuses sont à tarif réduit.</p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>03</div>
+                <div>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>AJOUTEZ VOS PARTENAIRES</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver.</p>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>04</div>
+                <div>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>RÉGLEZ COMME VOUS VOULEZ</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant.</p>
+                </div>
+              </div>
+            </div>
+
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '1rem' }}>
               Simple, rapide et 100% en ligne. Votre terrain vous attend !
             </p>
@@ -86,40 +118,6 @@ const ReservationGuide = ({ toggleHover }) => {
                   <svg width="18" height="18" viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
                   Android
                 </a>
-              </div>
-            </div>
-
-
-
-            {/* Steps list */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', textAlign: 'left', width: '100%' }}>
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>01</div>
-                <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>TÉLÉCHARGEZ L'APPLICATION</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Installez l'application <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> sur iOS et Android, ou réservez directement depuis votre navigateur.</p>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>02</div>
-                <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>CRÉEZ VOTRE COMPTE</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Renseignez vos informations pour accéder à votre espace joueur et activer vos notifications.</p>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>03</div>
-                <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>CHOISISSEZ VOTRE CRÉNEAU</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Consultez les disponibilités en temps réel et sélectionnez le jour, l'horaire et le terrain. Les heures creuses sont à tarif réduit.</p>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8' }}>04</div>
-                <div>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.1rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>RÉGLEZ COMME VOUS VOULEZ</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.5' }}>Payez la totalité du terrain, seulement votre part, ou utilisez vos crédits. Annulation possible jusqu'à 24 heures avant.</p>
-                </div>
               </div>
             </div>
 

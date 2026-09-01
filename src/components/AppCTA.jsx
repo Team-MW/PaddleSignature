@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AppCTA = ({ toggleHover }) => {
   return (
-    <section className="app-luxury-section" style={{ paddingTop: '4rem', paddingBottom: '4rem', backgroundColor: 'var(--white)' }}>
+    <section className="app-luxury-section" style={{ paddingTop: '1rem', paddingBottom: '4rem', backgroundColor: 'var(--white)' }}>
       <div className="container" style={{ maxWidth: '680px', margin: '0 auto' }}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           
@@ -26,10 +26,10 @@ const AppCTA = ({ toggleHover }) => {
           {/* 4 Steps */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'left', width: '100%', marginBottom: '2rem' }}>
             {[
-              { n: '01', title: "Téléchargez l'application", desc: "Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications." },
-              { n: '02', title: 'Choisissez votre créneau', desc: 'Disponibilités en temps réel. Les heures creuses sont à tarif réduit.' },
-              { n: '03', title: 'Ajoutez vos partenaires', desc: "Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver." },
-              { n: '04', title: 'Réglez comme vous voulez', desc: "Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant." },
+              { n: '01', title: "TÉLÉCHARGEZ L'APPLICATION", desc: "Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications." },
+              { n: '02', title: 'CHOISISSEZ VOTRE CRÉNEAU', desc: 'Disponibilités en temps réel. Les heures creuses sont à tarif réduit.' },
+              { n: '03', title: 'AJOUTEZ VOS PARTENAIRES', desc: "Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver." },
+              { n: '04', title: 'RÉGLEZ COMME VOUS VOULEZ', desc: "Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant." },
             ].map(({ n, title, desc }) => (
               <motion.div
                 key={n}
@@ -58,25 +58,26 @@ const AppCTA = ({ toggleHover }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            boxShadow: 'var(--shadow-sm)'
+            boxShadow: 'var(--shadow-sm)',
+            marginBottom: '3rem'
           }}>
+            <h3 style={{ color: 'var(--dark-green)', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              TÉLÉCHARGEZ L'APP
+            </h3>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
+              Réservez et gérez vos crédits en un clic
+            </p>
+
             <div style={{ 
               width: '120px', 
               height: '120px', 
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'center',
-              marginBottom: '1.5rem'
+              marginBottom: '2.5rem'
             }} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
               <img src="/favicon.png" alt="Logo Padel Signature" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
-            
-            <h3 style={{ color: 'var(--dark-green)', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              TÉLÉCHARGEZ L'APP
-            </h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '2.5rem' }}>
-              Réservez et gérez vos crédits en un clic
-            </p>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', width: '100%', alignItems: 'center' }}>
               <a href="https://apps.apple.com/fr/app/padel-signature/id6762594127" target="_blank" rel="noopener noreferrer" className="btn-app-download" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ 
@@ -89,7 +90,7 @@ const AppCTA = ({ toggleHover }) => {
                 <svg width="20" height="20" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                 iOS
               </a>
-              <a href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature" className="btn-app-download" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ 
+              <a href="https://play.google.com/store/apps/details?id=com.livexperience.padelsignature" target="_blank" rel="noopener noreferrer" className="btn-app-download" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ 
                 display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', 
                 padding: '0.8rem 2rem', borderRadius: '50px', 
                 border: '1.5px solid var(--terracotta)', color: 'var(--terracotta)', 
