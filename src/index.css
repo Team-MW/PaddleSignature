@@ -937,8 +937,16 @@ section {
 }
 
 .biz-emoji {
-  font-size: 2rem;
-  line-height: 1;
+  min-width: 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  background-color: rgba(164, 87, 41, 0.08);
+  color: var(--terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .biz-content h4 {

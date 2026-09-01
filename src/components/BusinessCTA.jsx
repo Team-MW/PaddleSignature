@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const BusinessFeature = ({ emoji, title, text }) => (
+import { Ticket, Handshake, Megaphone } from 'lucide-react';
+
+const BusinessFeature = ({ icon: Icon, title, text }) => (
   <div className="business-feature-item">
-    <div className="biz-emoji">{emoji}</div>
+    <div className="biz-emoji"><Icon size={26} /></div>
     <div className="biz-content">
       <h4>{title}</h4>
       <p>{text}</p>
@@ -28,22 +30,22 @@ const BusinessCTA = ({ toggleHover }) => {
             </div>
             <h2 className="serif xl-title" style={{ marginBottom: '3rem' }}>
               Recevez vos équipes <br/>
-              <span className="italic" style={{ color: 'var(--terracotta)' }}>et vos clients.</span>
+              <span className="italic" style={{ color: 'var(--terracotta)' }}>et vos clients</span>
             </h2>
             
             <div className="business-features-list">
               <BusinessFeature 
-                emoji="🎟️" 
+                icon={Ticket} 
                 title="Offre CSE" 
                 text="Des crédits à offrir à vos salariés, utilisables au club à tarif négocié. Une seule facture pour le CSE." 
               />
               <BusinessFeature 
-                emoji="🤝" 
+                icon={Handshake} 
                 title="Séminaires & Team Building" 
                 text="Une journée clé en main : salle jusqu’à 16 places assises (en configuration U), barre de visioconférence dernière génération sans fil, terrains et traiteur. Du café à l'afterwork." 
               />
               <BusinessFeature 
-                emoji="📣" 
+                icon={Megaphone} 
                 title="Sponsoring" 
                 text="Votre marque sur l'écran géant et les écrans dynamiques du club, un créneau réservé et une forte présence sur nos différents réseaux." 
               />

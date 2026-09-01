@@ -79,7 +79,7 @@ const Tarifs = ({ toggleHover }) => {
             <span className="badge-terracotta">Transparence</span>
             <h1 className="serif h1-huge">
               Jouez selon <br />
-              <span className="italic">Vos envies.</span>
+              <span className="italic">Vos envies</span>
             </h1>
             <p className="hero-subline">
               De la partie occasionnelle à l'abonnement illimité, trouvez la formule qui correspond à votre rythme de jeu.

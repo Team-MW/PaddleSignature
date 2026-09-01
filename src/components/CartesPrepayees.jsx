@@ -51,7 +51,7 @@ const CartesPrepayees = ({ toggleHover }) => {
           </div>
           
           <h2 className="serif xl-title mb-20">
-            Jouez plus, <span className="italic" style={{ color: 'var(--terracotta)' }}>payez moins.</span>
+            Jouez plus, <span className="italic" style={{ color: 'var(--terracotta)' }}>payez moins</span>
           </h2>
           
           <p className="cartes-desc">

@@ -17,7 +17,7 @@ const Identity = ({ toggleHover, yParallax }) => {
               <span style={{ width: '40px', height: '2px', backgroundColor: 'var(--terracotta)', display: 'inline-block', flexShrink: 0 }}></span> NOTRE ADN
             </div>
             <h2 className="serif xl-title" style={{ marginBottom: '1.5rem' }}>
-              L'alliance du style <span className="italic" style={{ color: 'var(--terracotta)' }}>et de la performance.</span>
+              L'alliance du style <span className="italic" style={{ color: 'var(--terracotta)' }}>et de la performance</span>
             </h2>
             <p className="description-text mb-40" style={{ fontSize: '1.25rem', color: 'var(--dark-green)', fontWeight: '400' }}>
               Quatre terrains, un clubhouse à l'étage, et de quoi rester après le match.

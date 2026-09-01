@@ -85,7 +85,7 @@ const InfosPage = ({ toggleHover }) => {
             <span className="badge-terracotta">Nous contacter</span>
             <h1 className="serif h1-huge">
               Contact & <br />
-              <span className="italic">Infos.</span>
+              <span className="italic">Infos</span>
             </h1>
             <p className="hero-subline">
               Une question ? Un besoin spécifique ? Remplissez notre formulaire ou retrouvez toutes nos informations pratiques.
@@ -179,7 +179,7 @@ const InfosPage = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center mb-60" style={{ maxWidth: '800px', margin: '0 auto 4rem auto' }}>
             <h2 className="serif xl-title mb-20">
-              Les terrains sont ouverts <span className="italic" style={{ color: 'var(--terracotta)' }}>24h/24.</span>
+              Les terrains sont ouverts <span className="italic" style={{ color: 'var(--terracotta)' }}>24h/24</span>
             </h2>
             <p className="text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
               En dehors des horaires du clubhouse, vous accédez au club de façon autonome et sécurisée, par QR code. Vous réservez, vous entrez, vous jouez.
@@ -254,7 +254,7 @@ const InfosPage = ({ toggleHover }) => {
           </div>
           
           <h2 className="serif xl-title mb-60">
-            Quelques <span className="italic" style={{ color: 'var(--terracotta)' }}>règles simples.</span>
+            Quelques <span className="italic" style={{ color: 'var(--terracotta)' }}>règles simples</span>
           </h2>
           
           <div style={{ 

@@ -12,7 +12,7 @@ const EntrepriseEspaces = () => {
             </div>
             
             <h2 className="serif xl-title mb-20">
-              Un club conçu <span className="italic" style={{ color: 'var(--terracotta)' }}>pour recevoir.</span>
+              Un club conçu <span className="italic" style={{ color: 'var(--terracotta)' }}>pour recevoir</span>
             </h2>
             
             <p className="mb-20 text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>

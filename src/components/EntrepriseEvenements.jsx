@@ -34,7 +34,7 @@ const EntrepriseEvenements = () => {
             <span className="community-line"></span>
           </div>
           <h2 className="serif xl-title mb-20">
-            Séminaires, team building, <span className="italic" style={{ color: 'var(--terracotta)' }}>privatisations.</span>
+            Séminaires, team building, <span className="italic" style={{ color: 'var(--terracotta)' }}>privatisations</span>
           </h2>
           <p className="text-muted" style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
             Vous réservez les terrains, puis vous composez votre journée. On s'occupe du reste : matériel, boissons, encadrement, mise en place.

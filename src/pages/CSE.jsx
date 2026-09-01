@@ -53,7 +53,7 @@ const CSE = ({ toggleHover }) => {
             <span className="badge-terracotta">Offre CSE</span>
             <h1 className="serif h1-huge">
               Tickets <span className="font-padel">Padel</span> <br/>
-              <span className="italic">Pour votre CSE.</span>
+              <span className="italic">Pour votre CSE</span>
             </h1>
             <p className="hero-subline">
               Offrez à vos collaborateurs une expérience sportive premium à tarif privilégié.<br/>

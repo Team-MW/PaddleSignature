@@ -55,7 +55,7 @@ const NosLocaux = ({ toggleHover }) => {
             <span className="badge-terracotta">L'Espace Signature</span>
             <h1 className="serif h1-huge">
               Une infrastructure <br />
-              <span className="italic">D'exception.</span>
+              <span className="italic">D'exception</span>
             </h1>
             <p className="hero-subline">
               Plus qu'un club. Une <span className="font-signature">Signature</span>. 1400m² dédiés à l'excellence du <span className="font-padel">Padel</span> indoor à Montauban.

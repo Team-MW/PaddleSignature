@@ -52,7 +52,7 @@ const Club = ({ toggleHover }) => {
             <span className="badge-terracotta">L'Esprit Signature</span>
             <h1 className="serif h1-huge">
               L'Elite du <span className="font-padel">Padel</span> <br />
-              <span className="italic">À Montauban.</span>
+              <span className="italic">À Montauban</span>
             </h1>
             <p className="hero-subline">
               Né d’une passion commune pour le sport et l’exigence, <span className="font-padel">Padel</span> <span className="font-signature">Signature</span> redéfinit les codes du club indoor premium.
@@ -69,7 +69,7 @@ const Club = ({ toggleHover }) => {
         <div className="container" style={{ padding: '4rem 0' }}>
           <div className="text-center mb-60">
             <h2 className="serif xl-title mb-10" style={{ fontSize: '3.5rem' }}>
-              Un lieu pensé <span className="italic" style={{ color: 'var(--terracotta)' }}>pour le jeu.</span>
+              Un lieu pensé <span className="italic" style={{ color: 'var(--terracotta)' }}>pour le jeu</span>
             </h2>
             <p className="text-muted" style={{ fontSize: '1.2rem', margin: '0 auto', maxWidth: '600px' }}>
               Tout est pensé pour que vous n'ayez qu'à jouer.

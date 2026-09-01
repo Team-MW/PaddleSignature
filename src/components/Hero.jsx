@@ -22,8 +22,7 @@ const Hero = ({ heroRef, toggleHover }) => {
             <img src={signatureImg} alt="Signature" style={{ height: '2em', display: 'inline-block', transform: 'translateY(5px)', objectFit: 'contain' }} />
           </h1>
           <h2 className="hero-desc-centered" style={{ maxWidth: '800px', fontSize: '1.25rem', marginBottom: '3rem' }}>
-            Le confort du jeu, le plaisir des rencontres, l'émotion du partage. Ici, le <span className="font-padel">padel</span> est plus qu'un sport : une expérience à vivre au cœur de Montauban.
-          </h2>
+            Le confort du jeu, le plaisir des rencontres, l'émotion du partage. Ici, le <span className="font-padel">padel</span> est plus qu'un sport : une expérience à vivre au cœur de Montauban</h2>
           <div className="hero-cta-centered">
             <Link to="/comment-reserver" className="btn" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={{ backgroundColor: 'var(--terracotta)', color: 'white', padding: '1.2rem 3rem', textTransform: 'uppercase', letterSpacing: '0.15em', fontWeight: 'bold', textDecoration: 'none' }}>
               RÉSERVER UN TERRAIN

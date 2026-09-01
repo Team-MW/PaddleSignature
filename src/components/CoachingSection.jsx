@@ -13,7 +13,7 @@ const CoachingSection = ({ toggleHover }) => {
           </div>
           
           <h2 className="serif xl-title mb-20">
-            Progressez <span className="italic" style={{ color: 'var(--terracotta)' }}>avec un coach.</span>
+            Progressez <span className="italic" style={{ color: 'var(--terracotta)' }}>avec un coach</span>
           </h2>
           
           <p className="coaching-desc">

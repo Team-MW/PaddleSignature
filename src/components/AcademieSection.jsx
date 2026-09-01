@@ -14,7 +14,7 @@ const AcademieSection = ({ toggleHover }) => {
           </div>
           
           <h2 className="serif xl-title mb-20">
-            Une saison <span className="italic" style={{ color: 'var(--terracotta)' }}>complète.</span>
+            Une saison <span className="italic" style={{ color: 'var(--terracotta)' }}>complète</span>
           </h2>
           
           <p className="academie-desc">
