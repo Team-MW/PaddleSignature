@@ -178,7 +178,7 @@ const Club = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center mb-60">
             <span className="badge-terracotta">Héritage</span>
-            <h2 className="serif xl-title">En Savoir Plus <br /><span className="italic">Sur le Club.</span></h2>
+            <h2 className="serif xl-title">En Savoir Plus <br /><span className="italic">Sur le Club</span></h2>
           </div>
           <div className="faq-container-narrow">
             <FAQItem

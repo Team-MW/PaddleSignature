@@ -538,9 +538,9 @@ section {
 }
 
 .xl-title {
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   margin-bottom: 2.5rem;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .badge-terracotta {
@@ -654,7 +654,7 @@ section {
 }
 
 .h2-xl {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .services-intro-p {
@@ -1116,8 +1116,9 @@ section {
 }
 
 .h2-contact {
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   margin-bottom: 4rem;
+  line-height: 1.1;
 }
 
 .contact-details-row {
@@ -1435,6 +1436,7 @@ section {
   background: white;
   border: 1px solid var(--border);
   transition: var(--transition);
+  width: 100%;
 }
 
 .loc-info-card:hover {
@@ -1642,7 +1644,7 @@ section {
 
   .h2-xl,
   .xl-title {
-    font-size: 3rem !important;
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
   }
 
   .hero-content-centered h1 {
@@ -2826,7 +2828,7 @@ section {
 }
 
 .xl-title {
-  font-size: clamp(3.5rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   line-height: 1.1;
   margin-bottom: 2.5rem;
 }

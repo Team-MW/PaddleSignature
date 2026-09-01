@@ -16,38 +16,9 @@ const AppCTA = ({ toggleHover }) => {
             RÉSERVATION
           </h2>
           <p className="serif italic" style={{ fontSize: '1.8rem', color: 'var(--terracotta)', marginBottom: '1rem', lineHeight: '1.2' }}>
-            Réserver, mode d'emploi.
+            Réserver, mode d'emploi
           </p>
           
-          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>
-            Simple, rapide et 100% en ligne. Votre terrain vous attend !
-          </p>
-
-          {/* 4 Steps */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'left', width: '100%', marginBottom: '2rem' }}>
-            {[
-              { n: '01', title: "TÉLÉCHARGEZ L'APPLICATION", desc: "Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications." },
-              { n: '02', title: 'CHOISISSEZ VOTRE CRÉNEAU', desc: 'Disponibilités en temps réel. Les heures creuses sont à tarif réduit.' },
-              { n: '03', title: 'AJOUTEZ VOS PARTENAIRES', desc: "Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver." },
-              { n: '04', title: 'RÉGLEZ COMME VOUS VOULEZ', desc: "Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant." },
-            ].map(({ n, title, desc }) => (
-              <motion.div
-                key={n}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}
-              >
-                <div className="serif italic" style={{ fontSize: '3.5rem', color: 'var(--terracotta)', lineHeight: '0.8', minWidth: '56px' }}>{n}</div>
-                <div style={{ paddingTop: '0.25rem' }}>
-                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.05rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{title}</h4>
-                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.6' }}>{desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
           {/* App Box */}
           <div style={{ 
             background: 'var(--off-white)', 
@@ -101,6 +72,35 @@ const AppCTA = ({ toggleHover }) => {
                 Android
               </a>
             </div>
+          </div>
+
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', marginBottom: '2rem' }}>
+            Simple, rapide et 100% en ligne. Votre terrain vous attend !
+          </p>
+
+          {/* 4 Steps */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'left', width: '100%', marginBottom: '2rem' }}>
+            {[
+              { n: '01', title: "TÉLÉCHARGEZ L'APPLICATION", desc: "Depuis votre navigateur, ou sur iOS et Android. Créez votre compte, activez les notifications." },
+              { n: '02', title: 'CHOISISSEZ VOTRE CRÉNEAU', desc: 'Disponibilités en temps réel. Les heures creuses sont à tarif réduit.' },
+              { n: '03', title: 'AJOUTEZ VOS PARTENAIRES', desc: "Une partie se joue à quatre, sur 1h30. Une seule personne réserve le terrain pour les quatre joueurs. Il vous manque des joueurs ? Notre groupe WhatsApp permet d'en trouver." },
+              { n: '04', title: 'RÉGLEZ COMME VOUS VOULEZ', desc: "Payez la totalité du terrain sur l'application, ou seulement votre part. Les autres joueurs règlent alors à la caisse du clubhouse en arrivant. Annulation jusqu'à 24 heures avant." },
+            ].map(({ n, title, desc }) => (
+              <motion.div
+                key={n}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                style={{ display: 'flex', gap: '2.5rem', alignItems: 'flex-start' }}
+              >
+                <div className="serif italic" style={{ fontSize: '2.8rem', color: 'var(--terracotta)', lineHeight: '0.8', minWidth: '56px' }}>{n}</div>
+                <div style={{ paddingTop: '0.25rem' }}>
+                  <h4 style={{ color: 'var(--dark-green)', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '1.05rem', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>{title}</h4>
+                  <p style={{ color: 'var(--text-muted)', fontSize: '1rem', margin: 0, lineHeight: '1.6' }}>{desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
         </div>

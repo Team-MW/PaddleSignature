@@ -67,7 +67,7 @@ const Evenement = ({ toggleHover }) => {
           
           {events.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '60px 0' }}>
-              <h2 style={{ color: '#0a2318', opacity: 0.5 }}>Aucun événement programmé pour le moment.</h2>
+              <h2 style={{ color: '#0a2318', opacity: 0.5 }}>Aucun événement programmé pour le moment</h2>
               <p style={{ color: '#666', marginTop: '10px' }}>Revenez très vite pour découvrir nos prochaines dates !</p>
             </div>
           ) : (

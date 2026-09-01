@@ -101,7 +101,7 @@ const InfosPage = ({ toggleHover }) => {
         <div className="container" style={{ position: 'relative' }}>
           <div className="text-center mb-60">
             <span className="badge-terracotta">Nous écrire</span>
-            <h2 className="serif xl-title">Formulaire de <br /><span className="italic">Contact.</span></h2>
+            <h2 className="serif xl-title">Formulaire de <br /><span className="italic">Contact</span></h2>
           </div>
           
           {!iframeLoaded && (

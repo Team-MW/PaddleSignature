@@ -17,7 +17,7 @@ const MentionsLegales = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="serif xl-title">Mentions <span className="italic">Légales.</span></h1>
+            <h1 className="serif xl-title">Mentions <span className="italic">Légales</span></h1>
             <p className="mt-20 opacity-60">Dernière mise à jour : Avril 2024</p>
           </motion.div>
         </div>

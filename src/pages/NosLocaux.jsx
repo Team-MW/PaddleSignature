@@ -135,7 +135,7 @@ const NosLocaux = ({ toggleHover }) => {
         <div className="container">
           <div className="grid-2 gap-100 align-center">
             <div>
-              <h2 className="serif lg-title text-white mb-40">Accès & <br /><span className="italic">Commodités.</span></h2>
+              <h2 className="serif lg-title text-white mb-40">Accès & <br /><span className="italic">Commodités</span></h2>
               <div className="info-item-minimal">
                 <MapPin size={24} className="terracotta-accent" />
                 <div>

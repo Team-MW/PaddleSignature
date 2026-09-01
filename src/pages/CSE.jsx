@@ -160,7 +160,7 @@ const CSE = ({ toggleHover }) => {
           <div className="grid-2 align-center" style={{ gap: '6rem' }}>
             <div>
               <span className="badge-terracotta">L'Avantage CSE</span>
-              <h2 className="serif xl-title" style={{ color: 'white' }}>Vos salariés <br/><span className="italic">Économisent.</span></h2>
+              <h2 className="serif xl-title" style={{ color: 'white' }}>Vos salariés <br/><span className="italic">Économisent</span></h2>
               <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.1rem', marginBottom: '2rem' }}>
                 Offrez à vos salariés un crédit à dépenser au club à un tarif négocié exclusif pour les comités d'entreprise. 
                 Ils profitent du <span className="font-padel">padel</span> dans des conditions financières imbattables.
@@ -204,7 +204,7 @@ const CSE = ({ toggleHover }) => {
             </div>
             <div className="business-detail-content pl-60">
               <span className="badge-terracotta">Le Complexe</span>
-              <h2 className="serif lg-title">Un Accès <br/><span className="italic">Facilité.</span></h2>
+              <h2 className="serif lg-title">Un Accès <br/><span className="italic">Facilité</span></h2>
               <p className="mb-20">
                 Notre club est idéalement situé, offrant à vos collaborateurs un cadre moderne et convivial pour se retrouver après le travail ou le week-end.
               </p>

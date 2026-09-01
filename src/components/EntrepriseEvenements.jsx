@@ -42,7 +42,7 @@ const EntrepriseEvenements = () => {
         </div>
 
         <div className="seminaire-card">
-          <h3 className="serif h3-title mb-20 text-center" style={{ fontSize: '1.4rem' }}>À quoi ressemble une journée chez nous.</h3>
+          <h3 className="serif h3-title mb-20 text-center" style={{ fontSize: '1.4rem' }}>À quoi ressemble une journée chez nous</h3>
           
           <div className="badges-group mb-40" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
             <button 

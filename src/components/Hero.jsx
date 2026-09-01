@@ -17,12 +17,9 @@ const Hero = ({ heroRef, toggleHover }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div style={{ textTransform: 'uppercase', letterSpacing: '0.2em', color: 'var(--terracotta)', fontWeight: '700', fontSize: '0.85rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-            UN CLUB UNE <img src={signatureImg} alt="Signature" style={{ height: '2em', objectFit: 'contain' }} />
-          </div>
           <h1 className="serif" style={{ fontSize: 'clamp(3.5rem, 8vw, 6.5rem)', marginBottom: '2.5rem', lineHeight: '1.1', fontWeight: 'normal' }}>
             Bienvenue chez <span className="font-padel">Padel</span> <br />
-            <img src={signatureImg} alt="Signature" style={{ height: '1.2em', display: 'inline-block', transform: 'translateY(10px)', objectFit: 'contain' }} />
+            <img src={signatureImg} alt="Signature" style={{ height: '2em', display: 'inline-block', transform: 'translateY(5px)', objectFit: 'contain' }} />
           </h1>
           <h2 className="hero-desc-centered" style={{ maxWidth: '800px', fontSize: '1.25rem', marginBottom: '3rem' }}>
             Le confort du jeu, le plaisir des rencontres, l'émotion du partage. Ici, le <span className="font-padel">padel</span> est plus qu'un sport : une expérience à vivre au cœur de Montauban.

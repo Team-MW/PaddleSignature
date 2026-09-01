@@ -79,7 +79,7 @@ const Entreprises = ({ toggleHover }) => {
       <section className="business-solutions section-padding">
         <div className="container">
           <div className="text-center mb-80">
-            <h2 className="serif xl-title">Nos Solutions <br/><span className="italic">Sur Mesure.</span></h2>
+            <h2 className="serif xl-title">Nos Solutions <br/><span className="italic">Sur Mesure</span></h2>
           </div>
           <div className="grid-3-clean">
             <div className="business-card-premium">
@@ -106,7 +106,7 @@ const Entreprises = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center" style={{ maxWidth: '800px', margin: '0 auto' }}>
             <span className="badge-terracotta">Infrastructure & Événementiel</span>
-            <h2 className="serif lg-title mb-40">Un espace de travail <br/><span className="italic">Inspirant.</span></h2>
+            <h2 className="serif lg-title mb-40">Un espace de travail <br/><span className="italic">Inspirant</span></h2>
             
             <ul className="premium-list" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', textAlign: 'left', marginBottom: '50px', background: 'white', padding: '30px', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
               <li><Calendar className="list-icon" /> Salle VIP modulable de 32m²</li>
@@ -140,7 +140,7 @@ const Entreprises = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center mb-60">
             <span className="badge-terracotta">FAQ</span>
-            <h2 className="serif xl-title">Les questions <br/><span className="italic">qu'on nous pose.</span></h2>
+            <h2 className="serif xl-title">Les questions <br/><span className="italic">qu'on nous pose</span></h2>
           </div>
           <div className="faq-container-narrow">
             <FAQItem question={<>Faut-il savoir jouer au <span className="font-padel">padel</span> ?</>} answer={<>Non. Le <span className="font-padel">padel</span> s'apprend en quelques minutes et nos formats sont adaptés aux débutants comme aux confirmés.</>} />

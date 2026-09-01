@@ -7,7 +7,7 @@ const Contact = ({ toggleHover }) => {
     <section id="contact" className="contact-main-section">
        <div className="container contact-grid-premium">
           <div className="contact-info-block">
-             <h2 className="serif h2-contact">Parlons de votre <br/><span className="italic">Prochain Match.</span></h2>
+             <h2 className="serif h2-contact">Parlons de votre <br/><span className="italic">Prochain Match</span></h2>
              <div className="contact-details-row">
                 <div className="contact-detail-col">
                    <span className="badge-small-terracotta">Le Club</span>

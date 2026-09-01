@@ -93,7 +93,7 @@ const Tarifs = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center mb-80">
             <span className="badge-terracotta">La partie</span>
-            <h2 className="serif xl-title">Jouez à votre <br/><span className="italic">rythme.</span></h2>
+            <h2 className="serif xl-title">Jouez à votre <br/><span className="italic">rythme</span></h2>
             <p className="hero-subline" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.2rem' }}>
               Une partie se joue à quatre, pendant 1h30. Le tarif dépend du créneau. Pas de sélecteur de durée, toutes les parties durent 1h30.
             </p>
@@ -144,7 +144,7 @@ const Tarifs = ({ toggleHover }) => {
         <div className="container">
           <div className="text-center mb-60">
             <span className="badge-terracotta">FAQ</span>
-            <h2 className="serif xl-title">Questions de <br /><span className="italic">tarifs.</span></h2>
+            <h2 className="serif xl-title">Questions de <br /><span className="italic">tarifs</span></h2>
           </div>
           <div className="faq-container-narrow">
             <FAQItem question="Le tarif est-il par personne ou par terrain ?" answer="Par personne. Un terrain accueille quatre joueurs." />
