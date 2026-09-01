@@ -3108,6 +3108,9 @@ section {
 .grid-list-item .list-desc {
   display: flex;
   gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .grid-list-item .list-dash {
