@@ -15,8 +15,6 @@ const Tarifs = lazy(() => import('./pages/Tarifs'));
 const Infos = lazy(() => import('./pages/Infos'));
 const EventBuilder = lazy(() => import('./pages/EventBuilder'));
 const MentionsLegales = lazy(() => import('./pages/MentionsLegales'));
-const Sponsoring = lazy(() => import('./pages/Sponsoring'));
-const CSE = lazy(() => import('./pages/CSE'));
 const PolitiqueConfidentialite = lazy(() => import('./pages/PolitiqueConfidentialite'));
 const ReservationGuide = lazy(() => import('./pages/ReservationGuide'));
 const Evenement = lazy(() => import('./pages/Evenement'));
@@ -95,8 +93,6 @@ export default function App() {
               <Route path="/creer-evenement" element={<EventBuilder />} />
               <Route path="/tarifs" element={<Tarifs toggleHover={toggleHover} />} />
               <Route path="/infos" element={<Infos toggleHover={toggleHover} />} />
-              <Route path="/sponsoring" element={<Sponsoring toggleHover={toggleHover} />} />
-              <Route path="/cse" element={<CSE toggleHover={toggleHover} />} />
               <Route path="/evenement" element={<Evenement toggleHover={toggleHover} />} />
               <Route path="/admin-evenement" element={<AdminEvenement />} />
               <Route path="/comment-reserver" element={<ReservationGuide toggleHover={toggleHover} />} />
