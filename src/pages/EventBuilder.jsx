@@ -37,17 +37,14 @@ const EventBuilder = () => {
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_B2B_ID || import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           {
-            format: formData.format,
-            participants: formData.participants,
-            date: formData.date,
-            duree: formData.duree,
-            restauration: formData.restauration,
-            entreprise: formData.entreprise,
-            poste: formData.poste,
-            nom: formData.nom,
+            company: formData.entreprise || 'Non renseigné',
+            name: formData.nom || 'Non renseigné',
             email: formData.email,
-            telephone: formData.telephone,
-            details: formData.details || 'Aucun détail'
+            phone: formData.telephone || 'Non renseigné',
+            type: formData.format || 'Non renseigné',
+            participants: formData.participants ? formData.participants.toString() : 'Non précisé',
+            message: `Date souhaitée : ${formData.date || 'Non précisée'}\nDurée : ${formData.duree || 'Non précisée'}\nRestauration : ${formData.restauration || 'Non précisée'}\nPoste de la personne : ${formData.poste || 'Non précisé'}\n\nBesoins spécifiques :\n${formData.details || 'Aucun détail supplémentaire'}`,
+            reply_to: formData.email
           },
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );

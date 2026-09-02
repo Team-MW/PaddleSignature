@@ -4410,4 +4410,55 @@ section {
   .marquee-logo {
     height: 40px !important;
   }
+
+  /* EventBuilder Mobile Fixes */
+  .eb-header {
+    padding: 1rem 1.5rem !important;
+  }
+
+  .eb-main {
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 1rem 0 4rem 0 !important;
+  }
+
+  .eb-step-content {
+    position: relative !important;
+    height: max-content !important;
+    padding: 0 1.5rem !important;
+  }
+
+  .eb-step-title {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+    margin-top: 1rem !important;
+  }
+  
+  .eb-options-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+  
+  .eb-choice-btn {
+    width: 100% !important;
+    max-width: 320px;
+    padding: 1rem 1.5rem !important;
+  }
+
+  .eb-footer {
+    padding: 1rem 1.5rem !important;
+  }
+
+  .eb-footer-inner {
+    flex-direction: column-reverse !important;
+    gap: 1rem !important;
+  }
+
+  .eb-nav-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.8rem !important;
+  }
 }
