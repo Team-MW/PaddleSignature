@@ -35,7 +35,7 @@ const FAQItem = ({ question, answer }) => {
 
 const PriceCard = ({ title, price, period, features, highlight, badgeText, toggleHover }) => (
   <div className={`price-card-modern ${highlight ? 'highlighted' : ''}`}>
-    {(highlight || badgeText) && <div className="card-badge">{badgeText || 'Plus Populaire'}</div>}
+
     <h3 className="serif">{title}</h3>
     <div className="price-value">
       <span className="amount serif">{price}</span>
@@ -68,7 +68,7 @@ const Tarifs = ({ toggleHover }) => {
       />
 
       {/* Hero Section */}
-      <section className="page-hero-premium pricing-hero with-bg" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/score.avif")' }}>
+      <section className="page-hero-premium pricing-hero with-bg" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("/hero-tarifs.jpeg")' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -76,7 +76,6 @@ const Tarifs = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="hero-text-center"
           >
-            <span className="badge-terracotta">Transparence</span>
             <h1 className="serif h1-huge">
               Jouez selon <br />
               <span className="italic">Vos envies</span>
@@ -92,15 +91,14 @@ const Tarifs = ({ toggleHover }) => {
       <section className="pricing-section section-padding">
         <div className="container">
           <div className="text-center mb-80">
-            <span className="badge-terracotta">La partie</span>
-            <h2 className="serif xl-title">Jouez à votre <br/><span className="italic">rythme</span></h2>
+            <h2 className="serif xl-title">Jouez à <span className="italic" style={{ color: 'var(--terracotta)' }}>votre rythme</span></h2>
             <p className="hero-subline" style={{ maxWidth: '600px', margin: '0 auto', fontSize: '1.2rem' }}>
               Une partie se joue à quatre, pendant 1h30. Le tarif dépend du créneau. Pas de sélecteur de durée, toutes les parties durent 1h30.
             </p>
-            <p className="rule-text mt-20"><em>4 joueurs maximum par terrain.</em></p>
+            <p className="mt-20 text-muted" style={{ fontSize: '1.1rem' }}><em>4 joueurs maximum par terrain.</em></p>
           </div>
 
-          <div className="pricing-grid-modern" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', maxWidth: '800px', margin: '0 auto' }}>
+          <div className="pricing-grid-modern" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem', maxWidth: '800px', margin: '0 auto' }}>
             <PriceCard 
               title="Heures creuses"
               price="10,50 €"

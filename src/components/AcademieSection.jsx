@@ -18,14 +18,14 @@ const AcademieSection = ({ toggleHover }) => {
           </h2>
           
           <p className="academie-desc">
-            25 séances sur l'année, en groupe et par niveau. Une formule pour progresser dans la durée.
+            30 séances sur l'année, en groupe et par niveau. Une formule pour progresser dans la durée.
           </p>
         </div>
 
         <div className="academie-card">
           <div className="academie-card-header">
-            <h3 className="serif text-white academie-card-title">25 séances sur l'année</h3>
-            <p className="academie-card-subtitle">Une séance par semaine, en groupe de 4 et par niveau.</p>
+            <h3 className="serif text-white academie-card-title">30 séances sur l'année</h3>
+            <p className="academie-card-subtitle">Des séances par groupe de 4 et par niveau.</p>
           </div>
           
           <div className="academie-list">
