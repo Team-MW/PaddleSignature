@@ -162,9 +162,9 @@ const InfosPage = ({ toggleHover }) => {
               icon={Shield}
               title="Règles du Club"
               lines={[
-                "Accès autonome via Digicode",
+                "Accès autonome via QR code",
                 "Chaussures Propres exigées",
-                "Fair-play & Élégance"
+                "Fair-play"
               ]}
             />
           </div>
@@ -295,8 +295,9 @@ const InfosPage = ({ toggleHover }) => {
             <FAQItem question="Peut-on venir sans jouer ?" answer="Oui. Le clubhouse est ouvert à tous, que vous veniez boire un verre ou regarder les autres jouer." />
             <FAQItem question="Y a-t-il des douches et des vestiaires ?" answer="Oui, nous disposons de vestiaires séparés hommes / femmes, spacieux et équipés de douches individuelles pour votre confort après l'effort." />
             <FAQItem question="Peut-on venir avec des accompagnateurs ?" answer="Bien sûr ! Nos accompagnateurs peuvent vous regarder depuis notre bar lounge en R+1 qui offre une vue panoramique sur tous les courts." />
-            <FAQItem question="Acceptiez-vous les enfants ?" answer="Le club accueille les joueurs de tous âges. Pour les mineurs, une autorisation parentale ou la présence d'un adulte est requise." />
-            <FAQItem question="Est-il possible de manger sur place ?" answer="Nous proposons une offre de snacking premium (planches, snacks sains, barres énergétiques) tout au long de la journée au bar. " />
+            <FAQItem question="Acceptez-vous les enfants ?" answer="Le club accueille les joueurs de tous âges. Pour les mineurs, une autorisation parentale ou la présence d'un adulte est requise." />
+            <FAQItem question="Est-il possible de manger sur place ?" answer="Nous proposons une offre de snacking (planches, snacks sains, barres énergétiques) tout au long de la journée au clubhouse." />
+
           </div>
         </div>
       </section>

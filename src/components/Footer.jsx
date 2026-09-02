@@ -2,6 +2,15 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
+const TripadvisorIcon = ({ size = 20 }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="8.5" cy="12" r="3.5" />
+    <circle cx="15.5" cy="12" r="3.5" />
+    <circle cx="8.5" cy="12" r="1" fill="currentColor" />
+    <circle cx="15.5" cy="12" r="1" fill="currentColor" />
+  </svg>
+);
+
 const Footer = ({ toggleHover }) => {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
@@ -67,6 +76,7 @@ const Footer = ({ toggleHover }) => {
               <a href="https://www.instagram.com/padelsignature_/" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Instagram size={20} /></a>
               <a href="https://www.facebook.com/61578486221135/videos/" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Facebook size={20} /></a>
               <a href="https://fr.linkedin.com/company/padel-signature" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><Linkedin size={20} /></a>
+              <a href="https://www.tripadvisor.fr/" target="_blank" rel="noopener noreferrer" className="footer-social-icon" onMouseEnter={toggleHover} onMouseLeave={toggleHover}><TripadvisorIcon size={20} /></a>
             </div>
           </div>
         </div>
