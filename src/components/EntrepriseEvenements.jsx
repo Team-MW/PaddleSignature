@@ -116,12 +116,12 @@ const EntrepriseEvenements = () => {
             </div>
             
             <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.5rem', textAlign: 'left' }}>
-              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Terrains et salle séminaire</h4>
+              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Terrains + salle séminaire</h4>
               <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>La formule terrains, avec notre salle séminaire privatisée et équipée : écran, wifi, climatisation.</p>
             </div>
             
             <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.5rem', textAlign: 'left' }}>
-              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Terrains et coaching</h4>
+              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Terrains + coaching</h4>
               <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>La formule terrains, avec un coach dédié sur vos courts. Initiation, tournoi ou américano selon les niveaux.</p>
             </div>
             
@@ -130,7 +130,7 @@ const EntrepriseEvenements = () => {
               <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>Terrains, salle séminaire, coaching et écrans à vos couleurs. La journée organisée de bout en bout.</p>
             </div>
 
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic', marginTop: '1rem', textAlign: 'left' }}>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic', marginTop: '1rem', textAlign: 'center' }}>
               Tarif par personne, établi sur devis. Il baisse à mesure que le groupe s'agrandit.
             </p>
           </div>
