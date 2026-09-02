@@ -11,16 +11,14 @@ const tabsData = {
     { time: '13h30', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
     { time: '13h45', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
     { time: '15h00', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
-    { time: '17h00', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
+    { time: '16h00', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
   ],
   journee: [
     { time: '09h00', title: 'ACCUEIL', desc: 'Café au clubhouse, vestiaires à disposition.' },
     { time: '09h30', title: 'SESSION DE TRAVAIL', desc: 'La salle séminaire privatisée, équipée pour vos présentations.' },
-    { time: '10h30', title: 'SUR LES TERRAINS', desc: 'Initiation ou tournoi encadré.' },
     { time: '12h30', title: 'DÉJEUNER', desc: 'Sur place au clubhouse, ou formule traiteur.' },
-    { time: '13h45', title: 'SESSION DE TRAVAIL', desc: 'Reprise de vos réunions en salle.' },
-    { time: '15h00', title: 'SUR LES TERRAINS', desc: 'Deuxième session de jeu, tournoi amical.' },
-    { time: '17h00', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
+    { time: '13h45', title: 'SUR LES TERRAINS', desc: 'Initiation, tournoi ou américano. Raquettes et balles fournies.' },
+    { time: '16h00', title: 'AFTERWORK', desc: 'Sur place au clubhouse avec planches à partager.' },
   ]
 };
 
@@ -111,11 +109,30 @@ const EntrepriseEvenements = () => {
             Trois formats parmi d'autres. On construit le vôtre selon votre durée, votre effectif et vos objectifs.
           </p>
           
-          <div className="premium-list" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '600px', margin: '0 auto' }}>
-            <div className="business-card-premium" style={{ padding: '1.5rem', background: 'transparent', border: '1px solid var(--border)', borderRadius: '8px', boxShadow: 'none' }}>
-              <h4 className="serif mb-10 text-center" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Les terrains</h4>
-              <p className="text-muted text-center" style={{ fontSize: '0.9rem' }}>De 1 à 4 terrains pendant 1h30. Raquettes, balles et boissons comprises. Vos visuels sur les écrans du club.</p>
+          <div className="premium-list" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '600px', margin: '0 auto' }}>
+            <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.5rem', textAlign: 'left' }}>
+              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Les terrains</h4>
+              <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>De 1 à 4 terrains pendant 1h30. Raquettes, balles et boissons comprises. Vos visuels sur les écrans du club.</p>
             </div>
+            
+            <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.5rem', textAlign: 'left' }}>
+              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Terrains et salle séminaire</h4>
+              <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>La formule terrains, avec notre salle séminaire privatisée et équipée : écran, wifi, climatisation.</p>
+            </div>
+            
+            <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.5rem', textAlign: 'left' }}>
+              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>Terrains et coaching</h4>
+              <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>La formule terrains, avec un coach dédié sur vos courts. Initiation, tournoi ou américano selon les niveaux.</p>
+            </div>
+            
+            <div style={{ background: 'white', border: '1px solid var(--border)', borderRadius: '8px', padding: '1.5rem', textAlign: 'left' }}>
+              <h4 className="serif mb-10" style={{ fontSize: '1.2rem', color: 'var(--dark-green)' }}>La formule complète</h4>
+              <p className="text-muted" style={{ fontSize: '0.9rem', margin: 0 }}>Terrains, salle séminaire, coaching et écrans à vos couleurs. La journée organisée de bout en bout.</p>
+            </div>
+
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontStyle: 'italic', marginTop: '1rem', textAlign: 'left' }}>
+              Tarif par personne, établi sur devis. Il baisse à mesure que le groupe s'agrandit.
+            </p>
           </div>
         </div>
       </div>

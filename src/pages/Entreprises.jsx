@@ -100,7 +100,7 @@ const Entreprises = ({ toggleHover }) => {
               <h3 className="serif h3-title">Séminaires</h3>
               <p style={{ marginBottom: '1rem' }}>Travailler dans une salle équipée, puis souffler sur les courts.</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <li>• Salle indépendante, 16 places assises en U</li>
+                <li>• Salle indépendante, <span style={{ whiteSpace: 'nowrap' }}>16 places assises en U</span></li>
                 <li>• Wifi, écran et visioconférence sans fil</li>
                 <li>• Café, eau et traiteur possible</li>
               </ul>

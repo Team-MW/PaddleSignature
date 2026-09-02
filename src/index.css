@@ -44,7 +44,7 @@
   --shadow-lg: 0 40px 100px rgba(27, 52, 43, 0.1);
 
   /* Spacing */
-  --section-padding: 12rem;
+  --section-padding: 7rem;
   
   /* Border Radius */
   --radius: 8px;
@@ -1512,7 +1512,7 @@ section {
 
 @media (max-width: 1024px) {
   :root {
-    --section-padding: 8rem;
+    --section-padding: 4rem;
   }
 
   .grid-asym-2 {
