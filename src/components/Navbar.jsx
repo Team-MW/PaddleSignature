@@ -54,59 +54,55 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
             exit={{ opacity: 0 }}
             className="mobile-menu-overlay"
           >
-             <div className="mobile-menu-header">
-                <img src="/logo.avif" alt="Padel Signature Logo" className="mobile-logo" />
-                <button className="close-btn" onClick={() => setMobileMenuOpen(false)}><X size={32}/></button>
-             </div>
-             
-             <nav className="mobile-nav">
-                {[
-                  { name: 'Le Club', path: '/club' },
-                  { name: 'Entreprises', path: '/entreprises' },
-                  { name: 'Tarifs', path: '/tarifs' },
-                  { name: 'Infos', path: '/infos' },
-                  { name: 'Événements', path: '/evenement' }
-                ].map((item, index) => (
-                  <motion.div
-                    key={item.name}
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 + index * 0.1 }}
-                  >
-                    <Link 
-                      to={item.path} 
-                      onClick={() => setMobileMenuOpen(false)} 
-                      className="mobile-link serif"
-                    >
-                      {item.name}
-                    </Link>
-                  </motion.div>
-                ))}
-                
+            {/* Header fixe */}
+            <div className="mobile-menu-header">
+              <img src="/logo.avif" alt="Padel Signature Logo" className="mobile-logo" />
+              <button className="close-btn" onClick={() => setMobileMenuOpen(false)}><X size={32}/></button>
+            </div>
+
+            {/* Liens — zone scrollable si nécessaire */}
+            <nav className="mobile-nav">
+              {[
+                { name: 'Le Club', path: '/club' },
+                { name: 'Entreprises', path: '/entreprises' },
+                { name: 'Tarifs', path: '/tarifs' },
+                { name: 'Infos', path: '/infos' },
+                { name: 'Événements', path: '/evenement' }
+              ].map((item, index) => (
                 <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="mt-40"
+                  key={item.name}
+                  initial={{ x: 50, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.1 + index * 0.1 }}
                 >
-                  <Link to="/comment-reserver" className="btn btn-primary btn-full-width" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
-                     <span>Réserver un court</span>
+                  <Link 
+                    to={item.path} 
+                    onClick={() => setMobileMenuOpen(false)} 
+                    className="mobile-link serif"
+                  >
+                    {item.name}
                   </Link>
                 </motion.div>
-             </nav>
+              ))}
+            </nav>
 
-             <motion.div 
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               transition={{ delay: 0.6 }}
-               className="mobile-menu-footer"
-             >
-                <div className="mobile-socials">
-                  <a href="https://www.instagram.com/padelsignature_/" target="_blank" rel="noopener noreferrer"><Instagram size={24}/></a>
-                  <a href="https://www.facebook.com/61578486221135/videos/" target="_blank" rel="noopener noreferrer"><Facebook size={24}/></a>
-                </div>
-                <p className="mobile-copyright">© 2024 Padel Signature</p>
-             </motion.div>
+            {/* Footer épinglé en bas — toujours visible */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mobile-menu-footer"
+            >
+              <Link 
+                to="/comment-reserver" 
+                className="btn btn-primary mobile-cta-btn" 
+                onClick={() => setMobileMenuOpen(false)} 
+                style={{ textDecoration: 'none' }}
+              >
+                <span>Réserver</span>
+              </Link>
+              <p className="mobile-copyright" style={{ marginTop: '0.5rem' }}>© 2024 Padel Signature</p>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

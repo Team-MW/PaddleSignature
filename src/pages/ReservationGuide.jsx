@@ -86,6 +86,64 @@ const ReservationGuide = ({ toggleHover }) => {
               </div>
             </div>
 
+            {/* Séparateur OU */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', width: '100%', margin: '0.5rem 0' }}>
+              <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontWeight: '600', letterSpacing: '0.15em', textTransform: 'uppercase' }}>OU</span>
+              <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+            </div>
+
+            {/* Web Box — sans application */}
+            <div style={{
+              background: 'var(--off-white)',
+              border: '1px solid rgba(27, 52, 43, 0.05)',
+              borderRadius: '24px',
+              padding: '1.5rem 1rem',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              boxShadow: 'var(--shadow-sm)',
+              marginBottom: '2rem',
+            }}>
+              <h3 style={{ color: 'var(--dark-green)', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                RÉSERVER SUR ORDINATEUR
+              </h3>
+              <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '1rem' }}>
+                Directement depuis votre navigateur, sans application
+              </p>
+              <a
+                href="https://padel-signature.mymobileapp.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={toggleHover}
+                onMouseLeave={toggleHover}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.6rem',
+                  padding: '0.8rem 2.5rem',
+                  borderRadius: '50px',
+                  background: 'var(--terracotta)',
+                  color: 'white',
+                  fontWeight: '600',
+                  fontSize: '0.85rem',
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  transition: 'var(--transition)',
+                  fontFamily: 'var(--font-padel)',
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Accéder au site de réservation
+              </a>
+            </div>
+
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '1.5rem', textAlign: 'center' }}>
               Simple, rapide et 100% en ligne. Votre terrain vous attend !
             </p>
