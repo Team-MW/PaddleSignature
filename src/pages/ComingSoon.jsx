@@ -12,7 +12,15 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 // ─────────────────────────────────────────────────────────────────
 
 const ComingSoon = ({ toggleHover, grantAccess }) => {
-  const [form, setForm] = useState({ name: '', phone: '', email: '' });
+  const [form, setForm] = useState({ 
+    company: '',
+    name: '', 
+    email: '', 
+    phone: '',
+    type: 'Séminaire',
+    participants: '',
+    message: ''
+  });
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
   
@@ -37,11 +45,11 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, phone, email } = form;
+    const { company, name, phone, email, type, participants, message } = form;
 
-    if (!name.trim() || !email.trim()) {
+    if (!name.trim() || !email.trim() || !company.trim() || !message.trim()) {
       setStatus('error');
-      setErrorMsg('Veuillez remplir au moins votre nom et votre adresse e-mail.');
+      setErrorMsg('Veuillez remplir tous les champs obligatoires.');
       return;
     }
 
@@ -71,16 +79,20 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name: name.trim(),
-          from_phone: phone.trim() || 'Non renseigné',
-          from_email: email.trim(),
+          company: company.trim(),
+          name: name.trim(),
+          phone: phone.trim() || 'Non renseigné',
+          email: email.trim(),
+          type: type,
+          participants: participants.trim() || 'Non précisé',
+          message: message.trim(),
           reply_to: email.trim(),
         },
         EMAILJS_PUBLIC_KEY
       );
       console.log('✅ EmailJS envoyé:', result.status, result.text);
       setStatus('success');
-      setForm({ name: '', phone: '', email: '' });
+      setForm({ company: '', name: '', phone: '', email: '', type: 'Séminaire', participants: '', message: '' });
     } catch (err) {
       // Affiche l'erreur complète dans la console pour diagnostic
       console.error('❌ EmailJS erreur complète:', {
@@ -216,24 +228,51 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
                     className="cs-form"
                   >
                     <p className="cs-form-label text-center">
-                      Soyez les premiers informés du lancement officiel et profitez d'avantages exclusifs :
+                      Formulaire de demande Entreprise & Événements :
                     </p>
 
-                    {/* Row 1 : Nom + Téléphone */}
                     <div className="cs-input-row">
+                      <div className="cs-input-wrapper">
+                        <input
+                          type="text"
+                          name="company"
+                          placeholder="Nom de l'entreprise *"
+                          value={form.company}
+                          onChange={handleChange}
+                          disabled={status === 'loading'}
+                          required
+                          className="cs-email-input"
+                        />
+                      </div>
                       <div className="cs-input-wrapper">
                         <User size={18} className="cs-mail-icon" />
                         <input
                           type="text"
                           name="name"
-                          placeholder="Votre nom"
+                          placeholder="Votre nom *"
                           value={form.name}
                           onChange={handleChange}
                           disabled={status === 'loading'}
                           required
                           className="cs-email-input"
-                          onMouseEnter={toggleHover}
-                          onMouseLeave={toggleHover}
+                          style={{ paddingLeft: '2.5rem' }}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="cs-input-row">
+                      <div className="cs-input-wrapper">
+                        <Mail size={18} className="cs-mail-icon" />
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email professionnel *"
+                          value={form.email}
+                          onChange={handleChange}
+                          disabled={status === 'loading'}
+                          required
+                          className="cs-email-input"
+                          style={{ paddingLeft: '2.5rem' }}
                         />
                       </div>
                       <div className="cs-input-wrapper">
@@ -241,51 +280,74 @@ const ComingSoon = ({ toggleHover, grantAccess }) => {
                         <input
                           type="tel"
                           name="phone"
-                          placeholder="Votre téléphone (optionnel)"
+                          placeholder="Téléphone"
                           value={form.phone}
                           onChange={handleChange}
                           disabled={status === 'loading'}
                           className="cs-email-input"
-                          onMouseEnter={toggleHover}
-                          onMouseLeave={toggleHover}
+                          style={{ paddingLeft: '2.5rem' }}
                         />
                       </div>
                     </div>
 
-                    {/* Row 2 : Email + Bouton */}
-                    <div className="cs-input-group">
+                    <div className="cs-input-row">
                       <div className="cs-input-wrapper">
-                        <Mail size={18} className="cs-mail-icon" />
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Votre adresse e-mail"
-                          value={form.email}
+                        <select
+                          name="type"
+                          value={form.type}
                           onChange={handleChange}
                           disabled={status === 'loading'}
-                          required
                           className="cs-email-input"
-                          onMouseEnter={toggleHover}
-                          onMouseLeave={toggleHover}
+                          style={{ width: '100%', appearance: 'none', backgroundColor: 'transparent' }}
+                        >
+                          <option value="Séminaire">Séminaire</option>
+                          <option value="Team Building">Team Building</option>
+                          <option value="Comité d'Entreprise">Comité d'Entreprise</option>
+                          <option value="Autre">Autre demande</option>
+                        </select>
+                      </div>
+                      <div className="cs-input-wrapper">
+                        <input
+                          type="number"
+                          name="participants"
+                          placeholder="Nombre de personnes"
+                          value={form.participants}
+                          onChange={handleChange}
+                          disabled={status === 'loading'}
+                          className="cs-email-input"
                         />
                       </div>
-                      <button
-                        type="submit"
-                        disabled={status === 'loading'}
-                        className="btn btn-primary cs-submit-btn"
-                        onMouseEnter={toggleHover}
-                        onMouseLeave={toggleHover}
-                      >
-                        {status === 'loading' ? (
-                          <Loader2 size={18} className="animate-spin" />
-                        ) : (
-                          <>
-                            <span>S'inscrire</span>
-                            <ArrowRight size={16} style={{ marginLeft: '8px' }} />
-                          </>
-                        )}
-                      </button>
                     </div>
+
+                    <div className="cs-input-wrapper" style={{ marginTop: '1rem' }}>
+                      <textarea
+                        name="message"
+                        placeholder="Votre message / Vos besoins spécifiques *"
+                        value={form.message}
+                        onChange={handleChange}
+                        disabled={status === 'loading'}
+                        required
+                        rows="4"
+                        className="cs-email-input"
+                        style={{ resize: 'none', borderRadius: '12px' }}
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="btn btn-primary cs-submit-btn"
+                      style={{ marginTop: '1.5rem', width: '100%' }}
+                    >
+                      {status === 'loading' ? (
+                        <Loader2 size={18} className="animate-spin" />
+                      ) : (
+                        <>
+                          <span>Envoyer la demande</span>
+                          <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+                        </>
+                      )}
+                    </button>
 
                     {status === 'error' && (
                       <motion.p
