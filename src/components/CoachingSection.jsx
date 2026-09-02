@@ -63,11 +63,12 @@ const CoachingSection = ({ toggleHover }) => {
         <div className="coaching-footer">
           <Link 
             to="/infos#reservation-form" 
-            className="btn btn-outline-dark" 
+            className="btn btn-terracotta serif uppercase" 
+            style={{ letterSpacing: '0.15em' }}
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}
           >
-            Nous contacter
+            NOUS CONTACTER
           </Link>
           <div className="coaching-footer-note">
             Tarifs par personne, séances d'1 heure. L'organisation se fait directement avec le coach.

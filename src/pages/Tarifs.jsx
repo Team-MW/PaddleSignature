@@ -98,7 +98,7 @@ const Tarifs = ({ toggleHover }) => {
             <p className="mt-20 text-muted" style={{ fontSize: '1.1rem' }}><em>4 joueurs maximum par terrain.</em></p>
           </div>
 
-          <div className="pricing-grid-modern" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '3rem', maxWidth: '800px', margin: '0 auto' }}>
+          <div className="pricing-grid-modern" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', maxWidth: '1000px', margin: '0 auto' }}>
             <PriceCard 
               title="Heures creuses"
               price="10,50 €"

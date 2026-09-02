@@ -3191,7 +3191,8 @@ section {
 
 .price-features {
   list-style: none;
-  width: 100%;
+  display: inline-block;
+  text-align: left;
   margin-bottom: 4rem;
 }
 
@@ -3200,7 +3201,7 @@ section {
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   font-size: 0.95rem;
 }
