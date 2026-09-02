@@ -82,10 +82,8 @@ const InfosPage = ({ toggleHover }) => {
             transition={{ duration: 1 }}
             className="hero-text-center"
           >
-            <span className="badge-terracotta">Nous contacter</span>
             <h1 className="serif h1-huge">
-              Contact & <br />
-              <span className="italic">Infos</span>
+              Contact & <span className="italic" style={{ color: 'var(--terracotta)' }}>Infos</span>
             </h1>
             <p className="hero-subline">
               Une question ? Un besoin spécifique ? Remplissez notre formulaire ou retrouvez toutes nos informations pratiques.
@@ -100,8 +98,7 @@ const InfosPage = ({ toggleHover }) => {
       <section id="reservation-form" className="contact-form-section section-padding" style={{ background: 'var(--cream)', position: 'relative', paddingBottom: '4rem' }}>
         <div className="container" style={{ position: 'relative' }}>
           <div className="text-center mb-60">
-            <span className="badge-terracotta">Nous écrire</span>
-            <h2 className="serif xl-title">Formulaire de <br /><span className="italic">Contact</span></h2>
+            <h2 className="serif xl-title">Formulaire de <span className="italic" style={{ color: 'var(--terracotta)' }}>Contact</span></h2>
           </div>
           
           {!iframeLoaded && (
