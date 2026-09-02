@@ -400,6 +400,12 @@ section {
   transform: translate(-50%, -50%) rotate(-90deg);
 }
 
+@media (max-width: 768px) {
+  .hero-fullscreen-bg video {
+    transform: translate(-50%, -50%) rotate(-90deg) scale(1.3);
+  }
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -2634,15 +2640,53 @@ section {
 
 @media (max-width: 768px) {
   .hero-content-centered {
-    padding-top: 140px;
+    padding-top: 100px; /* Reduced from 140px to make room */
     align-items: flex-start;
   }
 
   .hero {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    height: 100svh !important; /* Use svh for better mobile support */
+    min-height: 100svh;
+    padding-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .hero-stats-container {
+    overflow: hidden;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    width: 100vw;
+    margin-left: -1.5rem;
+    padding-left: 0;
+    margin-top: 2rem !important; /* Override inline 4rem to fit on mobile */
+  }
+  
+  .hero-stats-scroll {
+    display: flex;
+    flex-wrap: nowrap !important;
+    width: max-content;
+    gap: 0 !important;
+    animation: scroll-marquee 15s linear infinite;
+    flex-shrink: 0;
+  }
+
+  .hero-stats-group {
+    flex-wrap: nowrap !important;
+    flex-shrink: 0;
+    min-width: max-content;
+    white-space: nowrap; /* Prevent any accidental text wrapping that causes overlap */
+  }
+  
+  .mobile-only-group {
+    display: flex !important;
+  }
+  
+  .mobile-only-divider {
     display: block !important;
-    height: auto !important;
-    min-height: 100vh;
-    padding-bottom: 4rem;
+    margin-right: 2rem; /* Add the missing gap before the next group */
   }
 }
 
@@ -3926,6 +3970,38 @@ section {
   background: var(--terracotta-dark);
 }
 
+.hero-stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.hero-stats-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-stats-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mobile-only-group {
+  display: none;
+}
+
+.mobile-only-divider {
+  display: none;
+}
+
+/* 6. Typography adjustments */
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .cs-glass-card {
@@ -4327,8 +4403,11 @@ section {
     line-height: 1.4;
   }
   
-  /* Hide Marquee on mobile */
-  .marquee-wrapper-modern {
-    display: none !important;
+  /* Scale Marquee on mobile */
+  .marquee-logo-container {
+    padding-right: 2.5rem !important;
+  }
+  .marquee-logo {
+    height: 40px !important;
   }
 }

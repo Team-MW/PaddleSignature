@@ -16,15 +16,15 @@ const Marquee = () => {
       <div className="marquee-content-css">
         <div style={{ display: 'flex' }}>
           {baseLogos.map((logo, index) => (
-            <div key={`a-${index}`} style={{ paddingRight: '5rem', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-              <img src={logo} alt="Partenaire" style={{ height: '60px', objectFit: 'contain' }} />
+            <div key={`a-${index}`} className="marquee-logo-container" style={{ paddingRight: '5rem', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+              <img src={logo} alt="Partenaire" className="marquee-logo" style={{ height: '60px', objectFit: 'contain' }} />
             </div>
           ))}
         </div>
         <div style={{ display: 'flex' }}>
           {baseLogos.map((logo, index) => (
-            <div key={`b-${index}`} style={{ paddingRight: '5rem', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-              <img src={logo} alt="Partenaire" style={{ height: '60px', objectFit: 'contain' }} />
+            <div key={`b-${index}`} className="marquee-logo-container" style={{ paddingRight: '5rem', display: 'flex', alignItems: 'center', flexShrink: 0 }}>
+              <img src={logo} alt="Partenaire" className="marquee-logo" style={{ height: '60px', objectFit: 'contain' }} />
             </div>
           ))}
         </div>

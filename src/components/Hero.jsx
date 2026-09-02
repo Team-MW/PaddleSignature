@@ -4,6 +4,40 @@ import { Link } from 'react-router-dom';
 import signatureImg from '../assets/images/signature.avif';
 
 const Hero = ({ heroRef, toggleHover }) => {
+  const stats = (
+    <>
+      <div style={{ textAlign: 'center', flexShrink: 0 }}>
+        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>4</div>
+        <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>TERRAINS PANORAMIQUES</div>
+      </div>
+      <div className="stat-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+      <div style={{ textAlign: 'center', flexShrink: 0 }}>
+        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>9 m</div>
+        <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SOUS PLAFOND</div>
+      </div>
+      <div className="stat-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+      <div style={{ textAlign: 'center', flexShrink: 0 }}>
+        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>1</div>
+        <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>CLUBHOUSE À L'ÉTAGE</div>
+      </div>
+      <div className="stat-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+      <div style={{ textAlign: 'center', flexShrink: 0 }}>
+        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>1</div>
+        <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SALLE SÉMINAIRE</div>
+      </div>
+      <div className="stat-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+      <div style={{ textAlign: 'center', flexShrink: 0 }}>
+        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>46</div>
+        <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>PLACES DE PARKING</div>
+      </div>
+      <div className="stat-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+      <div style={{ textAlign: 'center', flexShrink: 0 }}>
+        <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>24h/24</div>
+        <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>7J/7 · TOUTE L'ANNÉE</div>
+      </div>
+    </>
+  );
+
   return (
     <header className="hero" ref={heroRef} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
       <div className="hero-fullscreen-bg">
@@ -29,35 +63,16 @@ const Hero = ({ heroRef, toggleHover }) => {
             </Link>
           </div>
 
-          <div className="desktop-only" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem', marginTop: '4rem', opacity: '0.9', fontFamily: 'var(--font-padel)' }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>4</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>TERRAINS PANORAMIQUES</div>
-            </div>
-            <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>9 m</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SOUS PLAFOND</div>
-            </div>
-            <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>1</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>CLUBHOUSE À L'ÉTAGE</div>
-            </div>
-            <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>1</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SALLE SÉMINAIRE</div>
-            </div>
-            <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>46</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>PLACES DE PARKING</div>
-            </div>
-            <div style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'white' }}>24h/24</div>
-              <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>7J/7 · TOUTE L'ANNÉE</div>
+          <div className="hero-stats-container" style={{ marginTop: '4rem', opacity: '0.9', fontFamily: 'var(--font-padel)' }}>
+            <div className="hero-stats-scroll">
+              <div className="hero-stats-group">
+                {stats}
+                <div className="stat-divider mobile-only-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+              </div>
+              <div className="hero-stats-group mobile-only-group" aria-hidden="true">
+                {stats}
+                <div className="stat-divider mobile-only-divider" style={{ width: '1px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
+              </div>
             </div>
           </div>
         </motion.div>

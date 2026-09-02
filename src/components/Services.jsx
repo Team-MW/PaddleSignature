@@ -18,11 +18,13 @@ const SignatureCard = ({ title, description, image }) => (
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-end',
-      minWidth: '320px',
+      minWidth: '280px',
+      width: '80vw',
+      maxWidth: '360px',
       height: '420px',
       borderRadius: '16px',
       overflow: 'hidden',
-      scrollSnapAlign: 'start',
+      scrollSnapAlign: 'center',
       flexShrink: 0
     }}
   >
@@ -86,7 +88,7 @@ const Services = () => {
         </motion.div>
       </div>
 
-      <div className="container" style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', paddingLeft: 'clamp(1.5rem, 5vw, calc((100vw - 1200px) / 2))', paddingRight: '1.5rem' }}>
         <div 
           ref={scrollContainerRef}
           style={{ 

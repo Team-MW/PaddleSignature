@@ -21,7 +21,7 @@ const Evenement = lazy(() => import('./pages/Evenement'));
 const AdminEvenement = lazy(() => import('./pages/AdminEvenement'));
 
 // Configuration de maintenance temporaire
-const IS_MAINTENANCE_MODE = true;
+const IS_MAINTENANCE_MODE = false;
 
 // Loading fallback
 import Preloader, { LogoLoader as PageLoader } from './components/Preloader';

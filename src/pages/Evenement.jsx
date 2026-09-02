@@ -46,14 +46,6 @@ const Evenement = ({ toggleHover }) => {
           >
             Nos Événements
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            style={{ color: '#d4af37', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto', fontFamily: 'var(--font-padel)', fontStyle: 'italic' }}
-          >
-            Découvrez l'agenda <span className="font-padel">Padel</span> <span className="font-signature">Signature</span>
-          </motion.p>
         </div>
       </section>
 
