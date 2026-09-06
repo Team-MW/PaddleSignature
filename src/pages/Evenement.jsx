@@ -87,22 +87,22 @@ const Evenement = ({ toggleHover }) => {
                   }}
                 >
 
-                  {/* Image à gauche */}
-                  <div style={{ flex: '1 1 400px', zIndex: 2 }}>
+                  {/* Image à gauche - format story 9:16 */}
+                  <div style={{ flex: '0 1 340px', maxWidth: '340px', margin: '0 auto', zIndex: 2 }}>
                     {event.image ? (
                       <img 
                         src={event.image} 
                         alt={event.title} 
                         style={{ 
                           width: '100%', 
-                          maxHeight: '500px', 
+                          aspectRatio: '9 / 16',
                           objectFit: 'cover',
                           display: 'block',
                           borderRadius: '16px'
                         }} 
                       />
                     ) : (
-                      <div style={{ width: '100%', height: '300px', background: '#f5f5f5', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <div style={{ width: '100%', aspectRatio: '9 / 16', background: '#f5f5f5', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <span style={{ color: '#aaa' }}>Image de l'événement</span>
                       </div>
                     )}

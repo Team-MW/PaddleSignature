@@ -237,8 +237,8 @@ const AdminEvenement = () => {
               />
               {formData.image && (
                 <div style={{ marginTop: '15px' }}>
-                  <p style={{ marginBottom: '8px', fontSize: '0.9rem' }}>Aperçu :</p>
-                  <img src={formData.image} alt="Aperçu" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', objectFit: 'cover' }} />
+                  <p style={{ marginBottom: '8px', fontSize: '0.9rem' }}>Aperçu (format story 9:16) :</p>
+                  <img src={formData.image} alt="Aperçu" style={{ width: '160px', aspectRatio: '9 / 16', borderRadius: '8px', objectFit: 'cover' }} />
                   <button 
                     type="button" 
                     onClick={() => setFormData(prev => ({...prev, image: ''}))}

@@ -208,20 +208,24 @@ const Club = ({ toggleHover }) => {
           </div>
           <div className="faq-container-narrow">
             <FAQItem
-              question={<>D'où provient le nom '<span className="font-signature">Signature</span>' ?</>}
-              answer={<><span className="font-signature">Signature</span> représente notre engagement sur la qualité. Chaque membre du club est unique, et nous souhaitons que chaque session de jeu soit gravée comme une expérience d'exception.</>}
+              question="Combien de temps dure une réservation ?"
+              answer="Un créneau dure 1h30, le temps idéal pour une partie à quatre."
             />
             <FAQItem
-              question="Est-il possible de prendre des cours avec Clément ou Hugo ?"
-              answer="Le club dispose d'entraîneurs diplômés partenaires. Clément et Hugo, bien que fondateurs, sont souvent présents sur les courts pour conseiller les joueurs et partager leur passion."
+              question="Peut-on partager le paiement entre joueurs ?"
+              answer="Oui lorsque le clubhouse est ouvert : une personne réserve et règle sa part, les trois autres joueurs peuvent régler la leur sur place. En accès autonome, en dehors des horaires du clubhouse, la partie est réglée en totalité au moment de la réservation."
             />
             <FAQItem
-              question="Quels types de terrains utilisez-vous ?"
-              answer="Nous avons sélectionné des pistes panoramiques sans montants d'angles pour une visibilité totale, avec une moquette WPT de dernière génération pour limiter les traumatismes articulaires."
+              question="Peut-on essayer une raquette avant de l'acheter ?"
+              answer="Oui. Le pro shop propose l'essai de raquette, déduit du prix si vous l'achetez, ainsi que la location à la partie."
             />
             <FAQItem
-              question="Le club organise-t-il des tournois ?"
-              answer="Absolument. Des tournois homologués (P100, P250) ainsi que des tournois loisirs et des montées-descentes sont organisés mensuellement."
+              question="Y a-t-il des vestiaires ?"
+              answer="Oui, des vestiaires avec casiers sont à votre disposition sur place."
+            />
+            <FAQItem
+              question="Peut-on prendre des cours ?"
+              answer="Oui, en cours individuel ou en petit groupe avec nos coachs. L'Académie ouvre en septembre 2026, en groupes de quatre et par niveau."
             />
           </div>
         </div>
