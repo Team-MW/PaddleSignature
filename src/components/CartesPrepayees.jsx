@@ -63,10 +63,10 @@ const CartesPrepayees = ({ toggleHover }) => {
           <PrepaidCard
             title="Découverte"
             subtitle="Pour essayer"
-            price="100 €"
-            creditsInfo="115 crédits, soit 15 offerts"
+            price="135 €"
+            creditsInfo="162 crédits, soit 27 offerts"
             features={[
-              "Environ 8 parties dont 1 offerte"
+              "12 parties au lieu de 10, dont 2 offertes"
             ]}
             toggleHover={toggleHover}
           />
@@ -74,10 +74,10 @@ const CartesPrepayees = ({ toggleHover }) => {
           <PrepaidCard
             title="Confort"
             subtitle="Pour jouer régulièrement"
-            price="250 €"
-            creditsInfo="300 crédits, soit 50 offerts"
+            price="270 €"
+            creditsInfo="338 crédits, soit 68 offerts"
             features={[
-              "Environ 22 parties dont 3 offertes"
+              "25 parties au lieu de 20, dont 5 offertes"
             ]}
             isHighlighted={true}
             badge="LE PLUS CHOISI"
@@ -87,10 +87,10 @@ const CartesPrepayees = ({ toggleHover }) => {
           <PrepaidCard
             title="Signature"
             subtitle="Pour les habitués"
-            price="500 €"
-            creditsInfo="625 crédits, soit 125 offerts"
+            price="540 €"
+            creditsInfo="702 crédits, soit 162 offerts"
             features={[
-              "Environ 46 parties dont 9 offertes"
+              "52 parties au lieu de 40, dont 12 offertes"
             ]}
             toggleHover={toggleHover}
           />
