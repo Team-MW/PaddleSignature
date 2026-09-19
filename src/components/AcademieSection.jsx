@@ -1,5 +1,4 @@
 import React from 'react';
-import { User } from 'lucide-react';
 
 const AcademieSection = ({ toggleHover }) => {
   return (
@@ -8,65 +7,65 @@ const AcademieSection = ({ toggleHover }) => {
         
         <div className="academie-header">
           <div className="academie-subtitle-wrapper">
-            <span className="academie-badge">À PARTIR DE SEPTEMBRE 2026</span>
             <span className="community-line"></span>
             <span className="community-subtitle">ACADÉMIE</span>
           </div>
           
           <h2 className="serif xl-title mb-20">
-            Une saison <span className="italic" style={{ color: 'var(--terracotta)' }}>complète</span>
+            Progressez <span className="italic" style={{ color: 'var(--terracotta)' }}>toute l'année</span>
           </h2>
           
           <p className="academie-desc">
-            30 séances sur l'année, en groupe et par niveau. Une formule pour progresser dans la durée.
+            Des séances d'1h30 en groupe de 4, réparties par niveau. On travaille des exercices, on remet en situation, on progresse vraiment.
+          </p>
+          <p className="academie-desc academie-desc-coach">
+            Encadrement par notre coach Sébastien Lapena, plus de 20 ans d'expérience en tennis et padel.
+          </p>
+          <p className="academie-desc-meta">
+            25 séances sur l'année · hors périodes de vacances scolaires
           </p>
         </div>
 
-        <div className="academie-card">
-          <div className="academie-card-header">
-            <h3 className="serif text-white academie-card-title">30 séances sur l'année</h3>
-            <p className="academie-card-subtitle">Des séances par groupe de 4 et par niveau.</p>
-          </div>
-          
-          <div className="academie-list">
-            <div className="academie-list-item">
-              <User size={20} className="academie-icon" />
-              <div className="academie-item-text">
-                <span className="font-bold text-white">Enfants</span>
-                <span className="academie-item-desc">7 à 12 ans · groupe de 4, par niveau</span>
-              </div>
-            </div>
-            
-            <div className="academie-list-item">
-              <User size={20} className="academie-icon" />
-              <div className="academie-item-text">
-                <span className="font-bold text-white">Jeunes</span>
-                <span className="academie-item-desc">13 à 17 ans · groupe de 4, par niveau</span>
-              </div>
-            </div>
-            
-            <div className="academie-list-item">
-              <User size={20} className="academie-icon" />
-              <div className="academie-item-text">
-                <span className="font-bold text-white">Adultes</span>
-                <span className="academie-item-desc">groupe de 4, par niveau</span>
-              </div>
-            </div>
-          </div>
+        <div className="academie-blocks">
+          <article className="academie-block">
+            <span className="academie-block-badge">Adultes</span>
+            <h3 className="serif academie-block-title">Lundi et mardi</h3>
+            <p className="academie-block-time">16h30 – 21h00</p>
+            <p className="academie-block-detail">
+              Créneaux d'1h30 selon vos disponibilités et votre niveau. Tous niveaux.
+            </p>
+            <div className="academie-block-price">625 € l'année</div>
+            <div className="academie-block-divider"></div>
+            <p className="academie-block-start">Dès la semaine du 28 septembre</p>
+          </article>
+
+          <article className="academie-block">
+            <span className="academie-block-badge">Enfants</span>
+            <h3 className="serif academie-block-title">Mercredi</h3>
+            <p className="academie-block-time">16h30 – 18h00</p>
+            <p className="academie-block-detail">
+              Deux groupes : 9-12 ans et 13-17 ans.
+            </p>
+            <div className="academie-block-price">370 € l'année</div>
+            <div className="academie-block-divider"></div>
+            <p className="academie-block-start">Dès le mercredi 30 septembre</p>
+          </article>
         </div>
 
         <div className="academie-footer">
-          <p className="academie-footer-note">Tarifs communiqués prochainement.</p>
-          <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLScmINsWx9uNJaR7Gukm-ouy-99MWUuxnbxlV4lkMV4LrFbYuQ/viewform?usp=sharing&ouid=107429083947289871223"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-terracotta" 
+          <span className="academie-welcome-badge">Pack de bienvenue offert</span>
+          <p className="academie-footer-note">
+            Les groupes sont limités à 4 joueurs. Appelez-nous pour vous inscrire, on vous place dans le groupe qui vous correspond.
+          </p>
+          <a
+            href="tel:0531970301"
+            className="btn btn-terracotta academie-phone-btn"
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}
           >
-            Se préinscrire
+            05 31 97 03 01
           </a>
+          <p className="academie-footer-cta">Appelez-nous pour vous inscrire</p>
         </div>
 
       </div>
