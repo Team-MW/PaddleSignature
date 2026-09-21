@@ -47,9 +47,9 @@ const PriceCard = ({ title, price, period, features, highlight, badgeText, toggl
       ))}
     </ul>
     <Link
-      to="/infos#reservation-form"
+      to="/comment-reserver"
       className={`btn-price ${highlight ? 'btn-terracotta' : 'btn-dark'}`}
-      style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}
+      style={{ display: 'block', textAlign: 'center', textDecoration: 'none', marginTop: 'auto' }}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >

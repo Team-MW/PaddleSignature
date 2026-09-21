@@ -3265,7 +3265,9 @@ section {
   list-style: none;
   display: inline-block;
   text-align: left;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+  flex: 1;
+  width: 100%;
 }
 
 .price-features li {

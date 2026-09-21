@@ -17,10 +17,10 @@ const AbonnementBanner = ({ toggleHover }) => {
         <div className="abo-card-right">
           <div className="abo-price-block">
             <div className="abo-price-main">
-              <span className="abo-price-value serif">500 €</span>
+              <span className="abo-price-value serif">420 €</span>
               <span className="abo-price-period">/an</span>
             </div>
-            <div className="abo-price-sub">ou 50 € par mois</div>
+            <div className="abo-price-sub">one shot · ou 39 € / mois</div>
           </div>
           <Link to="/infos#reservation-form" className="btn btn-terracotta abo-btn" onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             Je m'abonne
