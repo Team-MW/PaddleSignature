@@ -63,7 +63,7 @@ const Tarifs = ({ toggleHover }) => {
     <>
       <SEO
         title="Tarifs & Abonnements | Padel Signature"
-        description="Consultez nos tarifs de location de terrains, abonnements mensuels et cours de Padel à Montauban. Jouez dès 10€ par personne."
+        description="Consultez nos tarifs de location de terrains, abonnements mensuels et cours de Padel à Montauban. Jouez dès 7,50 € par personne."
         url="/tarifs"
       />
 
@@ -98,15 +98,25 @@ const Tarifs = ({ toggleHover }) => {
             <p className="mt-20 text-muted" style={{ fontSize: '1.1rem' }}><em>4 joueurs maximum par terrain.</em></p>
           </div>
 
-          <div className="pricing-grid-modern" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', maxWidth: '1000px', margin: '0 auto' }}>
+          <div className="pricing-grid-modern" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', maxWidth: '1100px', margin: '0 auto' }}>
+            <PriceCard 
+              title="La nuit"
+              price="7,50 €"
+              period="pers"
+              features={[
+                "Tous les jours",
+                "De 22h30 à 9h"
+              ]}
+              toggleHover={toggleHover}
+            />
             <PriceCard 
               title="Heures creuses"
               price="10,50 €"
               period="pers"
               highlight={true}
               features={[
-                "Du lundi au vendredi",
-                "Hors créneaux heures pleines"
+                "Semaine : 9h à 12h et 13h30 à 18h",
+                "Week-end : 12h à 18h"
               ]}
               toggleHover={toggleHover}
             />
@@ -115,9 +125,8 @@ const Tarifs = ({ toggleHover }) => {
               price="13,50 €"
               period="pers"
               features={[
-                "Du lun. au ven. 12h00 - 13h30",
-                "Du lun. au ven. 16h30 - 22h30",
-                "Samedi et dimanche en continu"
+                "Semaine : 12h à 13h30 et 18h à 22h30",
+                "Week-end : 9h à 12h et 18h à 22h30"
               ]}
               toggleHover={toggleHover}
             />

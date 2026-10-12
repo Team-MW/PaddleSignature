@@ -78,10 +78,7 @@ const Services = () => {
             fontWeight: '400', 
             margin: '0 0 30px 0' 
           }}>
-            Un lieu pensé <span style={{ 
-              fontFamily: 'var(--font-signature)', 
-              color: 'var(--terracotta)'
-            }}>
+            Un lieu pensé <span className="italic" style={{ color: 'var(--terracotta)' }}>
               pour le jeu
             </span>
           </h2>
