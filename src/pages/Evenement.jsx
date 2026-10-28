@@ -23,6 +23,17 @@ const Evenement = ({ toggleHover }) => {
     fetchEvents();
   }, []);
 
+  // Pixel Meta : inscription tournoi acceptée via le widget PTM
+  useEffect(() => {
+    const onRegistration = (e) => {
+      window.fbq?.('track', 'CompleteRegistration', {
+        content_name: e.detail?.tournamentName,
+      });
+    };
+    document.addEventListener('ptm:registration', onRegistration);
+    return () => document.removeEventListener('ptm:registration', onRegistration);
+  }, []);
+
   return (
     <div className="evenement-page">
       <SEO title="Événements | Padel Signature" description="Découvrez nos prochains événements et rejoignez la communauté Padel Signature." url="/evenement" />
@@ -46,6 +57,18 @@ const Evenement = ({ toggleHover }) => {
           >
             Nos Événements
           </motion.h1>
+        </div>
+      </section>
+
+      {/* Calendrier tournois PTM */}
+      <section className="section-padding" style={{
+        background: 'linear-gradient(135deg, #f4f7f6 0%, #ffffff 100%)',
+        position: 'relative',
+        paddingTop: '40px',
+        paddingBottom: '20px'
+      }}>
+        <div className="container" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <ptm-tournois club="padel-signature"></ptm-tournois>
         </div>
       </section>
 
