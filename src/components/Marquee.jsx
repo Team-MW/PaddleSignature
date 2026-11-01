@@ -9,11 +9,10 @@ import logo7 from '../assets/images/logo-ffb-btp.jpeg';
 import logo8 from '../assets/images/logo-leclerc-sapiac.jpeg';
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
-const duplicatedLogos = Array(20).fill(logos).flat();
 
 const Marquee = () => {
-  // Duplicate logos enough times to fill more than 100vw, then duplicate that entire block once more.
-  const baseLogos = Array(10).fill(logos).flat();
+  // 4 répétitions suffisent amplement pour couvrir tous les écrans (y compris UltraWide)
+  const baseLogos = Array(4).fill(logos).flat();
 
   return (
     <div className="marquee-wrapper-modern marquee-hover-pause" style={{ background: '#ffffff', borderTop: '1px solid #eaeaea', borderBottom: '1px solid #eaeaea' }}>
