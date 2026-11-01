@@ -4,8 +4,11 @@ import logo2 from '../assets/images/logo2entreprise.jpeg';
 import logo3 from '../assets/images/logo-OCCITANET.png';
 import logo4 from '../assets/images/logo-PG-BAT.png';
 import logo5 from '../assets/images/logobourre.jpeg';
+import logo6 from '../assets/images/logo-indysystem.jpeg';
+import logo7 from '../assets/images/logo-ffb-btp.jpeg';
+import logo8 from '../assets/images/logo-leclerc-sapiac.jpeg';
 
-const logos = [logo1, logo2, logo3, logo4, logo5];
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
 const duplicatedLogos = Array(20).fill(logos).flat();
 
 const Marquee = () => {

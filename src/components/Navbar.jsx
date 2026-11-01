@@ -34,7 +34,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
             <Link to="/entreprises" className="nav-link">Entreprises</Link>
             <Link to="/tarifs" className="nav-link">Tarifs</Link>
             <Link to="/infos" className="nav-link">Infos</Link>
-            <Link to="/evenement" className="nav-link">Événements</Link>
+            <Link to="/evenement" className="nav-link">Tournois</Link>
             <Link to="/comment-reserver" className="btn btn-primary" style={{padding: '0.8rem 2.5rem', textDecoration: 'none'}}>
                <span>Réserver</span>
             </Link>
@@ -67,7 +67,7 @@ const Navbar = ({ isScrolled, mobileMenuOpen, setMobileMenuOpen, toggleHover }) 
                 { name: 'Entreprises', path: '/entreprises' },
                 { name: 'Tarifs', path: '/tarifs' },
                 { name: 'Infos', path: '/infos' },
-                { name: 'Événements', path: '/evenement' }
+                { name: 'Tournois', path: '/evenement' }
               ].map((item, index) => (
                 <motion.div
                   key={item.name}
